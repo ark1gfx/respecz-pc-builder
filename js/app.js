@@ -215,6 +215,8 @@ const PART_BLURB = {
 const peekMode = matchMedia('(hover: hover) and (pointer: fine) and (min-width: 860px)');
 const peekTwoCol = matchMedia('(min-width: 860px) and (min-aspect-ratio: 11/10)');
 // zoomed into the PC (scrolled in, or full screen): the hero copy is gone, so the card floats over the 3D as glass
+// the next section ("Saan tayo magsisimula?") has come up on screen: no card, at once
+const peekPastPC = () => { const h = $('#start .section-head'); return !!h && h.getBoundingClientRect().top < innerHeight - 24; };
 const peekFloating = () => $('.stage-wrap')?.classList.contains('is-full') || $('#hero')?.classList.contains('is-deep');
 // Timing, like a good mega-menu:
 // - leave a part and the card waits PEEK_HIDE ms, then goes (quick, so it never lingers)
@@ -239,7 +241,7 @@ function peekPart(cat) {
   if (!card) return;
   clearTimeout(swapTimer);
   if (!cat) { peekLeave(); return; }
-  if (!peekMode.matches || !catalog.parts.length || (!peekFloating() && !peekTwoCol.matches)) return;
+  if (!peekMode.matches || !catalog.parts.length || peekPastPC() || (!peekFloating() && !peekTwoCol.matches)) return;
   clearTimeout(peekTimer); peekTimer = 0;
   if (cat === peekCat && !card.hidden && card.classList.contains('peek-float') === !!peekFloating()) return;
   // heading for the open card: don't swap it for a part you are only passing over
@@ -311,8 +313,7 @@ function bindPeek() {
   // scrolling between "beside the PC" and "zoomed in" (or past the PC): don't leave the card in the wrong place
   addEventListener('scroll', () => {
     if (card.hidden) return;
-    const gone = $('#stage').getBoundingClientRect().bottom < innerHeight * 0.5;
-    if (gone || card.classList.contains('peek-float') !== !!peekFloating()) hidePeek();
+    if (peekPastPC() || card.classList.contains('peek-float') !== !!peekFloating()) hidePeek();
   }, { passive: true });
 }
 
