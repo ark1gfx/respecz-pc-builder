@@ -2,7 +2,6 @@
 // Glass side faces -x (real ATX layout). Nodes named part_<category> are clickable; rotor_* nodes spin; materials get finishing touches here.
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 
@@ -252,6 +251,40 @@ function coolerDisplayTex() {
   return t;
 }
 
+// A dark studio for reflections: soft key box overhead, tall strip boxes left and right, a warm bounce below.
+function studioEnvironment() {
+  const env = new THREE.Scene();
+  const room = new THREE.Mesh(new THREE.BoxGeometry(100, 60, 100), new THREE.MeshBasicMaterial({ color: 0x0d0e10, side: THREE.BackSide }));
+  env.add(room);
+  const box = (w, h, color, strength, pos, rot) => {
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ color: new THREE.Color(color).multiplyScalar(strength), side: THREE.DoubleSide }));
+    m.position.set(...pos);
+    if (rot) m.rotation.set(...rot);
+    env.add(m);
+  };
+  box(46, 28, 0xffffff, 3.2, [0, 29, 0], [Math.PI / 2, 0, 0]);          // big softbox overhead
+  box(12, 44, 0xffffff, 4.0, [-49, 4, 10], [0, Math.PI / 2, 0]);         // strip left
+  box(12, 44, 0xdfe9ff, 2.4, [49, 4, -6], [0, -Math.PI / 2, 0]);         // strip right, cooler
+  box(30, 14, 0xffd9b0, 0.9, [0, -29, 20], [-Math.PI / 2, 0, 0]);        // warm bounce from below
+  box(40, 18, 0xffffff, 1.4, [0, 8, -49]);                                // back panel for rim reflections
+  return env;
+}
+
+function shadowBlobTex() {
+  const c = document.createElement('canvas');
+  c.width = c.height = 128;
+  const x = c.getContext('2d');
+  const g = x.createRadialGradient(64, 64, 4, 64, 64, 64);
+  g.addColorStop(0, 'rgba(0,0,0,0.85)');
+  g.addColorStop(0.45, 'rgba(0,0,0,0.5)');
+  g.addColorStop(1, 'rgba(0,0,0,0)');
+  x.fillStyle = g;
+  x.fillRect(0, 0, 128, 128);
+  const t = new THREE.CanvasTexture(c);
+  t.colorSpace = THREE.SRGBColorSpace;
+  return t;
+}
+
 export async function mountPC(container, { onPick, onHover, labels, reducedMotion = false, onLoad }) {
   const small = Math.min(container.clientWidth, container.clientHeight) < 520;
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
@@ -267,8 +300,9 @@ export async function mountPC(container, { onPick, onHover, labels, reducedMotio
 
   const scene = new THREE.Scene();
   const pmrem = new THREE.PMREMGenerator(renderer);
-  scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
-  scene.environmentIntensity = 0.4;
+  // product-shot reflections: a dark studio with big softboxes (built in code, nothing to download)
+  scene.environment = pmrem.fromScene(studioEnvironment(), 0.02).texture;
+  scene.environmentIntensity = 0.55;
 
   const camera = new THREE.PerspectiveCamera(30, 1, 1, 600);
   const HOME = { target: new THREE.Vector3(0, 1, 0), pos: new THREE.Vector3(-125, 9, 24) };
@@ -296,6 +330,13 @@ export async function mountPC(container, { onPick, onHover, labels, reducedMotio
   const fill = new THREE.DirectionalLight(0x9fc3ff, 0.6);
   fill.position.set(20, 10, 70);
   scene.add(fill);
+  // rim lights from behind: bright edges on the case frame and glass, like a studio product shot
+  const rimL = new THREE.DirectionalLight(0xffffff, 1.6);
+  rimL.position.set(40, 30, -70);
+  scene.add(rimL);
+  const rimR = new THREE.DirectionalLight(0xfff1e0, 1.1);
+  rimR.position.set(60, 12, 60);
+  scene.add(rimR);
   const inner = new THREE.PointLight(BLUE, 160, 45, 2);
   inner.position.set(-6, 8, 8);
   const top = new THREE.PointLight(0xffffff, 120, 40, 2);
@@ -327,6 +368,20 @@ export async function mountPC(container, { onPick, onHover, labels, reducedMotio
   const gltf = await new GLTFLoader().setDRACOLoader(draco).loadAsync(new URL('../assets/pc.glb', import.meta.url).href);
   const model = gltf.scene;
   scene.add(model);
+  // soft contact shadow under the case (a blurred dark ellipse; costs nothing per frame)
+  {
+    const box = new THREE.Box3().setFromObject(model);
+    const size = box.getSize(new THREE.Vector3());
+    const blob = new THREE.Mesh(
+      new THREE.PlaneGeometry(size.x * 1.35, size.z * 1.3),
+      new THREE.MeshBasicMaterial({ map: shadowBlobTex(), transparent: true, depthWrite: false, opacity: 0.75, toneMapped: false }),
+    );
+    blob.rotation.x = -Math.PI / 2;
+    blob.position.set((box.min.x + box.max.x) / 2, box.min.y + 0.05, (box.min.z + box.max.z) / 2);
+    blob.renderOrder = -1;
+    blob.raycast = () => {};
+    scene.add(blob);
+  }
 
   const groups = {};
   const rotors = [];
