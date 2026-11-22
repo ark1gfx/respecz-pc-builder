@@ -1401,3 +1401,17 @@ input.budget-out:focus { outline: none; border-bottom: 1.5px solid var(--blue); 
 
 /* every control uses the site font (buttons default to the system font otherwise) */
 button, input, select, textarea { font-family: inherit; }
+
+/* nav pills: a slimmer pill, and for "Parts" the dropdown arrow sits inside the same pill */
+.nav-links > a, .nav-drop > a { padding: 5px 12px; line-height: 20px; }
+.nav-drop { border-radius: 999px; padding-right: 6px; transition: background 0.18s ease; }
+.nav-drop > a { padding-right: 2px; }
+.nav-drop > a:hover { background: none; }
+.nav-drop:hover { background: rgba(255, 255, 255, 0.07); }
+.nav-drop:has(> a[aria-current='page']) {
+  background: linear-gradient(180deg, rgba(56, 189, 248, 0.28), rgba(37, 99, 235, 0.34));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), inset 0 0 0 1px rgba(56, 189, 248, 0.35), 0 0 18px -4px rgba(37, 99, 235, 0.8);
+}
+.nav-drop > a[aria-current='page'], .nav-drop > a[aria-current='page']:hover { background: none; box-shadow: none; }
+.nav-drop:has(> a[aria-current='page']) .nav-caret { color: #fff; }
+.nav-drop:has(> a[aria-current='page']):hover { background: linear-gradient(180deg, rgba(56, 189, 248, 0.34), rgba(37, 99, 235, 0.42)); }
