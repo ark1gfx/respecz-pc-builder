@@ -224,7 +224,8 @@ function peekPart(cat) {
   const card = $('#peek');
   if (!card) return;
   clearTimeout(peekTimer);
-  if (!cat) { peekTimer = setTimeout(hidePeek, 1400); return; }
+  peekTimer = 0;
+  if (!cat) { peekLeave(); return; }
   if (!peekMode.matches || !catalog.parts.length || $('.stage-wrap')?.classList.contains('is-full') || $('#hero')?.classList.contains('is-deep')) return;
   if (cat === peekCat && !card.hidden) return;
   peekCat = cat;
@@ -245,9 +246,23 @@ function peekPart(cat) {
   card.parentElement.classList.add('is-peek');
 }
 
+// Leaving a part hides the card almost at once, unless the pointer is heading left toward the card:
+// then each leftward move buys a little more time, so you can still reach a product and click it.
+let peekX = 0;
+function peekLeave() {
+  clearTimeout(peekTimer);
+  peekTimer = setTimeout(hidePeek, 220);
+}
+addEventListener('mousemove', (e) => {
+  const dx = e.clientX - peekX;
+  peekX = e.clientX;
+  if (peekTimer && peekCat && dx < -1) peekLeave();
+}, { passive: true });
+
 function hidePeek() {
   const card = $('#peek');
   if (!card) return;
+  peekTimer = 0;
   peekCat = null;
   card.parentElement.classList.remove('is-peek');
   card.hidden = true;
@@ -259,8 +274,8 @@ function bindPeek() {
   const chips = $('#stage-chips');
   chips?.addEventListener('mouseover', (e) => { const b = e.target.closest('[data-cat]'); if (b) peekPart(b.dataset.cat); });
   chips?.addEventListener('mouseout', (e) => { if (e.target.closest('[data-cat]') && !e.relatedTarget?.closest?.('#stage-chips [data-cat]')) peekPart(null); });
-  card.addEventListener('mouseenter', () => clearTimeout(peekTimer));
-  card.addEventListener('mouseleave', () => { peekTimer = setTimeout(hidePeek, 600); });
+  card.addEventListener('mouseenter', () => { clearTimeout(peekTimer); peekTimer = 0; });
+  card.addEventListener('mouseleave', () => { clearTimeout(peekTimer); peekTimer = setTimeout(hidePeek, 150); });
   card.addEventListener('click', (e) => {
     const all = e.target.closest('[data-peek-all]');
     if (all) { hidePeek(); openSheet(all.dataset.peekAll, { from3d: true }); }
