@@ -1280,3 +1280,10 @@ input.budget-out:focus { outline: none; border-bottom: 1.5px solid var(--blue); 
 }
 .tip.on { opacity: 1; }
 @media (prefers-reduced-motion: reduce) { .tip { transition: none; } }
+
+/* Ready Builds: every card shares the same rows (title, thumbs, specs, price), so prices and buttons line up */
+@supports (grid-template-rows: subgrid) {
+  .samples { row-gap: 14px; }
+  .sample { grid-row: span 4; grid-template-rows: subgrid; row-gap: 16px; }
+  .sample-foot { align-self: end; }
+}
