@@ -1482,3 +1482,17 @@ button, input, select, textarea { font-family: inherit; }
 .rail-item { min-width: 0; gap: 8px; padding: 4px 12px 4px 4px; border-radius: 12px; font-size: 0.78rem; text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6); }
 .rail-icon { width: 24px; height: 24px; border-radius: 7px; background: rgba(255, 255, 255, 0.08); }
 .rail-icon svg { width: 14px; height: 14px; }
+
+/* ReSpecz square grid (same pattern as the videos: big squares + 4x finer ones), only over the dark top part,
+   fading out before the blue horizon */
+.bg-grid {
+  position: fixed; inset: 0; z-index: -1; pointer-events: none; transform: translateZ(0);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.065) 1px, transparent 1px) -1px -1px / 240px 240px,
+    linear-gradient(90deg, rgba(255, 255, 255, 0.065) 1px, transparent 1px) -1px -1px / 240px 240px,
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px) 0 0 / 60px 60px,
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px) 0 0 / 60px 60px;
+  background-position: center top;
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 40%, transparent 72%);
+  mask-image: linear-gradient(180deg, #000 0%, #000 40%, transparent 72%);
+}
