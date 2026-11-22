@@ -54,7 +54,7 @@ document.addEventListener('error', (e) => {
 
 function shopButton(p, extraClass = '', label = 'Shopee Checkout') {
   if (!p?.shopeeUrl) return '';
-  return `<a class="btn btn-shop ${extraClass}" href="${esc(p.shopeeUrl)}" target="_blank" rel="sponsored noopener" data-part="${esc(p.id)}">${label}</a>`;
+  return `<a class="btn btn-shop ${extraClass}" href="${esc(p.shopeeUrl)}" target="_blank" rel="sponsored noopener" data-part="${esc(p.id)}" data-tip="Bubuksan sa Shopee (bagong tab)">${label}</a>`;
 }
 
 // Add-to-Basket uses the same basket icon as the nav and the Basket button (with a small plus), never a bare "+".
@@ -1082,7 +1082,7 @@ function fillPop() {
         <span class="pop-body"><span class="pop-name">${esc(p.name)}</span><span class="pop-spec">${esc(specLine(p))}</span></span>
         <span class="pop-side">
           <span class="pop-price">${peso.format(p.price)}</span>
-          <span class="pop-actions"><button type="button" class="pop-add" data-add="${esc(p.id)}" aria-label="Idagdag sa Basket" title="Idagdag sa Basket">${BASKET_ADD_ICON}</button>${shopButton(p, 'btn-shop-quiet', 'Shopee <span aria-hidden="true">›</span>')}</span>
+          <span class="pop-actions"><button type="button" class="pop-add" data-add="${esc(p.id)}" aria-label="Idagdag sa Basket">${BASKET_ADD_ICON}</button>${shopButton(p, 'btn-shop-quiet', 'Shopee <span aria-hidden="true">›</span>')}</span>
         </span>
       </div>`).join('') : '<p class="bk-empty">Walang tugma sa filter. Pindutin ang <strong>Lahat</strong>.</p>'}</div>`;
 }
@@ -1294,7 +1294,7 @@ async function initVideos() {
     grid.innerHTML = list.map((v, i) => `
       <article class="vid">
         <div class="vid-media">
-          <button type="button" class="vid-play" data-play="${i}" aria-label="I-play: ${esc(v.title)}">
+          <button type="button" class="vid-play" data-play="${i}" aria-label="I-play: ${esc(v.title)}" data-tip="I-play dito">
             ${v.thumb ? `<img src="${esc(new URL(v.thumb, ROOT).href)}" alt="" loading="lazy" decoding="async">` : ''}
             <span class="vid-badge">${PLAY_ICON}</span>
             ${v.length ? `<span class="vid-len">${duration(v.length)}</span>` : ''}
@@ -1337,7 +1337,50 @@ function bindRouteCards() {
 }
 
 // ---------- nav dropdown + scroll to top (every page) ----------
+// Hover tips: one shared bubble for icon-only controls (and anything with data-tip).
+// Mouse: shows after a short rest. Keyboard: shows on focus. Lives on <body> so popover/list overflow never clips it.
+const TIP_SEL = '[data-tip], .nav-basket, .icon-btn, .sheet-side-next, .basket-fab, .to-top, .viewer-expand, .viewer-btn, .nav-caret, .part-thumb, .may-row-thumb, .pop-close, .pop-add';
+function bindTips() {
+  const tip = document.createElement('div');
+  tip.className = 'tip'; tip.setAttribute('role', 'tooltip'); tip.id = 'tip';
+  document.body.append(tip);
+  const fine = matchMedia('(hover: hover) and (pointer: fine)');
+  let cur = null, timer = 0;
+  const text = (el) => el.dataset.tip || el.getAttribute('aria-label') || '';
+  const show = (el) => {
+    const t = text(el); if (!t || el.disabled) return;
+    cur = el; tip.textContent = t; tip.classList.remove('below');
+    const r = el.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
+    let top = r.top - h - 8;
+    if (top < 8) { top = r.bottom + 8; tip.classList.add('below'); }
+    const left = Math.min(Math.max(8, r.left + r.width / 2 - w / 2), innerWidth - w - 8);
+    tip.style.transform = `translate(${Math.round(left)}px, ${Math.round(top)}px)`;
+    tip.classList.add('on');
+  };
+  const hide = () => { clearTimeout(timer); cur = null; tip.classList.remove('on'); };
+  document.addEventListener('mouseover', (e) => {
+    if (!fine.matches) return;
+    const el = e.target.closest?.(TIP_SEL);
+    if (el === cur) return;
+    hide();
+    if (el) timer = setTimeout(() => show(el), 350);
+  });
+  document.addEventListener('mouseout', (e) => {
+    const el = e.target.closest?.(TIP_SEL);
+    if (el && !el.contains(e.relatedTarget)) hide();
+  });
+  document.addEventListener('focusin', (e) => {
+    const el = e.target.closest?.(TIP_SEL);
+    if (el && el.matches(':focus-visible')) show(el); else hide();
+  });
+  document.addEventListener('focusout', hide);
+  addEventListener('pointerdown', hide, true);
+  addEventListener('scroll', hide, { capture: true, passive: true });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hide(); });
+}
+
 function bindChrome() {
+  bindTips();
   // Parts dropdown: hover opens it on a mouse; the caret button toggles it for touch and keyboard
   const drop = $('.nav-drop');
   const caret = drop?.querySelector('.nav-caret');
