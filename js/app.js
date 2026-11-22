@@ -1320,6 +1320,9 @@ async function initVideos() {
   tabs.forEach((t) => t.addEventListener('click', () => show(t.dataset.vtab)));
   // nothing to rank by: start on "Bago"
   show(data.trending?.some((v) => v.views || v.engagement) ? 'trending' : 'latest');
+  // The section starts hidden until the JSON loads, so the browser's own #videos jump finds nothing on arrival
+  // from another page. Jump there ourselves once it exists (instantly: the visitor already asked to go there).
+  if (location.hash === '#videos') requestAnimationFrame(() => section.scrollIntoView({ block: 'start' }));
 }
 
 // Touch screens have no hover: play each card's animation once when it is mostly on screen.
