@@ -161,6 +161,7 @@ function enterFull() {
   if (isFull() || !pc3d) return;
   document.documentElement.classList.add('viewer-full');
   $('.stage-wrap').classList.add('is-full');
+  hidePeek();
   $('#stage').style.cssText = '';
   pc3d.setWindow(null);
   pc3d.setFull(true);
@@ -171,6 +172,7 @@ function exitFull() {
   if (!isFull()) return;
   document.documentElement.classList.remove('viewer-full');
   $('.stage-wrap').classList.remove('is-full');
+  hidePeek();
   pc3d?.setFull(false);
   window.__heroScroll?.remeasure();
   $('#viewer-expand')?.focus({ preventScroll: true });
@@ -210,7 +212,10 @@ const PART_BLURB = {
   case: 'Ang katawan ng PC. Dapat kasya ang motherboard, GPU at cooler, at maganda ang airflow.',
   cooler: 'Pampalamig ng CPU. Mas malamig, mas tahimik at mas tumatagal ang PC.',
 };
-const peekMode = matchMedia('(hover: hover) and (pointer: fine) and (min-width: 860px) and (min-aspect-ratio: 11/10)');
+const peekMode = matchMedia('(hover: hover) and (pointer: fine) and (min-width: 860px)');
+const peekTwoCol = matchMedia('(min-width: 860px) and (min-aspect-ratio: 11/10)');
+// zoomed into the PC (scrolled in, or full screen): the hero copy is gone, so the card floats over the 3D as glass
+const peekFloating = () => $('.stage-wrap')?.classList.contains('is-full') || $('#hero')?.classList.contains('is-deep');
 // Timing, like a good mega-menu:
 // - leave a part and the card waits PEEK_HIDE ms, then goes (quick, so it never lingers)
 // - while the pointer is getting closer to the card, it stays open, and parts you cross on the way
@@ -234,9 +239,9 @@ function peekPart(cat) {
   if (!card) return;
   clearTimeout(swapTimer);
   if (!cat) { peekLeave(); return; }
-  if (!peekMode.matches || !catalog.parts.length || $('.stage-wrap')?.classList.contains('is-full') || $('#hero')?.classList.contains('is-deep')) return;
+  if (!peekMode.matches || !catalog.parts.length || (!peekFloating() && !peekTwoCol.matches)) return;
   clearTimeout(peekTimer); peekTimer = 0;
-  if (cat === peekCat && !card.hidden) return;
+  if (cat === peekCat && !card.hidden && card.classList.contains('peek-float') === !!peekFloating()) return;
   // heading for the open card: don't swap it for a part you are only passing over
   if (!card.hidden && performance.now() - approaching < 120) { swapTimer = setTimeout(() => peekPart(cat), PEEK_SWAP); return; }
   showPeek(card, cat);
@@ -257,8 +262,12 @@ function showPeek(card, cat) {
       </a></li>`).join('')}
     </ul>
     <button type="button" class="peek-all" data-peek-all="${cat}">Tingnan lahat ng ${all.length} ${esc(SHORT_LABEL[cat])} options →</button>`;
+  const floating = !!peekFloating();
+  const home = floating ? document.body : $('.hero-copy');
+  if (card.parentElement !== home) home.append(card);
+  card.classList.toggle('peek-float', floating);
+  $('.hero-copy')?.classList.toggle('is-peek', !floating);
   card.hidden = false;
-  card.parentElement.classList.add('is-peek');
 }
 
 function peekLeave(ms = PEEK_HIDE) {
@@ -272,7 +281,7 @@ function hidePeek() {
   clearTimeout(peekTimer); clearTimeout(swapTimer);
   peekTimer = 0;
   peekCat = null;
-  card.parentElement.classList.remove('is-peek');
+  $('.hero-copy')?.classList.remove('is-peek');
   card.hidden = true;
 }
 
@@ -299,7 +308,12 @@ function bindPeek() {
     const all = e.target.closest('[data-peek-all]');
     if (all) { hidePeek(); openSheet(all.dataset.peekAll, { from3d: true }); }
   });
-  addEventListener('scroll', () => { if (!card.hidden && $('#hero')?.classList.contains('is-deep')) hidePeek(); }, { passive: true });
+  // scrolling between "beside the PC" and "zoomed in" (or past the PC): don't leave the card in the wrong place
+  addEventListener('scroll', () => {
+    if (card.hidden) return;
+    const gone = $('#stage').getBoundingClientRect().bottom < innerHeight * 0.5;
+    if (gone || card.classList.contains('peek-float') !== !!peekFloating()) hidePeek();
+  }, { passive: true });
 }
 
 // ---------- scroll into the PC ----------

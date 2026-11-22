@@ -1321,3 +1321,18 @@ input.budget-out:focus { outline: none; border-bottom: 1.5px solid var(--blue); 
 .peek-all { margin-top: 2px; padding: 8px 0; border: 0; background: none; color: var(--accent, var(--blue)); font: 500 0.95rem var(--font); cursor: pointer; }
 .peek-all:hover { text-decoration: underline; text-underline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) { .peek { animation: none; } .hero-copy > :not(.peek), .peek-item { transition: none; } }
+
+/* zoomed into the 3D (scrolled in or full screen): the hover card floats over the PC as frosted glass */
+.peek.peek-float {
+  position: fixed; left: max(24px, var(--gutter)); right: auto; top: 50%;
+  width: min(400px, 36vw); z-index: 40;
+  padding: 22px 20px 16px; border-radius: 26px;
+  background: rgba(16, 20, 36, 0.5);
+  -webkit-backdrop-filter: blur(26px) saturate(170%); backdrop-filter: blur(26px) saturate(170%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), inset 0 0 0 1px rgba(255, 255, 255, 0.09), 0 30px 70px -24px rgba(0, 0, 0, 0.75);
+}
+.peek-float .peek-title { font-size: clamp(1.8rem, 2.6vw, 2.4rem); }
+.peek-float .peek-blurb { font-size: 0.95rem; }
+.peek-float .peek-item { background: rgba(255, 255, 255, 0.07); }
+.peek-float .peek-item:hover { background: rgba(255, 255, 255, 0.12); }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .peek.peek-float { background: rgba(16, 20, 36, 0.92); } }
