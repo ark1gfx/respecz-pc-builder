@@ -252,7 +252,7 @@ function coolerDisplayTex() {
   return t;
 }
 
-export async function mountPC(container, { onPick, labels, reducedMotion = false, onLoad }) {
+export async function mountPC(container, { onPick, onHover, labels, reducedMotion = false, onLoad }) {
   const small = Math.min(container.clientWidth, container.clientHeight) < 520;
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5)); // full-screen canvas: 2x pixels cost ~1.8x GPU time for little visible gain
@@ -569,6 +569,7 @@ export async function mountPC(container, { onPick, labels, reducedMotion = false
     if (cat) setHighlight(cat, true);
     renderer.domElement.style.cursor = cat ? 'pointer' : 'grab';
     hotspots.forEach((h) => h.el.classList.toggle('is-hot', h.cat === cat));
+    onHover?.(cat);
   }
 
   let downAt = null;

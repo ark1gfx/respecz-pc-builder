@@ -127,7 +127,7 @@ async function mountStage() {
   try {
     stage.classList.add('is-loading');
     const { mountPC } = await import('./pc3d.js');
-    pc3d = await mountPC(stage, { onPick: (cat) => openSheet(cat, { from3d: true }), labels: SHORT_LABEL, reducedMotion });
+    pc3d = await mountPC(stage, { onPick: (cat) => openSheet(cat, { from3d: true }), onHover: peekPart, labels: SHORT_LABEL, reducedMotion });
     stage.classList.remove('is-loading');
     stage.classList.add('is-ready');
     // the tapping-hand cue shows until the visitor touches the PC once (remembered on this device)
@@ -195,6 +195,77 @@ function bindViewer() {
     // with a popup open, Esc closes the popup first; the next Esc leaves full screen
     if (e.key === 'Escape' && isFull() && !document.querySelector('dialog[open]')) exitFull();
   });
+}
+
+// ---------- hover a part of the 3D PC: the left column shows what it is + 3 picks ----------
+// Mouse + two-column hero only. The card stays a moment after the pointer leaves the PC, so you can move
+// over to it and click a product.
+const PART_BLURB = {
+  cpu: 'Ang utak ng PC. Siya ang nagpapatakbo ng lahat: games, apps, at Windows.',
+  motherboard: 'Dito nakakabit ang lahat ng parts. Dapat tugma ang socket sa CPU at ang RAM type.',
+  ram: 'Panandaliang memory. Mas marami, mas maraming sabay-sabay na bukas na apps at tabs.',
+  gpu: 'Graphics card. Siya ang bida sa gaming at video editing: mas malakas, mas mataas na FPS.',
+  ssd: 'Storage: dito naka-save ang Windows, games at files. NVMe ang pinakamabilis.',
+  psu: 'Power supply. Nagbibigay ng kuryente sa lahat ng parts; huwag tipirin.',
+  case: 'Ang katawan ng PC. Dapat kasya ang motherboard, GPU at cooler, at maganda ang airflow.',
+  cooler: 'Pampalamig ng CPU. Mas malamig, mas tahimik at mas tumatagal ang PC.',
+};
+const peekMode = matchMedia('(hover: hover) and (pointer: fine) and (min-width: 860px) and (min-aspect-ratio: 11/10)');
+let peekTimer = 0;
+let peekCat = null;
+
+function peekPicks(cat) {
+  const list = partsOf(cat).filter((p) => p.shopeeUrl);
+  if (list.length <= 3) return list.map((p, i) => [['Budget', 'Sulit', 'Premium'][i], p]);
+  return [['Budget', list[0]], ['Sulit', list[Math.floor((list.length - 1) / 2)]], ['Premium', list[list.length - 1]]];
+}
+
+function peekPart(cat) {
+  const card = $('#peek');
+  if (!card) return;
+  clearTimeout(peekTimer);
+  if (!cat) { peekTimer = setTimeout(hidePeek, 1400); return; }
+  if (!peekMode.matches || !catalog.parts.length || $('.stage-wrap')?.classList.contains('is-full') || $('#hero')?.classList.contains('is-deep')) return;
+  if (cat === peekCat && !card.hidden) return;
+  peekCat = cat;
+  const all = partsOf(cat);
+  card.innerHTML = `
+    <p class="peek-eyebrow"><span class="peek-icon">${ICONS[cat]}</span>Naka-hover</p>
+    <h2 class="peek-title">${esc(CATEGORY_LABEL[cat])}</h2>
+    <p class="peek-blurb">${PART_BLURB[cat] || ''}</p>
+    <ul class="peek-list">${peekPicks(cat).map(([tier, p]) => `
+      <li><a class="peek-item" href="${esc(p.shopeeUrl)}" target="_blank" rel="sponsored noopener" data-part="${esc(p.id)}" data-tip="Bubuksan sa Shopee (bagong tab)">
+        <span class="peek-thumb">${thumb(p, cat)}</span>
+        <span class="peek-body"><span class="peek-tier">${tier}</span><span class="peek-name">${esc(p.name)}</span></span>
+        <strong class="peek-price">${peso.format(p.price)}</strong>
+      </a></li>`).join('')}
+    </ul>
+    <button type="button" class="peek-all" data-peek-all="${cat}">Tingnan lahat ng ${all.length} ${esc(SHORT_LABEL[cat])} options →</button>`;
+  card.hidden = false;
+  card.parentElement.classList.add('is-peek');
+}
+
+function hidePeek() {
+  const card = $('#peek');
+  if (!card) return;
+  peekCat = null;
+  card.parentElement.classList.remove('is-peek');
+  card.hidden = true;
+}
+
+function bindPeek() {
+  const card = $('#peek');
+  if (!card) return;
+  const chips = $('#stage-chips');
+  chips?.addEventListener('mouseover', (e) => { const b = e.target.closest('[data-cat]'); if (b) peekPart(b.dataset.cat); });
+  chips?.addEventListener('mouseout', (e) => { if (e.target.closest('[data-cat]') && !e.relatedTarget?.closest?.('#stage-chips [data-cat]')) peekPart(null); });
+  card.addEventListener('mouseenter', () => clearTimeout(peekTimer));
+  card.addEventListener('mouseleave', () => { peekTimer = setTimeout(hidePeek, 600); });
+  card.addEventListener('click', (e) => {
+    const all = e.target.closest('[data-peek-all]');
+    if (all) { hidePeek(); openSheet(all.dataset.peekAll, { from3d: true }); }
+  });
+  addEventListener('scroll', () => { if (!card.hidden && $('#hero')?.classList.contains('is-deep')) hidePeek(); }, { passive: true });
 }
 
 // ---------- scroll into the PC ----------
@@ -1435,6 +1506,7 @@ async function init() {
   if (has('#stage')) {
     renderStageChips();
     bindHeroScroll();
+    bindPeek();
     deferStage();
   }
   try {
