@@ -57,8 +57,9 @@ body::before {
   pointer-events: none;
   transform: translateZ(0);
   background:
-    radial-gradient(120% 22% at 50% 92%, rgba(170, 215, 255, 0.35), transparent 70%),
-    linear-gradient(180deg, #000 0%, #01020a 38%, #020b3d 58%, #0636b8 72%, #2a6fd8 83%, #6aa8ee 91%, #4f93e6 100%);
+    /* calmer horizon (user: the bright blue at the bottom was distracting): deep ReSpecz navy, a soft glow, no sky-blue */
+    radial-gradient(90% 30% at 50% 100%, rgba(37, 99, 235, 0.22), transparent 70%),
+    linear-gradient(180deg, #000 0%, #01020a 40%, #030a26 64%, #06134a 84%, #0a1d66 100%);
 }
 /* faint stars in the dark top part only */
 body::after {
