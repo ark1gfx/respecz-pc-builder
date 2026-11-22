@@ -1558,7 +1558,37 @@ function bindTips() {
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hide(); });
 }
 
+// Background: three soft light blobs (like the reference) that drift a little as you scroll.
+// Transform-only on their own layers, eased toward the scroll position, idle when the page is still.
+function bindAurora() {
+  const blobs = [...document.querySelectorAll('.bg-aurora .au')];
+  if (!blobs.length) return;
+  // per blob: drift in vw / vh, base rotation, extra rotation, wave speed and phase
+  const cfg = [
+    { x: 5, y: 4, r: -18, dr: 5, k: 0.55, ph: 0 },
+    { x: 6, y: 5, r: 8, dr: -6, k: 0.45, ph: 2.1 },
+    { x: 8, y: 3, r: -14, dr: 4, k: 0.35, ph: 4.2 },
+  ];
+  let cur = scrollY / innerHeight;
+  let target = cur;
+  let raf = 0;
+  const draw = () => {
+    cur += (target - cur) * 0.07;
+    blobs.forEach((b, i) => {
+      const c = cfg[i];
+      const a = cur * c.k + c.ph;
+      b.style.transform = `translate3d(${(Math.sin(a) * c.x).toFixed(2)}vw, ${(Math.cos(a * 0.8) * c.y).toFixed(2)}vh, 0) rotate(${(c.r + Math.sin(a) * c.dr).toFixed(2)}deg)`;
+    });
+    raf = Math.abs(target - cur) > 0.001 ? requestAnimationFrame(draw) : 0;
+  };
+  draw();
+  if (reducedMotion) return;
+  const kick = () => { target = scrollY / innerHeight; if (!raf) raf = requestAnimationFrame(draw); };
+  addEventListener('scroll', kick, { passive: true });
+}
+
 function bindChrome() {
+  bindAurora();
   bindTips();
   // Parts dropdown: hover opens it on a mouse; the caret button toggles it for touch and keyboard
   const drop = $('.nav-drop');
