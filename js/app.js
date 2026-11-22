@@ -211,8 +211,17 @@ const PART_BLURB = {
   cooler: 'Pampalamig ng CPU. Mas malamig, mas tahimik at mas tumatagal ang PC.',
 };
 const peekMode = matchMedia('(hover: hover) and (pointer: fine) and (min-width: 860px) and (min-aspect-ratio: 11/10)');
+// Timing, like a good mega-menu:
+// - leave a part and the card waits PEEK_HIDE ms, then goes (quick, so it never lingers)
+// - while the pointer is getting closer to the card, it stays open, and parts you cross on the way
+//   do not swap it (a part only takes over once you rest on it for PEEK_SWAP ms)
+// - on the card itself it stays until you leave it
+const PEEK_HIDE = 350;
+const PEEK_SWAP = 180;
 let peekTimer = 0;
+let swapTimer = 0;
 let peekCat = null;
+let approaching = 0; // time of the last pointer move that brought it closer to the card
 
 function peekPicks(cat) {
   const list = partsOf(cat).filter((p) => p.shopeeUrl);
@@ -223,11 +232,17 @@ function peekPicks(cat) {
 function peekPart(cat) {
   const card = $('#peek');
   if (!card) return;
-  clearTimeout(peekTimer);
-  peekTimer = 0;
+  clearTimeout(swapTimer);
   if (!cat) { peekLeave(); return; }
   if (!peekMode.matches || !catalog.parts.length || $('.stage-wrap')?.classList.contains('is-full') || $('#hero')?.classList.contains('is-deep')) return;
+  clearTimeout(peekTimer); peekTimer = 0;
   if (cat === peekCat && !card.hidden) return;
+  // heading for the open card: don't swap it for a part you are only passing over
+  if (!card.hidden && performance.now() - approaching < 120) { swapTimer = setTimeout(() => peekPart(cat), PEEK_SWAP); return; }
+  showPeek(card, cat);
+}
+
+function showPeek(card, cat) {
   peekCat = cat;
   const all = partsOf(cat);
   card.innerHTML = `
@@ -246,22 +261,15 @@ function peekPart(cat) {
   card.parentElement.classList.add('is-peek');
 }
 
-// Leaving a part hides the card almost at once, unless the pointer is heading left toward the card:
-// then each leftward move buys a little more time, so you can still reach a product and click it.
-let peekX = 0;
-function peekLeave() {
+function peekLeave(ms = PEEK_HIDE) {
   clearTimeout(peekTimer);
-  peekTimer = setTimeout(hidePeek, 220);
+  peekTimer = setTimeout(hidePeek, ms);
 }
-addEventListener('mousemove', (e) => {
-  const dx = e.clientX - peekX;
-  peekX = e.clientX;
-  if (peekTimer && peekCat && dx < -1) peekLeave();
-}, { passive: true });
 
 function hidePeek() {
   const card = $('#peek');
   if (!card) return;
+  clearTimeout(peekTimer); clearTimeout(swapTimer);
   peekTimer = 0;
   peekCat = null;
   card.parentElement.classList.remove('is-peek');
@@ -274,8 +282,19 @@ function bindPeek() {
   const chips = $('#stage-chips');
   chips?.addEventListener('mouseover', (e) => { const b = e.target.closest('[data-cat]'); if (b) peekPart(b.dataset.cat); });
   chips?.addEventListener('mouseout', (e) => { if (e.target.closest('[data-cat]') && !e.relatedTarget?.closest?.('#stage-chips [data-cat]')) peekPart(null); });
-  card.addEventListener('mouseenter', () => { clearTimeout(peekTimer); peekTimer = 0; });
-  card.addEventListener('mouseleave', () => { clearTimeout(peekTimer); peekTimer = setTimeout(hidePeek, 150); });
+  card.addEventListener('mouseenter', () => { clearTimeout(peekTimer); clearTimeout(swapTimer); peekTimer = 0; });
+  card.addEventListener('mouseleave', () => peekLeave(250));
+  // getting closer to the card keeps it open (restarts the hide countdown)
+  let lastDist = Infinity;
+  addEventListener('mousemove', (e) => {
+    if (card.hidden || card.matches(':hover')) { lastDist = Infinity; return; }
+    const r = card.getBoundingClientRect();
+    const dx = Math.max(r.left - e.clientX, 0, e.clientX - r.right);
+    const dy = Math.max(r.top - e.clientY, 0, e.clientY - r.bottom);
+    const d = Math.hypot(dx, dy);
+    if (d < lastDist - 0.5) { approaching = performance.now(); if (peekTimer) peekLeave(); }
+    lastDist = d;
+  }, { passive: true });
   card.addEventListener('click', (e) => {
     const all = e.target.closest('[data-peek-all]');
     if (all) { hidePeek(); openSheet(all.dataset.peekAll, { from3d: true }); }
