@@ -2,6 +2,7 @@
    Background and glass tokens copied from the ReSpecz Studio dashboard (herk-edit-kit/dashboard/public/app.css). */
 :root {
   --ink: #f5f5f7;
+  --ink-mid: #d2d2d7;          /* nav links, long-form body text */
   --ink2: #a1a1aa;
   --soft: #8e8e96;
   --line: rgba(255, 255, 255, 0.08);
@@ -11,7 +12,12 @@
   --glass-blur: blur(28px) saturate(170%);
   --glass-edge: rgba(255, 255, 255, 0.14);
   --shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), inset 0 0 0 1px rgba(255, 255, 255, 0.06), 0 24px 60px -24px rgba(0, 0, 0, 0.7);
-  --blue: #4da3ff;
+  --blue: #4da3ff;            /* ReSpecz accent for text/icons on dark */
+  --brand-grad: linear-gradient(135deg, rgb(37, 99, 235), rgb(56, 189, 248)); /* the ReSpecz glow-pill gradient */
+  --accent: var(--blue);
+  --accent-rgb: 77, 163, 255;
+  --shopee: #ff8a5c;           /* Shopee links only */
+  --shopee-rgb: 255, 122, 69;
   --blue-deep: 37, 99, 235;
   --blue-bright: 56, 189, 248;
   --ok: #30d158;
@@ -115,7 +121,7 @@ img { max-width: 100%; }
 .brand:hover { text-decoration: none; }
 .brand img { height: 26px; width: auto; mix-blend-mode: screen; }
 .nav-links { display: none; gap: 28px; margin: 0 auto; }
-.nav-links a { color: #d2d2d7; font-size: 0.78rem; letter-spacing: 0; }
+.nav-links a { color: var(--ink-mid); font-size: 0.78rem; letter-spacing: 0; }
 .nav-links a:hover { color: #fff; text-decoration: none; }
 .nav .btn-xs { margin-left: 0; }
 .nav-basket { margin-left: auto; display: inline-flex; align-items: center; gap: 4px; padding: 6px 10px; border: 1px solid var(--glass-edge); border-radius: 999px; background: var(--island); color: var(--ink); font: inherit; font-size: 0.8rem; font-weight: 600; cursor: pointer; }
@@ -162,7 +168,7 @@ img { max-width: 100%; }
   flex: none;
   padding: 8px 15px;
   border-radius: 999px;
-  color: #d2d2d7;
+  color: var(--ink-mid);
   font: inherit;
   font-size: 0.86rem;
   font-weight: 500;
@@ -217,7 +223,7 @@ h1 { font-size: clamp(2.3rem, 10.5vw, 5.5rem); line-height: 1.04; letter-spacing
   padding: 7px 13px;
   border-radius: 999px;
   font-size: 0.78rem;
-  color: #e8e8ed;
+  color: var(--ink);
   white-space: nowrap;
   pointer-events: none;
 }
@@ -353,7 +359,7 @@ input[type='range']::-moz-range-thumb { width: 26px; height: 26px; border: 0; bo
 .compat { padding: 22px; }
 .compat h3 { font-size: 1.05rem; margin-bottom: 12px; }
 .compat-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-.compat-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 0.92rem; color: #e8e8ed; }
+.compat-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 0.92rem; color: var(--ink); }
 .dot { flex: none; width: 20px; height: 20px; margin-top: 1px; border-radius: 50%; display: grid; place-items: center; font-size: 0.68rem; font-weight: 800; color: #000; }
 .compat-ok .dot { background: var(--ok); }
 .compat-warn .dot { background: var(--warn); }
@@ -381,7 +387,7 @@ input[type='range']::-moz-range-thumb { width: 26px; height: 26px; border: 0; bo
 .sample h3 { font-size: 1.4rem; line-height: 1.15; }
 .sample p { margin: 0; }
 .spec-pills { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-.spec-pills li { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: #e8e8ed; min-width: 0; }
+.spec-pills li { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--ink); min-width: 0; }
 .pill-icon { display: grid; place-items: center; flex: none; width: 30px; height: 30px; border-radius: 9px; background: rgba(77, 163, 255, 0.16); color: var(--blue); }
 .pill-icon svg { width: 17px; height: 17px; }
 .sample-foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-top: 14px; border-top: 1px solid var(--line); }
@@ -415,8 +421,8 @@ input[type='range']::-moz-range-thumb { width: 26px; height: 26px; border: 0; bo
 .sheet-head p { margin: 0; }
 .sheet-icon { width: 46px; height: 46px; border-radius: 13px; display: grid; place-items: center; color: #fff; background: linear-gradient(135deg, rgb(var(--blue-deep)), rgb(var(--blue-bright))); }
 .sheet-icon svg { width: 26px; height: 26px; }
-.icon-btn { width: 34px; height: 34px; border-radius: 50%; border: 0; background: rgba(118, 118, 128, 0.3); color: #d2d2d7; font-size: 0.85rem; cursor: pointer; }
-.sheet-note { margin: 0 0 12px; padding: 11px 13px; border-radius: 14px; background: rgba(77, 163, 255, 0.12); color: #d6e8ff; }
+.icon-btn { width: 34px; height: 34px; border-radius: 50%; border: 0; background: rgba(118, 118, 128, 0.3); color: var(--ink-mid); font-size: 0.85rem; cursor: pointer; }
+.sheet-note { margin: 0 0 12px; padding: 11px 13px; border-radius: 14px; background: rgba(77, 163, 255, 0.12); color: #cfe4ff; }
 .prod-list { display: grid; gap: 10px; margin-bottom: 14px; }
 .prod, .bk-item { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 12px; padding: 12px; border-radius: 20px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.06); }
 .prod.is-chosen { border-color: rgba(77, 163, 255, 0.7); box-shadow: inset 0 0 0 1px rgba(77, 163, 255, 0.4); }
@@ -525,7 +531,7 @@ html.viewer-full, html.viewer-full body { overflow: hidden; }
 
 /* ---------- disclosure / footer / toast ---------- */
 .disclosure { max-width: 720px; width: 100%; margin: 0 auto; padding-top: 28px; border-top: 1px solid var(--line); color: var(--soft); font-size: 0.8rem; scroll-margin-top: 64px; }
-.disclosure h2 { font-size: 0.85rem; font-weight: 600; letter-spacing: 0; color: #d2d2d7; }
+.disclosure h2 { font-size: 0.85rem; font-weight: 600; letter-spacing: 0; color: var(--ink-mid); }
 .disclosure p { margin: 8px 0 0; }
 .foot { width: min(100%, 1080px); margin: 0 auto; padding: 18px var(--gutter) max(90px, env(safe-area-inset-bottom)); color: var(--soft); font-size: 0.76rem; text-align: center; }
 .foot p { margin: 0; }
@@ -815,7 +821,7 @@ html.viewer-full, html.viewer-full body { overflow: hidden; }
 }
 
 /* text that sits straight on the background gets a dark glass plate, so it stays readable over the bright horizon */
-.disclosure { padding: 22px 24px; border: 0; border-radius: 22px; color: #c7c7cf; background: rgba(2, 4, 14, 0.62); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08); }
+.disclosure { padding: 22px 24px; border: 0; border-radius: 22px; color: var(--ink-mid); background: rgba(2, 4, 14, 0.62); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08); }
 .disclosure h2 { color: #fff; }
 .foot { color: rgba(255, 255, 255, 0.85); text-shadow: 0 1px 8px rgba(0, 20, 60, 0.6); }
 .foot a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
@@ -906,12 +912,12 @@ html.viewer-full, html.viewer-full body { overflow: hidden; }
 
 /* ---------- nav: Home, Parts dropdown, Videos ---------- */
 .nav-drop { position: relative; display: flex; align-items: center; gap: 2px; }
-.nav-caret { display: grid; place-items: center; width: 20px; height: 20px; padding: 0; border: 0; border-radius: 6px; background: none; color: #d2d2d7; cursor: pointer; }
+.nav-caret { display: grid; place-items: center; width: 20px; height: 20px; padding: 0; border: 0; border-radius: 6px; background: none; color: var(--ink-mid); cursor: pointer; }
 .nav-caret svg { width: 12px; height: 12px; transition: transform 0.2s ease; }
 .nav-caret:hover { color: #fff; background: rgba(255, 255, 255, 0.08); }
 .nav-menu { position: absolute; top: calc(100% + 14px); left: -14px; min-width: 210px; display: grid; padding: 8px; border-radius: 16px; background: rgba(10, 13, 26, 0.96); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 20px 40px rgba(0, 0, 0, 0.5); opacity: 0; visibility: hidden; transform: translateY(-4px); transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s; }
 .nav-menu::before { content: ''; position: absolute; left: 0; right: 0; top: -16px; height: 16px; } /* hover bridge */
-.nav-links .nav-menu a { padding: 8px 12px; border-radius: 10px; font-size: 0.84rem; color: #e8e8ed; }
+.nav-links .nav-menu a { padding: 8px 12px; border-radius: 10px; font-size: 0.84rem; color: var(--ink); }
 .nav-links .nav-menu a:hover, .nav-links .nav-menu a:focus-visible { background: rgba(255, 255, 255, 0.08); color: #fff; }
 .nav-drop:hover .nav-menu, .nav-drop:focus-within .nav-menu, .nav-drop.is-open .nav-menu { opacity: 1; visibility: visible; transform: none; }
 .nav-drop:hover .nav-caret svg, .nav-drop.is-open .nav-caret svg { transform: rotate(180deg); }
@@ -964,12 +970,7 @@ html.viewer-full, html.viewer-full body { overflow: hidden; }
 .stage.is-ready .stage-poster, .stage.is-fallback .stage-poster { opacity: 0; }
 .stage.is-loading::after { content: none; } /* the poster already shows the PC */
 
-/* ---------- per-page accent (audit P1): each page wears its home-card colour ---------- */
-:root { --accent: var(--blue); }
-html[data-page='parts'] { --accent: #2dd4bf; }
-html[data-page='build'] { --accent: #4d8dff; }
-html[data-page='may'] { --accent: #a78bfa; }
-html[data-page='builds'] { --accent: #f0879a; }
+/* ---------- one ReSpecz accent on every page (brand audit: no per-page colours) ---------- */
 .section-tag { padding: 5px 14px; gap: 8px; }
 .section-tag::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
 .nav-links a[aria-current='page']::after { background: var(--accent); }
@@ -1128,7 +1129,7 @@ input.budget-out:focus { outline: none; border-bottom: 1.5px solid var(--blue); 
 .legal-body { gap: 10px; text-align: left; }
 .legal-body h3 { margin: 10px 0 0; font-size: 1.05rem; }
 .legal-body h3:first-child { margin-top: 0; }
-.legal-body p { margin: 0; color: #d6d6dc; line-height: 1.6; }
+.legal-body p { margin: 0; color: var(--ink-mid); line-height: 1.6; }
 
 /* ---------- Mag-Build hierarchy ----------
    1 the build (total + parts)  2 one primary action (Idagdag lahat sa Basket)  3 per-part Shopee links.
@@ -1143,18 +1144,18 @@ input.budget-out:focus { outline: none; border-bottom: 1.5px solid var(--blue); 
 .page-build #basket-build-btn { padding-inline: 20px; }
 .page-build .part-price { color: #fff; }
 /* still clearly a button: Shopee-orange outline pill (not filled), so it reads clickable but stays below the primary */
-.page-build .part-side .btn-shop-quiet { padding: 3px 10px; border-radius: 999px; color: #ff8a5c; box-shadow: inset 0 0 0 1px rgba(255, 122, 69, 0.55); background: rgba(255, 122, 69, 0.08); }
+.page-build .part-side .btn-shop-quiet { padding: 3px 10px; border-radius: 999px; color: var(--shopee); box-shadow: inset 0 0 0 1px rgba(var(--shopee-rgb), 0.55); background: rgba(var(--shopee-rgb), 0.08); }
 .page-build .part-side .btn-shop-quiet:hover { color: #fff; background: #ee4d2d; box-shadow: inset 0 0 0 1px #ee4d2d; }
 @media (pointer: coarse) { .page-build .part-side .btn-shop-quiet { min-height: 32px; padding: 6px 12px; } }
 
 /* Mag-Build: shortcut to "May Parts na Ako" (violet = that page's colour) */
-.may-shortcut { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 10px 14px 10px 10px; color: var(--ink); background: linear-gradient(100deg, rgba(109, 40, 217, 0.35), rgba(6, 10, 26, 0.62) 70%); border-color: rgba(167, 139, 250, 0.35); transition: transform 0.2s ease, border-color 0.2s ease; }
-.may-shortcut:hover { text-decoration: none; transform: translateY(-2px); border-color: rgba(167, 139, 250, 0.7); }
+.may-shortcut { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 10px 14px 10px 10px; color: var(--ink); background: linear-gradient(100deg, rgba(37, 99, 235, 0.32), rgba(6, 10, 26, 0.62) 70%); border-color: rgba(var(--accent-rgb), 0.35); transition: transform 0.2s ease, border-color 0.2s ease; }
+.may-shortcut:hover { text-decoration: none; transform: translateY(-2px); border-color: rgba(var(--accent-rgb), 0.7); }
 .may-shortcut img { width: 56px; height: 56px; border-radius: 14px; object-fit: cover; object-position: 50% 22%; }
 .may-sc-text { display: grid; gap: 1px; min-width: 0; }
 .may-sc-title { font-weight: 700; font-size: 0.98rem; letter-spacing: -0.015em; }
 .may-sc-sub { font-size: 0.82rem; color: var(--ink2); }
-.may-sc-go { font-size: 1.5rem; color: #a78bfa; transition: transform 0.2s ease; }
+.may-sc-go { font-size: 1.5rem; color: var(--accent); transition: transform 0.2s ease; }
 .may-shortcut:hover .may-sc-go { transform: translateX(3px); }
 /* wide: under the form in the left column (the build spans both rows on the right) */
 .build-side { display: grid; gap: 12px; align-content: start; }
@@ -1185,11 +1186,11 @@ input.budget-out:focus { outline: none; border-bottom: 1.5px solid var(--blue); 
 .may-row-body { display: grid; gap: 1px; min-width: 0; }
 .may-row-body .part-cat { font-size: 0.68rem; }
 .may-row-name { font-size: 0.86rem; font-weight: 600; line-height: 1.25; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.may-row-more { justify-self: start; padding: 2px 0; border: 0; background: none; color: #a78bfa; font: inherit; font-size: 0.74rem; font-weight: 600; cursor: pointer; }
-.may-row-more:hover { color: #c4b5fd; }
+.may-row-more { justify-self: start; padding: 2px 0; border: 0; background: none; color: var(--accent); font: inherit; font-size: 0.74rem; font-weight: 600; cursor: pointer; }
+.may-row-more:hover { color: #9ccbff; }
 .may-row-side { display: grid; justify-items: end; gap: 4px; }
 .may-row-price { font-weight: 700; font-size: 0.92rem; font-variant-numeric: tabular-nums; }
-.may-row-side .btn-shop-quiet { padding: 3px 10px; min-height: 0; border-radius: 999px; font-size: 0.74rem; font-weight: 600; color: #ff8a5c; background: rgba(255, 122, 69, 0.08); box-shadow: inset 0 0 0 1px rgba(255, 122, 69, 0.55); }
+.may-row-side .btn-shop-quiet { padding: 3px 10px; min-height: 0; border-radius: 999px; font-size: 0.74rem; font-weight: 600; color: var(--shopee); background: rgba(var(--shopee-rgb), 0.08); box-shadow: inset 0 0 0 1px rgba(var(--shopee-rgb), 0.55); }
 .may-row-side .btn-shop-quiet:hover { color: #fff; background: #ee4d2d; filter: none; }
 .may-row-empty { font-size: 0.8rem; color: var(--ink2); }
 .may-need-head .may-less { margin-left: auto; padding: 4px 10px; border: 0; border-radius: 999px; background: rgba(255, 255, 255, 0.08); color: var(--ink); font: inherit; font-size: 0.78rem; cursor: pointer; }
@@ -1251,9 +1252,9 @@ input.budget-out:focus { outline: none; border-bottom: 1.5px solid var(--blue); 
 .pop-actions { display: flex; gap: 6px; align-items: center; }
 .pop-add { width: 26px; height: 26px; border: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.1); color: #fff; font-size: 1rem; line-height: 1; cursor: pointer; }
 .pop-add:hover { background: rgb(var(--blue-deep)); }
-.pop-actions .btn-shop-quiet { padding: 3px 10px; min-height: 0; border-radius: 999px; font-size: 0.72rem; font-weight: 600; color: #ff8a5c; background: rgba(255, 122, 69, 0.08); box-shadow: inset 0 0 0 1px rgba(255, 122, 69, 0.55); }
+.pop-actions .btn-shop-quiet { padding: 3px 10px; min-height: 0; border-radius: 999px; font-size: 0.72rem; font-weight: 600; color: var(--shopee); background: rgba(var(--shopee-rgb), 0.08); box-shadow: inset 0 0 0 1px rgba(var(--shopee-rgb), 0.55); }
 .pop-actions .btn-shop-quiet:hover { color: #fff; background: #ee4d2d; filter: none; }
-.may-row.is-popped { border-color: rgba(167, 139, 250, 0.7); }
+.may-row.is-popped { border-color: rgba(var(--accent-rgb), 0.7); }
 @media (pointer: coarse) { .pop-add { width: 36px; height: 36px; } .pop-actions .btn-shop-quiet { min-height: 36px; padding: 6px 12px; } .pop-close { width: 40px; height: 40px; } }
 /* phones: the same popup as a card above the tab bar */
 @media (max-width: 639px) {
@@ -1367,3 +1368,36 @@ input.budget-out:focus { outline: none; border-bottom: 1.5px solid var(--blue); 
 @media (min-width: 1800px) and (min-height: 1000px) {
   html[data-page='build'] main, html[data-page='may'] main { zoom: 1.28; }
 }
+
+/* ---------- on-brand nav: ReSpecz wordmark, blue glow pill for the current page, glass basket ---------- */
+.nav { background: rgba(2, 4, 14, 0.62); box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.06); }
+.nav::after { /* a thin ReSpecz-blue light along the bottom edge */
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.45) 30%, rgba(37, 99, 235, 0.6) 50%, rgba(56, 189, 248, 0.45) 70%, transparent);
+}
+.brand { gap: 10px; }
+.brand-name { font-weight: 700; font-size: 1rem; letter-spacing: -0.02em; color: #fff; }
+.brand-sub { font-weight: 500; color: var(--ink2); }
+.nav-links { gap: 4px; align-items: center; }
+.nav-links > a, .nav-drop > a { padding: 7px 13px; border-radius: 999px; font-size: 0.8rem; font-weight: 500; color: var(--ink-mid); transition: background 0.18s ease, color 0.18s ease; }
+.nav-links > a:hover, .nav-drop > a:hover { background: rgba(255, 255, 255, 0.07); color: #fff; }
+.nav-drop { gap: 0; }
+.nav-drop > a { padding-right: 6px; }
+.nav-links a[aria-current='page'] {
+  color: #fff; font-weight: 600;
+  background: linear-gradient(180deg, rgba(56, 189, 248, 0.28), rgba(37, 99, 235, 0.34));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), inset 0 0 0 1px rgba(56, 189, 248, 0.35), 0 0 18px -4px rgba(37, 99, 235, 0.8);
+}
+.nav-links a[aria-current='page']::after { content: none; }
+.nav-links a[aria-current='page']:hover { background: linear-gradient(180deg, rgba(56, 189, 248, 0.34), rgba(37, 99, 235, 0.42)); }
+.nav-basket { gap: 6px; padding: 5px 6px 5px 11px; background: rgba(255, 255, 255, 0.05); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12); transition: background 0.18s ease; }
+.nav-basket:hover { background: rgba(255, 255, 255, 0.1); }
+.nav-basket svg { color: #9ccbff; }
+#nav-basket-count {
+  min-width: 22px; height: 22px; padding: 0 7px; border-radius: 999px; display: inline-grid; place-items: center;
+  font-size: 0.74rem; font-weight: 700; color: #fff; background: var(--brand-grad);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 0 12px -2px rgba(37, 99, 235, 0.9);
+}
+
+/* every control uses the site font (buttons default to the system font otherwise) */
+button, input, select, textarea { font-family: inherit; }
