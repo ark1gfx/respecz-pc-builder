@@ -1103,7 +1103,31 @@ function mayCard(p) {
 function renderMayResult() {
   const box = $('#may-result');
   if (!Object.keys(state.owned).length) {
-    box.innerHTML = '<p class="may-empty small">Pumili ng kahit isang part sa kaliwa (o sa taas sa phone) para makita ang swak.</p>';
+    // empty: a preview of what will show up here, how it works, and quick starts that open a picker
+    box.innerHTML = `
+      <div class="tile may-start">
+        <div class="ms-head">
+          <h3>Dito lalabas ang swak.</h3>
+          <p>Pumili ng kahit isang part na meron ka na. Ipapakita namin ang compatible na parts sa bawat category, may presyo at Shopee link.</p>
+        </div>
+        <ol class="ms-steps">
+          <li><b>1</b><span>Piliin ang meron ka</span></li>
+          <li><b>2</b><span>Tingnan ang swak</span></li>
+          <li><b>3</b><span>Idagdag sa Basket</span></li>
+        </ol>
+        <div class="ms-quick">
+          <p class="ms-label">Ano ang meron ka?</p>
+          <div class="ms-chips">${OWNED_CATS.map((c) => `<button type="button" class="chip" data-start-pick="${c}">${esc(OWNED_LABEL[c])}</button>`).join('')}</div>
+        </div>
+        <div class="ms-ghosts" aria-hidden="true">${CATEGORIES.map((c) => `
+          <div class="ms-ghost"><span class="ms-ghost-icon">${ICONS[c]}</span><span class="ms-ghost-body"><span>${esc(SHORT_LABEL[c])}</span><i></i></span><span class="ms-q">?</span></div>`).join('')}
+        </div>
+      </div>`;
+    box.querySelectorAll('[data-start-pick]').forEach((b) => b.addEventListener('click', () => {
+      const pick = document.querySelector(`#may-form [data-pick="${b.dataset.startPick}"]`);
+      pick?.scrollIntoView({ block: 'nearest' });
+      pick?.click();
+    }));
     return;
   }
   const { notes, needs } = suggestForOwned(state.owned, catalog.parts, { limit: 3 });
