@@ -61,11 +61,15 @@ export function checkBuild(build) {
 
   if (ram && mb) {
     if (ram.memType !== mb.memType) add('fail', 'ram-type', `${ram.memType} ang RAM pero ${mb.memType} ang board. Hindi papasok sa slot.`);
-    else if (ram.sticks > mb.memSlots) add('fail', 'ram-slots', `${ram.sticks} sticks ang RAM pero ${mb.memSlots} slots lang ang board.`);
-    else add('ok', 'ram-type', `${ram.memType} ${ram.capacityGB}GB, ${ram.sticks > 1 ? 'dual channel' : 'single stick'}.`);
+    else if (mb.memSlots && ram.sticks > mb.memSlots) add('fail', 'ram-slots', `${ram.sticks} sticks ang RAM pero ${mb.memSlots} slots lang ang board.`);
+    else add('ok', 'ram-type', `${ram.memType}${ram.capacityGB ? ` ${ram.capacityGB}GB` : ''}, ${ram.sticks > 1 ? 'dual channel' : 'single stick'}.`);
   }
 
-  if (mb && pcCase) {
+  if (cpu && ram && !mb && !cpu.memTypes.includes(ram.memType)) {
+    add('fail', 'cpu-ram', `Hindi supported ng ${cpu.name} ang ${ram.memType} RAM.`);
+  }
+
+  if (mb?.formFactor && pcCase) {
     if (!pcCase.formFactors.includes(mb.formFactor)) add('fail', 'form-factor', `${mb.formFactor} ang board, hindi kasya sa ${pcCase.name}.`);
     else add('ok', 'form-factor', `${mb.formFactor} board, kasya sa case.`);
   }
@@ -80,7 +84,7 @@ export function checkBuild(build) {
     else add('ok', 'display', 'Built-in graphics muna, pwedeng dagdagan ng GPU later.');
   }
 
-  if (ssd && mb && ssd.interface === 'NVMe' && mb.m2Slots < 1) {
+  if (ssd && mb && ssd.interface === 'NVMe' && mb.m2Slots === 0) {
     add('fail', 'm2', 'Walang M.2 slot ang board para sa NVMe SSD.');
   }
 

@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { CATEGORIES, checkBuild, hasFail, totalPrice } from '../js/compat.js';
-import { suggestBuild, USE_CASES } from '../js/picker.js';
+import { suggestBuild, USE_CASES, gpuVendor, availablePrefs } from '../js/picker.js';
 
 const { parts } = JSON.parse(fs.readFileSync(new URL('../data/parts.json', import.meta.url)));
 const { builds } = JSON.parse(fs.readFileSync(new URL('../data/builds.json', import.meta.url)));
@@ -75,4 +75,42 @@ test('suggestions stay in budget, are complete and have no compat problems', () 
 test('mid budgets get a real GPU for gaming', () => {
   const r = suggestBuild(parts, 60000, "gaming");
   assert.ok(r.build.gpu, 'expected a GPU at ₱60K gaming');
+});
+
+test('brand and size preferences are respected', () => {
+  const cases = [
+    [{ cpuBrand: 'AMD' }, (b) => b.cpu.brand === 'AMD'],
+    [{ cpuBrand: 'Intel' }, (b) => b.cpu.brand === 'Intel'],
+    [{ gpuBrand: 'NVIDIA' }, (b) => b.gpu && gpuVendor(b.gpu) === 'NVIDIA'],
+    [{ gpuBrand: 'AMD' }, (b) => b.gpu && gpuVendor(b.gpu) === 'AMD'],
+    [{ formFactor: 'ATX' }, (b) => b.motherboard.formFactor === 'ATX'],
+    [{ formFactor: 'mATX', cpuBrand: 'Intel', gpuBrand: 'AMD' }, (b) => b.motherboard.formFactor === 'mATX' && b.cpu.brand === 'Intel' && gpuVendor(b.gpu) === 'AMD'],
+  ];
+  for (const [prefs, ok] of cases) {
+    for (const budget of [90000, 160000]) {
+      const r = suggestBuild(parts, budget, 'gaming', prefs);
+      assert.ok(!r.error, `${JSON.stringify(prefs)} @ ${budget}: ${r.error}`);
+      assert.ok(ok(r.build), `${JSON.stringify(prefs)} @ ${budget}`);
+      assert.ok(!checkBuild(r.build).some((x) => x.level === 'fail'), `${JSON.stringify(prefs)} compatible`);
+    }
+  }
+});
+
+test('impossible preference mixes say so instead of asking for more budget', () => {
+  // School caps the GPU at a light card; every Radeon in the list is above that
+  const r = suggestBuild(parts, 250000, 'school', { gpuBrand: 'AMD' });
+  assert.equal(r.noMatch, true);
+});
+
+test('every size and brand choice is in the catalog, and Mini-ITX works for both CPU brands', () => {
+  const a = availablePrefs(parts);
+  for (const key of Object.keys(a)) for (const [v, ok] of Object.entries(a[key])) assert.ok(ok, `${key}=${v}`);
+  for (const cpuBrand of ['AMD', 'Intel']) {
+    const r = suggestBuild(parts, 90000, 'gaming', { formFactor: 'ITX', cpuBrand });
+    assert.ok(!r.error, `${cpuBrand} ITX: ${r.error}`);
+    assert.equal(r.build.motherboard.formFactor, 'ITX');
+    assert.ok(r.build.case.formFactors.includes('ITX'));
+  }
+  const atx = suggestBuild(parts, 90000, 'gaming', { formFactor: 'ATX', cpuBrand: 'Intel' });
+  assert.ok(!atx.error && atx.build.motherboard.formFactor === 'ATX');
 });

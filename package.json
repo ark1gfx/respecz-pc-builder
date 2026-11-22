@@ -7,6 +7,8 @@
     "test": "node --test test/",
     "start": "npx serve . -l 4870",
     "links:todo": "node tools/links-todo.mjs",
-    "links:merge": "node tools/merge-links.mjs"
+    "links:merge": "node tools/merge-links.mjs",
+    "pages": "python3 tools/pages.py",
+    "videos": "python3 tools/fb_videos.py"
   }
 }

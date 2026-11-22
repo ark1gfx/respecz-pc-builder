@@ -1,0 +1,66 @@
+    <!-- BUILDER -->
+    <section id="builder" class="section">
+      <header class="section-head">
+        <p class="section-tag">Mag-Build</p>
+        <h2>Sabihin ang budget. <span class="soft">Kami na sa parts.</span></h2>
+      </header>
+      <!-- one screen: choices on the left, the live build on the right (stacked and compact on phones) -->
+      <div class="build-grid">
+      <div class="build-side">
+      <div class="tile panel">
+        <div class="field">
+          <div class="field-head">
+            <label for="budget">Budget mo</label>
+            <input id="budget-out" class="budget-out" type="text" inputmode="numeric" autocomplete="off" value="₱60,000" aria-label="Budget, sa piso">
+          </div>
+          <input id="budget" type="range" min="35000" max="250000" step="1000" value="60000">
+          <div class="chips" id="budget-chips" role="group" aria-label="Mabilisang budget"></div>
+        </div>
+        <div class="field">
+          <span class="label" id="usecase-label">Saan mo gagamitin?</span>
+          <div class="segments" id="usecase" role="radiogroup" aria-labelledby="usecase-label"></div>
+        </div>
+        <!-- optional choices stay folded so the build shows up sooner -->
+        <details class="field more-prefs" id="more-prefs">
+          <summary>Brand at Laki <span class="more-opt">· Filter (Optional)</span><span class="more-note" id="prefs-note"></span></summary>
+          <div class="prefs" id="prefs"></div>
+        </details>
+      </div>
+
+      <!-- shortcut to "May Parts na Ako" (under the form on wide screens, after the build on phones) -->
+      <a class="tile may-shortcut" href="{{root}}may/">
+        <img src="{{root}}assets/cards/may-480.jpg?v=2" alt="" width="56" height="56" loading="lazy" decoding="async">
+        <span class="may-sc-text">
+          <span class="may-sc-title">May parts ka na?</span>
+          <span class="may-sc-sub">Check mo kung ano'ng compatible.</span>
+        </span>
+        <span class="may-sc-go" aria-hidden="true">›</span>
+      </a>
+      </div>
+
+      <div id="result" class="result" hidden aria-live="polite">
+        <div class="tile summary">
+          <div class="summary-row">
+            <div>
+              <p class="muted small" id="summary-label">Total</p>
+              <p class="total" id="total">₱0</p>
+            </div>
+            <span class="tag" id="usecase-tag">Gaming</span>
+          </div>
+          <div class="meter" aria-hidden="true"><span id="meter-fill"></span></div>
+          <p class="small muted" id="budget-note"></p>
+          <div class="summary-actions">
+            <button class="btn btn-blue btn-sm" id="basket-build-btn" type="button">Idagdag lahat sa Basket</button>
+            <button class="btn btn-glass btn-sm" id="share-btn" type="button">Kopyahin ang link</button>
+          </div>
+        </div>
+        <details class="tile compat">
+          <summary><span class="dot" id="compat-dot" aria-hidden="true">✓</span><span id="compat-sum">Compatibility check</span></summary>
+          <ul id="compat-list" class="compat-list"></ul>
+        </details>
+        <ol id="parts-list" class="parts-list"></ol>
+        <p class="tiny muted center" id="price-note"></p>
+      </div>
+      </div>
+    </section>
+

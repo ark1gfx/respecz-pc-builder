@@ -1,0 +1,66 @@
+  <!-- product popup -->
+  <dialog id="sheet" class="sheet sheet-stage" aria-labelledby="sheet-title">
+   <div class="sheet-panel">
+    <div class="sheet-inner">
+      <div class="sheet-head">
+        <div class="sheet-icon" id="sheet-icon"></div>
+        <div>
+          <h2 id="sheet-title">CPU</h2>
+          <p class="small muted" id="sheet-sub"></p>
+        </div>
+        <button class="icon-btn" id="sheet-close" type="button" aria-label="Isara">✕</button>
+      </div>
+      <p class="sheet-note small" id="sheet-note" hidden></p>
+      <div class="sheet-filters" id="sheet-filters"></div>
+      <div class="prod-list" id="sheet-list"></div>
+      <p class="tiny muted center">Presyo sa Shopee Mall noong <span id="sheet-date"></span>. Pwedeng magbago.</p>
+    </div>
+    <button type="button" class="sheet-side-next" id="sheet-next" aria-label="Susunod na category">
+      <span class="ssn-arrow" aria-hidden="true">›</span>
+      <span class="ssn-label" id="sheet-next-label">Susunod</span>
+    </button>
+   </div>
+   <div class="basket-dock in-sheet">
+     <div class="basket-preview" data-basket-preview></div>
+     <button type="button" class="basket-fab" data-open-basket aria-label="Buksan ang Basket">
+       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.3 10.2a2 2 0 0 1-2 1.8H8.3a2 2 0 0 1-2-1.8L5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+       <span>Basket</span>
+       <span class="fab-count" data-basket-count>0</span>
+     </button>
+   </div>
+  </dialog>
+
+  <!-- basket -->
+  <button type="button" class="to-top" id="to-top" aria-label="Bumalik sa itaas" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </button>
+  <div class="basket-dock" id="basket-dock">
+    <div class="basket-preview" data-basket-preview></div>
+    <button id="basket-fab" class="basket-fab" type="button" aria-label="Buksan ang Basket" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.3 10.2a2 2 0 0 1-2 1.8H8.3a2 2 0 0 1-2-1.8L5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+    <span>Basket</span>
+    <span class="fab-count">0</span>
+  </button>
+  </div>
+  <dialog id="basket" class="sheet" aria-labelledby="basket-title">
+    <div class="sheet-inner">
+      <div class="sheet-head">
+        <div class="sheet-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.3 10.2a2 2 0 0 1-2 1.8H8.3a2 2 0 0 1-2-1.8L5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></div>
+        <div>
+          <h2 id="basket-title">Basket</h2>
+          <p class="small muted" id="basket-sub"></p>
+        </div>
+        <button class="icon-btn" id="basket-close" type="button" aria-label="Isara">✕</button>
+      </div>
+      <p class="sheet-note small">Para masuportahan ang ReSpecz, i-tap ang <strong>Bilhin sa Shopee</strong> dito bago ka mag-checkout, at huwag munang mag-click ng ibang affiliate link. Walang dagdag na bayad sa'yo.</p>
+      <div class="bk-progress"><div class="meter" aria-hidden="true"><span id="basket-progress-fill"></span></div><p class="small muted" id="basket-progress-text"></p></div>
+      <div class="prod-list" id="basket-list"></div>
+      <div class="bk-foot">
+        <button type="button" class="bk-remove" id="basket-clear">Tanggalin lahat</button>
+        <p class="tiny muted">Bawat item ay bubukas sa Shopee (app o web) gamit ang affiliate link namin. Doon mo ito idadagdag sa cart at mag-checkout.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+

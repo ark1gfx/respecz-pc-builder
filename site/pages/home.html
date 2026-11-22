@@ -1,0 +1,120 @@
+    <!-- HERO -->
+    <section class="hero" id="hero">
+     <div class="hero-pin">
+      <div class="hero-copy">
+        <p class="eyebrow">ReSpecz PC Builder</p>
+        <h1>Buuin ang PC mo.<br><span class="soft">Sakto sa budget.</span></h1>
+        <p class="lede">I-tap ang kahit anong part para makita ang options sa Shopee. O hayaan kaming pumili ng compatible na set para sa'yo.</p>
+        <div class="hero-cta">
+          <a class="btn btn-blue" href="{{root}}build/">Mag-Build</a>
+          <a class="btn btn-glass" href="{{root}}may/">May Parts na Ako</a>
+        </div>
+      </div>
+      <div class="stage-wrap">
+        <div class="stage-slot" aria-hidden="true"></div>
+        <div id="stage" class="stage" aria-label="3D PC. I-tap ang part para makita ang products.">
+          <!-- shown at once; the 3D (three.js + model, ~2.5 MB) loads after the page is up -->
+          <img class="stage-poster" src="{{root}}assets/pc-poster.webp" alt="" width="645" height="710" fetchpriority="high" decoding="async">
+          <div class="tap-cue" aria-hidden="true">
+            <span class="tap-hand"><span class="tap-ring"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V10m0-.5a1.5 1.5 0 0 1 3 0V11m0-.5a1.5 1.5 0 0 1 3 0V14a6 6 0 0 1-6 6h-1a5 5 0 0 1-4.2-2.3L4.5 14a1.6 1.6 0 0 1 2.6-1.8L9 14"/></svg></span>
+            <span class="tap-label">I-tap ang PC</span>
+          </div>
+          <p class="stage-hint"><span class="pulse"></span><span class="hint-normal">I-tap ang parts para makapili</span><span class="hint-full">I-drag para iikot · scroll para mag-zoom · scroll palabas para isara</span></p>
+          <button type="button" class="viewer-expand" id="viewer-expand" aria-label="Full screen ang 3D PC">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+          </button>
+          <div class="viewer-bar" role="group" aria-label="3D viewer">
+            <button type="button" class="viewer-btn" id="viewer-zoomout">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M8 11h6M16 16l4 4"/></svg>
+              <span>Zoom out</span>
+            </button>
+            <button type="button" class="viewer-btn viewer-close" id="viewer-close" aria-label="Isara ang full screen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+              <span>Isara</span>
+            </button>
+          </div>
+        </div>
+        <div class="stage-chips" id="stage-chips" role="group" aria-label="Pumili ng part"></div>
+      </div>
+     </div>
+    </section>
+
+    <!-- fixed "scroll down" hint; kept outside the sticky hero so it stays above the next section -->
+    <a class="scroll-cue" href="#start">
+      <span>Mag-scroll pababa</span>
+      <span class="scroll-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+    </a>
+    <!-- START: one card per page -->
+    <section id="start" class="section">
+      <header class="section-head">
+        <h2>Saan tayo magsisimula? <span class="soft">Pili&nbsp;ka.</span></h2>
+        <p>Apat na paraan para mahanap ang tamang parts, lahat may compatibility check at Shopee Mall link.</p>
+        <p class="price-date" data-price-date hidden></p>
+      </header>
+      <nav class="routes" aria-label="Mga page">
+        <a class="route route-build" href="{{root}}build/" style="--tone: #0c2fc4">
+          <span class="route-media"><img class="route-img" src="{{root}}assets/cards/build.jpg?v=2" srcset="{{root}}assets/cards/build-480.jpg?v=2 480w, {{root}}assets/cards/build.jpg?v=2 900w" sizes="(max-width: 639px) 76vw, (max-width: 999px) 45vw, 260px" width="900" height="1200" alt="" loading="lazy" decoding="async"></span>
+          <span class="route-layers" aria-hidden="true">
+            <img class="fly" src="{{root}}assets/cards/build-fan.webp" alt="" loading="lazy" decoding="async" style="--cx: 17.7%; --cy: 16.7%; --d: 0s">
+            <img class="fly" src="{{root}}assets/cards/build-cpu.webp" alt="" loading="lazy" decoding="async" style="--cx: 42.0%; --cy: 8.4%; --d: 0.06s">
+            <img class="fly" src="{{root}}assets/cards/build-ram.webp" alt="" loading="lazy" decoding="async" style="--cx: 63.7%; --cy: 10.9%; --d: 0.12s">
+            <img class="fly" src="{{root}}assets/cards/build-ssd.webp" alt="" loading="lazy" decoding="async" style="--cx: 28.5%; --cy: 29.6%; --d: 0.18s">
+            <img class="fly" src="{{root}}assets/cards/build-gpu.webp" alt="" loading="lazy" decoding="async" style="--cx: 24.0%; --cy: 42.3%; --d: 0.24s">
+          </span>
+          <span class="route-body">
+            <span class="route-title">Mag-Build</span>
+            <span class="route-sub">Sabihin ang budget at gamit, kami na ang pipili ng compatible na set.</span>
+            <span class="route-btn">Simulan<span aria-hidden="true">›</span></span>
+          </span>
+        </a>
+        <a class="route route-may" href="{{root}}may/" style="--tone: #3d0f9e">
+          <span class="route-media"><img class="route-img" src="{{root}}assets/cards/may.jpg?v=2" srcset="{{root}}assets/cards/may-480.jpg?v=2 480w, {{root}}assets/cards/may.jpg?v=2 900w" sizes="(max-width: 639px) 76vw, (max-width: 999px) 45vw, 260px" width="900" height="1200" alt="" loading="lazy" decoding="async"></span>
+          <img class="route-pop" src="{{root}}assets/cards/may-ram.webp" alt="" loading="lazy" decoding="async" aria-hidden="true" style="--cx: 50.5%; --cy: 30.5%">
+          <span class="route-body">
+            <span class="route-title">May Parts na Ako</span>
+            <span class="route-sub">May RAM, CPU o GPU ka na? Hanapin ang swak na kulang.</span>
+            <span class="route-btn">Hanapin<span aria-hidden="true">›</span></span>
+          </span>
+        </a>
+        <a class="route route-parts" href="{{root}}parts/" style="--tone: #0a6464">
+          <span class="route-media"><img class="route-img" src="{{root}}assets/cards/parts.jpg?v=2" srcset="{{root}}assets/cards/parts-480.jpg?v=2 480w, {{root}}assets/cards/parts.jpg?v=2 900w" sizes="(max-width: 639px) 76vw, (max-width: 999px) 45vw, 260px" width="900" height="1200" alt="" loading="lazy" decoding="async"></span>
+          <!-- each product card is its own layer; they lift one after another -->
+          <span class="route-layers" aria-hidden="true">
+            <img class="lift" src="{{root}}assets/cards/parts-1.webp" alt="" loading="lazy" decoding="async" style="--d: 0.00s">
+            <img class="lift" src="{{root}}assets/cards/parts-2.webp" alt="" loading="lazy" decoding="async" style="--d: 0.05s">
+            <img class="lift" src="{{root}}assets/cards/parts-3.webp" alt="" loading="lazy" decoding="async" style="--d: 0.10s">
+            <img class="lift" src="{{root}}assets/cards/parts-4.webp" alt="" loading="lazy" decoding="async" style="--d: 0.15s">
+            <img class="lift" src="{{root}}assets/cards/parts-5.webp" alt="" loading="lazy" decoding="async" style="--d: 0.20s">
+            <img class="lift" src="{{root}}assets/cards/parts-6.webp" alt="" loading="lazy" decoding="async" style="--d: 0.25s">
+          </span>
+          <span class="route-body">
+            <span class="route-title">Parts</span>
+            <span class="route-sub">I-browse lahat ng parts per category, may filter at presyo.</span>
+            <span class="route-btn">I-browse<span aria-hidden="true">›</span></span>
+          </span>
+        </a>
+        <a class="route route-builds" href="{{root}}builds/" style="--tone: #1f1c8f">
+          <span class="route-media"><img class="route-img" src="{{root}}assets/cards/builds.jpg" srcset="{{root}}assets/cards/builds-480.jpg 480w, {{root}}assets/cards/builds.jpg 900w" sizes="(max-width: 639px) 76vw, (max-width: 999px) 45vw, 260px" width="900" height="1200" alt="" loading="lazy" decoding="async"></span>
+          <img class="route-pop" src="{{root}}assets/cards/builds-pop.webp" alt="" loading="lazy" decoding="async" aria-hidden="true">
+          <span class="route-body">
+            <span class="route-title">Ready Builds</span>
+            <span class="route-sub">Kumpletong set para sa gaming, editing at school.</span>
+            <span class="route-btn">Tingnan<span aria-hidden="true">›</span></span>
+          </span>
+        </a>
+      </nav>
+    </section>
+
+    <!-- VIDEOS: from the ReSpecz Facebook Page (data/videos.json, made by tools/fb_videos.py); hidden until there is data -->
+    <section id="videos" class="section" hidden>
+      <header class="section-head">
+        <h2>Alamin bago bumili.<br><span class="soft">Trending&nbsp;at&nbsp;bago.</span></h2>
+        <p>Tech tips at mga sagot sa "totoo ba &#39;to?" mula sa ReSpecz Facebook page. I-tap para panoorin dito mismo.</p>
+      </header>
+      <div class="vid-tabs" role="tablist" aria-label="Mga video">
+        <button type="button" class="chip active" role="tab" aria-selected="true" data-vtab="trending">Trending</button>
+        <button type="button" class="chip" role="tab" aria-selected="false" data-vtab="latest">Bago</button>
+      </div>
+      <div class="vid-grid" id="vid-grid" role="tabpanel"></div>
+      <p class="vid-more"><a class="btn btn-glass btn-sm" id="vid-follow" href="#" target="_blank" rel="noopener">Follow sa Facebook</a></p>
+    </section>

@@ -23,7 +23,7 @@ ALL = ['AM4', 'AM5', 'LGA1700']
 parts = [
     # ---------------- CPU ----------------
     p(id='cpu-r5-5600', category='cpu', name='AMD Ryzen 5 5600', brand='AMD', price=7945, tier=2, socket='AM4', memTypes=['DDR4'], tdp=65, cores='6C/12T', igpu=0, perf=55, perfMulti=50, boxedCooler=False,
-      note='Budget gaming king sa AM4. Kailangan ng GPU. Tray: walang kasamang cooler.', search='Ryzen 5 5600', shopeeItemId='17260830695', link='6AmmdxuT68'),
+      note='Budget gaming king sa AM4. Kailangan ng GPU. Tray: walang kasamang cooler.', search='Ryzen 5 5600', shopeeItemId='17260830695', link='4qHPSo4FdM'),
     p(id='cpu-r7-5700x', category='cpu', name='AMD Ryzen 7 5700X (Tray + cooler)', brand='AMD', price=10690, tier=3, socket='AM4', memTypes=['DDR4'], tdp=65, cores='8C/16T', igpu=0, perf=64, perfMulti=66, boxedCooler=True,
       note='8 cores sa AM4, may kasamang cooler fan ang listing.', search='Ryzen 7 5700X', shopeeItemId='41812380760', link='2qWKg8hx9s'),
     p(id='cpu-r5-7600', category='cpu', name='AMD Ryzen 5 7600', brand='AMD', price=11999, tier=3, socket='AM5', memTypes=['DDR5'], tdp=65, cores='6C/12T', igpu=5, perf=76, perfMulti=62, boxedCooler=False,
@@ -65,6 +65,18 @@ parts = [
     p(id='mb-b760m-ds3h-gen5', category='motherboard', name='Gigabyte B760M DS3H GEN5 (DDR5)', brand='Gigabyte', price=8999, tier=3, socket='LGA1700', chipset='B760', formFactor='mATX', memType='DDR5', memSlots=4, m2Slots=2, wifi=False, vrmMaxTdp=150,
       note='DDR5 Intel board.', search='Gigabyte B760M DS3H GEN5 DDR5', shopeeItemId='9757785358', link='7VIAF5BXC8'),
 
+    # Mini-ITX and Intel ATX boards (added 2026-11-22, Shopee Mall, same day's prices)
+    p(id='mb-a520i-ac', category='motherboard', name='Gigabyte A520I AC (Mini-ITX)', brand='Gigabyte', price=8099, tier=2, socket='AM4', chipset='A520', formFactor='ITX', memType='DDR4', memSlots=2, m2Slots=1, wifi=True, vrmMaxTdp=105,
+      note='Pinakamurang Mini-ITX para sa AM4, may WiFi na.', search='Gigabyte A520I AC', shopeeItemId='6966814186', link='114gt7urah'),
+    p(id='mb-b550i-aorus-pro-ax', category='motherboard', name='Gigabyte B550I AORUS PRO AX (Mini-ITX)', brand='Gigabyte', price=13099, tier=4, socket='AM4', chipset='B550', formFactor='ITX', memType='DDR4', memSlots=2, m2Slots=2, wifi=True, vrmMaxTdp=170,
+      note='Premium AM4 Mini-ITX, PCIe 4.0 at WiFi 6.', search='Gigabyte B550I AORUS PRO AX', shopeeItemId='7840876004', link='8fU81DesNl'),
+    p(id='mb-b650i-ax', category='motherboard', name='Gigabyte B650I AX (Mini-ITX)', brand='Gigabyte', price=11795, tier=4, socket='AM5', chipset='B650', formFactor='ITX', memType='DDR5', memSlots=2, m2Slots=1, wifi=True, vrmMaxTdp=170,
+      note='AM5 Mini-ITX na may WiFi 6E, swak sa maliit na build.', search='Gigabyte B650I AX', shopeeItemId='29685482595', link='5LDg364hEL'),
+    p(id='mb-b660m-itx-ac', category='motherboard', name='ASRock B660M-ITX/ac (Mini-ITX)', brand='ASRock', price=8995, tier=3, socket='LGA1700', chipset='B660', formFactor='ITX', memType='DDR4', memSlots=2, m2Slots=1, wifi=True, vrmMaxTdp=125,
+      note='Intel Mini-ITX sa DDR4, may WiFi.', search='ASRock B660M-ITX/ac', shopeeItemId='23346758428', link='5LDg36Hxq9'),
+    p(id='mb-b760-gaming-plus-wifi', category='motherboard', name='MSI B760 GAMING PLUS WIFI DDR4 (ATX)', brand='MSI', price=12999, tier=4, socket='LGA1700', chipset='B760', formFactor='ATX', memType='DDR4', memSlots=4, m2Slots=2, wifi=True, vrmMaxTdp=150,
+      note='Full ATX para sa Intel, 4 RAM slots, WiFi 6E.', search='MSI B760 GAMING PLUS WIFI DDR4', shopeeItemId='52306603663', link='60TMqKOV6R'),
+
     # ---------------- RAM ----------------
     p(id='ram-d4-16-vulcan', category='ram', name='TeamGroup T-Force Vulcan Z DDR4-3200 16GB (2x8GB)', brand='TeamGroup', price=9395, tier=2, memType='DDR4', capacityGB=16, sticks=2, speed=3200,
       note='Dual channel, 2 sticks = mas mabilis.', search='T-Force Vulcan Z DDR4 16GB 2x8GB', shopeeItemId='29280108577', link='1gKNINxsCq'),
@@ -83,7 +95,7 @@ parts = [
     p(id='gpu-rtx5050', category='gpu', name='MSI GeForce RTX 5050 Ventus 2X OC 8GB', brand='MSI', price=25399, tier=2, vramGB=8, tdp=130, lengthMm=200, recPsuW=550, perf=58,
       note='Bagong 50-series entry, may DLSS 4.', search='MSI RTX 5050 Ventus 2X OC 8GB', shopeeItemId='42212709516', link='9fMep9abM8'),
     p(id='gpu-rx7600', category='gpu', name='ASUS Dual Radeon RX 7600 EVO OC 8GB', brand='ASUS', price=25999, tier=2, vramGB=8, tdp=165, lengthMm=243, recPsuW=550, perf=58,
-      note='Solid 1080p high settings.', search='ASUS Dual RX 7600 EVO OC 8GB', shopeeItemId='23188684715', link='5AuFSASXZ3'),
+      note='Solid 1080p high settings.', search='ASUS Dual RX 7600 EVO OC 8GB', shopeeItemId='23188684715', link='40iITHJf0W'),
     p(id='gpu-rtx5060', category='gpu', name='MSI GeForce RTX 5060 Shadow 2X OC 8GB', brand='MSI', price=33995, tier=3, vramGB=8, tdp=145, lengthMm=197, recPsuW=550, perf=70,
       note='1080p high refresh, matipid sa kuryente.', search='MSI RTX 5060 Shadow 2X OC 8GB', shopeeItemId='43558221119', link='30pksuuyHh'),
     p(id='gpu-rx9060xt-16', category='gpu', name='Sapphire Pulse Radeon RX 9060 XT 16GB', brand='Sapphire', price=37995, tier=3, vramGB=16, tdp=182, lengthMm=240, recPsuW=550, perf=78,
@@ -141,6 +153,13 @@ parts = [
     p(id='cooler-mag-a13-240', category='cooler', name='MSI MAG CoreLiquid A13 240 (AIO)', brand='MSI', price=4095, tier=5, type='aio', sockets=ALL, heightMm=0, tdpRating=260,
       note='240mm liquid cooler, kailangan ng case na may 240mm radiator mount.', search='MSI MAG CoreLiquid A13 240', shopeeItemId='26678389320', link='2VtUIBOBwg'),
 ]
+
+# Shopee product images (from the affiliate portal's Product Offer pages), served by Shopee's CDN.
+THUMBS = dict(line.split() for line in (Path(__file__).resolve().parent.parent / 'data' / 'thumbs.txt').read_text().splitlines() if line.strip())
+for part in parts:
+    img = THUMBS.get(part.get('shopeeItemId', ''))
+    if img:
+        part['image'] = f'https://down-ph.img.susercontent.com/file/{img}@resize_w320_nl.webp'
 
 stock = dict(id='cooler-stock', category='cooler', name='Stock cooler (kasama sa CPU)', brand='', price=0, tier=0, stock=True, type='air', sockets=ALL, heightMm=70, tdpRating=95,
              note='Libre kung may kasamang cooler ang CPU.', search='', shopeeUrl='')
