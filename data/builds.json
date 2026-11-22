@@ -1,0 +1,32 @@
+{
+  "builds": [
+    {
+      "id": "school-40k",
+      "title": "₱40K School / Office",
+      "useCase": "school",
+      "blurb": "Core i5-14400 na may built-in graphics. Pang-docs, Zoom, at light games. Dagdag GPU later.",
+      "parts": { "cpu": "cpu-i5-14400", "motherboard": "mb-h610m-e", "ram": "ram-d4-16-vulcan", "gpu": null, "ssd": "ssd-nv3-500", "psu": "psu-pro650b", "case": "case-infinity-m", "cooler": "cooler-stock" }
+    },
+    {
+      "id": "esports-60k",
+      "title": "₱60K Valorant + Dota 2",
+      "useCase": "gaming",
+      "blurb": "i5-14400 + RTX 3050. Pang-esports sa 1080p, 1TB para sa games.",
+      "parts": { "cpu": "cpu-i5-14400", "motherboard": "mb-h610m-e", "ram": "ram-d4-16-vulcan", "gpu": "gpu-rtx3050", "ssd": "ssd-s880-1tb", "psu": "psu-pro650b", "case": "case-db330m", "cooler": "cooler-stock" }
+    },
+    {
+      "id": "cs2-80k",
+      "title": "₱80K CS2 1080p high",
+      "useCase": "gaming",
+      "blurb": "RX 9060 XT 16GB ang bida. High FPS sa CS2 at 1080p high settings.",
+      "parts": { "cpu": "cpu-i5-14400", "motherboard": "mb-h610m-e", "ram": "ram-d4-16-vulcan", "gpu": "gpu-rx9060xt-16", "ssd": "ssd-s880-1tb", "psu": "psu-pro650b", "case": "case-db330m", "cooler": "cooler-stock" }
+    },
+    {
+      "id": "editing-130k",
+      "title": "₱130K Editing + gaming",
+      "useCase": "editing",
+      "blurb": "i7-14700 (20 cores), 32GB RAM, RX 9060 XT 16GB para sa mabilis na render at timeline.",
+      "parts": { "cpu": "cpu-i7-14700", "motherboard": "mb-b760m-ds3h-d4", "ram": "ram-d4-32-vulcan", "gpu": "gpu-rx9060xt-16", "ssd": "ssd-990evo-1tb", "psu": "psu-pro650b", "case": "case-h7-flow", "cooler": "cooler-mag-a13-240" }
+    }
+  ]
+}

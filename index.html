@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fil">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ReSpecz PC Builder</title>
+  <meta name="description" content="Pili ng budget at gamit, at bubuuin namin ang compatible na PC parts list para sa'yo. Gaming, editing, o school.">
+  <meta name="theme-color" content="#070b16">
+  <meta property="og:title" content="ReSpecz PC Builder">
+  <meta property="og:description" content="Buuin ang PC mo, sakto sa budget. Compatible parts, may Shopee links.">
+  <meta property="og:image" content="assets/rs-logo-glow.png">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg" aria-hidden="true"></div>
+
+  <header class="top">
+    <a class="brand" href="./">
+      <img src="assets/rs-logo-glow.png" alt="ReSpecz" width="62" height="40">
+      <span>PC Builder</span>
+    </a>
+    <a class="pill pill-ghost" href="#disclosure">Affiliate links ⓘ</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">ReSpecz · Gabay sa pagbuo ng PC</p>
+      <h1>Buuin ang PC mo, <span class="accent">sakto sa budget.</span></h1>
+      <p class="lede">Pili ka ng budget at kung saan mo gagamitin. Kami na bahala sa compatible na parts: socket, RAM, wattage, at sukat ng case.</p>
+    </section>
+
+    <section class="glass panel" aria-labelledby="form-title">
+      <h2 id="form-title" class="sr-only">Budget at gamit</h2>
+
+      <div class="field">
+        <div class="field-head">
+          <label for="budget">Budget mo</label>
+          <output id="budget-out" for="budget" class="budget-out">₱60,000</output>
+        </div>
+        <input id="budget" type="range" min="35000" max="250000" step="1000" value="60000">
+        <div class="chips" id="budget-chips" role="group" aria-label="Mabilisang budget"></div>
+      </div>
+
+      <div class="field">
+        <span class="label" id="usecase-label">Saan mo gagamitin?</span>
+        <div class="segments" id="usecase" role="radiogroup" aria-labelledby="usecase-label"></div>
+      </div>
+
+      <button id="build-btn" class="btn btn-primary" type="button">Buuin ang PC ko</button>
+    </section>
+
+    <section id="result" class="result" hidden aria-live="polite">
+      <div class="glass summary">
+        <div class="summary-row">
+          <div>
+            <p class="muted small" id="summary-label">Tantiyang total</p>
+            <p class="total" id="total">₱0</p>
+          </div>
+          <span class="pill" id="usecase-tag">Gaming</span>
+        </div>
+        <div class="meter" aria-hidden="true"><span id="meter-fill"></span></div>
+        <p class="small muted" id="budget-note"></p>
+        <div class="summary-actions">
+          <button class="btn btn-ghost" id="share-btn" type="button">Kopyahin ang link ng build</button>
+        </div>
+      </div>
+
+      <div class="glass compat">
+        <h2>Compatibility check</h2>
+        <ul id="compat-list" class="compat-list"></ul>
+      </div>
+
+      <h2 class="section-title">Parts list</h2>
+      <ol id="parts" class="parts"></ol>
+      <p class="small muted center" id="price-note"></p>
+    </section>
+
+    <section aria-labelledby="samples-title">
+      <h2 id="samples-title" class="section-title">Sample builds</h2>
+      <div id="samples" class="samples"></div>
+    </section>
+
+    <section id="disclosure" class="glass disclosure">
+      <h2>Affiliate disclosure</h2>
+      <p>May <strong>Shopee affiliate links</strong> ang site na 'to. Kapag bumili ka gamit ang links namin, may maliit na commission ang ReSpecz. <strong>Walang dagdag na bayad sa'yo.</strong> Ito ang tumutulong sa amin gumawa ng libreng tech content.</p>
+      <p>Ang presyo ay galing sa Shopee Mall listing noong araw na naka-check, at pwedeng magbago anumang oras. I-check palagi ang presyo, variant, seller, at reviews sa Shopee bago bumili. Hindi kami ang seller ng mga produkto.</p>
+      <p>Ang compatibility check ay gabay lang base sa published specs. I-double check ang exact model (lalo na ang GPU length at BIOS support) bago mag-order.</p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>© <span id="year"></span> ReSpecz · <a href="https://www.tiktok.com/@resp3cz" rel="noopener" target="_blank">TikTok @resp3cz</a></p>
+  </footer>
+
+  <template id="part-tpl">
+    <li class="glass part">
+      <div class="part-icon"></div>
+      <div class="part-body">
+        <p class="part-cat"></p>
+        <p class="part-name"></p>
+        <p class="part-spec"></p>
+        <p class="part-note"></p>
+        <label class="swap">
+          <span class="sr-only">Palitan</span>
+          <select></select>
+        </label>
+      </div>
+      <div class="part-side">
+        <p class="part-price"></p>
+        <a class="btn btn-shop" target="_blank" rel="sponsored noopener"></a>
+      </div>
+    </li>
+  </template>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

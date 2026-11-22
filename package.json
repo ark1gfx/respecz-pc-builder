@@ -1,0 +1,12 @@
+{
+  "name": "respecz-pc-builder",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/",
+    "start": "npx serve . -l 4870",
+    "links:todo": "node tools/links-todo.mjs",
+    "links:merge": "node tools/merge-links.mjs"
+  }
+}
