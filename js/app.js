@@ -106,6 +106,25 @@ function renderStageChips() {
     const b = e.target.closest('[data-cat]');
     if (b) openSheet(b.dataset.cat, { from3d: true });
   });
+  const rail = $('#stage-rail');
+  if (rail) {
+    rail.innerHTML = CATEGORIES.map((c) =>
+      `<button type="button" class="rail-item" data-cat="${c}" tabindex="-1"><span class="rail-icon">${ICONS[c]}</span><span>${SHORT_LABEL[c]}</span></button>`).join('');
+    rail.addEventListener('click', (e) => {
+      const b = e.target.closest('[data-cat]');
+      if (b) openSheet(b.dataset.cat, { from3d: true });
+    });
+  }
+}
+
+// The parts rail shows while the PC fills the screen (scrolled in, or full screen), desktop only.
+function syncRail() {
+  const rail = $('#stage-rail');
+  if (!rail) return;
+  const on = !!peekFloating() && !peekPastPC() && peekMode.matches;
+  if (rail.classList.contains('is-on') === on) return;
+  rail.classList.toggle('is-on', on);
+  rail.querySelectorAll('button').forEach((b) => { b.tabIndex = on ? 0 : -1; });
 }
 
 // The 3D (three.js ~1.3 MB + the model ~1.2 MB) waits until the page has painted, behind a still poster.
@@ -162,6 +181,7 @@ function enterFull() {
   document.documentElement.classList.add('viewer-full');
   $('.stage-wrap').classList.add('is-full');
   hidePeek();
+  syncRail();
   $('#stage').style.cssText = '';
   pc3d.setWindow(null);
   pc3d.setFull(true);
@@ -173,6 +193,7 @@ function exitFull() {
   document.documentElement.classList.remove('viewer-full');
   $('.stage-wrap').classList.remove('is-full');
   hidePeek();
+  syncRail();
   pc3d?.setFull(false);
   window.__heroScroll?.remeasure();
   $('#viewer-expand')?.focus({ preventScroll: true });
@@ -271,6 +292,7 @@ function showPeek(card, cat) {
   card.classList.toggle('peek-float', floating);
   $('.hero-copy')?.classList.toggle('is-peek', !floating);
   card.hidden = false;
+  $('#stage-rail')?.querySelectorAll('[data-cat]').forEach((b) => b.classList.toggle('is-hot', b.dataset.cat === cat));
 }
 
 function peekLeave(ms = PEEK_HIDE) {
@@ -286,14 +308,16 @@ function hidePeek() {
   peekCat = null;
   $('.hero-copy')?.classList.remove('is-peek');
   card.hidden = true;
+  $('#stage-rail')?.querySelectorAll('.is-hot').forEach((b) => b.classList.remove('is-hot'));
 }
 
 function bindPeek() {
   const card = $('#peek');
   if (!card) return;
-  const chips = $('#stage-chips');
-  chips?.addEventListener('mouseover', (e) => { const b = e.target.closest('[data-cat]'); if (b) peekPart(b.dataset.cat); });
-  chips?.addEventListener('mouseout', (e) => { if (e.target.closest('[data-cat]') && !e.relatedTarget?.closest?.('#stage-chips [data-cat]')) peekPart(null); });
+  for (const list of [$('#stage-chips'), $('#stage-rail')]) {
+    list?.addEventListener('mouseover', (e) => { const b = e.target.closest('[data-cat]'); if (b) peekPart(b.dataset.cat); });
+    list?.addEventListener('mouseout', (e) => { if (e.target.closest('[data-cat]') && !e.relatedTarget?.closest?.(`#${list.id} [data-cat]`)) peekPart(null); });
+  }
   card.addEventListener('mouseenter', () => { clearTimeout(peekTimer); clearTimeout(swapTimer); peekTimer = 0; });
   card.addEventListener('mouseleave', () => peekLeave(250));
   // getting closer to the card keeps it open (restarts the hide countdown)
@@ -387,6 +411,7 @@ function bindHeroScroll() {
     hero.classList.toggle('is-deep', k > 0.5);
     hero.classList.toggle('is-zooming', p > 0.01); // the PC has started to grow over the hero copy
     peekSync();
+    syncRail();
     // "Mag-scroll pababa" stays until the next section (the page cards) is fully on screen, then fades
     if (cue && next) {
       const top = nextTop;
