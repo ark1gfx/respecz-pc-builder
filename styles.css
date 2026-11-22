@@ -1415,3 +1415,7 @@ button, input, select, textarea { font-family: inherit; }
 .nav-drop > a[aria-current='page'], .nav-drop > a[aria-current='page']:hover { background: none; box-shadow: none; }
 .nav-drop:has(> a[aria-current='page']) .nav-caret { color: #fff; }
 .nav-drop:has(> a[aria-current='page']):hover { background: linear-gradient(180deg, rgba(56, 189, 248, 0.34), rgba(37, 99, 235, 0.42)); }
+
+/* Ready Builds: the title row is as tall as the longest card's; keep tag, title and text packed at the top
+   (otherwise the grid stretches the tag pill into a tall blob) */
+.sample-main { align-content: start; }
