@@ -719,7 +719,11 @@ bpy.ops.export_scene.gltf(
     export_apply=True,
     export_yup=True,
     export_draco_mesh_compression_enable=True,
-    export_draco_mesh_compression_level=7,
+    export_draco_mesh_compression_level=10,
+    # smaller download: the model has no textures, so no UVs; coarser normals/positions are not visible at this size
+    export_texcoords=False,
+    export_draco_position_quantization=12,
+    export_draco_normal_quantization=8,
     export_lights=False,
     export_cameras=False,
 )

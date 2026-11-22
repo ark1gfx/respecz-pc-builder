@@ -11,7 +11,7 @@ Uses the Page token that the herk-edit-kit auto-posting dashboard already keeps
     FB_PAGE_TOKEN=EAAB...
 
 Writes data/videos.json with two lists, "trending" (most views) and "latest" (newest), and saves each
-thumbnail to assets/videos/<id>.jpg (Facebook's thumbnail links expire, so the site keeps its own copy).
+thumbnail to assets/videos/<id>.webp (.jpg if Pillow is missing) (Facebook's thumbnail links expire, so the site keeps its own copy).
 Standard library only. Safe to re-run: it rewrites the JSON and refreshes the thumbnails.
 """
 import json
@@ -118,7 +118,20 @@ def save_thumb(video, token):
     if shutil.which('sips'):
         subprocess.run(['sips', '-s', 'format', 'jpeg', '-s', 'formatOptions', '78', '--resampleWidth', '540',
                         str(dest), '--out', str(dest)], capture_output=True)
-    return f"assets/videos/{dest.name}"
+    return f"assets/videos/{to_webp(dest).name}"
+
+
+def to_webp(jpg):
+    """WebP is about half the size of the JPEG. Needs Pillow (pip install pillow); without it the JPEG stays."""
+    try:
+        from PIL import Image
+    except ImportError:
+        return jpg
+    out = jpg.with_suffix('.webp')
+    with Image.open(jpg) as im:
+        im.convert('RGB').save(out, 'WEBP', quality=72, method=6)
+    jpg.unlink()
+    return out
 
 
 def main():
@@ -162,8 +175,8 @@ def main():
         print('note: no view counts (the token has no read_insights); Trending is ranked by likes + comments')
     for it in {i['id']: i for i in latest + trending}.values():
         it['thumb'] = save_thumb(it['_raw'], token)
-    keep = {f"{i['id']}.jpg" for i in latest + trending}
-    for old in THUMB_DIR.glob('*.jpg'):
+    keep = {Path(i['thumb']).name for i in latest + trending if i.get('thumb')}
+    for old in [*THUMB_DIR.glob('*.jpg'), *THUMB_DIR.glob('*.webp')]:
         if old.name not in keep:
             old.unlink()
     clean = lambda lst: [{k: v for k, v in i.items() if k != '_raw'} for i in lst]
