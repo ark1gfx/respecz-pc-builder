@@ -217,7 +217,7 @@ const peekTwoCol = matchMedia('(min-width: 860px) and (min-aspect-ratio: 11/10)'
 // zoomed into the PC (scrolled in, or full screen): the hero copy is gone, so the card floats over the 3D as glass
 // the next section ("Saan tayo magsisimula?") has come up on screen: no card, at once
 const peekPastPC = () => { const h = $('#start .section-head'); return !!h && h.getBoundingClientRect().top < innerHeight - 24; };
-const peekFloating = () => $('.stage-wrap')?.classList.contains('is-full') || $('#hero')?.classList.contains('is-deep');
+const peekFloating = () => $('.stage-wrap')?.classList.contains('is-full') || $('#hero')?.classList.contains('is-zooming');
 // Timing, like a good mega-menu:
 // - leave a part and the card waits PEEK_HIDE ms, then goes (quick, so it never lingers)
 // - while the pointer is getting closer to the card, it stays open, and parts you cross on the way
@@ -228,6 +228,7 @@ const PEEK_SWAP = 180;
 let peekTimer = 0;
 let swapTimer = 0;
 let peekCat = null;
+let peekSync = () => {};
 let approaching = 0; // time of the last pointer move that brought it closer to the card
 
 function peekPicks(cat) {
@@ -310,11 +311,15 @@ function bindPeek() {
     const all = e.target.closest('[data-peek-all]');
     if (all) { hidePeek(); openSheet(all.dataset.peekAll, { from3d: true }); }
   });
-  // scrolling between "beside the PC" and "zoomed in" (or past the PC): don't leave the card in the wrong place
-  addEventListener('scroll', () => {
+  // scrolling between "beside the PC" and "zoomed in" (or past the PC): don't leave the card in the wrong place.
+  // Runs from the hero's own scroll frame (after it sets is-zooming), so it never reads a stale state.
+  peekSync = () => {
     if (card.hidden) return;
-    if (peekPastPC() || card.classList.contains('peek-float') !== !!peekFloating()) hidePeek();
-  }, { passive: true });
+    if (peekPastPC()) hidePeek();
+    // started zooming (or back at the top): move the open card to the right place instead of losing it
+    else if (card.classList.contains('peek-float') !== !!peekFloating()) showPeek(card, peekCat);
+  };
+  addEventListener('scroll', peekSync, { passive: true });
 }
 
 // ---------- scroll into the PC ----------
@@ -380,6 +385,8 @@ function bindHeroScroll() {
     stage.style.transform = fadeOut ? `scale(${(1 + fadeOut * 0.06).toFixed(4)})` : '';
     stage.style.pointerEvents = fadeOut > 0.6 ? 'none' : '';
     hero.classList.toggle('is-deep', k > 0.5);
+    hero.classList.toggle('is-zooming', p > 0.01); // the PC has started to grow over the hero copy
+    peekSync();
     // "Mag-scroll pababa" stays until the next section (the page cards) is fully on screen, then fades
     if (cue && next) {
       const top = nextTop;
