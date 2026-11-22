@@ -41,7 +41,7 @@ body {
   line-height: 1.47;
   letter-spacing: -0.012em;
   color: var(--ink);
-  background: #0e0f12;
+  background: #070708;
   overflow-x: clip; /* clip, not hidden: hidden makes body a scroll box and breaks the pinned hero */
   -webkit-font-smoothing: antialiased;
 }
@@ -466,7 +466,7 @@ html.viewer-full, html.viewer-full body { overflow: hidden; }
   padding: env(safe-area-inset-top) 0 0;
   background:
     radial-gradient(55% 50% at 50% 45%, rgba(120, 82, 52, 0.16), transparent 72%),
-    radial-gradient(120% 90% at 50% 50%, #1b1c20 0%, #121316 55%, #0b0c0e 100%);
+    radial-gradient(120% 90% at 50% 50%, #111214 0%, #0a0b0c 55%, #050506 100%);
   animation: viewer-in 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 @keyframes viewer-in { from { opacity: 0; transform: scale(0.97); } }
@@ -1527,18 +1527,18 @@ body::after {
 
 /* ---------- graphite studio background (user reference: dark product shot, warm glow, vignette) ----------
    replaces the blue aurora; same layers, so the soft scroll drift still works */
-body::before { background: radial-gradient(110% 85% at 50% 42%, #1c1d21 0%, #141518 50%, #0c0d0f 100%); }
+body::before { background: radial-gradient(110% 85% at 50% 42%, #111214 0%, #0b0c0d 50%, #060607 100%); }
 .au-a { /* warm glow low-left, like light bouncing off a desk */
   width: 110vmax; height: 60vmax; left: -46vmax; bottom: -38vmax;
-  background: radial-gradient(closest-side, rgba(150, 96, 58, 0.26), rgba(110, 70, 44, 0.14) 45%, transparent);
+  background: radial-gradient(closest-side, rgba(150, 96, 58, 0.16), rgba(110, 70, 44, 0.08) 45%, transparent);
 }
 .au-b { /* cool, faint top-right */
   width: 95vmax; height: 50vmax; right: -44vmax; top: -30vmax;
-  background: radial-gradient(closest-side, rgba(120, 132, 156, 0.16), rgba(80, 90, 110, 0.08) 50%, transparent);
+  background: radial-gradient(closest-side, rgba(120, 132, 156, 0.09), rgba(80, 90, 110, 0.04) 50%, transparent);
 }
 .au-c { /* soft light behind the content, centre */
   width: 120vmax; height: 50vmax; left: -10vmax; top: 10vh;
-  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.035), transparent);
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.02), transparent);
 }
 .bg-grid { opacity: 0.55; }
 body::after { opacity: 0.07; }
