@@ -1964,3 +1964,105 @@ p, li { text-wrap: pretty; }
 #budget::-moz-range-track { height: 6px; background: var(--island3); }
 #budget::-moz-range-progress { height: 6px; border-radius: 4px; background: linear-gradient(90deg, rgb(var(--blue-deep)), rgb(var(--blue-bright))); }
 #budget::-webkit-slider-thumb { margin-top: -10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45), 0 0 0 4px rgba(var(--accent-rgb), 0.25); }
+
+/* ---------- Troubleshooter flowchart: areas on top, Oo/Hindi cards down the ladder ---------- */
+.tsf-title { margin: 0; font-size: clamp(1.15rem, 4.4vw, 1.4rem); text-align: center; letter-spacing: -0.015em; }
+.tsf-title:focus { outline: none; }
+.tsf-areas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+@media (min-width: 640px) { .tsf-areas { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .tsf-areas { grid-template-columns: repeat(9, minmax(0, 1fr)); } }
+.tsf-area {
+  display: grid; justify-items: center; align-content: start; gap: 3px; min-width: 0; padding: 12px 6px 10px;
+  border-radius: 16px; border: 1px solid var(--glass-edge); background: rgba(255, 255, 255, 0.04); color: var(--ink);
+  font: inherit; text-align: center; cursor: pointer; transition: background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease, transform 0.15s ease;
+}
+.tsf-area:hover { background: rgba(var(--accent-rgb), 0.1); border-color: rgba(var(--accent-rgb), 0.45); }
+.tsf-area:active { transform: scale(0.97); }
+.tsf-area:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.tsf-area-icon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: rgba(var(--accent-rgb), 0.14); color: var(--blue); }
+.tsf-area-icon svg { width: 24px; height: 24px; }
+.tsf-area strong { font-size: 0.86rem; font-weight: 600; }
+.tsf-area > span:last-child { font-size: 0.7rem; color: var(--ink2); line-height: 1.25; }
+.tsf-areas.has-pick .tsf-area:not(.is-on) { opacity: 0.5; }
+.tsf-areas.has-pick .tsf-area:not(.is-on):hover { opacity: 1; }
+.tsf-area.is-on { border-color: rgba(var(--accent-rgb), 0.8); background: rgba(var(--accent-rgb), 0.16); box-shadow: 0 0 0 1px rgba(var(--accent-rgb), 0.35), 0 8px 24px -10px rgba(var(--blue-deep), 0.8); }
+.tsf-area.is-on .tsf-area-icon { background: var(--brand-grad); color: #fff; }
+
+.tsf-ask { display: grid; gap: 8px; justify-items: center; padding-top: 4px; }
+.tsf-ask label { font-size: 0.88rem; color: var(--ink2); }
+.tsf-ask .ts-ask-row { width: min(100%, 460px); }
+
+/* the ladder: a vertical line with an arrowhead between cards, the answer written on the line */
+.tsf-ladder { display: grid; justify-items: center; }
+.tsf-arrow { position: relative; width: 2px; height: 46px; background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.25), rgba(var(--accent-rgb), 0.9)); }
+.tsf-arrow::after { content: ''; position: absolute; left: 50%; bottom: -1px; width: 10px; height: 10px; border-right: 2px solid rgba(var(--accent-rgb), 0.9); border-bottom: 2px solid rgba(var(--accent-rgb), 0.9); transform: translateX(-50%) rotate(45deg); }
+.tsf-arrow-label { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -60%); padding: 2px 10px; border-radius: 999px; font-size: 0.72rem; font-weight: 700; color: #fff; background: rgb(var(--blue-deep)); box-shadow: 0 0 0 3px rgba(14, 15, 19, 0.9); white-space: nowrap; }
+.tsf-node { width: min(100%, 520px); display: grid; gap: 10px; justify-items: center; text-align: center; padding: 16px; border-radius: 20px; border: 1px solid var(--glass-edge); background: rgba(255, 255, 255, 0.04); }
+.tsf-node.is-done { padding: 10px 14px; gap: 8px; }
+.tsf-node.is-current { border-color: rgba(var(--accent-rgb), 0.55); background: rgba(var(--accent-rgb), 0.07); box-shadow: 0 10px 30px -14px rgba(var(--blue-deep), 0.9); }
+.tsf-node.is-result { text-align: left; justify-items: stretch; border-color: rgba(var(--accent-rgb), 0.7); background: rgba(var(--accent-rgb), 0.08); box-shadow: 0 12px 36px -14px rgba(var(--blue-deep), 1); }
+.tsf-step { margin: 0; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); }
+.tsf-q { margin: 0; font-size: 0.92rem; color: var(--ink-mid); line-height: 1.35; }
+.tsf-q-big { font-size: clamp(1.1rem, 4.4vw, 1.3rem); font-weight: 600; color: var(--ink); letter-spacing: -0.01em; }
+.tsf-q:focus { outline: none; }
+.tsf-help { margin: -4px 0 0; font-size: 0.8rem; color: var(--ink2); }
+.tsf-yn { display: flex; justify-content: center; gap: 8px; }
+.tsf-btn { min-width: 74px; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--glass-edge); background: rgba(255, 255, 255, 0.05); color: var(--ink2); font: inherit; font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease; }
+.tsf-btn.is-picked { color: #fff; border-color: transparent; background: rgb(var(--blue-deep)); }
+.tsf-btn.is-off:hover { color: var(--ink); border-color: rgba(var(--accent-rgb), 0.5); }
+.tsf-yn-big .tsf-btn { min-width: 0; flex: 1 1 0; max-width: 180px; padding: 13px 18px; font-size: 1.02rem; color: var(--ink); }
+.tsf-btn.is-yes { color: #fff; border-color: transparent; background: linear-gradient(100deg, rgb(var(--blue-deep)), rgb(var(--blue-bright))); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 8px 22px -8px rgba(var(--blue-deep), 0.9); }
+.tsf-btn.is-no:hover { border-color: rgba(var(--accent-rgb), 0.55); background: rgba(var(--accent-rgb), 0.1); }
+.tsf-btn:active { transform: scale(0.97); }
+.tsf-btn:focus-visible, .tsf-link:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.tsf-link { border: 0; background: none; color: var(--ink2); font: inherit; font-size: 0.78rem; text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
+.tsf-link:hover { color: var(--ink); }
+.tsf-node.is-result .ts-title { font-size: clamp(1.1rem, 4.4vw, 1.35rem); }
+.tsf-node.is-result .ts-answers { padding-top: 10px; }
+.tsf-node.is-result .ts-why { margin: 10px 0; font-size: 0.88rem; }
+.ts-steps-full li { font-size: 0.88rem; }
+.tsf-node.is-result .ts-nav { padding-top: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .tsf-node.is-current, .tsf-node.is-result { animation: tsf-in 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  @keyframes tsf-in { from { opacity: 0; transform: translateY(-8px); } }
+}
+/* the flowchart needs the full width: safety becomes a slim strip under it */
+.ts-layout { grid-template-columns: minmax(0, 1fr) !important; max-width: 1060px !important; }
+.ts-safety { position: static !important; padding: 14px 18px; }
+.ts-safety h3 { margin-bottom: 8px; }
+@media (min-width: 760px) {
+  .ts-safety { display: flex; align-items: center; gap: 18px; }
+  .ts-safety h3 { margin: 0; flex: none; }
+  .ts-safety ul { display: flex; flex-wrap: wrap; gap: 6px 20px; padding-left: 16px; }
+}
+/* troubleshooter area tiles: a short last row sits centred (flex instead of grid), same tile width per screen size */
+.tsf-areas { display: flex; flex-wrap: wrap; justify-content: center; --cols: 3; }
+.tsf-area { flex: 0 0 calc((100% - (var(--cols) - 1) * 8px) / var(--cols)); box-sizing: border-box; }
+@media (min-width: 640px) { .tsf-areas { --cols: 5; } }
+@media (min-width: 1000px) { .tsf-areas { --cols: 9; } }
+/* Oo / Hindi: the row gets a real width (it was shrink-wrapped to 0, so the buttons squeezed and "Hindi" spilled
+   past its pill); text centred inside each button */
+.tsf-yn-big { width: min(100%, 380px); }
+.tsf-btn { display: inline-flex; align-items: center; justify-content: center; text-align: center; white-space: nowrap; }
+
+/* troubleshooter area tiles: a 3D render of each part (assets/ts/<id>.webp) instead of a line icon.
+   Hover: the tile lifts, a blue glow comes up behind the part and the part floats and tilts a little. */
+.tsf-area { position: relative; overflow: hidden; padding: 10px 6px 12px; transition: background 0.25s ease, border-color 0.25s ease, opacity 0.2s ease, transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease; }
+.tsf-area-art { position: relative; display: grid; place-items: center; width: 100%; aspect-ratio: 1 / 0.82; margin-bottom: 2px; }
+.tsf-area-art::before { content: ''; position: absolute; inset: 12% 14%; border-radius: 50%; background: radial-gradient(closest-side, rgba(var(--accent-rgb), 0.38), transparent); opacity: 0.35; transform: scale(0.85); transition: opacity 0.3s ease, transform 0.35s ease; }
+.tsf-area-art img { position: relative; width: min(86%, 96px); height: auto; filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.55)); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.3s ease; }
+@media (hover: hover) and (pointer: fine) {
+  .tsf-area:hover { transform: translateY(-4px); box-shadow: 0 16px 30px -16px rgba(var(--blue-deep), 0.9); }
+  .tsf-area:hover .tsf-area-art::before { opacity: 1; transform: scale(1.05); }
+  .tsf-area:hover .tsf-area-art img { transform: translateY(-6%) scale(1.1) rotate(-4deg); filter: drop-shadow(0 16px 18px rgba(0, 0, 0, 0.6)); }
+}
+.tsf-area.is-on .tsf-area-art::before { opacity: 1; transform: scale(1.05); }
+.tsf-area.is-on .tsf-area-art img { transform: scale(1.06); }
+.tsf-area:active { transform: scale(0.97); }
+@media (prefers-reduced-motion: reduce) { .tsf-area, .tsf-area-art img, .tsf-area-art::before { transition: none; } .tsf-area:hover { transform: none; } .tsf-area:hover .tsf-area-art img { transform: none; } }
+/* phones: smaller part renders so the 3×3 grid stays short and the questions come into view sooner */
+@media (max-width: 639px) { .tsf-area-art { aspect-ratio: 1 / 0.62; } .tsf-area-art img { width: min(72%, 76px); } .tsf-area > span:last-child { display: none; } }
+/* tile text: the label column was as wide as its longest word, so it spilled past the tile's right padding and
+   everything sat a few px right of centre; the column now fits the tile and long words wrap */
+.tsf-area { grid-template-columns: minmax(0, 1fr); }
+.tsf-area > * { min-width: 0; max-width: 100%; justify-self: center; text-align: center; overflow-wrap: anywhere; hyphens: auto; }

@@ -23,11 +23,11 @@ test('the troubleshooter tree has no dead ends, loops, orphan nodes or unknown c
   assert.deepEqual(validate(data, CATEGORIES), []);
 });
 
-test('every answer path ends on a result within 4 questions', () => {
+test('every answer path ends on a result within 8 Oo/Hindi questions', () => {
   const paths = allPaths();
   assert.ok(paths.length >= 30, `only ${paths.length} paths`);
   for (const { symptom, answers, at } of paths) {
-    assert.ok(answers.length <= 4, `${encodePath(symptom, answers)} asks too many questions`);
+    assert.ok(answers.length <= 8, `${encodePath(symptom, answers)} asks too many questions`);
     assert.ok(at.node.steps.length >= 2);
   }
 });
@@ -51,11 +51,12 @@ test('validate catches a broken tree', () => {
 });
 
 test('walk follows answers and stops cleanly on a bad index', () => {
-  const at = walk(data, 'nodisplay', [1]);
+  // Display: fans on (Oo) → has a GPU (Oo) → monitor not on the GPU (Hindi)
+  const at = walk(data, 'display', [0, 0, 1]);
   assert.equal(at.id, 'r-plug-into-gpu');
-  assert.equal(at.trail.length, 1);
-  const bad = walk(data, 'nodisplay', [0, 99, 0]);
-  assert.equal(bad.id, 'nodisplay-led'); // the valid part is kept, the rest ignored
+  assert.equal(at.trail.length, 3);
+  const bad = walk(data, 'display', [0, 99, 0]);
+  assert.equal(bad.id, 'd2'); // the valid part is kept, the rest ignored
   assert.equal(walk(data, 'nope', []), null);
 });
 
@@ -75,7 +76,7 @@ test('safety: every result that opens the case says so, and the page always show
     if (n.open) assert.ok(n.steps.some((s) => opensCase.test(s)), `${id} is open: true but no step touches the inside`);
   }
   assert.match(page, /Huwag kailanman buksan ang PSU/);
-  assert.match(fs.readFileSync(new URL('../js/troubleshoot.js', import.meta.url), 'utf8'), /Huwag kailanman buksan ang PSU/);
+  assert.match(fs.readFileSync(new URL('../js/troubleshoot.js', import.meta.url), 'utf8'), /Huwag buksan ang PSU/);
 });
 
 test('game examples are PC games only', () => {
@@ -88,4 +89,17 @@ test('the start screen and every question offer a way to type your own question 
   assert.match(js, /Wala sa listahan\?/);
   assert.match(js, /data-ark-type/);
   assert.match(js, /respecz:open-ark/);
+});
+
+test('flowchart: every question is a short Oo/Hindi, every fix starts with 1–3 short lines', () => {
+  for (const [id, n] of Object.entries(data.nodes)) {
+    if (isResult(n)) {
+      assert.ok(Array.isArray(n.short) && n.short.length >= 1 && n.short.length <= 3, `${id}: short needs 1-3 lines`);
+      for (const line of n.short) assert.ok(line.length <= 70, `${id}: "${line}" is too long for the card`);
+    } else {
+      assert.deepEqual(n.options.map((o) => o.label), ['Oo', 'Hindi'], `${id}: answers must be Oo / Hindi`);
+      assert.ok(n.q.length <= 60, `${id}: question too long (${n.q.length})`);
+    }
+  }
+  for (const s of data.symptoms) assert.ok(s.icon && s.label.length <= 10, `${s.id}: area needs an icon and a short label`);
 });

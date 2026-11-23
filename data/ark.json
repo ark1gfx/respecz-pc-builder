@@ -302,7 +302,7 @@
       "a": "Unang tingnan: saan nakasaksak ang monitor? Kung may graphics card ka, sa graphics card dapat, hindi sa motherboard.\n\nKung tama na iyon, tingnan ang maliliit na debug LED sa motherboard (CPU, DRAM, VGA, BOOT). Ang nakailaw ang nagsasabi kung saan tumigil. Sa bagong DDR5 build, normal na itim muna ang monitor nang ilang minuto sa unang boot habang nagme-memory training.\n\nSundan ang Troubleshooter para sa step-by-step.",
       "links": [
         {
-          "ts": "nodisplay",
+          "ts": "display",
           "label": "Troubleshooter: walang display"
         }
       ],
@@ -328,7 +328,7 @@
       "a": "Simulan sa simple:\n• Naka-ON ba ang switch sa likod ng PSU (nakapindot sa \"I\")?\n• Gumagana ba ang outlet, AVR o extension?\n• Sa bagong build: nasa tamang pins ba ang power switch cable ng case (PWR_SW sa front panel header) at naka-click nang buo ang 24-pin at CPU power cable?\n\nKung may amoy sunog o pumutok, bunutin agad at huwag nang i-on ulit.",
       "links": [
         {
-          "ts": "nopower",
+          "ts": "power",
           "label": "Troubleshooter: ayaw mag-on"
         },
         {
@@ -355,7 +355,7 @@
       "a": "Tatlong karaniwang dahilan:\n• Kulang o mahinang PSU, lalo na kung habang naglalaro lang nangyayari.\n• Sobrang init ng CPU o GPU.\n• Hindi stable na XMP/EXPO o overclock.\n\nKung may blue screen muna, isulat ang stop code. Malaking clue iyon.",
       "links": [
         {
-          "ts": "restart",
+          "ts": "power.1.0",
           "label": "Troubleshooter: namamatay o nagre-restart"
         }
       ],
@@ -384,7 +384,7 @@
       "a": "Mga check na libre:\n• Nakasaksak ba ang monitor sa graphics card, hindi sa motherboard?\n• Updated ba ang graphics driver (galing sa AMD, NVIDIA o Intel)?\n• Dalawang RAM stick ba (dual channel) at naka-on ang XMP/EXPO?\n• Naka-\"Best performance\" ba ang power mode ng Windows?\n\nSa Valorant at CS2, malaki ang epekto ng CPU at RAM sa mataas na FPS. Sa Dota 2, CPU din at GPU.",
       "links": [
         {
-          "ts": "slow.0",
+          "ts": "games",
           "label": "Troubleshooter: mababa ang FPS"
         }
       ],
@@ -408,7 +408,7 @@
       "a": "Tingnan muna kung ping ang tumataas (internet) o FPS ang bumabagsak (PC).\n\nKung FPS: isang RAM stick lang, naka-install ang game sa HDD, halos punong drive, o background apps. Normal din ang kaunting stutter sa unang laro pagkatapos ng driver update habang nagko-compile ng shaders.\n\nKung ping: gumamit ng LAN cable imbes na Wi-Fi.",
       "links": [
         {
-          "ts": "slow.1",
+          "ts": "games",
           "label": "Troubleshooter: stutter"
         }
       ],
@@ -437,7 +437,7 @@
       "a": "Sa Windows: Settings > System > Display > Advanced display, at piliin ang pinakamataas na refresh rate.\n\nSiguraduhing nakasaksak sa graphics card ang monitor. Mas safe ang DisplayPort; kung HDMI, gumamit ng port at cable na kaya ang refresh rate ng monitor (may lumang HDMI na hindi umaabot sa 144Hz).",
       "links": [
         {
-          "ts": "slow.2",
+          "ts": "games",
           "label": "Troubleshooter: hindi smooth"
         }
       ],
@@ -531,7 +531,7 @@
       "a": "Sa maraming board, isang maikling beep tapos tuloy ang boot = normal (pumasa ang hardware check).\n\nKung paulit-ulit o sunod-sunod, iba-iba ang ibig sabihin per brand at BIOS, kaya ang manual ng motherboard ang basehan. Kadalasan RAM o graphics card ang tinuturo nito.",
       "links": [
         {
-          "ts": "beep",
+          "ts": "display",
           "label": "Troubleshooter: beep"
         }
       ],
@@ -562,7 +562,7 @@
       "a": "Iyan ang debug LEDs. Ipinapakita nila kung saan tumigil ang hardware check:\n• CPU: CPU, power nito, o BIOS na hindi pa kilala ang CPU.\n• DRAM: RAM na hindi ma-detect o nagme-memory training pa.\n• VGA: graphics card o display.\n• BOOT: pumasa ang hardware, pero walang makitang drive na may Windows.\n\nPiliin ang nakailaw sa Troubleshooter.",
       "links": [
         {
-          "ts": "nodisplay.0",
+          "ts": "display.0.0.0",
           "label": "Troubleshooter: debug LEDs"
         }
       ],
@@ -588,7 +588,7 @@
       "a": "• I-click ang speaker icon sa taskbar at piliin ang tamang output device.\n• Kung sa harap ng case nakasaksak, i-check kung naka-saksak ang \"HD_AUDIO\" cable ng case sa motherboard.\n• Kung sa monitor dumadaan (HDMI o DisplayPort), kailangan may speakers o jack ang monitor.\n• I-install ang audio driver galing sa website ng motherboard.",
       "links": [
         {
-          "ts": "netaudio.0",
+          "ts": "audio",
           "label": "Troubleshooter: walang tunog"
         }
       ],
@@ -613,7 +613,7 @@
       "a": "• LAN: tingnan kung may ilaw ang LAN port at subukan ang ibang cable.\n• Wi-Fi: maraming motherboard ang walang built-in Wi-Fi. Kadalasan may \"WiFi\" o \"AX\" sa pangalan kapag meron, at kailangang ikabit ang antenna.\n• Pagkatapos mag-install ng Windows, i-download ang LAN o Wi-Fi driver sa website ng motherboard gamit ang ibang device, at ilipat gamit ang USB.",
       "links": [
         {
-          "ts": "netaudio.1",
+          "ts": "net",
           "label": "Troubleshooter: walang internet"
         },
         {
@@ -664,7 +664,7 @@
       "a": "Sa front panel header ng motherboard (kadalasan sa baba, kanang sulok, may label na F_PANEL o JFP1). Maliit ang pins at iba-iba ang ayos per brand, kaya tingnan ang diagram sa manual.\n\nAng POWER SW ay walang polarity (kahit baligtad, gagana). Ang LED cables ay may + at −.",
       "links": [
         {
-          "ts": "nopower.0.0",
+          "ts": "power.0.0.0",
           "label": "Troubleshooter: bagong build na ayaw mag-on"
         }
       ],
@@ -1658,7 +1658,7 @@
       "a": "Normal iyan. Sa unang boot (at pagkatapos mag-update ng BIOS, magpalit ng RAM o mag-clear ng CMOS), tine-train ng board ang DDR5. Pwedeng ilang minuto na itim ang monitor, at sa ilang system umaabot ng 10 hanggang 15 minuto. Huwag patayin. Mas mabilis na ang susunod na boot.",
       "links": [
         {
-          "ts": "nodisplay.0.4.0",
+          "ts": "display.0.0.0.1.0",
           "label": "Troubleshooter: memory training"
         }
       ],
@@ -1683,7 +1683,7 @@
       "a": "1. Maghintay muna ng 10 hanggang 15 minuto kung bagong DDR5 build (memory training).\n2. Kung wala pa rin: patayin at bunutin, tanggalin ang RAM at ibalik nang mabuti hanggang mag-click.\n3. Subukan ang isang stick lang sa A2, tapos ang kabila, para malaman kung may sirang stick.\n4. I-check kung supported ng BIOS mo ang RAM at CPU.",
       "links": [
         {
-          "ts": "nodisplay.0.0",
+          "ts": "ram.0",
           "label": "Troubleshooter: DRAM light"
         },
         {
@@ -1833,8 +1833,8 @@
       "a": "• Sa BIOS (Delete o F2): nakikita ba ang SSD? Kung hindi, patayin at bunutin ang PC, at tingnan kung buo ang pagkakapasok at naka-screw ang M.2.\n• Kung nasa BIOS pero wala sa Windows: buksan ang Disk Management, i-initialize ang bagong drive at gumawa ng partition.\n• Sa ilang board, nadi-disable ang isang M.2 slot o SATA port depende sa gamit. Tingnan ang manual.",
       "links": [
         {
-          "ts": "nodisplay.0.3",
-          "label": "Troubleshooter: BOOT light"
+          "ts": "storage",
+          "label": "Troubleshooter: storage"
         }
       ],
       "next": [
@@ -2007,7 +2007,7 @@
       "a": "Nasa likod ng PSU, katabi ng saksakan ng power cable. Ang \"I\" ay on, ang \"O\" ay off. I-off ito at bunutin ang cable bago galawin ang loob ng PC.",
       "links": [
         {
-          "ts": "nopower",
+          "ts": "power",
           "label": "Troubleshooter: ayaw mag-on"
         }
       ],
@@ -2030,7 +2030,7 @@
       "a": "Mga palatandaan: ayaw mag-on kahit tama ang cables, namamatay kapag naglalaro, amoy sunog, o pumutok pagkatapos ng brownout. Ang pinaka-siguradong test ay subukan ang ibang PSU na gumagana. Huwag buksan ang PSU: may capacitor sa loob na pwedeng may kuryente pa kahit nakabunot na.",
       "links": [
         {
-          "ts": "nopower",
+          "ts": "power",
           "label": "Troubleshooter: ayaw mag-on"
         },
         {

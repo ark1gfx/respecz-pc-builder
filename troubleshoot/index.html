@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://down-ph.img.susercontent.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=5e7b6d63">
+  <link rel="stylesheet" href="../styles.css?v=a8baca1d">
 </head>
 <body>
   <div class="bg-aurora" aria-hidden="true"><i class="au au-a"></i><i class="au au-b"></i><i class="au au-c"></i></div>
@@ -66,31 +66,29 @@
   </header>
 
   <main id="main" class="page page-troubleshoot">
-    <!-- TROUBLESHOOTER: symptom → a few questions → likely cause + safe steps (js/troubleshoot.js, data/troubleshoot.json) -->
+    <!-- TROUBLESHOOTER: a flowchart. Area on top → Oo/Hindi questions down the ladder → the fix (js/troubleshoot.js, data/troubleshoot.json) -->
     <section id="troubleshoot" class="section">
       <header class="section-head">
         <p class="section-tag">Troubleshooter</p>
-        <h2>May problema ang PC mo? <span class="soft">Hanapin natin ang dahilan.</span></h2>
-        <p>Piliin ang nangyayari at sagutin ang ilang tanong. Bibigyan ka namin ng step-by-step na checks na kaya mong gawin sa bahay.</p>
+        <h2>May sira ang PC? <span class="soft">Sagutin lang ng Oo o Hindi.</span></h2>
       </header>
       <div class="ts-layout">
         <div class="tile panel ts-panel" id="ts-app" aria-live="polite">
-          <p class="ts-loading">Nilo-load ang troubleshooter…</p>
+          <p class="ts-loading">Nilo-load…</p>
           <noscript><p class="error">Kailangan ng JavaScript para gumana ang troubleshooter.</p></noscript>
         </div>
         <aside class="tile ts-safety" aria-labelledby="ts-safety-title">
           <h3 id="ts-safety-title">Safety muna</h3>
           <ul>
-            <li><strong>Patayin at bunutin</strong> ang PC bago buksan ang case. I-off din ang switch sa likod ng PSU.</li>
-            <li><strong>Humawak sa metal ng case</strong> bago humawak ng parts, para mawala ang static.</li>
-            <li><strong>Huwag kailanman buksan ang PSU.</strong> May capacitor sa loob na pwedeng may kuryente pa kahit nakabunot na.</li>
-            <li>Kapag may <strong>amoy sunog, usok o pumutok</strong>, bunutin agad at huwag nang i-on ulit.</li>
-            <li>Kung may warranty pa ang part, i-claim muna bago galawin o buksan.</li>
+            <li><strong>Patayin at bunutin</strong> bago buksan ang case.</li>
+            <li><strong>Humawak sa metal</strong> ng case para mawala ang static.</li>
+            <li><strong>Huwag kailanman buksan ang PSU.</strong></li>
+            <li>May <strong>amoy sunog o usok?</strong> Bunutin agad.</li>
           </ul>
         </aside>
       </div>
     </section>
-    <script type="module" src="../js/troubleshoot.js?v=60d880d0"></script>
+    <script type="module" src="../js/troubleshoot.js?v=bc473aca"></script>
 
     <p id="disclosure" class="disclosure">May affiliate links kami: may maliit kaming commission kapag bumili ka, walang dagdag sa presyo mo. <a href="../disclosure/">Alamin pa →</a></p>
   </main>

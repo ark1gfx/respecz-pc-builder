@@ -10,34 +10,620 @@
     ]
   },
   "symptoms": [
-    { "id": "nopower", "label": "Ayaw mag-on", "sub": "Walang ilaw, walang umiikot na fan", "start": "nopower-switch" },
-    { "id": "nodisplay", "label": "Naka-on pero walang display", "sub": "Umiikot ang fans, may RGB, pero itim ang monitor", "start": "nodisplay-port" },
-    { "id": "beep", "label": "Nagbe-beep pagka-on", "sub": "May tunog galing sa motherboard", "start": "beep-kind" },
-    { "id": "restart", "label": "Biglang namamatay o nagre-restart", "sub": "Habang naglalaro, o kahit walang ginagawa", "start": "restart-when" },
-    { "id": "heat", "label": "Sobrang init o ingay ng fans", "sub": "Mainit ang CPU o GPU, o parang eroplano ang fans", "start": "heat-which" },
-    { "id": "slow", "label": "Mabagal o nag-i-stutter sa games", "sub": "Valorant, Dota 2, CS2 at iba pa", "start": "slow-kind" },
-    { "id": "netaudio", "label": "Walang tunog o walang internet", "sub": "Headset, speakers, LAN o Wi-Fi", "start": "netaudio-which" }
+    {
+      "id": "power",
+      "label": "Power",
+      "sub": "Ayaw mag-on o namamatay",
+      "icon": "power",
+      "start": "p1"
+    },
+    {
+      "id": "display",
+      "label": "Display",
+      "sub": "Walang display",
+      "icon": "display",
+      "start": "d1"
+    },
+    {
+      "id": "gpu",
+      "label": "GPU",
+      "sub": "Graphics card",
+      "icon": "gpu",
+      "start": "g1"
+    },
+    {
+      "id": "ram",
+      "label": "RAM",
+      "sub": "Memory",
+      "icon": "ram",
+      "start": "m1"
+    },
+    {
+      "id": "storage",
+      "label": "Storage",
+      "sub": "SSD, HDD",
+      "icon": "ssd",
+      "start": "s1"
+    },
+    {
+      "id": "heat",
+      "label": "Init",
+      "sub": "Mainit, maingay",
+      "icon": "heat",
+      "start": "h1"
+    },
+    {
+      "id": "games",
+      "label": "Games",
+      "sub": "FPS, lag",
+      "icon": "games",
+      "start": "f1"
+    },
+    {
+      "id": "audio",
+      "label": "Tunog",
+      "sub": "Headset, speaker",
+      "icon": "audio",
+      "start": "a1"
+    },
+    {
+      "id": "net",
+      "label": "Internet",
+      "sub": "LAN, Wi-Fi",
+      "icon": "net",
+      "start": "n1"
+    }
   ],
   "nodes": {
-    "nopower-switch": {
-      "q": "Naka-ON ba ang switch sa likod ng PSU (nakapindot sa \"I\") at nakasaksak nang maayos ang power cable sa outlet?",
+    "p1": {
+      "q": "Ayaw talaga mag-on? Walang ilaw, walang fan?",
       "options": [
-        { "label": "Oo, naka-on at nakasaksak", "next": "nopower-new" },
-        { "label": "Hindi ko sure", "next": "r-nopower-switch" }
+        {
+          "label": "Oo",
+          "next": "p2"
+        },
+        {
+          "label": "Hindi",
+          "next": "p5"
+        }
       ]
     },
-    "nopower-new": {
-      "q": "Bagong build ba ito, o dati na itong gumagana?",
+    "p2": {
+      "q": "Naka-ON ba ang switch sa likod ng PSU at nakasaksak?",
       "options": [
-        { "label": "Bagong build, first time i-on", "next": "r-nopower-newbuild" },
-        { "label": "Dati gumagana, biglang ayaw na", "next": "nopower-event" }
+        {
+          "label": "Oo",
+          "next": "p3"
+        },
+        {
+          "label": "Hindi",
+          "next": "r-nopower-switch"
+        }
+      ],
+      "help": "Ang \"I\" sa switch = on."
+    },
+    "p3": {
+      "q": "Bagong build ba?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "r-nopower-newbuild"
+        },
+        {
+          "label": "Hindi",
+          "next": "p4"
+        }
       ]
     },
-    "nopower-event": {
-      "q": "May nangyari ba bago ito tumigil?",
+    "p4": {
+      "q": "May brownout, kidlat o amoy sunog bago ito?",
       "options": [
-        { "label": "Brownout, kidlat, pumutok na tunog o amoy sunog", "next": "r-nopower-psu-dead" },
-        { "label": "Wala naman akong napansin", "next": "r-nopower-general" }
+        {
+          "label": "Oo",
+          "next": "r-nopower-psu-dead"
+        },
+        {
+          "label": "Hindi",
+          "next": "r-nopower-general"
+        }
+      ]
+    },
+    "p5": {
+      "q": "Namamatay o nagre-restart habang ginagamit?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "p6"
+        },
+        {
+          "label": "Hindi",
+          "next": "r-wrong-area"
+        }
+      ]
+    },
+    "p6": {
+      "q": "May blue screen bago mamatay?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "r-bsod"
+        },
+        {
+          "label": "Hindi",
+          "next": "p7"
+        }
+      ]
+    },
+    "p7": {
+      "q": "Habang naglalaro lang nangyayari?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "p8"
+        },
+        {
+          "label": "Hindi",
+          "next": "p9"
+        }
+      ]
+    },
+    "p8": {
+      "q": "Sobrang init ba ang CPU o GPU?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "h1"
+        },
+        {
+          "label": "Hindi",
+          "next": "r-psu-load"
+        }
+      ],
+      "help": "Tingnan ang temps gamit ang libreng HWiNFO."
+    },
+    "p9": {
+      "q": "Naka-on ba ang XMP/EXPO o may overclock?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "r-oc-reset"
+        },
+        {
+          "label": "Hindi",
+          "next": "r-random-restart"
+        }
+      ]
+    },
+    "d1": {
+      "q": "Umiikot ba ang fans at may ilaw?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "d2"
+        },
+        {
+          "label": "Hindi",
+          "next": "p2"
+        }
+      ]
+    },
+    "d2": {
+      "q": "May graphics card ka ba?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "d3"
+        },
+        {
+          "label": "Hindi",
+          "next": "d4"
+        }
+      ]
+    },
+    "d3": {
+      "q": "Sa graphics card ba nakasaksak ang monitor?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "d5"
+        },
+        {
+          "label": "Hindi",
+          "next": "r-plug-into-gpu"
+        }
+      ]
+    },
+    "d4": {
+      "q": "May built-in graphics ba ang CPU mo?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "d5"
+        },
+        {
+          "label": "Hindi",
+          "next": "r-no-igpu"
+        }
+      ],
+      "help": "Walang built-in graphics ang Intel na may \"F\" at Ryzen 5000 na walang \"G\"."
+    },
+    "d5": {
+      "q": "May nakailaw bang debug LED sa board?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "d6"
+        },
+        {
+          "label": "Hindi",
+          "next": "d9"
+        }
+      ],
+      "help": "Maliliit na ilaw: CPU, DRAM, VGA, BOOT. Hindi lahat ng board meron."
+    },
+    "d6": {
+      "q": "DRAM ang nakailaw?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "r-led-dram"
+        },
+        {
+          "label": "Hindi",
+          "next": "d7"
+        }
+      ]
+    },
+    "d7": {
+      "q": "CPU ang nakailaw?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "r-led-cpu"
+        },
+        {
+          "label": "Hindi",
+          "next": "d8"
+        }
+      ]
+    },
+    "d8": {
+      "q": "VGA ang nakailaw?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "r-led-vga"
+        },
+        {
+          "label": "Hindi",
+          "next": "r-led-boot"
+        }
+      ]
+    },
+    "d9": {
+      "q": "Bagong build, bagong RAM o bagong BIOS update?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "r-memory-training"
+        },
+        {
+          "label": "Hindi",
+          "next": "d10"
+        }
+      ]
+    },
+    "d10": {
+      "q": "Nagbe-beep ba nang paulit-ulit pagka-on?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "r-beep-codes"
+        },
+        {
+          "label": "Hindi",
+          "next": "r-nodisplay-general"
+        }
+      ]
+    },
+    "g1": {
+      "q": "May display ba sa monitor?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "g2"
+        },
+        {
+          "label": "Hindi",
+          "next": "d3"
+        }
+      ]
+    },
+    "g2": {
+      "q": "Mababa ang FPS o nag-i-stutter sa games?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "f1"
+        },
+        {
+          "label": "Hindi",
+          "next": "g3"
+        }
+      ]
+    },
+    "g3": {
+      "q": "Mainit o maingay ang graphics card?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "r-gpu-hot"
+        },
+        {
+          "label": "Hindi",
+          "next": "g4"
+        }
+      ]
+    },
+    "g4": {
+      "q": "May kakaibang kulay, guhit o kislap sa screen?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "r-gpu-artifacts"
+        },
+        {
+          "label": "Hindi",
+          "next": "r-gpu-driver"
+        }
+      ]
+    },
+    "m1": {
+      "q": "Nakailaw ang DRAM light o ayaw mag-boot?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "r-led-dram"
+        },
+        {
+          "label": "Hindi",
+          "next": "m2"
+        }
+      ]
+    },
+    "m2": {
+      "q": "May blue screen o random na restart?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "m3"
+        },
+        {
+          "label": "Hindi",
+          "next": "m4"
+        }
+      ]
+    },
+    "m3": {
+      "q": "Naka-on ba ang XMP/EXPO?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "r-oc-reset"
+        },
+        {
+          "label": "Hindi",
+          "next": "r-bsod"
+        }
+      ]
+    },
+    "m4": {
+      "q": "Kulang ang RAM na nakikita sa Windows?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "r-ram-missing"
+        },
+        {
+          "label": "Hindi",
+          "next": "r-ram-speed"
+        }
+      ],
+      "help": "Hal. 16GB ang nabili pero 8GB lang sa Task Manager."
+    },
+    "s1": {
+      "q": "Nakikita ba ang SSD sa BIOS?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "s2"
+        },
+        {
+          "label": "Hindi",
+          "next": "r-ssd-missing"
+        }
+      ]
+    },
+    "s2": {
+      "q": "Nakikita ba sa Windows (File Explorer)?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "s3"
+        },
+        {
+          "label": "Hindi",
+          "next": "r-ssd-init"
+        }
+      ]
+    },
+    "s3": {
+      "q": "Mabagal mag-boot o mag-load ng games?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "r-ssd-slow"
+        },
+        {
+          "label": "Hindi",
+          "next": "r-ssd-health"
+        }
+      ]
+    },
+    "h1": {
+      "q": "CPU ba ang mainit?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "h2"
+        },
+        {
+          "label": "Hindi",
+          "next": "h3"
+        }
+      ]
+    },
+    "h2": {
+      "q": "Bagong kabit ang CPU cooler?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "r-cooler-install"
+        },
+        {
+          "label": "Hindi",
+          "next": "r-cpu-hot-old"
+        }
+      ]
+    },
+    "h3": {
+      "q": "Graphics card ba ang mainit?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "r-gpu-hot"
+        },
+        {
+          "label": "Hindi",
+          "next": "r-check-temps"
+        }
+      ]
+    },
+    "f1": {
+      "q": "May graphics card ka ba?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "f2"
+        },
+        {
+          "label": "Hindi",
+          "next": "r-low-fps"
+        }
+      ]
+    },
+    "f2": {
+      "q": "Sa graphics card ba nakasaksak ang monitor?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "f3"
+        },
+        {
+          "label": "Hindi",
+          "next": "r-plug-into-gpu"
+        }
+      ]
+    },
+    "f3": {
+      "q": "Tumataas ang ping kapag nagla-lag?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "r-network-lag"
+        },
+        {
+          "label": "Hindi",
+          "next": "f4"
+        }
+      ]
+    },
+    "f4": {
+      "q": "Mababa ang FPS kahit naka-low settings?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "r-low-fps"
+        },
+        {
+          "label": "Hindi",
+          "next": "f5"
+        }
+      ]
+    },
+    "f5": {
+      "q": "Biglang stutter lang, pero okay ang FPS?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "r-stutter"
+        },
+        {
+          "label": "Hindi",
+          "next": "r-refresh-rate"
+        }
+      ]
+    },
+    "a1": {
+      "q": "Sa harap ng case nakasaksak ang headset?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "r-audio-front"
+        },
+        {
+          "label": "Hindi",
+          "next": "a2"
+        }
+      ]
+    },
+    "a2": {
+      "q": "Sa monitor dumadaan ang tunog (HDMI o DisplayPort)?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "r-audio-monitor"
+        },
+        {
+          "label": "Hindi",
+          "next": "r-audio-rear"
+        }
+      ]
+    },
+    "n1": {
+      "q": "Naka-LAN cable ka?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "r-lan"
+        },
+        {
+          "label": "Hindi",
+          "next": "n2"
+        }
+      ]
+    },
+    "n2": {
+      "q": "May Wi-Fi ang motherboard (may antenna)?",
+      "options": [
+        {
+          "label": "Oo",
+          "next": "r-wifi-onboard"
+        },
+        {
+          "label": "Hindi",
+          "next": "r-wifi-none"
+        }
       ]
     },
     "r-nopower-switch": {
@@ -50,7 +636,12 @@
         "Pindutin ulit ang power button. Kung ayaw pa rin, bumalik dito at piliin ang \"Oo, naka-on at nakasaksak\"."
       ],
       "cats": [],
-      "open": false
+      "open": false,
+      "short": [
+        "I-on ang switch sa likod ng PSU (\"I\")",
+        "Itulak nang mabuti ang power cable",
+        "Subukan sa ibang outlet"
+      ]
     },
     "r-nopower-newbuild": {
       "title": "Malamang, may kulang na cable",
@@ -63,8 +654,15 @@
         "Kung modular ang PSU, siguraduhing nakasaksak din nang buo ang cables sa PSU side.",
         "Isaksak ulit, i-on ang PSU switch, at pindutin ang power button."
       ],
-      "cats": ["psu"],
-      "open": true
+      "cats": [
+        "psu"
+      ],
+      "open": true,
+      "short": [
+        "Patayin at bunutin muna",
+        "I-check ang power switch cable sa front panel pins",
+        "I-click nang buo ang 24-pin at CPU 8-pin"
+      ]
     },
     "r-nopower-psu-dead": {
       "title": "Posibleng nasira ang PSU",
@@ -77,8 +675,15 @@
         "Kung bagong PSU na pero ayaw pa rin, pwedeng may iba pang tinamaan (hal. motherboard). Ipa-check sa technician.",
         "Para sa susunod, gumamit ng AVR o UPS lalo na kung madalas ang brownout sa lugar ninyo."
       ],
-      "cats": ["psu"],
-      "open": false
+      "cats": [
+        "psu"
+      ],
+      "open": false,
+      "short": [
+        "Huwag nang i-on kung may amoy sunog",
+        "Huwag buksan ang PSU",
+        "I-warranty o palitan ng kilalang brand"
+      ]
     },
     "r-nopower-general": {
       "title": "I-reset ang power, tapos i-check ang PSU",
@@ -90,34 +695,14 @@
         "Kung may kakilala kang may gumaganang PSU, subukan ito sa PC mo. Kung bumuhay, PSU ang sira.",
         "Kung ayaw pa rin kahit ibang PSU na, ipa-check sa technician ang motherboard."
       ],
-      "cats": ["psu"],
-      "open": true
-    },
-
-    "nodisplay-port": {
-      "q": "Saan nakasaksak ang cable ng monitor?",
-      "options": [
-        { "label": "Sa graphics card (GPU)", "next": "nodisplay-led" },
-        { "label": "Sa motherboard, at may graphics card ako", "next": "r-plug-into-gpu" },
-        { "label": "Sa motherboard, wala akong graphics card", "next": "r-no-igpu" }
-      ]
-    },
-    "nodisplay-led": {
-      "q": "May debug LED ba sa motherboard mo (CPU, DRAM, VGA, BOOT) na nakailaw at hindi namamatay?",
-      "help": "Maliliit na ilaw ito, kadalasan malapit sa RAM slots o sa 24-pin. Hindi lahat ng board meron.",
-      "options": [
-        { "label": "DRAM", "next": "r-led-dram" },
-        { "label": "CPU", "next": "r-led-cpu" },
-        { "label": "VGA", "next": "r-led-vga" },
-        { "label": "BOOT", "next": "r-led-boot" },
-        { "label": "Wala akong ganyan / walang nakailaw", "next": "nodisplay-new" }
-      ]
-    },
-    "nodisplay-new": {
-      "q": "Bagong build ba, o bago ka lang nagpalit ng RAM o nag-update ng BIOS?",
-      "options": [
-        { "label": "Oo, bago lang", "next": "r-memory-training" },
-        { "label": "Hindi, biglang nawala ang display", "next": "r-nodisplay-general" }
+      "cats": [
+        "psu"
+      ],
+      "open": true,
+      "short": [
+        "Bunutin, i-hold ang power button nang 15 segundo",
+        "I-check ang 24-pin, CPU power at power switch cable",
+        "Subukan ang ibang PSU kung may mahihiraman"
       ]
     },
     "r-plug-into-gpu": {
@@ -130,7 +715,11 @@
         "Kung nag-i-stutter dati sa games, malaking tulong din ito: graphics card na ang gagawa ng trabaho, hindi ang CPU."
       ],
       "cats": [],
-      "open": false
+      "open": false,
+      "short": [
+        "Ilipat ang monitor cable sa graphics card",
+        "Piliin ang tamang input sa monitor"
+      ]
     },
     "r-no-igpu": {
       "title": "Baka walang built-in graphics ang CPU mo",
@@ -141,8 +730,14 @@
         "Kung wala ngang built-in graphics, kailangan mong magkabit ng graphics card at doon isaksak ang monitor.",
         "Kung meron naman, i-check ang monitor input, subukan ang ibang cable, at ituloy sa troubleshooter na \"walang display\" gamit ang debug LEDs."
       ],
-      "cats": ["gpu"],
-      "open": false
+      "cats": [
+        "gpu"
+      ],
+      "open": false,
+      "short": [
+        "Intel na may \"F\" at Ryzen 5000 na walang \"G\": walang display",
+        "Kailangan ng graphics card"
+      ]
     },
     "r-led-dram": {
       "title": "RAM ang hindi pumapasa",
@@ -154,8 +749,15 @@
         "Subukan muna ang isang stick lang sa A2. Kung bumuhay, palitan ng kabila para malaman kung may sirang stick.",
         "I-check sa website ng motherboard kung supported ng BIOS mo ang RAM at CPU mo."
       ],
-      "cats": ["ram"],
-      "open": true
+      "cats": [
+        "ram"
+      ],
+      "open": true,
+      "short": [
+        "DDR5? Maghintay muna ng 10–15 minuto",
+        "Ibalik nang mabuti ang RAM",
+        "Isang stick muna sa A2"
+      ]
     },
     "r-led-cpu": {
       "title": "Hindi makita ng board ang CPU",
@@ -167,8 +769,16 @@
         "Kung tinanggal mo ang CPU, tingnan kung may baluktot na pin (nasa CPU sa AM4, nasa socket ng board sa AM5 at Intel). Huwag ayusin kung hindi ka sigurado. Dalhin sa technician.",
         "Kung bago ang board at CPU at ayaw pa rin, i-claim ang warranty sa seller."
       ],
-      "cats": ["cpu", "motherboard"],
-      "open": true
+      "cats": [
+        "cpu",
+        "motherboard"
+      ],
+      "open": true,
+      "short": [
+        "I-check ang CPU power cable (8-pin)",
+        "Baka kailangan ng BIOS update",
+        "Baluktot na pins? Dalhin sa technician"
+      ]
     },
     "r-led-vga": {
       "title": "Graphics card ang may problema",
@@ -180,8 +790,16 @@
         "Kung may built-in graphics ang CPU mo, subukang tanggalin ang GPU at isaksak ang monitor sa motherboard. Kung may display, GPU o power nito ang problema.",
         "Kung may ibang PC ka, subukan doon ang graphics card."
       ],
-      "cats": ["gpu", "psu"],
-      "open": true
+      "cats": [
+        "gpu",
+        "psu"
+      ],
+      "open": true,
+      "short": [
+        "Ibalik nang mabuti ang graphics card",
+        "I-check ang power cable ng GPU",
+        "Monitor dapat sa graphics card"
+      ]
     },
     "r-led-boot": {
       "title": "Pumasa na ang hardware, storage na ang hinahanap",
@@ -193,8 +811,15 @@
         "Kung bago ang SSD, normal na walang Windows pa. Kailangan mong mag-install gamit ang USB installer galing sa website ng Microsoft.",
         "Kung dati gumagana at biglang nawala ang SSD sa BIOS, posibleng sira na ito."
       ],
-      "cats": ["ssd"],
-      "open": true
+      "cats": [
+        "ssd"
+      ],
+      "open": true,
+      "short": [
+        "I-check ang monitor input at cable",
+        "Tingnan sa BIOS kung nakikita ang SSD",
+        "Bagong SSD? Mag-install ng Windows"
+      ]
     },
     "r-memory-training": {
       "title": "Hintayin muna: baka nagme-memory training",
@@ -205,8 +830,14 @@
         "Kung wala pa rin pagkatapos ng 15 minuto, patayin, bunutin, at ibalik nang mabuti ang RAM (gamitin ang slots na sinasabi ng manual, kadalasan A2 at B2).",
         "Subukan ang isang stick lang muna. Kung may debug LED ang board, tingnan kung alin ang nakailaw at bumalik dito."
       ],
-      "cats": ["ram"],
-      "open": true
+      "cats": [
+        "ram"
+      ],
+      "open": true,
+      "short": [
+        "Huwag patayin, maghintay ng 10–15 minuto",
+        "Wala pa rin? Ibalik nang mabuti ang RAM"
+      ]
     },
     "r-nodisplay-general": {
       "title": "Isa-isahin: monitor, cable, GPU, RAM",
@@ -218,26 +849,16 @@
         "I-clear ang CMOS para bumalik sa default ang BIOS. Sundin ang manual (may button o jumper ang karamihan ng board). Gawin ito habang nakabunot ang PC.",
         "Kung may built-in graphics ang CPU, subukan ang display gamit ang ports ng motherboard nang walang GPU para malaman kung GPU ang sira."
       ],
-      "cats": ["gpu", "ram"],
-      "open": true
-    },
-
-    "beep-kind": {
-      "q": "Anong klaseng beep ang naririnig mo?",
-      "options": [
-        { "label": "Isang maikling beep, tapos tuloy ang boot", "next": "r-beep-ok" },
-        { "label": "Paulit-ulit o sunod-sunod na beep, walang boot", "next": "r-beep-codes" }
-      ]
-    },
-    "r-beep-ok": {
-      "title": "Normal lang iyan",
-      "why": "Sa maraming motherboard, isang maikling beep ang ibig sabihin ay pumasa ang hardware check (POST).",
-      "steps": [
-        "Kung tuloy ang boot at may display, wala kang kailangang ayusin.",
-        "Kung gusto mong patahimikin, may setting dito sa BIOS ang ilang board. I-check sa manual."
+      "cats": [
+        "gpu",
+        "ram"
       ],
-      "cats": [],
-      "open": false
+      "open": true,
+      "short": [
+        "Subukan ang monitor at cable sa ibang device",
+        "Ibalik nang mabuti ang GPU at RAM",
+        "I-clear ang CMOS (sundin ang manual)"
+      ]
     },
     "r-beep-codes": {
       "title": "Basahin ang beep code sa manual",
@@ -249,31 +870,15 @@
         "Kung graphics card: ibalik nang mabuti ang GPU at i-check ang power cable nito.",
         "Kung may debug LEDs ang board, mas madaling basahin iyon. Gamitin ang troubleshooter na \"Naka-on pero walang display\"."
       ],
-      "cats": ["ram", "gpu"],
-      "open": true
-    },
-
-    "restart-when": {
-      "q": "Kailan ito nangyayari?",
-      "options": [
-        { "label": "Kapag naglalaro o mabigat ang ginagawa", "next": "restart-hot" },
-        { "label": "Kahit walang ginagawa, random lang", "next": "restart-oc" },
-        { "label": "May blue screen muna bago mag-restart", "next": "r-bsod" }
-      ]
-    },
-    "restart-hot": {
-      "q": "Na-check mo na ba ang temperature ng CPU at GPU habang naglalaro?",
-      "help": "Pwede mong gamitin ang libreng HWiNFO (Sensors only) para makita ang temps.",
-      "options": [
-        { "label": "Oo, sobrang init bago mamatay", "next": "heat-which" },
-        { "label": "Hindi naman mainit / hindi ko pa na-check", "next": "r-psu-load" }
-      ]
-    },
-    "restart-oc": {
-      "q": "Naka-on ba ang XMP o EXPO ng RAM, o may overclock o undervolt ka?",
-      "options": [
-        { "label": "Oo", "next": "r-oc-reset" },
-        { "label": "Hindi / hindi ko alam", "next": "r-random-restart" }
+      "cats": [
+        "ram",
+        "gpu"
+      ],
+      "open": true,
+      "short": [
+        "Bilangin ang beep: ilan ang mahaba at maikli",
+        "Itugma sa manual ng motherboard",
+        "Kadalasan RAM o GPU: ibalik nang mabuti"
       ]
     },
     "r-psu-load": {
@@ -286,8 +891,15 @@
         "Kung hindi ka sigurado, i-check din ang temps gamit ang HWiNFO habang naglalaro.",
         "Kung luma o walang brand ang PSU, palitan ng kilalang brand na may sapat na wattage."
       ],
-      "cats": ["psu"],
-      "open": true
+      "cats": [
+        "psu"
+      ],
+      "open": true,
+      "short": [
+        "Ikumpara ang PSU sa recommended watts ng GPU",
+        "Hiwalay na cable sa bawat GPU power socket",
+        "Palitan kung luma o walang brand"
+      ]
     },
     "r-oc-reset": {
       "title": "Ibalik muna sa default ang BIOS",
@@ -298,8 +910,15 @@
         "I-update ang BIOS gamit ang file galing sa website ng motherboard. Madalas may fix ito para sa RAM stability. Huwag patayin habang nag-a-update.",
         "Pagkatapos, i-on ulit ang XMP o EXPO. Kung bumalik ang restart, gamitin ang mas mababang speed o i-check kung nasa supported list ng board ang RAM mo."
       ],
-      "cats": ["ram"],
-      "open": false
+      "cats": [
+        "ram"
+      ],
+      "open": false,
+      "short": [
+        "BIOS: Load Optimized Defaults",
+        "Gamitin muna nang walang XMP/EXPO",
+        "I-update ang BIOS"
+      ]
     },
     "r-random-restart": {
       "title": "I-check ang kuryente, drivers at RAM",
@@ -311,8 +930,16 @@
         "Sa Event Viewer, tingnan ang ibang errors na kasabay ng Kernel-Power 41 (hal. disk o driver errors) para may clue.",
         "Kung wala pa ring makita, subukan ang ibang PSU kung may mahihiraman ka."
       ],
-      "cats": ["psu", "ram"],
-      "open": false
+      "cats": [
+        "psu",
+        "ram"
+      ],
+      "open": false,
+      "short": [
+        "Gumamit ng UPS kung madalas ang brownout",
+        "I-update ang graphics at chipset drivers",
+        "I-test ang RAM: i-type ang \"mdsched\" sa Start"
+      ]
     },
     "r-bsod": {
       "title": "Basahin ang stop code ng blue screen",
@@ -324,23 +951,15 @@
         "I-run ang Windows Memory Diagnostic (i-type ang \"mdsched\" sa Start) para ma-test ang RAM.",
         "I-check ang health ng SSD gamit ang tool ng brand nito, at siguraduhing may bakanteng space pa."
       ],
-      "cats": ["ram", "ssd"],
-      "open": false
-    },
-
-    "heat-which": {
-      "q": "Alin ang mainit?",
-      "options": [
-        { "label": "CPU", "next": "heat-cooler" },
-        { "label": "Graphics card (GPU)", "next": "r-gpu-hot" },
-        { "label": "Hindi ko alam, maingay lang", "next": "r-check-temps" }
-      ]
-    },
-    "heat-cooler": {
-      "q": "Bago lang ba na-install ang CPU cooler?",
-      "options": [
-        { "label": "Oo, bago lang", "next": "r-cooler-install" },
-        { "label": "Hindi, matagal na", "next": "r-cpu-hot-old" }
+      "cats": [
+        "ram",
+        "ssd"
+      ],
+      "open": false,
+      "short": [
+        "Kunan ng picture ang stop code",
+        "I-update ang drivers",
+        "I-off muna ang XMP/EXPO at i-test ang RAM"
       ]
     },
     "r-cooler-install": {
@@ -353,8 +972,15 @@
         "Isaksak ang fan cable ng cooler sa \"CPU_FAN\" header. Kung AIO, sundin ang manual para sa pump cable.",
         "Pag-on, i-check ang temps gamit ang HWiNFO."
       ],
-      "cats": ["cooler"],
-      "open": true
+      "cats": [
+        "cooler"
+      ],
+      "open": true,
+      "short": [
+        "Tanggalin ang plastic sa ilalim ng cooler",
+        "Ikabit nang pantay at mahigpit",
+        "Fan cable sa CPU_FAN"
+      ]
     },
     "r-cpu-hot-old": {
       "title": "Alikabok, lumang paste, o kulang ang cooler",
@@ -366,8 +992,16 @@
         "I-check ang temps gamit ang HWiNFO. Kung bumabagsak ang bilis ng CPU o namamatay ang PC dahil sa init, mag-upgrade ng mas malakas na cooler.",
         "Kung stock cooler ang gamit sa mabigat na CPU, malaking tulong ang upgrade sa tower cooler o AIO."
       ],
-      "cats": ["cooler", "case"],
-      "open": true
+      "cats": [
+        "cooler",
+        "case"
+      ],
+      "open": true,
+      "short": [
+        "Linisin ang alikabok",
+        "Palitan ang thermal paste kung ilang taon na",
+        "Mag-upgrade ng cooler kung kulang"
+      ]
     },
     "r-gpu-hot": {
       "title": "Airflow at alikabok ng graphics card",
@@ -379,8 +1013,15 @@
         "Pwede mong i-cap ang FPS sa game (hal. sa refresh rate ng monitor mo) para mas malamig at tahimik ang GPU.",
         "Kung maliit o luma ang case, mas magandang airflow ang case na may mesh na harap."
       ],
-      "cats": ["case"],
-      "open": true
+      "cats": [
+        "case"
+      ],
+      "open": true,
+      "short": [
+        "Linisin ang fans ng GPU (huwag buksan)",
+        "Intake sa harap, exhaust sa likod o taas",
+        "I-cap ang FPS sa game"
+      ]
     },
     "r-check-temps": {
       "title": "Tingnan muna ang temps",
@@ -392,30 +1033,10 @@
         "Kapag alam mo na kung alin ang mainit, bumalik dito at piliin ang CPU o GPU."
       ],
       "cats": [],
-      "open": false
-    },
-
-    "slow-kind": {
-      "q": "Ano ang mas malapit sa nangyayari?",
-      "options": [
-        { "label": "Mababa ang FPS kahit naka-low settings", "next": "slow-port" },
-        { "label": "Okay ang FPS pero may biglang stutter o lag", "next": "slow-ping" },
-        { "label": "Mataas ang FPS pero hindi smooth tingnan", "next": "r-refresh-rate" }
-      ]
-    },
-    "slow-port": {
-      "q": "Saan nakasaksak ang cable ng monitor?",
-      "options": [
-        { "label": "Sa graphics card (GPU)", "next": "r-low-fps" },
-        { "label": "Sa motherboard", "next": "r-plug-into-gpu" },
-        { "label": "Wala akong graphics card", "next": "r-low-fps" }
-      ]
-    },
-    "slow-ping": {
-      "q": "Online game ba (hal. Valorant, Dota 2, CS2), at tumataas ang ping kapag nagla-lag?",
-      "options": [
-        { "label": "Oo, tumataas ang ping", "next": "r-network-lag" },
-        { "label": "Hindi, FPS mismo ang bumabagsak", "next": "r-stutter" }
+      "open": false,
+      "short": [
+        "I-download ang HWiNFO (Sensors only)",
+        "Maglaro nang 15 minuto, tingnan ang Maximum"
       ]
     },
     "r-refresh-rate": {
@@ -428,7 +1049,12 @@
         "Sa game settings, i-check din kung tama ang refresh rate at walang FPS cap na masyadong mababa."
       ],
       "cats": [],
-      "open": false
+      "open": false,
+      "short": [
+        "Settings > Display > Advanced display",
+        "Piliin ang pinakamataas na Hz",
+        "Monitor dapat sa graphics card"
+      ]
     },
     "r-low-fps": {
       "title": "Drivers, settings, tapos hardware",
@@ -441,8 +1067,17 @@
         "I-check ang temps gamit ang HWiNFO. Kapag sobrang init, kusang bumabagal ang CPU at GPU.",
         "Kung okay na lahat at mababa pa rin, baka oras na mag-upgrade. Built-in graphics lang? Malaking tulong ang graphics card."
       ],
-      "cats": ["gpu", "cpu", "ram"],
-      "open": false
+      "cats": [
+        "gpu",
+        "cpu",
+        "ram"
+      ],
+      "open": false,
+      "short": [
+        "I-update ang graphics driver",
+        "Power mode: Best performance",
+        "2 RAM stick at naka-on ang XMP/EXPO"
+      ]
     },
     "r-stutter": {
       "title": "Hanapin ang dahilan ng stutter",
@@ -454,8 +1089,16 @@
         "Isara ang overlays at apps na hindi kailangan (recording, browser, launchers na nagda-download).",
         "I-check ang temps gamit ang HWiNFO para makita kung bumabagal ang CPU o GPU dahil sa init."
       ],
-      "cats": ["ram", "ssd"],
-      "open": false
+      "cats": [
+        "ram",
+        "ssd"
+      ],
+      "open": false,
+      "short": [
+        "2 RAM stick at naka-on ang XMP/EXPO",
+        "Ilipat ang game sa SSD",
+        "Isara ang apps na hindi kailangan"
+      ]
     },
     "r-network-lag": {
       "title": "Internet ang problema, hindi ang PC",
@@ -468,36 +1111,11 @@
         "Kung tuloy-tuloy pa rin, tumawag sa internet provider ninyo."
       ],
       "cats": [],
-      "open": false
-    },
-
-    "netaudio-which": {
-      "q": "Alin ang problema?",
-      "options": [
-        { "label": "Walang tunog", "next": "audio-where" },
-        { "label": "Walang internet", "next": "net-how" }
-      ]
-    },
-    "audio-where": {
-      "q": "Saan nakasaksak ang headset o speakers?",
-      "options": [
-        { "label": "Sa harap ng case", "next": "r-audio-front" },
-        { "label": "Sa likod (sa motherboard)", "next": "r-audio-rear" },
-        { "label": "Sa monitor, gamit ang HDMI o DisplayPort", "next": "r-audio-monitor" }
-      ]
-    },
-    "net-how": {
-      "q": "Paano ka kumokonekta sa internet?",
-      "options": [
-        { "label": "LAN cable", "next": "r-lan" },
-        { "label": "Wi-Fi", "next": "net-wifi" }
-      ]
-    },
-    "net-wifi": {
-      "q": "May Wi-Fi ba ang motherboard mo? (May \"WiFi\" sa pangalan nito at may kasamang antenna.)",
-      "options": [
-        { "label": "Oo", "next": "r-wifi-onboard" },
-        { "label": "Wala / hindi ko sure", "next": "r-wifi-none" }
+      "open": false,
+      "short": [
+        "Gumamit ng LAN cable",
+        "I-restart ang router",
+        "Piliin ang pinakamalapit na server"
       ]
     },
     "r-audio-front": {
@@ -510,7 +1128,12 @@
         "I-install ang audio driver galing sa website ng motherboard mo."
       ],
       "cats": [],
-      "open": true
+      "open": true,
+      "short": [
+        "Piliin ang tamang output sa speaker icon",
+        "Isaksak ang HD_AUDIO cable ng case sa board",
+        "I-install ang audio driver"
+      ]
     },
     "r-audio-rear": {
       "title": "Output device at driver",
@@ -522,7 +1145,12 @@
         "Subukan ang headset o speakers sa ibang device para malaman kung sila ang sira."
       ],
       "cats": [],
-      "open": false
+      "open": false,
+      "short": [
+        "Piliin ang tamang output, tingnan kung naka-mute",
+        "Berdeng port sa likod",
+        "I-install ang audio driver"
+      ]
     },
     "r-audio-monitor": {
       "title": "Piliin ang monitor bilang output",
@@ -534,7 +1162,11 @@
         "I-update ang graphics driver. Kasama rito ang audio driver para sa HDMI at DisplayPort."
       ],
       "cats": [],
-      "open": false
+      "open": false,
+      "short": [
+        "Piliin ang monitor bilang output",
+        "Kailangan may speakers o jack ang monitor"
+      ]
     },
     "r-lan": {
       "title": "Cable, router at LAN driver",
@@ -546,7 +1178,12 @@
         "I-restart ang router at ang PC."
       ],
       "cats": [],
-      "open": false
+      "open": false,
+      "short": [
+        "Tingnan kung may ilaw ang LAN port",
+        "Subukan ang ibang cable at port",
+        "I-install ang LAN driver mula sa site ng board"
+      ]
     },
     "r-wifi-onboard": {
       "title": "Antenna at Wi-Fi driver",
@@ -558,7 +1195,11 @@
         "Kung malayo sa router, ilapit ang antenna o gumamit ng LAN cable."
       ],
       "cats": [],
-      "open": false
+      "open": false,
+      "short": [
+        "Ikabit ang antenna sa likod ng board",
+        "I-install ang Wi-Fi driver mula sa site ng board"
+      ]
     },
     "r-wifi-none": {
       "title": "Baka walang Wi-Fi ang motherboard mo",
@@ -569,7 +1210,178 @@
         "Pwede ka ring bumili ng USB o PCIe Wi-Fi adapter.",
         "Kung magpapalit ka rin ng motherboard, pumili ng model na may \"WiFi\" sa pangalan."
       ],
-      "cats": ["motherboard"],
+      "cats": [
+        "motherboard"
+      ],
+      "open": false,
+      "short": [
+        "Gumamit ng LAN cable",
+        "O bumili ng USB o PCIe Wi-Fi adapter"
+      ]
+    },
+    "r-wrong-area": {
+      "title": "Mukhang hindi power ang problema",
+      "why": "Bumubukas at hindi namamatay ang PC, kaya ibang part ang dapat tingnan.",
+      "short": [
+        "Walang display? Piliin ang Display",
+        "Mabagal sa games? Piliin ang Games"
+      ],
+      "steps": [
+        "Kung walang lumalabas sa monitor, bumalik sa itaas at piliin ang Display.",
+        "Kung mabagal o nag-i-stutter sa games, piliin ang Games.",
+        "Kung mainit o maingay, piliin ang Init.",
+        "Hindi pa rin? I-type ang problema mo kay Ark."
+      ],
+      "cats": [],
+      "open": false
+    },
+    "r-gpu-artifacts": {
+      "title": "Artifacts: overclock, driver o sira na GPU",
+      "why": "Ang kakaibang kulay, guhit o kislap sa screen ay kadalasang galing sa overclock, driver, sobrang init, o sira na graphics card.",
+      "short": [
+        "Alisin ang overclock ng GPU",
+        "Clean install ng graphics driver",
+        "Lumalabas pa rin kahit sa BIOS? Warranty"
+      ],
+      "steps": [
+        "Kung may overclock ka (hal. sa MSI Afterburner), ibalik sa default.",
+        "I-clean install ang graphics driver galing sa AMD, NVIDIA o Intel.",
+        "I-check ang temps ng GPU gamit ang HWiNFO habang naglalaro.",
+        "Subukan ang ibang cable, port o monitor para matiyak na hindi monitor ang sira.",
+        "Kung may artifacts pa rin kahit sa BIOS screen (bago mag-Windows), malamang hardware na ang sira. I-claim ang warranty."
+      ],
+      "cats": [
+        "gpu"
+      ],
+      "open": false
+    },
+    "r-gpu-driver": {
+      "title": "I-update o i-clean install ang driver",
+      "why": "Kapag nagka-crash o kakaiba ang graphics pero hindi mainit, kadalasang driver ang dahilan.",
+      "short": [
+        "I-download ang bagong driver sa AMD, NVIDIA o Intel",
+        "Piliin ang clean install o factory reset",
+        "I-check ang power cable ng GPU"
+      ],
+      "steps": [
+        "I-download ang pinakabagong driver sa website ng AMD, NVIDIA o Intel.",
+        "Sa installer, piliin ang malinis na install: \"Perform a clean installation\" sa NVIDIA (Custom install) o \"Factory Reset\" sa AMD.",
+        "I-restart ang PC pagkatapos.",
+        "Patayin at bunutin ang PC, tapos i-check kung buong nakasaksak ang power cable ng graphics card."
+      ],
+      "cats": [
+        "gpu"
+      ],
+      "open": true
+    },
+    "r-ram-missing": {
+      "title": "Hindi nababasa ang isang RAM stick",
+      "why": "Kapag kulang ang RAM sa Windows, kadalasang hindi nakaupo nang buo ang isang stick o nasa maling slot.",
+      "short": [
+        "Tingnan ang \"Slots used\" sa Task Manager",
+        "Ibalik nang mabuti ang RAM hanggang mag-click",
+        "Gamitin ang slots sa manual (kadalasan A2/B2)"
+      ],
+      "steps": [
+        "Sa Task Manager > Performance > Memory, tingnan ang \"Slots used\".",
+        "Patayin at bunutin ang PC. Tanggalin ang RAM at ibalik nang mabuti hanggang mag-click ang dalawang lock.",
+        "Ilagay sa slots na sinasabi ng manual, kadalasan A2 at B2.",
+        "Subukan ang bawat stick nang mag-isa para malaman kung may sira."
+      ],
+      "cats": [
+        "ram"
+      ],
+      "open": true
+    },
+    "r-ram-speed": {
+      "title": "I-check ang speed at dual channel",
+      "why": "Kung tama ang laki pero parang mabagal, baka hindi naka-on ang XMP/EXPO o isang stick lang ang gamit.",
+      "short": [
+        "Task Manager > Memory: tingnan ang Speed",
+        "I-on ang XMP o EXPO sa BIOS",
+        "Mas mabilis ang 2 stick kaysa 1"
+      ],
+      "steps": [
+        "Sa Task Manager > Performance > Memory, tingnan ang \"Speed\" at \"Slots used\".",
+        "Kung mas mababa ang speed kaysa nakasulat sa box, i-on ang XMP o EXPO sa BIOS.",
+        "Kung isang stick lang, mas maganda ang dalawa (dual channel)."
+      ],
+      "cats": [
+        "ram"
+      ],
+      "open": false
+    },
+    "r-ssd-missing": {
+      "title": "Hindi nakikita ang SSD sa BIOS",
+      "why": "Kadalasang maluwag ang pagkakakabit, kulang ang cable, o naka-disable ang slot dahil sa ibang device.",
+      "short": [
+        "Ibalik nang mabuti at i-screw ang M.2 SSD",
+        "SATA: i-check ang data at power cable",
+        "Tingnan sa manual kung may slot na nadi-disable"
+      ],
+      "steps": [
+        "Patayin at bunutin ang PC.",
+        "M.2: tanggalin at ibalik nang buo, tapos i-screw.",
+        "SATA SSD: i-check ang SATA data cable sa board at ang power cable mula sa PSU.",
+        "Sa ilang board, nadi-disable ang isang M.2 slot o SATA port kapag may gamit sa iba. Nakasulat ito sa manual.",
+        "Subukan sa ibang slot. Kung wala pa rin, posibleng sira ang SSD."
+      ],
+      "cats": [
+        "ssd"
+      ],
+      "open": true
+    },
+    "r-ssd-init": {
+      "title": "I-initialize ang bagong drive",
+      "why": "Ang bagong SSD ay hindi lalabas sa File Explorer hangga't hindi na-initialize at nagagawan ng partition.",
+      "short": [
+        "Buksan ang Disk Management",
+        "I-initialize (GPT), tapos New Simple Volume",
+        "Huwag gawin sa drive na may laman"
+      ],
+      "steps": [
+        "I-right click ang Start at piliin ang Disk Management.",
+        "Kapag nag-prompt, i-initialize ang bagong disk bilang GPT.",
+        "I-right click ang \"Unallocated\" na space, piliin ang New Simple Volume, at sundin ang wizard.",
+        "Para lang ito sa bagong, walang lamang drive. Kung may files ang drive, huwag i-initialize o i-format."
+      ],
+      "cats": [
+        "ssd"
+      ],
+      "open": false
+    },
+    "r-ssd-slow": {
+      "title": "Bilisan ang loading",
+      "why": "Mabagal ang boot at loading kapag nasa HDD ang Windows o games, o halos puno na ang drive.",
+      "short": [
+        "Windows at games sa SSD, hindi HDD",
+        "Mag-iwan ng 10–20% na bakanteng space",
+        "I-check ang health ng SSD"
+      ],
+      "steps": [
+        "Siguraduhing nasa SSD ang Windows at ang madalas laruin.",
+        "Mag-iwan ng mga 10 hanggang 20% na bakanteng space sa drive.",
+        "I-check ang health gamit ang tool ng brand o ang CrystalDiskInfo."
+      ],
+      "cats": [
+        "ssd"
+      ],
+      "open": false
+    },
+    "r-ssd-health": {
+      "title": "I-check ang health ng SSD",
+      "why": "Kung nakikita ang drive at hindi mabagal, magandang i-check pa rin ang health para sigurado.",
+      "short": [
+        "Gamitin ang tool ng brand o CrystalDiskInfo",
+        "Mag-backup kung may warning"
+      ],
+      "steps": [
+        "Buksan ang tool ng brand (hal. Samsung Magician, Kingston SSD Manager, WD Dashboard) o ang libreng CrystalDiskInfo.",
+        "Tingnan ang \"Health\". Kung may warning o bumababa na, mag-backup agad."
+      ],
+      "cats": [
+        "ssd"
+      ],
       "open": false
     }
   }
