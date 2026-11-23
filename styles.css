@@ -954,10 +954,9 @@ html.viewer-full, html.viewer-full body { overflow: hidden; }
 .more-note:empty { display: none; }
 .more-note { padding: 2px 8px; border-radius: 999px; font-size: 0.75rem; color: #fff; background: rgba(var(--blue-deep), 0.8); font-weight: 600; white-space: nowrap; }
 
-/* Phones: one Basket (top bar) instead of a floating pill, so the bottom-right corner stays clear */
+/* Phones: the floating Basket sits above the tab bar; back-to-top stacks above it */
 @media (max-width: 999px) {
-  .basket-dock:not(.in-sheet) { display: none; }
-  .to-top { bottom: calc(var(--tabbar-h) + 14px + env(safe-area-inset-bottom)); }
+  .to-top { bottom: calc(var(--tabbar-h) + 72px + env(safe-area-inset-bottom)); }
   .nav-basket { min-height: 44px; padding: 8px 14px; font-size: 0.9rem; }
   .brand { min-height: 44px; }
   /* inside the product list the Basket shrinks to an icon + count */
@@ -1615,3 +1614,9 @@ p, li { text-wrap: pretty; }
   .ad-img { width: 100%; height: auto; aspect-ratio: 16 / 9; }
   .ad-cta { justify-self: start; }
 }
+
+/* house ad (no sponsor yet): centred, quiet invite */
+.ad-wrap { width: 100%; }
+.ad-house { grid-template-columns: minmax(0, 1fr); justify-items: center; text-align: center; gap: 12px; max-width: 760px; padding: 22px 24px; }
+.ad-house .ad-body { justify-items: center; }
+.ad-house .ad-cta { justify-self: center; }
