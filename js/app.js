@@ -200,7 +200,7 @@ function exitFull() {
 }
 
 function bindViewer() {
-  $('#viewer-expand').addEventListener('click', enterFull);
+  $('#viewer-expand')?.addEventListener('click', enterFull);
   $('#viewer-close').addEventListener('click', exitFull);
   $('#viewer-zoomout').addEventListener('click', () => pc3d?.reset());
   // In full screen the wheel zooms; scrolling back out past the whole-PC view closes it.
