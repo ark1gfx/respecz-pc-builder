@@ -1,22 +1,40 @@
 {
   "_help": "Featured items and ad slots. featured.items: part ids from parts.json (tag = short label). ads: one entry per paid ad; slot = home | parts | builds; shown only between start and end (YYYY-MM-DD, inclusive). When a slot has no live ad, the house ad is shown instead. Set house to null to leave empty slots hidden.",
   "featured": {
-    "title": "Featured picks",
-    "sub": "Mga part na sulit ngayon, pinili ng ReSpecz.",
+    "title": "Pinili ng ReSpecz",
+    "sub": "Pinili namin dahil maganda ang presyo para sa performance.",
     "items": [
-      { "id": "cpu-r5-5600", "tag": "Budget king" },
-      { "id": "gpu-rx9060xt-16", "tag": "Best value GPU" },
-      { "id": "ram-d4-16-vulcan", "tag": "Sulit na RAM" },
-      { "id": "ssd-s880-1tb", "tag": "Mabilis na 1TB" },
-      { "id": "cpu-r7-7800x3d", "tag": "Gaming beast" },
-      { "id": "psu-a750gl", "tag": "Safe na PSU" }
+      {
+        "id": "cpu-r5-5600",
+        "tag": "Pinakamurang 6-core"
+      },
+      {
+        "id": "gpu-rx9060xt-16",
+        "tag": "16GB VRAM sa ₱38K"
+      },
+      {
+        "id": "ram-d4-16-vulcan",
+        "tag": "16GB DDR4, sapat sa gaming"
+      },
+      {
+        "id": "ssd-s880-1tb",
+        "tag": "1TB NVMe Gen4"
+      },
+      {
+        "id": "cpu-r7-7800x3d",
+        "tag": "Pinakamabilis sa gaming"
+      },
+      {
+        "id": "psu-a750gl",
+        "tag": "750W, 80+ Gold"
+      }
     ]
   },
   "ads": [],
   "house": {
     "sponsor": "ReSpecz",
     "title": "Gusto mo bang ma-feature ang Store or Brand mo?",
-    "text": "Abutin ang mga nagbu-build ng PC sa Pilipinas. Mag-message sa ReSpecz Facebook page para sa ad o featured slot.",
+    "text": "Nakikita ito ng mga nagpaplano ng PC build. Mag-message sa ReSpecz sa Facebook para sa ad o featured slot.",
     "cta": "Mag-message",
     "url": "https://www.facebook.com/1378136052056179"
   }

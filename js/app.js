@@ -1134,12 +1134,12 @@ function renderMayResult() {
     box.innerHTML = `
       <div class="tile may-start">
         <div class="ms-head">
-          <h3>Dito lalabas ang swak.</h3>
+          <h3>Dito lalabas ang mga kasya.</h3>
           <p>Pumili ng kahit isang part na meron ka na. Ipapakita namin ang compatible na parts sa bawat category, may presyo at Shopee link.</p>
         </div>
         <ol class="ms-steps">
           <li><b>1</b><span>Piliin ang meron ka</span></li>
-          <li><b>2</b><span>Tingnan ang swak</span></li>
+          <li><b>2</b><span>Tingnan ang kasya</span></li>
           <li><b>3</b><span>Idagdag sa Basket</span></li>
         </ol>
         <div class="ms-quick">
