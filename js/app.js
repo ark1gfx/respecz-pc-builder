@@ -114,6 +114,12 @@ function renderStageChips() {
       const b = e.target.closest('[data-cat]');
       if (b) openSheet(b.dataset.cat, { from3d: true });
     });
+    // hovering (or keyboard-focusing) a rail item lights that part up in the 3D PC
+    const lit = (e) => pc3d?.highlight(e.target.closest?.('[data-cat]')?.dataset.cat || null);
+    rail.addEventListener('pointerover', lit);
+    rail.addEventListener('focusin', lit);
+    rail.addEventListener('pointerleave', () => pc3d?.highlight(null));
+    rail.addEventListener('focusout', () => pc3d?.highlight(null));
   }
 }
 

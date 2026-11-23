@@ -233,7 +233,7 @@ h1 { font-size: clamp(2.3rem, 10.5vw, 5.5rem); line-height: 1.04; letter-spacing
 
 /* Apple-style "+" hotspots: thin frosted glass so the 3D model stays visible behind them,
    sized with the stage (24 px on phones, up to 32 px on desktop) */
-.hotspots { position: absolute; inset: 0; z-index: 2; pointer-events: none; --hs: clamp(24px, 6.4vw, 32px); }
+.hotspots { position: absolute; inset: 0; z-index: 2; pointer-events: none; --hs: clamp(12px, 3.2vw, 16px); }
 .hotspot {
   position: absolute;
   left: 0;
@@ -479,7 +479,7 @@ html.viewer-full, html.viewer-full body { overflow: hidden; }
 }
 /* chips sit above the Basket pill so both stay tappable */
 .stage-wrap.is-full .stage-chips { padding: 10px 16px calc(78px + env(safe-area-inset-bottom)); }
-.stage-wrap.is-full .hotspots { --hs: clamp(26px, 3vw, 34px); }
+.stage-wrap.is-full .hotspots { --hs: clamp(13px, 1.5vw, 17px); }
 @media (min-width: 860px) {
   .stage-wrap.is-full .stage-chips { padding-bottom: 22px; padding-right: 160px; padding-left: 160px; }
 }
@@ -1878,3 +1878,7 @@ p, li { text-wrap: pretty; }
 @media (hover: hover) and (pointer: fine) and (min-width: 860px) and (min-aspect-ratio: 11/10) {
   .hero-pin .stage-wrap:not(.is-full) { box-sizing: border-box; padding-right: max(0px, calc(184px - (100vw - 1080px) / 2 - var(--gutter))); }
 }
+
+/* small "+" discs (half the old size): thinner cross, and the invisible tap target stays 36px */
+.hs-dot::before, .hs-dot::after { height: 1.5px; margin-top: -0.75px; width: calc(var(--hs) * 0.46); margin-left: calc(var(--hs) * -0.23); }
+.hotspot::before { left: calc(var(--hs) / 2 - 18px); top: calc(var(--hs) / 2 - 18px); width: 36px; height: 36px; }

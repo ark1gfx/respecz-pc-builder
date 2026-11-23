@@ -617,14 +617,14 @@ export async function mountPC(container, { onPick, onHover, labels, reducedMotio
     while (o && !o.userData.cat) o = o.parent;
     return o?.userData.cat || null;
   }
-  function hover(cat) {
+  function hover(cat, quiet = false) {
     if (cat === hovered) return;
     if (hovered && hovered !== focused) setHighlight(hovered, false);
     hovered = cat;
     if (cat) setHighlight(cat, true);
     renderer.domElement.style.cursor = cat ? 'pointer' : 'grab';
     hotspots.forEach((h) => h.el.classList.toggle('is-hot', h.cat === cat));
-    onHover?.(cat);
+    if (!quiet) onHover?.(cat);
   }
 
   let downAt = null;
@@ -812,5 +812,7 @@ export async function mountPC(container, { onPick, onHover, labels, reducedMotio
     if (k > 0.02) lastInput = performance.now() - 2000; // keep the idle sway, skip the long wait
   }
 
-  return { focus, reset, setFull, atHome, setScrollZoom, setWindow, isFocused: () => !!focused };
+  // highlight a part from outside the canvas (the parts rail), without the hover card
+  const highlight = (cat) => hover(cat || null, true);
+  return { focus, reset, setFull, atHome, setScrollZoom, setWindow, highlight, isFocused: () => !!focused };
 }
