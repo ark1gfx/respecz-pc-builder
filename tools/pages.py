@@ -42,11 +42,11 @@ PAGES = [
          title="May parts ka na? Tingnan ang compatible · ReSpecz PC Builder",
          og_title='May parts ka na? Tingnan ang compatible',
          description='Piliin ang meron ka na (RAM, CPU, GPU…) at ipapakita namin ang compatible na motherboard, RAM, PSU at iba pa.'),
-    dict(name='builds', slug='builds/', nav=None, tab='Builds',  # in the Parts dropdown, not the top nav
+    dict(name='builds', slug='builds/', nav=None, tab=None,  # in the Parts dropdown, not the top nav
          title='Ready PC builds · ReSpecz PC Builder',
          og_title='Ready PC builds mula ₱40K',
          description='Kumpletong PC builds para sa gaming, editing at school, may total na presyo at Shopee links.'),
-    dict(name='troubleshoot', slug='troubleshoot/', nav='Troubleshoot', tab=None,
+    dict(name='troubleshoot', slug='troubleshoot/', nav='Troubleshoot', tab='Troubleshoot',
          title='PC Troubleshooter: ayaw mag-on, walang display, nag-i-stutter · ReSpecz PC Builder',
          og_title='May problema ang PC mo? Hanapin natin ang dahilan',
          description='Piliin ang problema (ayaw mag-on, walang display, nagre-restart, mainit, mabagal sa games) at sagutin ang ilang tanong. May step-by-step na checks na kaya mong gawin.'),
@@ -62,6 +62,7 @@ TAB_ICONS = {
     'parts': '<rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx=".8"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/>',
     'build': '<path d="M14.5 6.5a4 4 0 0 0-5.3 5.3L4 17l3 3 5.2-5.2a4 4 0 0 0 5.3-5.3l-2.6 2.6-2.3-.7-.7-2.3z"/>',
     'may': '<path d="m9 12 2 2 4-4"/><rect x="3.5" y="3.5" width="17" height="17" rx="3"/>',
+    'troubleshoot': '<circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v3.5M11 14h.01"/>',
     'builds': '<rect x="6" y="2.5" width="12" height="19" rx="1.8"/><path d="M9 6h6M9 8.5h6"/><circle cx="12" cy="15" r="2.5"/>',
 }
 

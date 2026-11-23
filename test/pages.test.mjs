@@ -5,8 +5,8 @@ import { execFileSync } from 'node:child_process';
 
 const root = new URL('../', import.meta.url);
 const PAGES = ['index.html', 'parts/index.html', 'build/index.html', 'may/index.html', 'builds/index.html', 'troubleshoot/index.html', 'disclosure/index.html'];
-// pages with no mobile tab (reached from the top nav, Home and the footer)
-const NO_TAB = ['troubleshoot/', 'disclosure/'];
+// pages with no mobile tab (Ready Builds: from the Home card and the Parts menu; disclosure: from the footer)
+const NO_TAB = ['builds/', 'disclosure/'];
 
 test('generated pages match site/ (run `npm run pages` after editing site/)', () => {
   const before = PAGES.map((p) => fs.readFileSync(new URL(p, root), 'utf8'));
