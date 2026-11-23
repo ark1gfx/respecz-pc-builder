@@ -1949,3 +1949,9 @@ p, li { text-wrap: pretty; }
 .scroll-dots i { width: 6px; height: 6px; border-radius: 999px; background: rgba(255, 255, 255, 0.28); transition: width 0.25s ease, background 0.25s ease; }
 .scroll-dots i.is-on { width: 18px; background: var(--accent); }
 @media (prefers-reduced-motion: reduce) { .scroll-arrow, .scroll-dots i { transition: none; } }
+
+/* Mag-Build: the budget amount is typeable; a small pencil says so on every screen (the tooltip needs a mouse) */
+.budget-edit { display: inline-flex; align-items: center; gap: 6px; }
+.budget-pen { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 8px; color: var(--accent); background: rgba(255, 255, 255, 0.06); cursor: text; flex: none; }
+.budget-pen svg { width: 15px; height: 15px; }
+.budget-edit:hover .budget-pen, .budget-out:focus + .budget-pen { background: rgba(var(--accent-rgb), 0.18); }
