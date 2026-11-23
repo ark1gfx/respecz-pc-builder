@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "respecz-pc-builder",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "serve",
+        "-l",
+        "4870",
+        "."
+      ],
+      "port": 4870,
+      "autoPort": false
+    }
+  ]
+}

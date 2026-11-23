@@ -2066,3 +2066,4 @@ p, li { text-wrap: pretty; }
    everything sat a few px right of centre; the column now fits the tile and long words wrap */
 .tsf-area { grid-template-columns: minmax(0, 1fr); }
 .tsf-area > * { min-width: 0; max-width: 100%; justify-self: center; text-align: center; overflow-wrap: anywhere; hyphens: auto; }
+

@@ -1,0 +1,12 @@
+name = "respecz-visits"
+main = "worker.js"
+compatibility_date = "2026-11-01"
+
+# Create the KV namespace once with:  npx wrangler kv namespace create VISITS
+# then paste the id it prints below.
+[[kv_namespaces]]
+binding = "VISITS"
+id = "PASTE_KV_NAMESPACE_ID_HERE"
+
+# The Studio reads the total with a secret header:  npx wrangler secret put VISITS_KEY
+# (same value as VISITS_KEY in herk-edit-kit/.env; never commit it)
