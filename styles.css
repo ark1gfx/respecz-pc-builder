@@ -1897,13 +1897,19 @@ p, li { text-wrap: pretty; }
    a bigger headline and a bigger 3D PC */
 @media (min-width: 1500px) and (min-height: 860px) {
   html[data-page='home'] :is(.nav-inner, main, .foot) { width: min(100%, 1280px); }
-  html[data-page='home'] .hero-pin h1 { font-size: clamp(3.9rem, 4.2vw, 4.8rem); }
-  html[data-page='home'] .hero-pin .lede { font-size: 1.18rem; max-width: 40ch; }
-  html[data-page='home'] .stage-slot { max-height: min(80svh, 880px); }
+  html[data-page='home'] .hero-pin { grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); }
+  html[data-page='home'] .hero-pin h1 { font-size: clamp(3.4rem, 3.7vw, 4.2rem); }
+  html[data-page='home'] .hero-pin .lede { font-size: 1.15rem; max-width: 40ch; }
+  html[data-page='home'] .stage-slot { max-height: min(84svh, 940px); }
 }
 @media (min-width: 1800px) and (min-height: 980px) {
   html[data-page='home'] :is(.nav-inner, main, .foot) { width: min(100%, 1440px); }
-  html[data-page='home'] .hero-pin h1 { font-size: clamp(4.4rem, 4vw, 5.4rem); }
-  html[data-page='home'] .hero-pin .lede { font-size: 1.25rem; }
-  html[data-page='home'] .stage-slot { max-height: min(82svh, 980px); }
+  html[data-page='home'] .hero-pin h1 { font-size: clamp(3.6rem, 3.7vw, 4.6rem); }
+  html[data-page='home'] .hero-pin .lede { font-size: 1.2rem; }
+  html[data-page='home'] .stage-slot { max-height: min(86svh, 1040px); }
+}
+
+/* mid-size laptops (1200–1499px): give the PC a bit more of the row too */
+@media (hover: hover) and (pointer: fine) and (min-width: 1200px) and (max-width: 1499px) and (min-aspect-ratio: 11/10) {
+  html[data-page='home'] .hero-pin { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); }
 }
