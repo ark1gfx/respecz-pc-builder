@@ -1,20 +1,20 @@
 {
   "_help": "Featured items and ad slots. featured.items: part ids from parts.json (tag = short label). ads: one entry per paid ad; slot = home | parts | builds; shown only between start and end (YYYY-MM-DD, inclusive). When a slot has no live ad, the house ad is shown instead. Set house to null to leave empty slots hidden.",
   "featured": {
-    "title": "Pinili ng ReSpecz",
-    "sub": "Pinili namin dahil maganda ang presyo para sa performance.",
+    "title": "ReSpecz Picks",
+    "sub": "Mga part na sulit for the price, pinili namin.",
     "items": [
       {
         "id": "cpu-r5-5600",
-        "tag": "Pinakamurang 6-core"
+        "tag": "Cheapest 6-core"
       },
       {
         "id": "gpu-rx9060xt-16",
-        "tag": "16GB VRAM sa ₱38K"
+        "tag": "16GB VRAM for ₱38K"
       },
       {
         "id": "ram-d4-16-vulcan",
-        "tag": "16GB DDR4, sapat sa gaming"
+        "tag": "16GB DDR4, okay na for gaming"
       },
       {
         "id": "ssd-s880-1tb",
@@ -22,11 +22,11 @@
       },
       {
         "id": "cpu-r7-7800x3d",
-        "tag": "Pinakamabilis sa gaming"
+        "tag": "Best for gaming"
       },
       {
         "id": "psu-a750gl",
-        "tag": "750W, 80+ Gold"
+        "tag": "750W 80+ Gold"
       }
     ]
   },
@@ -34,7 +34,7 @@
   "house": {
     "sponsor": "ReSpecz",
     "title": "Gusto mo bang ma-feature ang Store or Brand mo?",
-    "text": "Nakikita ito ng mga nagpaplano ng PC build. Mag-message sa ReSpecz sa Facebook para sa ad o featured slot.",
+    "text": "Nakikita ito ng mga nagpaplano ng PC build. Mag-message sa ReSpecz FB page para sa ad o featured slot.",
     "cta": "Mag-message",
     "url": "https://www.facebook.com/1378136052056179"
   }

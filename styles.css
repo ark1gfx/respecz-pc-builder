@@ -1622,3 +1622,15 @@ p, li { text-wrap: pretty; }
 .ad-house { grid-template-columns: minmax(0, 1fr); justify-items: center; text-align: center; gap: 12px; max-width: 760px; padding: 22px 24px; }
 .ad-house .ad-body { justify-items: center; }
 .ad-house .ad-cta { justify-self: center; }
+
+/* route cards: the art sits on top, the text below it (no text over the products).
+   Art keeps its 3:4 box; the body starts where the art fades out (~76% down). */
+.route { aspect-ratio: auto; display: flex; flex-direction: column; overflow: hidden; }
+.route::before { content: ''; display: block; aspect-ratio: 1 / 1.02; flex: none; }
+.route-media, .route-layers, .route-pop { inset: 0 0 auto 0; height: auto; aspect-ratio: 3 / 4; }
+.route-media { border-radius: 26px 26px 0 0; }
+.route-media::after { background: linear-gradient(180deg, transparent 50%, color-mix(in srgb, var(--tone) 80%, transparent) 70%, var(--tone) 77%); }
+.route-body { position: relative; inset: auto; flex: 1; align-content: start; padding: 4px 20px 20px; }
+.route-btn { margin-top: auto; }
+.route-body { grid-template-rows: auto auto 1fr; }
+.route-btn { align-self: end; }
