@@ -1,0 +1,22 @@
+# ReSpecz PC Builder
+
+> Libreng PC builder para sa Pilipinas (respecz.com) ni ReSpecz, isang Filipino tech creator. Ilagay ang budget at gamit
+> (gaming, editing, school) at bibigyan ka ng compatible na set ng parts na may presyo at Shopee Mall link. May compatibility
+> checker para sa parts na meron ka na, ready builds, at PC Troubleshooter. Taglish ang site.
+
+- Presyo: Shopee Mall listings; nagbabago ang presyo, kaya i-check sa Shopee bago bumili.
+- May affiliate links ang site (maliit na commission, walang dagdag sa presyo ng bumibili): https://respecz.com/disclosure/
+- Facebook: https://www.facebook.com/1378136052056179 · TikTok: https://www.tiktok.com/@resp3cz
+
+## Pages
+
+- [Home](https://respecz.com/): budget PC builder at 3D PC
+- [Mag-Build](https://respecz.com/build/): budget + gamit → compatible na buong set
+- [May Parts na Ako](https://respecz.com/may/): compatibility checker para sa parts na meron ka na
+- [Parts](https://respecz.com/parts/): 67 parts (CPU, motherboard, RAM, GPU, SSD, PSU, case, cooler) na may presyo
+- [Ready Builds](https://respecz.com/builds/): ₱40K School / Office, ₱60K Valorant + Dota 2, ₱80K CS2 1080p high, ₱130K Editing + gaming
+- [Troubleshooter](https://respecz.com/troubleshoot/): ayaw mag-on o namamatay, walang display, graphics card, memory, ssd, hdd, mainit, maingay, fps, lag, headset, speaker, lan, wi-fi
+
+## Full content
+
+- [llms-full.txt](https://respecz.com/llms-full.txt): builds, parts at presyo, troubleshooting steps, at Q&A

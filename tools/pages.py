@@ -192,6 +192,7 @@ def main():
         dest.write_text(render(page))
         print('wrote', dest.relative_to(ROOT))
     write_robots_and_sitemap()
+    import llms; llms.main()   # plain-text copy of the data for AI crawlers
 
 
 if __name__ == '__main__':

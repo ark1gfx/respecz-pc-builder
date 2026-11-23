@@ -1,0 +1,1088 @@
+# ReSpecz PC Builder
+
+> Libreng PC builder para sa Pilipinas (respecz.com) ni ReSpecz, isang Filipino tech creator. Ilagay ang budget at gamit
+> (gaming, editing, school) at bibigyan ka ng compatible na set ng parts na may presyo at Shopee Mall link. May compatibility
+> checker para sa parts na meron ka na, ready builds, at PC Troubleshooter. Taglish ang site.
+
+- Presyo: Shopee Mall listings; nagbabago ang presyo, kaya i-check sa Shopee bago bumili.
+- May affiliate links ang site (maliit na commission, walang dagdag sa presyo ng bumibili): https://respecz.com/disclosure/
+- Facebook: https://www.facebook.com/1378136052056179 · TikTok: https://www.tiktok.com/@resp3cz
+
+Presyo noong 2026-11-22. Presyo ng Shopee Mall listing noong 2026-11-22. Nagbabago ang presyo; i-check sa Shopee bago bumili.
+
+## Ready PC builds
+
+### ₱40K School / Office
+
+Core i5-14400 na may built-in graphics. Pang-docs, Zoom, at light games. Dagdag GPU later.
+
+- CPU: Intel Core i5-14400 (Tray + fan) (₱11,895)
+- Motherboard: MSI PRO H610M-E DDR4 (₱4,999)
+- RAM: TeamGroup T-Force Vulcan Z DDR4-3200 16GB (2x8GB) (₱9,395)
+- SSD: Kingston NV3 500GB NVMe (₱7,295)
+- Power supply (PSU): ASRock PRO-650B 650W Bronze (₱2,995)
+- Case: Tecware Infinity M (mATX) (₱3,062)
+- Estimated total: ₱39,641
+
+### ₱60K Valorant + Dota 2
+
+i5-14400 + RTX 3050. Pang-esports sa 1080p, 1TB para sa games.
+
+- CPU: Intel Core i5-14400 (Tray + fan) (₱11,895)
+- Motherboard: MSI PRO H610M-E DDR4 (₱4,999)
+- RAM: TeamGroup T-Force Vulcan Z DDR4-3200 16GB (2x8GB) (₱9,395)
+- Graphics card (GPU): MSI GeForce RTX 3050 Ventus 2X E 6GB OC (₱17,495)
+- SSD: Fanxiang S880 1TB NVMe Gen4 (₱10,999)
+- Power supply (PSU): ASRock PRO-650B 650W Bronze (₱2,995)
+- Case: darkFlash DB330M Mesh (mATX) (₱1,695)
+- Estimated total: ₱59,473
+
+### ₱80K CS2 1080p high
+
+RX 9060 XT 16GB ang bida. High FPS sa CS2 at 1080p high settings.
+
+- CPU: Intel Core i5-14400 (Tray + fan) (₱11,895)
+- Motherboard: MSI PRO H610M-E DDR4 (₱4,999)
+- RAM: TeamGroup T-Force Vulcan Z DDR4-3200 16GB (2x8GB) (₱9,395)
+- Graphics card (GPU): Sapphire Pulse Radeon RX 9060 XT 16GB (₱37,995)
+- SSD: Fanxiang S880 1TB NVMe Gen4 (₱10,999)
+- Power supply (PSU): ASRock PRO-650B 650W Bronze (₱2,995)
+- Case: darkFlash DB330M Mesh (mATX) (₱1,695)
+- Estimated total: ₱79,973
+
+### ₱130K Editing + gaming
+
+i7-14700 (20 cores), 32GB RAM, RX 9060 XT 16GB para sa mabilis na render at timeline.
+
+- CPU: Intel Core i7-14700 (₱26,999)
+- Motherboard: Gigabyte B760M DS3H DDR4 (₱7,999)
+- RAM: TeamGroup T-Force Vulcan Z DDR4-3200 32GB (2x16GB) (₱20,995)
+- Graphics card (GPU): Sapphire Pulse Radeon RX 9060 XT 16GB (₱37,995)
+- SSD: Samsung 990 EVO Plus 1TB NVMe (₱18,999)
+- Power supply (PSU): ASRock PRO-650B 650W Bronze (₱2,995)
+- Case: NZXT H7 Flow (ATX) (₱7,399)
+- CPU cooler: MSI MAG CoreLiquid A13 240 (AIO) (₱4,095)
+- Estimated total: ₱127,476
+
+## PC parts sa catalog
+
+Bawat part ay may Shopee Mall link sa https://respecz.com/parts/
+
+### CPU
+
+- AMD Ryzen 5 5600 (₱7,945) · AM4, 6C/12T · Budget gaming king sa AM4. Kailangan ng GPU. Tray: walang kasamang cooler.
+- Intel Core i5-12400 (₱9,699) · LGA1700, 6C/12T · May UHD 730 graphics, swak sa school at office kahit walang GPU.
+- AMD Ryzen 7 5700X (Tray + cooler) (₱10,690) · AM4, 8C/16T · 8 cores sa AM4, may kasamang cooler fan ang listing.
+- Intel Core i5-14400 (Tray + fan) (₱11,895) · LGA1700, 10C/16T · 10 cores (6P + 4E), may graphics at kasamang fan.
+- AMD Ryzen 5 7600 (₱11,999) · AM5, 6C/12T · AM5 + DDR5, may upgrade path pa.
+- AMD Ryzen 5 9600X (Tray) (₱12,780) · AM5, 6C/12T · Zen 5, mas mabilis sa gaming kaysa 7600. Tray: walang kasamang cooler.
+- AMD Ryzen 7 7700 (₱12,999) · AM5, 8C/16T · 8 cores sa 65W, swak sa editing at streaming.
+- AMD Ryzen 5 8600G (Box) (₱14,999) · AM5, 6C/12T · Pinakamalakas na built-in graphics. Valorant at Dota 2 kahit walang GPU.
+- AMD Ryzen 7 7800X3D (Tray) (₱20,475) · AM5, 8C/16T · 3D V-Cache, top pick para sa CS2 high FPS.
+- Intel Core i7-14700 (₱26,999) · LGA1700, 20C/28T · 20 cores para sa mabigat na editing at rendering. Kailangan ng magandang cooler.
+- AMD Ryzen 7 9800X3D (Tray) (₱29,090) · AM5, 8C/16T · Pinakamabilis na gaming CPU sa listahan. Kailangan ng dual-tower o AIO.
+
+### Motherboard
+
+- ASUS PRIME A520M-K (₱3,861) · AM4, mATX · Basic AM4 board, 2 RAM slots.
+- MSI PRO H610M-E DDR4 (₱4,999) · LGA1700, mATX · Budget Intel board, 2 RAM slots.
+- Gigabyte A620M H (₱5,695) · AM5, mATX · Pinakamurang daan papuntang AM5.
+- MSI PRO B760M-E DDR4 (₱6,799) · LGA1700, mATX · B760 sa DDR4, murang upgrade sa H610.
+- Gigabyte B550M AORUS ELITE (₱7,799) · AM4, mATX · 4 RAM slots, PCIe 4.0, solid na AM4 board.
+- Gigabyte B650M GAMING WIFI (₱7,949) · AM5, mATX · B650 + WiFi sa murang presyo.
+- Gigabyte B760M DS3H DDR4 (₱7,999) · LGA1700, mATX · 4 RAM slots DDR4, kaya ang i7.
+- Gigabyte A520I AC (Mini-ITX) (₱8,099) · AM4, ITX · Pinakamurang Mini-ITX para sa AM4, may WiFi na.
+- MSI B550-A PRO (₱8,299) · AM4, ATX · Full ATX, maraming slots.
+- ASRock B660M-ITX/ac (Mini-ITX) (₱8,995) · LGA1700, ITX · Intel Mini-ITX sa DDR4, may WiFi.
+- Gigabyte B760M DS3H GEN5 (DDR5) (₱8,999) · LGA1700, mATX · DDR5 Intel board.
+- MSI B650M GAMING PLUS WIFI (₱9,990) · AM5, mATX · 4 RAM slots + WiFi, swak hanggang 7800X3D.
+- Gigabyte B650I AX (Mini-ITX) (₱11,795) · AM5, ITX · AM5 Mini-ITX na may WiFi 6E, swak sa maliit na build.
+- Gigabyte B650 EAGLE AX (₱12,499) · AM5, ATX · Full ATX, 3 M.2 slots, WiFi 6E.
+- MSI B760 GAMING PLUS WIFI DDR4 (ATX) (₱12,999) · LGA1700, ATX · Full ATX para sa Intel, 4 RAM slots, WiFi 6E.
+- Gigabyte B550I AORUS PRO AX (Mini-ITX) (₱13,099) · AM4, ITX · Premium AM4 Mini-ITX, PCIe 4.0 at WiFi 6.
+
+### RAM
+
+- TeamGroup T-Force Vulcan Z DDR4-3200 16GB (2x8GB) (₱9,395) · 16GB · Dual channel, 2 sticks = mas mabilis.
+- TeamGroup T-Force Vulcan Z DDR4-3200 32GB (2x16GB) (₱20,995) · 32GB · 32GB para sa editing at multitasking.
+- Kingston FURY Beast RGB DDR5-5600 16GB (2x8GB) (₱20,999) · 16GB · Entry DDR5, dual channel.
+- G.Skill Ripjaws V DDR4-3600 32GB (2x16GB) (₱21,295) · 32GB · DDR4-3600 CL18, sweet spot ng AM4.
+- TeamGroup T-Force Vulcan DDR5-6000 16GB (2x8GB) (₱21,495) · 16GB · DDR5-6000 dual channel, swak sa AM5.
+- TeamGroup T-Force Vulcan DDR5-6000 32GB (2x16GB) (₱35,995) · 32GB · 6000 MT/s, sweet spot ng AM5.
+- G.Skill Trident Z5 Neo RGB DDR5-6000 32GB (2x16GB) (₱40,999) · 32GB · AMD EXPO, RGB. Plug and play sa AM5.
+- TeamGroup T-Force Delta RGB DDR5-6000 64GB (2x32GB) (₱75,995) · 64GB · 64GB para sa 4K editing at heavy projects.
+
+### Graphics card (GPU)
+
+- MSI GeForce RTX 3050 Ventus 2X E 6GB OC (₱17,495) · 6GB VRAM · Mababa ang konsumo, pang-esports sa 1080p.
+- MSI GeForce RTX 5050 Ventus 2X OC 8GB (₱25,399) · 8GB VRAM · Bagong 50-series entry, may DLSS 4.
+- ASUS Dual Radeon RX 7600 EVO OC 8GB (₱25,999) · 8GB VRAM · Solid 1080p high settings.
+- MSI GeForce RTX 5060 Ti Shadow 2X OC Plus 8GB (₱33,195) · 8GB VRAM · Mas malakas sa RTX 5060 sa halos parehong presyo.
+- MSI GeForce RTX 5060 Shadow 2X OC 8GB (₱33,995) · 8GB VRAM · 1080p high refresh, matipid sa kuryente.
+- Sapphire Pulse Radeon RX 9060 XT 16GB (₱37,995) · 16GB VRAM · 16GB VRAM, matagal bago maluma.
+- ASRock Radeon RX 9070 XT Challenger 16GB (₱56,290) · 16GB VRAM · Pinakamurang RX 9070 XT sa listahan. Mahaba, i-check ang case.
+- MSI GeForce RTX 5060 Ti Shadow 2X OC Plus 16GB (₱62,299) · 16GB VRAM · 16GB + NVENC, sulit sa editing at gaming.
+- Gigabyte Radeon RX 9070 XT Gaming OC 16GB (₱63,995) · 16GB VRAM · 1440p high refresh, pinakamalakas sa listahan.
+- MSI GeForce RTX 5070 Shadow 2X OC 12GB (₱65,999) · 12GB VRAM · 1440p high refresh, CS2 sa 240Hz territory.
+- MSI GeForce RTX 5070 Ti Shadow 3X OC 16GB (₱101,999) · 16GB VRAM · 1440p at 4K, 16GB para sa editing at high settings.
+
+### SSD
+
+- Kingston NV3 500GB NVMe (₱7,295) · 500GB · Murang NVMe para sa boot drive.
+- Kingston A400 480GB SATA (₱9,049) · 480GB · SATA, para sa lumang board na walang M.2.
+- Fanxiang S880 1TB NVMe Gen4 (₱10,999) · 1000GB · Mabilis na Gen4, sulit sa 1TB.
+- Kingston NV3 1TB NVMe (₱11,395) · 1000GB · 1TB, kasya ang ilang games at projects.
+- Samsung 990 EVO Plus 1TB NVMe (₱18,999) · 1000GB · Mabilis at maaasahan.
+- WD Blue SN5000 2TB NVMe (₱28,999) · 2000GB · 2TB para sa video files at maraming games.
+
+### Power supply (PSU)
+
+- ASRock PRO-650B 650W Bronze (₱2,995) · 650W, ATX · ATX 3.1, sapat sa mid-range GPU.
+- MSI MAG A550BN 550W Bronze (₱3,125) · 550W, ATX · Swak sa entry builds.
+- MSI MAG A750GL 750W Gold (₱6,150) · 750W, ATX · Gold, fully modular, PCIe 5.1 ready.
+- MSI MAG A850GL 850W Gold (₱8,095) · 850W, ATX · Para sa high-end GPU at future upgrades.
+- MSI MAG A1000GL 1000W Gold (₱10,695) · 1000W, ATX · 1000W, ATX 3.1. May headroom para sa RTX 5070 Ti at upgrades.
+
+### Case
+
+- darkFlash DB330M Mesh (mATX) (₱1,695) · Mura, mesh front at glass side.
+- Tecware Infinity M (mATX) (₱3,062) · May kasamang 3 aRGB fans.
+- Montech AIR 1000 Lite (ATX) (₱3,599) · Murang ATX case na maganda ang airflow.
+- Lian Li A3-mATX (₱4,499) · Compact pero kasya ang malalaking GPU.
+- darkFlash DLX21 Mesh White (ATX) (₱4,750) · Puting ATX case, mesh front at hinged glass.
+- NZXT H7 Flow (ATX) (₱7,399) · Premium airflow, maluwag gawan ng build.
+
+### CPU cooler
+
+- DeepCool AK400 Digital SE (₱1,785) · Single tower na may temp display.
+- Thermalright Peerless Assassin 120 Mini (₱2,399) · Dual tower pero 135mm lang, kasya sa maliit na case.
+- Thermalright Peerless Assassin 120 SE (₱2,650) · Dual tower, kaya ang i7 at 7800X3D.
+- MSI MAG CoreLiquid A13 240 (AIO) (₱4,095) · 240mm liquid cooler, kailangan ng case na may 240mm radiator mount.
+
+## PC troubleshooting
+
+Gabay lang ito. Iba-iba ang board at case, kaya laging i-check ang manual ng motherboard mo. Interactive na bersyon: https://respecz.com/troubleshoot/
+
+### Simulan sa saksakan
+
+Madalas, simple lang: naka-off ang switch ng PSU, maluwag ang cable, o patay ang outlet o AVR.
+
+1. Tingnan ang switch sa likod ng PSU. Dapat nakapindot ito sa "I" (on), hindi sa "O" (off).
+2. Itulak nang mabuti ang power cable sa PSU at sa outlet.
+3. Kung may AVR, UPS o extension, siguraduhing naka-on ito. Subukan ding isaksak nang direkta sa ibang outlet na sigurado kang gumagana.
+4. Pindutin ulit ang power button. Kung ayaw pa rin, bumalik dito at piliin ang "Oo, naka-on at nakasaksak".
+
+### Malamang, may kulang na cable
+
+Sa bagong build, kadalasang dahilan ang power switch cable ng case na mali ang pwesto, o PSU cable na hindi pa fully nakasaksak.
+
+1. Patayin ang PSU at bunutin sa saksakan bago galawin ang loob.
+2. Hanapin ang front panel header sa motherboard (kadalasan sa baba, kanang sulok). I-check sa manual kung saan eksakto ang "PWR_SW" o "POWER SW" pins, at doon isaksak ang power switch cable ng case.
+3. Itulak hanggang mag-click ang malaking 24-pin cable sa motherboard.
+4. I-check ang CPU power cable (4+4 o 8-pin, may label na "CPU" o "EPS") sa taas-kaliwa ng motherboard. Huwag ipagpalit sa PCIe cable ng GPU.
+5. Kung modular ang PSU, siguraduhing nakasaksak din nang buo ang cables sa PSU side.
+6. Isaksak ulit, i-on ang PSU switch, at pindutin ang power button.
+
+### Posibleng nasira ang PSU
+
+Ang brownout, power surge o kidlat ay pwedeng makasira ng PSU. Kapag may pumutok na tunog o amoy sunog, kadalasan PSU ang unang tinamaan.
+
+1. Kung may amoy sunog o usok, huwag nang subukang i-on ulit. Bunutin agad sa saksakan.
+2. Huwag buksan ang PSU. May mga capacitor sa loob na pwedeng may natitirang kuryente kahit nakabunot na.
+3. Kung may warranty pa ang PSU, i-claim ito sa seller o brand.
+4. Palitan ng PSU galing sa kilalang brand na may sapat na wattage para sa build mo.
+5. Kung bagong PSU na pero ayaw pa rin, pwedeng may iba pang tinamaan (hal. motherboard). Ipa-check sa technician.
+6. Para sa susunod, gumamit ng AVR o UPS lalo na kung madalas ang brownout sa lugar ninyo.
+
+### I-reset ang power, tapos i-check ang PSU
+
+Minsan naka-protection mode lang ang PSU. Kung hindi pa rin bumubuhay, PSU o power switch ang pinaka-posibleng sira.
+
+1. Bunutin ang power cable, tapos pindutin at i-hold ang power button nang mga 15 segundo para maubos ang natitirang kuryente.
+2. Hintayin ang isang minuto, isaksak ulit, at subukang i-on.
+3. Buksan ang case (nakabunot pa rin) at i-check kung nakasaksak nang maayos ang 24-pin, CPU power cable at power switch cable ng case.
+4. Kung may kakilala kang may gumaganang PSU, subukan ito sa PC mo. Kung bumuhay, PSU ang sira.
+5. Kung ayaw pa rin kahit ibang PSU na, ipa-check sa technician ang motherboard.
+
+### Ilipat ang monitor cable sa graphics card
+
+Kapag may graphics card ka, doon dapat nakasaksak ang monitor. Ang ports sa motherboard ay para lang sa built-in graphics ng CPU, at kadalasan hindi ito gumagana o mas mabagal kapag may GPU na.
+
+1. Hanapin ang ports sa graphics card. Pahalang sila sa bandang baba ng likod ng case, hindi sa taas kasama ng USB ports.
+2. Ilipat doon ang HDMI o DisplayPort cable ng monitor.
+3. Sa monitor, piliin ang tamang input (HDMI o DisplayPort) gamit ang buttons nito.
+4. Kung nag-i-stutter dati sa games, malaking tulong din ito: graphics card na ang gagawa ng trabaho, hindi ang CPU.
+
+### Baka walang built-in graphics ang CPU mo
+
+Hindi lahat ng CPU ay may built-in graphics. Kapag wala, walang lalabas sa ports ng motherboard at kailangan ng graphics card.
+
+1. Tingnan ang model ng CPU mo. Ang Ryzen 5000 na walang "G" sa dulo (hal. Ryzen 5 5600) at ang Intel na may "F" (hal. Core i5-12400F) ay walang built-in graphics.
+2. Ang may "G" (hal. Ryzen 5 5600G), ang Intel na walang "F", at karamihan ng Ryzen 7000 at 9000 ay may built-in graphics. I-check pa rin ang specs page ng CPU mo sa AMD o Intel.
+3. Kung wala ngang built-in graphics, kailangan mong magkabit ng graphics card at doon isaksak ang monitor.
+4. Kung meron naman, i-check ang monitor input, subukan ang ibang cable, at ituloy sa troubleshooter na "walang display" gamit ang debug LEDs.
+
+### RAM ang hindi pumapasa
+
+Nakailaw ang DRAM LED kapag hindi ma-detect o ma-train ng board ang RAM. Sa bagong DDR5 build, normal na matagal ito sa unang boot.
+
+1. Kung bagong build o bagong RAM, maghintay muna ng hanggang 10 hanggang 15 minuto. Nagme-memory training ang DDR5 sa unang boot, at itim lang ang monitor habang ginagawa ito. Huwag patayin.
+2. Kung wala pa rin, patayin at bunutin ang PC. Tanggalin ang RAM at ibalik nang mabuti hanggang mag-click ang dalawang lock.
+3. Kung dalawang stick, ilagay sa slots na sinasabi ng manual. Kadalasan A2 at B2 (pangalawa at pang-apat mula sa CPU).
+4. Subukan muna ang isang stick lang sa A2. Kung bumuhay, palitan ng kabila para malaman kung may sirang stick.
+5. I-check sa website ng motherboard kung supported ng BIOS mo ang RAM at CPU mo.
+
+### Hindi makita ng board ang CPU
+
+Ang CPU LED ay nakailaw kapag may problema sa CPU, sa power nito, o kapag hindi pa kilala ng BIOS ang CPU mo.
+
+1. Patayin at bunutin ang PC. I-check ang CPU power cable (4+4 o 8-pin) sa taas-kaliwa ng motherboard. Kailangang nakasaksak ito nang buo.
+2. Tingnan sa CPU support list ng motherboard sa website ng brand kung anong BIOS version ang kailangan ng CPU mo. Halimbawa, ang mga lumang B450 o B550 BIOS ay hindi pa kilala ang ilang bagong Ryzen.
+3. Kung luma ang BIOS, gamitin ang BIOS Flashback button kung meron ang board mo. Kaya nitong mag-update kahit walang CPU. Sundin ang manual, at huwag patayin habang nag-a-update.
+4. Kung tinanggal mo ang CPU, tingnan kung may baluktot na pin (nasa CPU sa AM4, nasa socket ng board sa AM5 at Intel). Huwag ayusin kung hindi ka sigurado. Dalhin sa technician.
+5. Kung bago ang board at CPU at ayaw pa rin, i-claim ang warranty sa seller.
+
+### Graphics card ang may problema
+
+Nakailaw ang VGA LED kapag hindi ma-detect ng board ang graphics card o walang lumalabas na display.
+
+1. Patayin at bunutin ang PC. Tanggalin ang graphics card at ibalik nang mabuti hanggang mag-click ang lock ng PCIe slot.
+2. I-check ang power cable ng GPU (6+2 pin o 12V-2x6). Dapat buong nakasaksak. Kung dalawa o higit pa ang socket, gumamit ng hiwalay na cable para sa bawat isa kung kaya.
+3. Siguraduhing nakasaksak ang monitor sa graphics card, at tama ang input na napili sa monitor.
+4. Kung may built-in graphics ang CPU mo, subukang tanggalin ang GPU at isaksak ang monitor sa motherboard. Kung may display, GPU o power nito ang problema.
+5. Kung may ibang PC ka, subukan doon ang graphics card.
+
+### Pumasa na ang hardware, storage na ang hinahanap
+
+Ang BOOT LED ay nangangahulugang tapos na ang hardware check pero walang makitang drive na may Windows, o may problema sa display.
+
+1. I-check muna ang monitor: tamang input, nakasaksak sa graphics card, at subukan ang ibang cable.
+2. Pumasok sa BIOS (kadalasan Delete o F2 habang nagbu-boot) at tingnan kung nakikita ang SSD mo.
+3. Kung M.2 SSD, patayin at bunutin ang PC, tapos i-check kung nakapasok nang buo at naka-screw ito.
+4. Kung bago ang SSD, normal na walang Windows pa. Kailangan mong mag-install gamit ang USB installer galing sa website ng Microsoft.
+5. Kung dati gumagana at biglang nawala ang SSD sa BIOS, posibleng sira na ito.
+
+### Hintayin muna: baka nagme-memory training
+
+Pagkatapos ng bagong build, bagong RAM, BIOS update o clear CMOS, tine-train ulit ng board ang RAM. Sa DDR5 (lalo na sa AM5), pwedeng umabot ng ilang minuto na itim ang monitor.
+
+1. Iwan muna ang PC na naka-on nang 10 hanggang 15 minuto. Huwag patayin o i-restart.
+2. Kung may display na, normal na mas mabilis ang susunod na boot.
+3. Kung wala pa rin pagkatapos ng 15 minuto, patayin, bunutin, at ibalik nang mabuti ang RAM (gamitin ang slots na sinasabi ng manual, kadalasan A2 at B2).
+4. Subukan ang isang stick lang muna. Kung may debug LED ang board, tingnan kung alin ang nakailaw at bumalik dito.
+
+### Isa-isahin: monitor, cable, GPU, RAM
+
+Kapag biglang nawala ang display, kadalasang dahilan ang cable o monitor, maluwag na part, o settings ng BIOS na kailangang i-reset.
+
+1. Subukan ang monitor at cable sa ibang device (laptop o console). Kung walang display pa rin, monitor o cable ang sira.
+2. Subukan ang ibang port sa graphics card at ibang cable.
+3. Patayin at bunutin ang PC, tapos ibalik nang mabuti ang graphics card at RAM.
+4. I-clear ang CMOS para bumalik sa default ang BIOS. Sundin ang manual (may button o jumper ang karamihan ng board). Gawin ito habang nakabunot ang PC.
+5. Kung may built-in graphics ang CPU, subukan ang display gamit ang ports ng motherboard nang walang GPU para malaman kung GPU ang sira.
+
+### Basahin ang beep code sa manual
+
+Iba-iba ang ibig sabihin ng beep pattern depende sa brand at BIOS ng motherboard, kaya ang manual ang pinaka-tamang basehan. Kadalasan RAM o graphics card ang tinuturo nito.
+
+1. Bilangin ang beep: ilan ang mahaba at ilan ang maikli, at kung umuulit.
+2. Hanapin sa manual ng motherboard (o sa support page ng brand) ang "beep codes" o "POST codes" at itugma ang pattern.
+3. Kung RAM ang tinuturo: patayin at bunutin ang PC, ibalik nang mabuti ang RAM, at subukan ang isang stick lang muna.
+4. Kung graphics card: ibalik nang mabuti ang GPU at i-check ang power cable nito.
+5. Kung may debug LEDs ang board, mas madaling basahin iyon. Gamitin ang troubleshooter na "Naka-on pero walang display".
+
+### Baka kulang ang PSU sa load
+
+Kapag biglang namamatay habang naglalaro pero hindi mainit, kadalasang dahilan ang PSU na kulang ang wattage, luma na, o mahina ang quality para sa GPU mo.
+
+1. Tingnan ang recommended PSU wattage ng graphics card mo sa website ng brand, at ikumpara sa PSU mo.
+2. Gamitin ang Mag-Build sa site na ito para makita ang estimated na power ng buong set mo.
+3. Patayin at bunutin ang PC, tapos i-check ang power cables ng GPU. Kung dalawa o higit pa ang socket, gumamit ng hiwalay na cable para sa bawat isa kung kaya.
+4. Kung hindi ka sigurado, i-check din ang temps gamit ang HWiNFO habang naglalaro.
+5. Kung luma o walang brand ang PSU, palitan ng kilalang brand na may sapat na wattage.
+
+### Ibalik muna sa default ang BIOS
+
+Ang XMP, EXPO, overclock o undervolt ay pwedeng hindi stable sa ilang CPU, RAM o board, kahit gumana ito dati.
+
+1. Pumasok sa BIOS at piliin ang "Load Optimized Defaults" (o katulad na pangalan), tapos i-save.
+2. Gamitin muna ang PC nang ilang araw nang walang XMP o EXPO. Kung wala nang restart, iyon ang dahilan.
+3. I-update ang BIOS gamit ang file galing sa website ng motherboard. Madalas may fix ito para sa RAM stability. Huwag patayin habang nag-a-update.
+4. Pagkatapos, i-on ulit ang XMP o EXPO. Kung bumalik ang restart, gamitin ang mas mababang speed o i-check kung nasa supported list ng board ang RAM mo.
+
+### I-check ang kuryente, drivers at RAM
+
+Ang random na restart ay pwedeng galing sa kuryente sa bahay, sa driver, sa RAM o sa PSU. Ang "Kernel-Power 41" sa Event Viewer ay nagsasabi lang na hindi maayos ang huling shutdown. Hindi nito sinasabi kung bakit.
+
+1. Kung madalas ang brownout o mahina ang kuryente sa lugar ninyo, gumamit ng AVR o UPS.
+2. I-update ang graphics driver galing sa AMD, NVIDIA o Intel, at ang chipset driver galing sa website ng motherboard.
+3. I-run ang Windows Memory Diagnostic (i-type ang "mdsched" sa Start) para ma-test ang RAM.
+4. Sa Event Viewer, tingnan ang ibang errors na kasabay ng Kernel-Power 41 (hal. disk o driver errors) para may clue.
+5. Kung wala pa ring makita, subukan ang ibang PSU kung may mahihiraman ka.
+
+### Basahin ang stop code ng blue screen
+
+May nakasulat na stop code sa blue screen (hal. MEMORY_MANAGEMENT o WHEA_UNCORRECTABLE_ERROR). Iyon ang pinakamagandang clue kung driver, RAM o storage ang problema.
+
+1. Kunan ng picture ang blue screen at isulat ang stop code. I-search ito sa website ng Microsoft.
+2. I-update ang graphics driver (AMD, NVIDIA o Intel) at chipset driver (website ng motherboard).
+3. Kung naka-on ang XMP o EXPO, i-off muna sa BIOS at tingnan kung mawawala ang blue screen.
+4. I-run ang Windows Memory Diagnostic (i-type ang "mdsched" sa Start) para ma-test ang RAM.
+5. I-check ang health ng SSD gamit ang tool ng brand nito, at siguraduhing may bakanteng space pa.
+
+### I-check ang pagkakabit ng cooler
+
+Sa bagong cooler, madalas na dahilan ang plastic na nakadikit pa sa ilalim nito, maluwag na pagkakakabit, o fan cable na wala sa tamang header.
+
+1. Patayin at bunutin ang PC. Tanggalin ang cooler at tingnan kung may plastic film pa sa ilalim. Kung meron, tanggalin ito.
+2. Kung natanggal ang cooler, linisin ang lumang thermal paste gamit ang isopropyl alcohol at maglagay ng bago (parang butil ng mais lang sa gitna). Kung may pre-applied paste ang cooler, okay na iyon sa unang kabit.
+3. Ikabit ulit nang pantay, hinihigpitan nang paekis (cross pattern) ang screws.
+4. Isaksak ang fan cable ng cooler sa "CPU_FAN" header. Kung AIO, sundin ang manual para sa pump cable.
+5. Pag-on, i-check ang temps gamit ang HWiNFO.
+
+### Alikabok, lumang paste, o kulang ang cooler
+
+Pagkalipas ng ilang taon, nag-iipon ng alikabok ang heatsink at natutuyo ang thermal paste. Tandaan din: ang ilang bagong CPU (hal. Ryzen 7000) ay talagang dinisenyo na umabot ng mga 95°C sa mabigat na load, at kusa silang nagbabawas ng bilis kapag nasa limit.
+
+1. Patayin at bunutin ang PC. Linisin ang alikabok sa heatsink, fans at filters gamit ang brush o blower. Hawakan ang fan para hindi umikot habang binobugahan.
+2. Kung ilang taon na, palitan ang thermal paste.
+3. Siguraduhing may hangin na pumapasok sa harap at lumalabas sa likod o taas ng case.
+4. I-check ang temps gamit ang HWiNFO. Kung bumabagsak ang bilis ng CPU o namamatay ang PC dahil sa init, mag-upgrade ng mas malakas na cooler.
+5. Kung stock cooler ang gamit sa mabigat na CPU, malaking tulong ang upgrade sa tower cooler o AIO.
+
+### Airflow at alikabok ng graphics card
+
+Kapag mainit ang GPU, kadalasang dahilan ang alikabok, kulang na hangin sa case, o masikip na pwesto.
+
+1. Patayin at bunutin ang PC. Linisin ang fans at heatsink ng GPU gamit ang brush o blower, nang hindi binubuksan ang GPU (mawawala ang warranty).
+2. Siguraduhing may intake fans sa harap at exhaust sa likod o taas, at hindi nakaharang ang cables sa harap ng GPU.
+3. Huwag ilagay ang PC sa masikip na kabinet o sa sahig na maalikabok.
+4. Pwede mong i-cap ang FPS sa game (hal. sa refresh rate ng monitor mo) para mas malamig at tahimik ang GPU.
+5. Kung maliit o luma ang case, mas magandang airflow ang case na may mesh na harap.
+
+### Tingnan muna ang temps
+
+Para malaman kung alin ang mainit, kailangan mong makita ang temperature ng CPU at GPU habang ginagamit ang PC.
+
+1. I-download ang HWiNFO sa official website nito at buksan sa "Sensors only".
+2. Maglaro nang 15 minuto, tapos tingnan ang "Maximum" column ng CPU at GPU temperature.
+3. Ikumpara sa specs ng CPU at GPU mo sa website ng AMD, Intel o NVIDIA. Ang ilang bagong CPU ay normal na umaabot ng mga 90 hanggang 95°C sa mabigat na load.
+4. Kapag alam mo na kung alin ang mainit, bumalik dito at piliin ang CPU o GPU.
+
+### I-check ang refresh rate ng monitor
+
+Kung 144Hz o mas mataas ang monitor mo pero naka-60Hz sa Windows, hindi mo makikita ang mataas na FPS.
+
+1. Sa Windows: Settings > System > Display > Advanced display, at piliin ang pinakamataas na refresh rate.
+2. Siguraduhing nakasaksak ang monitor sa graphics card, hindi sa motherboard.
+3. Mas safe ang DisplayPort. Kung HDMI, gumamit ng port at cable na kaya ang refresh rate ng monitor mo. May lumang HDMI na hindi umaabot sa 144Hz.
+4. Sa game settings, i-check din kung tama ang refresh rate at walang FPS cap na masyadong mababa.
+
+### Drivers, settings, tapos hardware
+
+Ang mababang FPS ay pwedeng dahil sa lumang driver, settings ng Windows o RAM, o talagang kulang ang hardware para sa game. Sa Valorant at CS2, malaki ang epekto ng CPU at RAM sa mataas na FPS.
+
+1. I-update ang graphics driver galing sa website ng AMD, NVIDIA o Intel.
+2. Sa Windows: Settings > System > Power, at piliin ang "Best performance".
+3. Sa Task Manager > Performance > Memory, tingnan ang "Speed" at "Slots used". Kung isang stick lang, mas mabilis ang dalawa (dual channel). Kung mababa ang speed, i-on ang XMP o EXPO sa BIOS.
+4. Isara ang ibang apps habang naglalaro, lalo na ang browser na maraming tabs.
+5. I-check ang temps gamit ang HWiNFO. Kapag sobrang init, kusang bumabagal ang CPU at GPU.
+6. Kung okay na lahat at mababa pa rin, baka oras na mag-upgrade. Built-in graphics lang? Malaking tulong ang graphics card.
+
+### Hanapin ang dahilan ng stutter
+
+Madalas na dahilan ng stutter ang RAM na isang stick lang o mabagal, game na naka-install sa HDD o halos punong drive, o background apps.
+
+1. Normal ang kaunting stutter sa unang laro pagkatapos ng driver o game update habang nagko-compile ng shaders. Dapat mawala ito pagkatapos ng ilang laro.
+2. Kung isang RAM stick lang, mas smooth ang dalawang stick (dual channel). I-on din ang XMP o EXPO sa BIOS.
+3. Kung naka-install ang game sa HDD, ilipat sa SSD. Mag-iwan din ng bakanteng space sa drive.
+4. Isara ang overlays at apps na hindi kailangan (recording, browser, launchers na nagda-download).
+5. I-check ang temps gamit ang HWiNFO para makita kung bumabagal ang CPU o GPU dahil sa init.
+
+### Internet ang problema, hindi ang PC
+
+Kapag tumataas ang ping habang nagla-lag, connection ang may problema at hindi ang hardware ng PC.
+
+1. Gumamit ng LAN cable papunta sa router imbes na Wi-Fi kung kaya. Mas stable ito para sa online games.
+2. I-check kung may ibang device sa bahay na nagda-download o nanonood ng video habang naglalaro ka.
+3. I-restart ang router at modem.
+4. Sa game, piliin ang server na pinakamalapit sa iyo (hal. Singapore o SEA).
+5. Kung tuloy-tuloy pa rin, tumawag sa internet provider ninyo.
+
+### I-check ang audio cable ng case at ang output
+
+Ang front audio ng case ay may sariling cable papunta sa motherboard. Kapag hindi ito nakasaksak, walang tunog sa harap.
+
+1. Sa Windows, i-click ang speaker icon sa taskbar at piliin ang tamang output device.
+2. Patayin at bunutin ang PC. Hanapin ang "HD_AUDIO" o "AAFP" header sa baba-kaliwa ng motherboard at doon isaksak ang audio cable ng case.
+3. Subukan muna ang headset sa likod ng motherboard. Kung may tunog doon, ang front panel cable ang problema.
+4. I-install ang audio driver galing sa website ng motherboard mo.
+
+### Output device at driver
+
+Kadalasan, mali lang ang napiling output device sa Windows, o kulang ang audio driver.
+
+1. I-click ang speaker icon sa taskbar at piliin ang tamang output device. Tingnan din kung naka-mute.
+2. Isaksak sa berdeng port (headphone o line out) sa likod ng motherboard.
+3. I-install ang audio driver galing sa website ng motherboard mo.
+4. Subukan ang headset o speakers sa ibang device para malaman kung sila ang sira.
+
+### Piliin ang monitor bilang output
+
+Kapag sa monitor dumadaan ang tunog (HDMI o DisplayPort), kailangang may speakers o headphone jack ang monitor, at dapat ito ang napiling output sa Windows.
+
+1. I-check kung may built-in speakers o 3.5mm jack ang monitor mo. Kung wala, sa motherboard isaksak ang headset.
+2. Sa speaker icon sa taskbar, piliin ang pangalan ng monitor bilang output.
+3. Tingnan ang volume sa menu ng monitor mismo, baka naka-mute.
+4. I-update ang graphics driver. Kasama rito ang audio driver para sa HDMI at DisplayPort.
+
+### Cable, router at LAN driver
+
+Kapag walang internet sa LAN, kadalasang maluwag ang cable, may problema ang router, o kulang ang LAN driver (lalo na pagkatapos mag-install ng Windows).
+
+1. I-check kung nakailaw o kumikislap ang ilaw sa LAN port ng PC. Kung wala, subukan ang ibang cable at ibang port sa router.
+2. Subukan ang internet sa ibang device. Kung wala rin, router o provider ang problema.
+3. I-download ang LAN driver galing sa website ng motherboard gamit ang ibang device, ilipat gamit ang USB flash drive, at i-install.
+4. I-restart ang router at ang PC.
+
+### Antenna at Wi-Fi driver
+
+Ang Wi-Fi ng motherboard ay kailangan ng nakakabit na antenna at tamang driver.
+
+1. Ikabit ang kasamang antenna sa dalawang gold na screw port sa likod ng motherboard. Mahina o walang signal kapag walang antenna.
+2. I-download ang Wi-Fi at Bluetooth driver galing sa website ng motherboard gamit ang ibang device, ilipat gamit ang USB, at i-install.
+3. Sa Windows, siguraduhing naka-on ang Wi-Fi at hindi naka-airplane mode.
+4. Kung malayo sa router, ilapit ang antenna o gumamit ng LAN cable.
+
+### Baka walang Wi-Fi ang motherboard mo
+
+Maraming motherboard ang walang built-in Wi-Fi. Kadalasan, may "WiFi" sa pangalan ng model kapag meron.
+
+1. Tingnan ang model ng motherboard mo at hanapin ang specs sa website ng brand.
+2. Kung wala, gumamit ng LAN cable papunta sa router. Ito rin ang pinaka-stable para sa games.
+3. Pwede ka ring bumili ng USB o PCIe Wi-Fi adapter.
+4. Kung magpapalit ka rin ng motherboard, pumili ng model na may "WiFi" sa pangalan.
+
+### Mukhang hindi power ang problema
+
+Bumubukas at hindi namamatay ang PC, kaya ibang part ang dapat tingnan.
+
+1. Kung walang lumalabas sa monitor, bumalik sa itaas at piliin ang Display.
+2. Kung mabagal o nag-i-stutter sa games, piliin ang Games.
+3. Kung mainit o maingay, piliin ang Init.
+4. Hindi pa rin? I-type ang problema mo kay Ark.
+
+### Artifacts: overclock, driver o sira na GPU
+
+Ang kakaibang kulay, guhit o kislap sa screen ay kadalasang galing sa overclock, driver, sobrang init, o sira na graphics card.
+
+1. Kung may overclock ka (hal. sa MSI Afterburner), ibalik sa default.
+2. I-clean install ang graphics driver galing sa AMD, NVIDIA o Intel.
+3. I-check ang temps ng GPU gamit ang HWiNFO habang naglalaro.
+4. Subukan ang ibang cable, port o monitor para matiyak na hindi monitor ang sira.
+5. Kung may artifacts pa rin kahit sa BIOS screen (bago mag-Windows), malamang hardware na ang sira. I-claim ang warranty.
+
+### I-update o i-clean install ang driver
+
+Kapag nagka-crash o kakaiba ang graphics pero hindi mainit, kadalasang driver ang dahilan.
+
+1. I-download ang pinakabagong driver sa website ng AMD, NVIDIA o Intel.
+2. Sa installer, piliin ang malinis na install: "Perform a clean installation" sa NVIDIA (Custom install) o "Factory Reset" sa AMD.
+3. I-restart ang PC pagkatapos.
+4. Patayin at bunutin ang PC, tapos i-check kung buong nakasaksak ang power cable ng graphics card.
+
+### Hindi nababasa ang isang RAM stick
+
+Kapag kulang ang RAM sa Windows, kadalasang hindi nakaupo nang buo ang isang stick o nasa maling slot.
+
+1. Sa Task Manager > Performance > Memory, tingnan ang "Slots used".
+2. Patayin at bunutin ang PC. Tanggalin ang RAM at ibalik nang mabuti hanggang mag-click ang dalawang lock.
+3. Ilagay sa slots na sinasabi ng manual, kadalasan A2 at B2.
+4. Subukan ang bawat stick nang mag-isa para malaman kung may sira.
+
+### I-check ang speed at dual channel
+
+Kung tama ang laki pero parang mabagal, baka hindi naka-on ang XMP/EXPO o isang stick lang ang gamit.
+
+1. Sa Task Manager > Performance > Memory, tingnan ang "Speed" at "Slots used".
+2. Kung mas mababa ang speed kaysa nakasulat sa box, i-on ang XMP o EXPO sa BIOS.
+3. Kung isang stick lang, mas maganda ang dalawa (dual channel).
+
+### Hindi nakikita ang SSD sa BIOS
+
+Kadalasang maluwag ang pagkakakabit, kulang ang cable, o naka-disable ang slot dahil sa ibang device.
+
+1. Patayin at bunutin ang PC.
+2. M.2: tanggalin at ibalik nang buo, tapos i-screw.
+3. SATA SSD: i-check ang SATA data cable sa board at ang power cable mula sa PSU.
+4. Sa ilang board, nadi-disable ang isang M.2 slot o SATA port kapag may gamit sa iba. Nakasulat ito sa manual.
+5. Subukan sa ibang slot. Kung wala pa rin, posibleng sira ang SSD.
+
+### I-initialize ang bagong drive
+
+Ang bagong SSD ay hindi lalabas sa File Explorer hangga't hindi na-initialize at nagagawan ng partition.
+
+1. I-right click ang Start at piliin ang Disk Management.
+2. Kapag nag-prompt, i-initialize ang bagong disk bilang GPT.
+3. I-right click ang "Unallocated" na space, piliin ang New Simple Volume, at sundin ang wizard.
+4. Para lang ito sa bagong, walang lamang drive. Kung may files ang drive, huwag i-initialize o i-format.
+
+### Bilisan ang loading
+
+Mabagal ang boot at loading kapag nasa HDD ang Windows o games, o halos puno na ang drive.
+
+1. Siguraduhing nasa SSD ang Windows at ang madalas laruin.
+2. Mag-iwan ng mga 10 hanggang 20% na bakanteng space sa drive.
+3. I-check ang health gamit ang tool ng brand o ang CrystalDiskInfo.
+
+### I-check ang health ng SSD
+
+Kung nakikita ang drive at hindi mabagal, magandang i-check pa rin ang health para sigurado.
+
+1. Buksan ang tool ng brand (hal. Samsung Magician, Kingston SSD Manager, WD Dashboard) o ang libreng CrystalDiskInfo.
+2. Tingnan ang "Health". Kung may warning o bumababa na, mag-backup agad.
+
+## Q&A (mga madalas itanong kay Ark, ang assistant ng site)
+
+### May problema ang PC ko, saan ako magsisimula?
+
+Sabihin mo kung ano ang nangyayari, hal. "walang display", "ayaw mag-on", "nagre-restart", "mainit" o "mababa ang FPS". Pwede ka ring pumili ng part sa itaas, o gamitin ang Troubleshooter: ilang tanong lang, may step-by-step na checks na.
+
+### Naka-on pero walang display
+
+Unang tingnan: saan nakasaksak ang monitor? Kung may graphics card ka, sa graphics card dapat, hindi sa motherboard.
+
+Kung tama na iyon, tingnan ang maliliit na debug LED sa motherboard (CPU, DRAM, VGA, BOOT). Ang nakailaw ang nagsasabi kung saan tumigil. Sa bagong DDR5 build, normal na itim muna ang monitor nang ilang minuto sa unang boot habang nagme-memory training.
+
+Sundan ang Troubleshooter para sa step-by-step.
+
+### Ayaw mag-on ang PC
+
+Simulan sa simple:
+• Naka-ON ba ang switch sa likod ng PSU (nakapindot sa "I")?
+• Gumagana ba ang outlet, AVR o extension?
+• Sa bagong build: nasa tamang pins ba ang power switch cable ng case (PWR_SW sa front panel header) at naka-click nang buo ang 24-pin at CPU power cable?
+
+Kung may amoy sunog o pumutok, bunutin agad at huwag nang i-on ulit.
+
+### Biglang namamatay o nagre-restart
+
+Tatlong karaniwang dahilan:
+• Kulang o mahinang PSU, lalo na kung habang naglalaro lang nangyayari.
+• Sobrang init ng CPU o GPU.
+• Hindi stable na XMP/EXPO o overclock.
+
+Kung may blue screen muna, isulat ang stop code. Malaking clue iyon.
+
+### Mababa ang FPS sa games
+
+Mga check na libre:
+• Nakasaksak ba ang monitor sa graphics card, hindi sa motherboard?
+• Updated ba ang graphics driver (galing sa AMD, NVIDIA o Intel)?
+• Dalawang RAM stick ba (dual channel) at naka-on ang XMP/EXPO?
+• Naka-"Best performance" ba ang power mode ng Windows?
+
+Sa Valorant at CS2, malaki ang epekto ng CPU at RAM sa mataas na FPS. Sa Dota 2, CPU din at GPU.
+
+### May stutter o lag spikes sa games
+
+Tingnan muna kung ping ang tumataas (internet) o FPS ang bumabagsak (PC).
+
+Kung FPS: isang RAM stick lang, naka-install ang game sa HDD, halos punong drive, o background apps. Normal din ang kaunting stutter sa unang laro pagkatapos ng driver update habang nagko-compile ng shaders.
+
+Kung ping: gumamit ng LAN cable imbes na Wi-Fi.
+
+### 144Hz monitor pero parang 60Hz
+
+Sa Windows: Settings > System > Display > Advanced display, at piliin ang pinakamataas na refresh rate.
+
+Siguraduhing nakasaksak sa graphics card ang monitor. Mas safe ang DisplayPort; kung HDMI, gumamit ng port at cable na kaya ang refresh rate ng monitor (may lumang HDMI na hindi umaabot sa 144Hz).
+
+### Paano i-check ang temperature ng PC?
+
+I-download ang HWiNFO sa official website nito at buksan sa "Sensors only". Maglaro nang 15 minuto, tapos tingnan ang "Maximum" column ng CPU at GPU.
+
+Iba-iba ang normal per CPU. Halimbawa, dinisenyo ang Ryzen 7000 na umabot ng mga 95°C sa mabigat na load. Kusang bumabagal ang CPU at GPU kapag nasa limit, kaya hindi agad masisira, pero babagal ang performance.
+
+### Sobrang ingay ng fans
+
+Kadalasan, ingay ay dahil mainit (bumibilis ang fans) o maalikabok.
+• Linisin ang alikabok sa fans, heatsink at filters.
+• I-check ang temps gamit ang HWiNFO.
+• Sa BIOS, pwedeng i-adjust ang fan curve para mas tahimik sa idle.
+• Kung may kumakaskas na tunog, baka sira ang bearing ng isang fan. Palitan ito.
+
+### Paano linisin ang PC?
+
+Patayin at bunutin ang PC. Gumamit ng soft brush o blower para sa fans, heatsink at dust filters. Hawakan ang fan para hindi umikot habang binubugahan.
+
+Huwag gumamit ng vacuum sa loob ng case (static), at huwag buksan ang PSU o ang graphics card. Gawin ito tuwing ilang buwan, mas madalas kung maalikabok ang kwarto.
+
+### Nagbe-beep ang PC pagka-on
+
+Sa maraming board, isang maikling beep tapos tuloy ang boot = normal (pumasa ang hardware check).
+
+Kung paulit-ulit o sunod-sunod, iba-iba ang ibig sabihin per brand at BIOS, kaya ang manual ng motherboard ang basehan. Kadalasan RAM o graphics card ang tinuturo nito.
+
+### Ano ang ibig sabihin ng ilaw na CPU, DRAM, VGA, BOOT?
+
+Iyan ang debug LEDs. Ipinapakita nila kung saan tumigil ang hardware check:
+• CPU: CPU, power nito, o BIOS na hindi pa kilala ang CPU.
+• DRAM: RAM na hindi ma-detect o nagme-memory training pa.
+• VGA: graphics card o display.
+• BOOT: pumasa ang hardware, pero walang makitang drive na may Windows.
+
+Piliin ang nakailaw sa Troubleshooter.
+
+### Walang tunog
+
+• I-click ang speaker icon sa taskbar at piliin ang tamang output device.
+• Kung sa harap ng case nakasaksak, i-check kung naka-saksak ang "HD_AUDIO" cable ng case sa motherboard.
+• Kung sa monitor dumadaan (HDMI o DisplayPort), kailangan may speakers o jack ang monitor.
+• I-install ang audio driver galing sa website ng motherboard.
+
+### Walang internet o Wi-Fi
+
+• LAN: tingnan kung may ilaw ang LAN port at subukan ang ibang cable.
+• Wi-Fi: maraming motherboard ang walang built-in Wi-Fi. Kadalasan may "WiFi" o "AX" sa pangalan kapag meron, at kailangang ikabit ang antenna.
+• Pagkatapos mag-install ng Windows, i-download ang LAN o Wi-Fi driver sa website ng motherboard gamit ang ibang device, at ilipat gamit ang USB.
+
+### LAN o Wi-Fi para sa online games?
+
+LAN cable kung kaya. Mas stable ang ping at walang interference, kaya mas kaunting lag spikes sa Valorant, Dota 2 at CS2. Kung Wi-Fi talaga, ilapit sa router at iwasan ang makapal na pader sa pagitan.
+
+### Saan isasaksak ang power button cable ng case?
+
+Sa front panel header ng motherboard (kadalasan sa baba, kanang sulok, may label na F_PANEL o JFP1). Maliit ang pins at iba-iba ang ayos per brand, kaya tingnan ang diagram sa manual.
+
+Ang POWER SW ay walang polarity (kahit baligtad, gagana). Ang LED cables ay may + at −.
+
+### Ano ang gagawin sa unang boot ng bagong build?
+
+1. I-check ang lahat ng cable bago isaksak: 24-pin, CPU power, GPU power, front panel.
+2. Pag-on, maghintay. Sa DDR5, pwedeng ilang minuto na itim ang monitor habang nagme-memory training. Huwag patayin.
+3. Pumasok sa BIOS (Delete o F2). Tingnan kung nakikita ang CPU, RAM at SSD.
+4. I-on ang XMP/EXPO, i-save, at mag-install ng Windows mula sa USB.
+5. I-install ang chipset at graphics drivers.
+
+### Paano mag-install ng Windows sa bagong PC?
+
+1. Sa ibang PC, i-download ang Media Creation Tool sa website ng Microsoft at gumawa ng USB installer (8GB pataas).
+2. Isaksak sa bagong PC, pumasok sa boot menu (kadalasan F8, F11 o F12, depende sa board) at piliin ang USB.
+3. I-install sa SSD.
+4. Pagkatapos, i-install ang chipset, LAN/Wi-Fi at audio drivers galing sa website ng motherboard, at ang graphics driver galing sa AMD, NVIDIA o Intel.
+
+### Saan kukuha ng drivers?
+
+• Chipset, LAN, Wi-Fi, audio: sa support page ng motherboard mo (hanapin ang eksaktong model).
+• Graphics: sa website ng AMD, NVIDIA o Intel.
+
+Iwasan ang "driver updater" apps galing sa ibang site. Madalas may kasamang ads o malware.
+
+### Paano makita ang specs ng PC ko?
+
+• CPU at RAM: Settings > System > About.
+• Graphics card: Task Manager > Performance > GPU.
+• RAM speed at ilang stick: Task Manager > Performance > Memory ("Speed" at "Slots used").
+• Lahat-lahat: libreng HWiNFO o CPU-Z.
+
+### Ano ang unahin i-upgrade?
+
+Depende sa problema:
+• Mababa ang FPS sa graphics-heavy games: graphics card.
+• Mabagal mag-boot at mag-load: SSD (kung HDD pa).
+• Isang RAM stick lang o 8GB: dagdagan para dual channel at 16GB pataas.
+• Valorant o CS2 na kulang sa FPS kahit low settings: kadalasan CPU.
+
+Kapag GPU ang ia-upgrade, i-check din kung kaya ng PSU.
+
+### Ano ang bottleneck?
+
+Ang bottleneck ay ang part na pumipigil sa iba. Halimbawa, malakas na GPU pero mahinang CPU: hindi magamit nang buo ang GPU sa games na mabigat sa CPU.
+
+Laging may isang part na limit, kaya hindi ito masama. Ang mahalaga ay balanse para sa games mo. Huwag masyadong maniwala sa "bottleneck calculator" sites. Mas maaasahan ang benchmarks ng games na nilalaro mo.
+
+### Kailangan ko ba ng graphics card?
+
+Depende sa CPU at sa gagawin mo:
+• Kung walang built-in graphics ang CPU (hal. Ryzen 5 5600, o Intel na may "F"), kailangan talaga ng GPU para may display.
+• Pang-school at office lang: sapat ang built-in graphics.
+• Gaming: kaya ng malakas na built-in graphics (hal. Ryzen 5 8600G) ang light games sa mababang settings, pero para sa mataas na FPS kailangan ng graphics card.
+
+### 8GB o 16GB VRAM?
+
+Para sa Valorant, Dota 2 at CS2 sa 1080p, sapat ang 8GB.
+
+Sa mga bagong AAA games, lalo na sa high o ultra textures at 1440p, mabilis nang mapuno ang 8GB at pwedeng mag-stutter. Kung pang-matagalan o pang-AAA, mas safe ang 12GB o 16GB.
+
+### NVIDIA o AMD na graphics card?
+
+Parehong maganda, depende sa presyo at gamit:
+• NVIDIA (RTX): DLSS, malakas sa ray tracing, at madalas preferred sa streaming at ilang editing apps.
+• AMD (Radeon RX): madalas mas maraming VRAM sa parehong presyo. May FSR para sa upscaling.
+
+Ikumpara ang performance sa games mo sa parehong budget.
+
+### Anong GPU sa budget ko?
+
+Gamitin ang Mag-Build: ilagay ang budget at gamit, at pipili kami ng GPU na balanse sa CPU at PSU. Pwede mo ring i-browse ang listahan ng GPU na may filter at presyo.
+
+### Paano i-update ang graphics driver?
+
+• NVIDIA: i-download ang NVIDIA App o driver sa nvidia.com.
+• AMD: AMD Software: Adrenalin Edition sa amd.com.
+• Intel: Intel Arc o graphics driver sa intel.com.
+
+Kapag lumipat ng brand (hal. AMD papuntang NVIDIA), magandang i-uninstall muna ang lumang driver.
+
+### Paano isaksak ang power ng graphics card?
+
+Gamitin ang PCIe cable ng PSU (6+2 pin) o ang 12V-2x6 cable para sa mga bagong card na meron nito. Itulak hanggang mag-click.
+
+Kung dalawa o higit pa ang socket sa card, mas safe ang hiwalay na cable para sa bawat isa, lalo na sa malakas na GPU. Huwag gamitin ang CPU cable (EPS) sa GPU: magkahawig pero iba.
+
+### Saang slot ilalagay ang graphics card?
+
+Sa pinakamataas na mahabang PCIe x16 slot, pinakamalapit sa CPU.
+
+Backward compatible ang PCIe: gagana ang PCIe 4.0 o 5.0 card sa PCIe 3.0 slot. Pero ang mga card na x8 lang ang koneksyon (hal. RTX 5060 series, RX 7600) ay pwedeng medyo bumagal sa PCIe 3.0 board, lalo na ang 8GB na versions.
+
+### Lumulubog ang graphics card (GPU sag)
+
+Normal sa mabibigat na card ang bahagyang paglubog. Kung halata ang pagkalaylay, gumamit ng GPU support bracket (madalas kasama na sa box). Siguraduhin ding naka-screw nang mahigpit ang card sa case.
+
+### Mainit ang graphics card
+
+• Linisin ang alikabok sa fans ng GPU (huwag buksan ang card, mawawala ang warranty).
+• Siguraduhing may intake sa harap at exhaust sa likod o taas ng case.
+• I-cap ang FPS sa game (hal. sa refresh rate ng monitor) para mas malamig at tahimik.
+
+### Okay ba bumili ng second hand na GPU?
+
+Pwede, pero may risk: kadalasan wala nang warranty, at hindi mo alam kung paano ginamit. Kung bibili, subukan muna nang personal (maglaro o mag-benchmark ng 15 minuto), i-check ang temps, at humingi ng resibo. Ang bago sa Shopee Mall ay may warranty at returns sa seller.
+
+### Pwede ba ang dalawang monitor?
+
+Oo. Isaksak ang dalawa sa ports ng graphics card (hindi isa sa GPU at isa sa motherboard, maliban kung naka-on ang iGPU sa BIOS). Sa Windows: Settings > System > Display, piliin ang "Extend these displays".
+
+### Intel o AMD?
+
+Parehong maganda. Ikumpara ang presyo at performance sa gamit mo:
+• AMD AM5 (Ryzen 7000/9000): DDR5, at may upgrade path pa sa susunod na Ryzen.
+• AMD AM4 (Ryzen 5000): murang build gamit ang DDR4.
+• Intel LGA1700 (12th–14th Gen): pwedeng DDR4 o DDR5, depende sa board.
+
+Para sa pure gaming, malakas ang Ryzen na may "X3D".
+
+### Ano ang X3D?
+
+Ang X3D (hal. Ryzen 7 7800X3D, 9800X3D) ay may dagdag na cache (3D V-Cache) na malaking tulong sa games. Kaya sila madalas pinakamabilis sa gaming. Mas mahal sila, at hindi kasing laki ang dagdag sa editing o rendering.
+
+### Ano ang ibig sabihin ng F, K, X, G sa CPU?
+
+• Intel F (hal. i5-12400F): walang built-in graphics, kailangan ng GPU.
+• Intel K: pwedeng i-overclock (kailangan ng Z board).
+• AMD G (hal. 8600G): mas malakas na built-in graphics.
+• AMD X: mas mataas na clock speed kaysa non-X.
+• AMD X3D: may dagdag na cache para sa gaming.
+
+### Paano malaman kung may built-in graphics ang CPU?
+
+Tingnan ang model at ang specs page sa AMD o Intel:
+• Walang built-in graphics: Ryzen 5000 na walang "G" (hal. Ryzen 5 5600), at Intel na may "F" (hal. i5-12400F) o "KF".
+• Meron: Ryzen na may "G", karamihan ng Ryzen 7000 at 9000 (maliban sa may "F"), at Intel na walang "F".
+
+Pwede mo ring itanong dito ang eksaktong model, hal. "may igpu ba ang i5-12400".
+
+### AM4 o AM5?
+
+• AM4 (Ryzen 5000): DDR4 lang, mas mura ang board at RAM. Huling henerasyon na ito, kaya limitado ang upgrade.
+• AM5 (Ryzen 7000/9000): DDR5 lang. Mas mahal ng kaunti, pero mas bago at may upgrade path pa.
+
+Hindi pwedeng ilagay ang AM4 na CPU sa AM5 board, at baliktad.
+
+### Tray o box na CPU?
+
+• Box: may kahon at kadalasan official na warranty. Ang ilang box CPU ay may kasamang cooler.
+• Tray: CPU lang, kadalasang walang cooler, at madalas sa seller ang warranty.
+
+Tingnan sa listing kung may cooler, at i-check ang warranty sa seller bago bumili.
+
+### Ilang cores ang kailangan?
+
+Para sa gaming, sapat na ang 6 cores, 12 threads (hal. Ryzen 5 7600) sa karamihan ng games. Mas maraming cores (8 pataas) ay tulong sa streaming habang naglalaro, video editing at rendering.
+
+### Totoo bang may problema ang Intel 13th at 14th Gen?
+
+May kinumpirmang stability issue ang Intel sa ilang 13th at 14th Gen desktop CPUs, at naglabas sila ng microcode fix sa BIOS updates. Kung may 13th o 14th Gen ka, i-update ang BIOS ng motherboard sa pinakabagong version galing sa website ng brand.
+
+### Kailangan ba ng thermal paste sa bagong CPU?
+
+Oo, kailangan ng paste sa pagitan ng CPU at cooler. Maraming cooler (kasama ang stock coolers) ang may pre-applied na paste. Kung meron, hindi mo na kailangang dagdagan sa unang kabit.
+
+### Ano ang chipset (A, B, X, H, Z)?
+
+Ang chipset ang nagsasabi ng features ng board:
+• AMD: A (basic) < B (karamihan ng gaming builds) < X (pinakamaraming features). Hal. A620, B650, X870.
+• Intel: H (basic) < B < Z (pang-overclock ng K CPUs). Hal. H610, B760, Z790.
+
+Para sa karamihan, ang B ang sweet spot.
+
+### ATX, mATX o Mini-ITX?
+
+• ATX: pinakamalaki, mas maraming slots.
+• mATX (Micro-ATX): mas maliit, sapat para sa karamihan ng builds, at madalas mas mura.
+• Mini-ITX: pinakamaliit, para sa small builds; 2 RAM slots lang.
+
+Dapat kasya ang board sa case: ang mATX case ay hindi kasya ang ATX board.
+
+### Paano mag-update ng BIOS?
+
+1. I-download ang BIOS file para sa eksaktong model ng board mo sa website ng brand.
+2. Ilagay sa USB flash drive (sundin ang manual sa format at filename).
+3. Gamitin ang tool sa BIOS (hal. EZ Flash, M-Flash, Q-Flash) o ang BIOS Flashback button kung meron.
+
+Huwag patayin habang nag-a-update. Kung may Flashback, kaya nitong mag-update kahit walang CPU o kahit hindi pa kilala ang CPU mo.
+
+### May Wi-Fi ba ang motherboard?
+
+Kung may "WIFI" o "AX" sa pangalan ng board, kadalasan may built-in Wi-Fi at Bluetooth ito, at may kasamang antenna na ikakabit sa likod. Kung wala, gumamit ng LAN cable o bumili ng USB o PCIe Wi-Fi adapter.
+
+### Ilang SSD ang kasya sa board?
+
+Tingnan ang specs ng board: kadalasan 1 hanggang 3 M.2 slots, plus SATA ports para sa SATA SSD at HDD. Sa ilang board, kapag ginamit ang isang M.2 slot, may SATA port na nadi-disable. Nakasulat ito sa manual.
+
+### Paano mag-clear ng CMOS?
+
+Patayin at bunutin ang PC. Tapos, depende sa board: pindutin ang Clear CMOS button, o i-short ang CLR_CMOS jumper ayon sa manual. Sa ibang board, tanggalin ang coin battery nang ilang minuto. Babalik sa default ang BIOS settings, kaya i-on ulit ang XMP/EXPO pagkatapos.
+
+### Kaya ba ng murang board ang malakas na CPU?
+
+Ang VRM ng board ang nagbibigay ng power sa CPU. Ang entry boards (hal. A620, H610) ay ayos sa 65W CPUs, pero sa mas malakas na CPU pwedeng uminit ang VRM at bumagal ang CPU. Sa Mag-Build, may babala kami kapag manipis ang board para sa CPU.
+
+### Pwede ba ang DDR5 sa DDR4 na board?
+
+Hindi. Iba ang hugis at notch ng DDR4 at DDR5, kaya hindi papasok sa maling slot. Ang board ang magdedesisyon: ang AM5 ay DDR5 lang, ang AM4 ay DDR4 lang, at sa Intel LGA1700 may DDR4 board at may DDR5 board (nakasulat sa pangalan).
+
+### 16GB o 32GB na RAM?
+
+• 16GB (2x8GB): sapat sa karamihan ng games, kasama ang Valorant, Dota 2 at CS2.
+• 32GB (2x16GB): mas maganda kung may Discord, browser at streaming habang naglalaro, o pang-editing.
+• 64GB: pang-mabigat na editing o 3D.
+
+Ang 8GB ay kulang na para sa modernong gaming.
+
+### Kailangan ba ng dalawang RAM stick?
+
+Oo, mas maganda ang dalawa (dual channel). Halos doble ang bandwidth, kaya mas mataas at mas stable ang FPS, lalo na sa built-in graphics at sa CPU-heavy games tulad ng Valorant at CS2. Mas maganda ang 2x8GB kaysa 1x16GB.
+
+### Saang slot ilalagay ang dalawang RAM?
+
+Sa karamihan ng 4-slot boards: A2 at B2 (pangalawa at pang-apat mula sa CPU). Pero tingnan pa rin ang manual, dahil may board na iba. Kung isang stick lang, kadalasan sa A2. Itulak hanggang mag-click ang dalawang lock.
+
+### Ano ang XMP o EXPO at paano i-on?
+
+Default, tumatakbo ang RAM sa mas mababang "safe" speed. Ang XMP (Intel) o EXPO (AMD) ang nagpapatakbo nito sa speed na nakasulat sa box.
+
+Pumasok sa BIOS (Delete o F2), hanapin ang XMP, EXPO o DOCP, i-enable, at i-save. Kung naging hindi stable (restart o blue screen), i-off ulit o gumamit ng mas mababang profile.
+
+### Anong RAM speed ang maganda?
+
+• AM4 (Ryzen 5000): DDR4-3200 hanggang 3600.
+• AM5 (Ryzen 7000/9000): DDR5-6000 ang madalas na sweet spot.
+• Intel LGA1700: DDR4-3200/3600 o DDR5-5600/6000, depende sa board.
+
+Mas mahalaga ang dual channel at naka-on na XMP/EXPO kaysa sa sobrang mataas na speed.
+
+### Matagal mag-boot ang bagong DDR5 build
+
+Normal iyan. Sa unang boot (at pagkatapos mag-update ng BIOS, magpalit ng RAM o mag-clear ng CMOS), tine-train ng board ang DDR5. Pwedeng ilang minuto na itim ang monitor, at sa ilang system umaabot ng 10 hanggang 15 minuto. Huwag patayin. Mas mabilis na ang susunod na boot.
+
+### DRAM light ang nakailaw
+
+1. Maghintay muna ng 10 hanggang 15 minuto kung bagong DDR5 build (memory training).
+2. Kung wala pa rin: patayin at bunutin, tanggalin ang RAM at ibalik nang mabuti hanggang mag-click.
+3. Subukan ang isang stick lang sa A2, tapos ang kabila, para malaman kung may sirang stick.
+4. I-check kung supported ng BIOS mo ang RAM at CPU.
+
+### Pwede bang paghaluin ang magkaibang RAM?
+
+Minsan gumagana, pero hindi garantisado. Kapag magkaiba ang brand o speed, tatakbo ang lahat sa pinakamabagal na setting, at pwedeng hindi mag-boot o hindi stable sa XMP/EXPO. Pinaka-safe ang isang kit (hal. 2x16GB) na sabay binili.
+
+### Pwede ba ang laptop RAM sa desktop?
+
+Hindi. Ang laptop RAM (SO-DIMM) ay mas maikli at iba ang slot. Ang desktop ay gumagamit ng DIMM.
+
+### NVMe o SATA SSD?
+
+• NVMe (M.2): pinakamabilis, maliit na stick na direkta sa motherboard, walang cable.
+• SATA SSD (2.5"): mas mabagal kaysa NVMe pero mas mabilis pa rin nang malayo sa HDD. Kailangan ng SATA cable at power.
+
+Sa bagong build, NVMe ang karaniwang pinipili kung may M.2 slot ang board.
+
+### Gaano kalaking SSD ang kailangan?
+
+• 500GB: Windows at ilang games lang.
+• 1TB: magandang simula para sa gaming. Maraming bagong games ang 50 hanggang 150GB bawat isa.
+• 2TB: kung maraming malalaking games o video files.
+
+Mag-iwan ng bakanteng space (mga 10 hanggang 20%) para hindi bumagal.
+
+### Gen3, Gen4 o Gen5 na SSD?
+
+Mas mabilis ang mas mataas na Gen sa malalaking file transfers, pero sa paglo-load ng games, maliit lang ang diperensya. Backward compatible sila: gagana ang Gen4 SSD sa Gen3 slot (sa Gen3 speed). Para sa gaming, sulit na ang magandang Gen4.
+
+### Hindi makita ang SSD
+
+• Sa BIOS (Delete o F2): nakikita ba ang SSD? Kung hindi, patayin at bunutin ang PC, at tingnan kung buo ang pagkakapasok at naka-screw ang M.2.
+• Kung nasa BIOS pero wala sa Windows: buksan ang Disk Management, i-initialize ang bagong drive at gumawa ng partition.
+• Sa ilang board, nadi-disable ang isang M.2 slot o SATA port depende sa gamit. Tingnan ang manual.
+
+### Okay ba mag-install ng games sa HDD?
+
+Gagana, pero mas matagal ang loading at pwedeng mag-stutter sa mga bagong open-world games. Ilagay ang Windows at mga madalas laruin sa SSD. Okay ang HDD para sa videos, photos at backup.
+
+### Paano i-check ang health ng SSD?
+
+Gamitin ang tool ng brand ng SSD (hal. Samsung Magician, Kingston SSD Manager, WD Dashboard) o ang libreng CrystalDiskInfo. Tingnan ang "Health" o porsyento. Kung bumababa na o may warning, mag-backup agad ng files.
+
+### Kailangan ba ng heatsink ang NVMe?
+
+Para sa karamihan ng Gen3 at Gen4 SSD sa gaming, hindi kailangan. Maraming board ang may kasamang M.2 heatsink, at magandang gamitin iyon. Ang Gen5 SSD ay kadalasang kailangan ng heatsink. Tanggalin ang plastic film ng thermal pad kung meron.
+
+### Ilang watts ng PSU ang kailangan ko?
+
+Tingnan ang recommended PSU ng graphics card mo (nasa website ng brand). Pwede mo ring itanong dito, hal. "kaya ba ng 650W ang RTX 5070".
+
+Para sa buong set, gamitin ang Mag-Build: kinukuwenta nito ang estimated load ng CPU at GPU, at nagbibigay ng recommended na may allowance.
+
+### Ano ang 80+ Bronze, Gold?
+
+Ang 80+ rating ay tungkol sa efficiency: gaano kaliit ang nasasayang na kuryente bilang init. Mas efficient ang Gold kaysa Bronze. Hindi nito direktang sinasabi ang quality, kaya piliin din ang kilalang brand at maayos na reviews. Iwasan ang walang brand na mataas ang nakasulat na watts.
+
+### Ano ang modular PSU?
+
+• Non-modular: nakakabit na lahat ng cable, mas mura.
+• Semi-modular: nakakabit ang main cables, pwedeng tanggalin ang iba.
+• Full modular: lahat natatanggal, pinakamalinis sa cable management.
+
+Sa modular, gamitin lang ang cables na kasama ng PSU mo. Huwag ihalo sa cables ng ibang PSU, kahit pareho ang brand.
+
+### Nasaan ang switch ng PSU?
+
+Nasa likod ng PSU, katabi ng saksakan ng power cable. Ang "I" ay on, ang "O" ay off. I-off ito at bunutin ang cable bago galawin ang loob ng PC.
+
+### Paano malaman kung sira ang PSU?
+
+Mga palatandaan: ayaw mag-on kahit tama ang cables, namamatay kapag naglalaro, amoy sunog, o pumutok pagkatapos ng brownout. Ang pinaka-siguradong test ay subukan ang ibang PSU na gumagana. Huwag buksan ang PSU: may capacitor sa loob na pwedeng may kuryente pa kahit nakabunot na.
+
+### Kailangan ba ng AVR o UPS?
+
+Kung madalas ang brownout o pabago-bago ang kuryente, malaking tulong ang UPS: may battery ito kaya may oras kang mag-save at mag-shutdown nang maayos. Proteksyon din ang magandang surge protector laban sa spikes. Ang mismong PSU na de-kalidad ang pinakamahalagang proteksyon ng PC.
+
+### Pwede bang buksan ang PSU para ayusin?
+
+Huwag. May mga capacitor sa loob ng PSU na pwedeng may mapanganib na kuryente kahit nakabunot na. Mawawala rin ang warranty. Kung sira, i-claim ang warranty o palitan.
+
+### Sapat ba ang stock cooler?
+
+Para sa 65W CPU na may kasamang cooler, kadalasan sapat para sa gaming, pero mas maingay at mas mainit. Ang murang tower cooler (hal. ₱1,500 hanggang ₱2,500) ay malaking upgrade sa temps at ingay. Kapag tray o walang kasamang cooler ang CPU, kailangan mo talagang bumili.
+
+### Air cooler o AIO?
+
+• Air (tower): mas mura, halos walang masisira bukod sa fan, at sapat para sa karamihan ng CPUs.
+• AIO (liquid): mas malinis tingnan at maganda sa mainit na CPUs, pero mas mahal at may pump na pwedeng masira pagkalipas ng ilang taon.
+
+I-check ang taas ng tower cooler o ang radiator mount ng case.
+
+### Paano maglagay ng thermal paste?
+
+1. Kung may lumang paste, punasan gamit ang isopropyl alcohol at tissue o coffee filter.
+2. Maglagay ng kaunti sa gitna ng CPU, mga kasinlaki ng gisantes.
+3. Ikabit ang cooler nang pantay, hinihigpitan nang paekis ang screws.
+
+Huwag sobrahan. Kung may pre-applied paste ang cooler, hindi na kailangan sa unang kabit.
+
+### Mainit ang CPU pagkatapos magkabit ng bagong cooler
+
+Pinaka-karaniwang dahilan: may plastic film pa sa ilalim ng cooler. Tanggalin ito. Tingnan din kung pantay at mahigpit ang pagkakakabit, at kung nasa "CPU_FAN" header ang fan cable.
+
+### Kailan dapat palitan ang thermal paste?
+
+Kadalasan, ilang taon bago kailangang palitan. Kung ilang taon na ang PC at mas mainit na kaysa dati kahit malinis ang heatsink, magandang i-repaste. Palitan din ang paste tuwing tatanggalin ang cooler.
+
+### Saan isasaksak ang fan ng cooler?
+
+Sa "CPU_FAN" header ng motherboard, kadalasan malapit sa socket. Sa AIO, ang pump ay sa "AIO_PUMP" o "PUMP_FAN" (o ayon sa manual), at ang radiator fans sa CPU_FAN. Kung may "CPU Fan Error" sa boot, kadalasang nasa maling header ang fan.
+
+### Pwede ba ang AM4 cooler sa AM5?
+
+Kadalasan oo: ginawa ng AMD na pareho ang mounting ng AM5 at AM4 para sa karamihan ng coolers. I-check pa rin ang compatibility list ng cooler. Sa Intel LGA1700, kailangan ng tamang bracket; maraming bagong cooler ang may kasama na nito.
+
+### Anong case size ang bibilhin?
+
+Dapat kasya ang motherboard: ang ATX case ay kasya ang ATX, mATX at ITX; ang mATX case ay mATX at ITX lang. I-check din ang max haba ng GPU at max taas ng CPU cooler sa specs ng case.
+
+### Paano malaman kung kasya ang GPU sa case?
+
+Ikumpara ang haba ng graphics card (nasa specs, sa mm) sa "max GPU length" ng case. Mag-iwan ng allowance kung may fans o radiator sa harap.
+
+Pwede mo ring itanong dito gamit ang mga model, hal. "kasya ba ang RX 9070 XT sa Tecware Infinity M".
+
+### Paano ang tamang direksyon ng fans?
+
+Karaniwang setup: intake (pasok ng hangin) sa harap o ilalim, exhaust (labas) sa likod at taas. May arrow sa gilid ng fan frame na nagpapakita ng direksyon ng hangin. Kadalasan, ang hangin ay lumalabas sa gilid na may grill o mga braso ng fan frame.
+
+### Mesh o glass sa harap ng case?
+
+Mas malamig kadalasan ang mesh sa harap dahil mas maraming hangin ang pumapasok. Ang solid o glass na harap ay pwedeng maganda tingnan pero mas mainit, lalo na kung kaunti ang butas sa gilid.
+
+### Ilang fans ang kailangan?
+
+Para sa karamihan ng gaming builds, maganda ang 2 hanggang 3 intake sa harap at 1 exhaust sa likod. Maraming case ang may kasama nang fans. Mas mahalaga ang maayos na daloy ng hangin kaysa sa dami ng fans.
+
+### Hindi gumagana ang USB-C sa harap ng case
+
+Kailangan ng motherboard na may USB-C front panel header ("USB 3.2 Gen 2 Type-C" o katulad) para gumana ang USB-C sa harap. Kung walang ganitong header ang board, hindi ito gagana. Para sa USB-A sa harap, isaksak ang USB 3 cable sa USB 3 header.
+
+### Magkano ang gaming PC?
+
+Depende sa target. May Ready Builds kami mula mga ₱40K hanggang ₱130K, may total na presyo at Shopee links. Kung may sariling budget ka, ilagay ito sa Mag-Build at gagawan ka namin ng compatible na set.
+
+### Saan dapat mapunta ang malaking parte ng budget?
+
+Para sa gaming, kadalasan ang graphics card ang pinakamalaking bahagi, sunod ang CPU. Huwag tipirin ang PSU (dapat kilalang brand) at siguraduhing may SSD at dual-channel RAM. Pwedeng mas simple ang case at board basta compatible.
+
+### Anong PC pang-editing?
+
+Para sa video editing: mas maraming CPU cores, 32GB RAM pataas, mabilis na NVMe SSD, at GPU na suportado ng editing app mo. Piliin ang "Editing" sa Mag-Build para ma-adjust ang set.
+
+### Paano gamitin ang site na ito?
+
+• Mag-Build: ilagay ang budget at gamit, may compatible na set ka na.
+• May Parts na Ako: piliin ang meron ka na, ipapakita ang compatible.
+• Parts: i-browse per category na may filters.
+• Ready Builds: kumpletong sets.
+• Troubleshooter: para sa sira o problema.
+
+May compatibility check at Shopee Mall link ang bawat part.
+
+### Ano ang affiliate link?
+
+Shopee affiliate links ang mga "Shopee Checkout" na button. Kapag bumili ka gamit ang mga ito, may maliit na commission ang ReSpecz mula sa Shopee. Walang dagdag sa presyo mo, at hindi nito binabago ang mga suggestion namin.
+
+### Saan galing ang presyo?
+
+Galing sa Shopee Mall listing noong araw na na-check namin (nakasulat sa site). Nagbabago ang presyo at vouchers anumang oras, kaya laging i-check sa Shopee bago bumili.
+
+### Paano ang warranty?
+
+Hindi kami ang seller. Ang order, warranty at returns ay sa pagitan mo at ng seller sa Shopee (at ng brand, para sa official warranty). Basahin ang warranty sa listing bago bumili, at itago ang resibo at kahon.
+
+### Bakit Shopee Mall?
+
+Ang Shopee Mall ay para sa official stores at authorized sellers, kaya mas mababa ang risk ng peke at mas malinaw ang warranty. Kaya Shopee Mall ang ginagamit namin sa listahan.
+
+### Ano ang Basket?
+
+Ang Basket ay listahan ng parts na pinili mo sa site, may total na presyo. Hindi ito Shopee cart. Mula rito, i-click ang Shopee link ng bawat part para i-add sa Shopee cart mo.
