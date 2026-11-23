@@ -528,6 +528,8 @@ function renderSheetList(cat) {
       else if (bad) badge = '<span class="badge badge-bad">Hindi compatible sa build mo</span>';
       if (!chosen) action = `<button type="button" class="btn btn-glass btn-sm" data-use="${p.id}">Gamitin sa build</button>`;
     }
+    const feat = featuredIds.get(p.id);
+    if (feat && !badge) badge = `<span class="badge badge-feat">${feat.sponsored ? 'Sponsored' : 'Featured'}</span>`;
     return `
       <article class="prod${chosen ? ' is-chosen' : ''}">
         <div class="prod-thumb">${thumb(p, cat)}</div>
@@ -1502,6 +1504,77 @@ async function initVideos() {
 }
 
 // Touch screens have no hover: play each card's animation once when it is mostly on screen.
+// ---------- featured picks + ad slots (data/promo.json) ----------
+let featuredIds = new Map(); // part id -> { tag, sponsored }
+
+const today = () => new Date().toISOString().slice(0, 10);
+const liveAd = (a) => (!a.start || a.start <= today()) && (!a.end || a.end >= today());
+
+function adHtml(ad, house) {
+  const img = ad.image ? `<img class="ad-img" src="${esc(ad.image)}" alt="" loading="lazy" decoding="async">` : '';
+  return `
+    <a class="ad${house ? ' ad-house' : ''}${img ? ' has-img' : ''}" href="${esc(ad.url)}" target="_blank" rel="${house ? 'noopener' : 'sponsored noopener'}" data-ad-id="${esc(ad.id || 'house')}">
+      ${img}
+      <span class="ad-body">
+        <span class="ad-label">${house ? 'Ad slot' : 'Sponsored'}${ad.sponsor ? ` · ${esc(ad.sponsor)}` : ''}</span>
+        <span class="ad-title">${esc(ad.title)}</span>
+        ${ad.text ? `<span class="ad-text">${esc(ad.text)}</span>` : ''}
+      </span>
+      ${ad.cta ? `<span class="btn btn-glass btn-sm ad-cta">${esc(ad.cta)}<span aria-hidden="true">›</span></span>` : ''}
+    </a>`;
+}
+
+function renderAds(promo) {
+  document.querySelectorAll('[data-ad]').forEach((slot) => {
+    const ad = (promo.ads || []).find((a) => a.slot === slot.dataset.ad && a.url && liveAd(a));
+    const house = !ad && promo.house?.url ? promo.house : null;
+    if (!ad && !house) return;
+    slot.innerHTML = adHtml(ad || house, !ad);
+    slot.hidden = false;
+  });
+}
+
+function renderFeatured(promo) {
+  const row = $('#feat-row');
+  const f = promo.featured;
+  if (!row || !f?.items?.length) return;
+  const items = f.items.map((it) => ({ ...it, p: catalog.byId.get(it.id) })).filter((it) => it.p && !it.p.stock);
+  if (!items.length) return;
+  if (f.title) $('[data-feat-title]').textContent = f.title;
+  $('[data-feat-sub]').textContent = f.sub || '';
+  row.innerHTML = items.map(({ p, tag, sponsored }) => `
+    <article class="feat-card">
+      <div class="feat-thumb">${thumb(p)}</div>
+      <div class="feat-body">
+        <p class="feat-tag">${sponsored ? '<span class="feat-spons">Sponsored</span>' : ''}${esc(tag || CATEGORY_LABEL[p.category])}</p>
+        <h3 class="feat-name">${esc(p.name)}</h3>
+        <p class="feat-spec">${esc(SHORT_LABEL[p.category])} · ${esc(specLine(p))}</p>
+        <div class="feat-foot">
+          <strong class="feat-price">${peso.format(p.price)}</strong>
+          <div class="feat-actions">${basketButton(p.id)}${shopButton(p, 'btn-sm', 'Shopee')}</div>
+        </div>
+      </div>
+    </article>`).join('');
+  $('#featured').hidden = false;
+  row.addEventListener('click', (e) => {
+    const add = e.target.closest('[data-add]');
+    if (add) addToBasket([add.dataset.add]);
+  });
+}
+
+async function initPromo() {
+  try {
+    const res = await fetch(new URL('data/promo.json', ROOT));
+    if (!res.ok) return;
+    const promo = await res.json();
+    featuredIds = new Map((promo.featured?.items || []).map((it) => [it.id, it]));
+    renderFeatured(promo);
+    renderAds(promo);
+  } catch (err) {
+    console.warn('promo', err);
+  }
+}
+
 function bindRouteCards() {
   if (matchMedia('(hover: hover) and (pointer: fine)').matches || reducedMotion || !('IntersectionObserver' in window)) return;
   const io = new IntersectionObserver((entries) => {
@@ -1683,6 +1756,7 @@ async function init() {
       pd.hidden = false;
     }
     if (has('#videos')) initVideos();
+    initPromo();
     if (has('#may-form')) {
       renderMayForm();
       renderMayResult();

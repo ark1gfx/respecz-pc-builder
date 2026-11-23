@@ -1,0 +1,23 @@
+{
+  "_help": "Featured items and ad slots. featured.items: part ids from parts.json (tag = short label). ads: one entry per paid ad; slot = home | parts | builds; shown only between start and end (YYYY-MM-DD, inclusive). When a slot has no live ad, the house ad is shown instead. Set house to null to leave empty slots hidden.",
+  "featured": {
+    "title": "Featured picks",
+    "sub": "Mga part na sulit ngayon, pinili ng ReSpecz.",
+    "items": [
+      { "id": "cpu-r5-5600", "tag": "Budget king" },
+      { "id": "gpu-rx9060xt-16", "tag": "Best value GPU" },
+      { "id": "ram-d4-16-vulcan", "tag": "Sulit na RAM" },
+      { "id": "ssd-s880-1tb", "tag": "Mabilis na 1TB" },
+      { "id": "cpu-r7-7800x3d", "tag": "Gaming beast" },
+      { "id": "psu-a750gl", "tag": "Safe na PSU" }
+    ]
+  },
+  "ads": [],
+  "house": {
+    "sponsor": "ReSpecz",
+    "title": "Dito pwede ang brand mo.",
+    "text": "Abutin ang mga nagbu-build ng PC sa Pilipinas. Mag-message sa ReSpecz Facebook page para sa ad o featured slot.",
+    "cta": "Mag-message",
+    "url": "https://www.facebook.com/1378136052056179"
+  }
+}
