@@ -34,7 +34,7 @@ npm test
 
 Parts without a link show "Hanapin sa Shopee" (plain search, no commission).
 
-`tools/catalog-2026-11-22.py` holds the current catalog: every part is a Shopee Mall listing
+`tools/catalog-2026-11-22.py` holds the current catalog (10 parts added 2026-11-23, marked with their own priceChecked): every part is a Shopee Mall listing
 (Preferred Seller had none of the missing models) with its affiliate link (Sub_id1
 `pcbuilder`, Sub_id2 = part tag), item ID and the variant price checked on 2026-11-22.
 Edit that file and re-run it to change parts or prices. Case and GPU sizes are approximate

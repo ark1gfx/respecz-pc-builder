@@ -151,6 +151,54 @@
       "image": "https://down-ph.img.susercontent.com/file/ph-11134207-820l7-mtd9zhtk01l27d@resize_w320_nl.webp"
     },
     {
+      "id": "cpu-r5-9600x",
+      "category": "cpu",
+      "name": "AMD Ryzen 5 9600X (Tray)",
+      "brand": "AMD",
+      "price": 12780,
+      "tier": 3,
+      "socket": "AM5",
+      "memTypes": [
+        "DDR5"
+      ],
+      "tdp": 65,
+      "cores": "6C/12T",
+      "igpu": 5,
+      "perf": 84,
+      "perfMulti": 66,
+      "boxedCooler": false,
+      "priceChecked": "2026-11-23",
+      "note": "Zen 5, mas mabilis sa gaming kaysa 7600. Tray: walang kasamang cooler.",
+      "search": "Ryzen 5 9600X",
+      "shopeeItemId": "25946759050",
+      "shopeeUrl": "https://s.shopee.ph/8KrIbuuGak",
+      "image": "https://down-ph.img.susercontent.com/file/ph-11134207-81ztk-me41curqn6rr37@resize_w320_nl.webp"
+    },
+    {
+      "id": "cpu-r7-9800x3d",
+      "category": "cpu",
+      "name": "AMD Ryzen 7 9800X3D (Tray)",
+      "brand": "AMD",
+      "price": 29090,
+      "tier": 5,
+      "socket": "AM5",
+      "memTypes": [
+        "DDR5"
+      ],
+      "tdp": 120,
+      "cores": "8C/16T",
+      "igpu": 5,
+      "perf": 110,
+      "perfMulti": 90,
+      "boxedCooler": false,
+      "priceChecked": "2026-11-23",
+      "note": "Pinakamabilis na gaming CPU sa listahan. Kailangan ng dual-tower o AIO.",
+      "search": "Ryzen 7 9800X3D",
+      "shopeeItemId": "43465455309",
+      "shopeeUrl": "https://s.shopee.ph/8pnZCqUJKA",
+      "image": "https://down-ph.img.susercontent.com/file/ph-11134207-81ztk-mfn9i0jyz30r7b@resize_w320_nl.webp"
+    },
+    {
       "id": "cpu-i5-12400",
       "category": "cpu",
       "name": "Intel Core i5-12400",
@@ -614,6 +662,24 @@
       "image": "https://down-ph.img.susercontent.com/file/ph-11134207-81zti-mgsqcg8zjh1r5c@resize_w320_nl.webp"
     },
     {
+      "id": "ram-d4-32-ripjaws",
+      "category": "ram",
+      "name": "G.Skill Ripjaws V DDR4-3600 32GB (2x16GB)",
+      "brand": "G.Skill",
+      "price": 21295,
+      "tier": 3,
+      "memType": "DDR4",
+      "capacityGB": 32,
+      "sticks": 2,
+      "speed": 3600,
+      "priceChecked": "2026-11-23",
+      "note": "DDR4-3600 CL18, sweet spot ng AM4.",
+      "search": "G.Skill Ripjaws V DDR4 3600 32GB",
+      "shopeeItemId": "45150970666",
+      "shopeeUrl": "https://s.shopee.ph/BVasskRam",
+      "image": "https://down-ph.img.susercontent.com/file/ph-11134207-81zte-mgrd2rl0elfv84@resize_w320_nl.webp"
+    },
+    {
       "id": "ram-d5-16-fury",
       "category": "ram",
       "name": "Kingston FURY Beast RGB DDR5-5600 16GB (2x8GB)",
@@ -632,6 +698,24 @@
       "image": "https://down-ph.img.susercontent.com/file/ph-11134207-820li-musoiq0agbgqb5@resize_w320_nl.webp"
     },
     {
+      "id": "ram-d5-16-vulcan",
+      "category": "ram",
+      "name": "TeamGroup T-Force Vulcan DDR5-6000 16GB (2x8GB)",
+      "brand": "TeamGroup",
+      "price": 21495,
+      "tier": 2,
+      "memType": "DDR5",
+      "capacityGB": 16,
+      "sticks": 2,
+      "speed": 6000,
+      "priceChecked": "2026-11-23",
+      "note": "DDR5-6000 dual channel, swak sa AM5.",
+      "search": "T-Force Vulcan DDR5 6000 16GB",
+      "shopeeItemId": "54421138670",
+      "shopeeUrl": "https://s.shopee.ph/8pnZCnZqy3",
+      "image": "https://down-ph.img.susercontent.com/file/ph-11134207-820lc-mv5g9p0qqi2pc1@resize_w320_nl.webp"
+    },
+    {
       "id": "ram-d5-32-vulcan",
       "category": "ram",
       "name": "TeamGroup T-Force Vulcan DDR5-6000 32GB (2x16GB)",
@@ -648,6 +732,24 @@
       "shopeeUrl": "https://s.shopee.ph/7AfJqWTG8B",
       "priceChecked": "2026-11-22",
       "image": "https://down-ph.img.susercontent.com/file/ph-11134207-81ztk-mgbxt4k6nswe8b@resize_w320_nl.webp"
+    },
+    {
+      "id": "ram-d5-32-trident",
+      "category": "ram",
+      "name": "G.Skill Trident Z5 Neo RGB DDR5-6000 32GB (2x16GB)",
+      "brand": "G.Skill",
+      "price": 40999,
+      "tier": 4,
+      "memType": "DDR5",
+      "capacityGB": 32,
+      "sticks": 2,
+      "speed": 6000,
+      "priceChecked": "2026-11-23",
+      "note": "AMD EXPO, RGB. Plug and play sa AM5.",
+      "search": "G.Skill Trident Z5 Neo DDR5 6000 32GB",
+      "shopeeItemId": "21771571383",
+      "shopeeUrl": "https://s.shopee.ph/AKcMzXqgQm",
+      "image": "https://down-ph.img.susercontent.com/file/ph-11134207-81ztf-mkanevi35tkwa5@resize_w320_nl.webp"
     },
     {
       "id": "ram-d5-64-delta",
@@ -744,6 +846,25 @@
       "image": "https://down-ph.img.susercontent.com/file/ph-11134207-81ztd-mf3bmmciquq60b@resize_w320_nl.webp"
     },
     {
+      "id": "gpu-rtx5060ti-8",
+      "category": "gpu",
+      "name": "MSI GeForce RTX 5060 Ti Shadow 2X OC Plus 8GB",
+      "brand": "MSI",
+      "price": 33195,
+      "tier": 3,
+      "vramGB": 8,
+      "tdp": 180,
+      "lengthMm": 199,
+      "recPsuW": 600,
+      "perf": 78,
+      "priceChecked": "2026-11-23",
+      "note": "Mas malakas sa RTX 5060 sa halos parehong presyo.",
+      "search": "MSI RTX 5060 Ti Shadow 2X 8GB",
+      "shopeeItemId": "27840614312",
+      "shopeeUrl": "https://s.shopee.ph/1CAgUn1ta",
+      "image": "https://down-ph.img.susercontent.com/file/ph-11134207-81ztf-mdzj41jjuosi51@resize_w320_nl.webp"
+    },
+    {
       "id": "gpu-rx9060xt-16",
       "category": "gpu",
       "name": "Sapphire Pulse Radeon RX 9060 XT 16GB",
@@ -801,6 +922,25 @@
       "image": "https://down-ph.img.susercontent.com/file/ph-11134207-7ra0i-mbagb38h8sb2db@resize_w320_nl.webp"
     },
     {
+      "id": "gpu-rx9070xt-ch",
+      "category": "gpu",
+      "name": "ASRock Radeon RX 9070 XT Challenger 16GB",
+      "brand": "ASRock",
+      "price": 56290,
+      "tier": 5,
+      "vramGB": 16,
+      "tdp": 304,
+      "lengthMm": 314,
+      "recPsuW": 750,
+      "perf": 112,
+      "priceChecked": "2026-11-23",
+      "note": "Pinakamurang RX 9070 XT sa listahan. Mahaba, i-check ang case.",
+      "search": "ASRock RX 9070 XT Challenger 16GB",
+      "shopeeItemId": "54663012096",
+      "shopeeUrl": "https://s.shopee.ph/6q2Up4WIxM",
+      "image": "https://down-ph.img.susercontent.com/file/ph-11134207-820lb-mq1cbwqbynsy80@resize_w320_nl.webp"
+    },
+    {
       "id": "gpu-rtx5070",
       "category": "gpu",
       "name": "MSI GeForce RTX 5070 Shadow 2X OC 12GB",
@@ -818,6 +958,25 @@
       "shopeeUrl": "https://s.shopee.ph/6L6Cr3mU2A",
       "priceChecked": "2026-11-22",
       "image": "https://down-ph.img.susercontent.com/file/ph-11134207-7rasd-m9bf33ar0yhq4f@resize_w320_nl.webp"
+    },
+    {
+      "id": "gpu-rtx5070ti",
+      "category": "gpu",
+      "name": "MSI GeForce RTX 5070 Ti Shadow 3X OC 16GB",
+      "brand": "MSI",
+      "price": 101999,
+      "tier": 5,
+      "vramGB": 16,
+      "tdp": 300,
+      "lengthMm": 303,
+      "recPsuW": 750,
+      "perf": 120,
+      "priceChecked": "2026-11-23",
+      "note": "1440p at 4K, 16GB para sa editing at high settings.",
+      "search": "MSI RTX 5070 Ti Shadow 3X OC 16GB",
+      "shopeeItemId": "26985928616",
+      "shopeeUrl": "https://s.shopee.ph/7pv20wS29B",
+      "image": "https://down-ph.img.susercontent.com/file/ph-11134207-7rasb-m9cf9udxt92r2f@resize_w320_nl.webp"
     },
     {
       "id": "ssd-nv3-500",
@@ -984,6 +1143,23 @@
       "image": "https://down-ph.img.susercontent.com/file/ph-11134207-7r991-ln7ywoi1bprz1e@resize_w320_nl.webp"
     },
     {
+      "id": "psu-a1000gl",
+      "category": "psu",
+      "name": "MSI MAG A1000GL 1000W Gold",
+      "brand": "MSI",
+      "price": 10695,
+      "tier": 5,
+      "watts": 1000,
+      "rating": "80+ Gold",
+      "formFactor": "ATX",
+      "priceChecked": "2026-11-23",
+      "note": "1000W, ATX 3.1. May headroom para sa RTX 5070 Ti at upgrades.",
+      "search": "MSI MAG A1000GL",
+      "shopeeItemId": "28961547220",
+      "shopeeUrl": "https://s.shopee.ph/3LScekTbOh",
+      "image": "https://down-ph.img.susercontent.com/file/ph-11134207-7r98s-m09zvs9uyxym98@resize_w320_nl.webp"
+    },
+    {
       "id": "case-db330m",
       "category": "case",
       "name": "darkFlash DB330M Mesh (mATX)",
@@ -1104,6 +1280,31 @@
       "shopeeUrl": "https://s.shopee.ph/1W0x6K7EFc",
       "priceChecked": "2026-11-22",
       "image": "https://down-ph.img.susercontent.com/file/ph-11134207-7r992-m0bhz7bdsxdw6c@resize_w320_nl.webp"
+    },
+    {
+      "id": "case-dlx21-white",
+      "category": "case",
+      "name": "darkFlash DLX21 Mesh White (ATX)",
+      "brand": "darkFlash",
+      "price": 4750,
+      "tier": 3,
+      "formFactors": [
+        "ATX",
+        "mATX",
+        "ITX"
+      ],
+      "maxGpuMm": 400,
+      "maxCoolerMm": 170,
+      "rad240": true,
+      "psuFormFactors": [
+        "ATX"
+      ],
+      "priceChecked": "2026-11-23",
+      "note": "Puting ATX case, mesh front at hinged glass.",
+      "search": "darkFlash DLX21 Mesh White",
+      "shopeeItemId": "4857963073",
+      "shopeeUrl": "https://s.shopee.ph/3qOtFgaRE8",
+      "image": "https://down-ph.img.susercontent.com/file/ph-11134207-820lc-mnv9mypapfcxae@resize_w320_nl.webp"
     },
     {
       "id": "cooler-ak400-se",

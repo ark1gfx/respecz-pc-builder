@@ -15,7 +15,7 @@ CHECKED = '2026-11-22'
 def p(**kw):
     kw.setdefault('note', '')
     kw['shopeeUrl'] = L + kw.pop('link')
-    kw['priceChecked'] = CHECKED
+    kw.setdefault('priceChecked', CHECKED)
     return kw
 
 
@@ -34,6 +34,10 @@ parts = [
       note='Pinakamalakas na built-in graphics. Valorant at Dota 2 kahit walang GPU.', search='Ryzen 5 8600G', shopeeItemId='25661737644', link='5fqW3LtIpi'),
     p(id='cpu-r7-7800x3d', category='cpu', name='AMD Ryzen 7 7800X3D (Tray)', brand='AMD', price=20475, tier=5, socket='AM5', memTypes=['DDR5'], tdp=120, cores='8C/16T', igpu=5, perf=100, perfMulti=78, boxedCooler=False,
       note='3D V-Cache, top pick para sa CS2 high FPS.', search='Ryzen 7 7800X3D', shopeeItemId='43508944979', link='40iI4IHrij'),
+    p(id='cpu-r5-9600x', category='cpu', name='AMD Ryzen 5 9600X (Tray)', brand='AMD', price=12780, tier=3, socket='AM5', memTypes=['DDR5'], tdp=65, cores='6C/12T', igpu=5, perf=84, perfMulti=66, boxedCooler=False, priceChecked='2026-11-23', 
+      note='Zen 5, mas mabilis sa gaming kaysa 7600. Tray: walang kasamang cooler.', search='Ryzen 5 9600X', shopeeItemId='25946759050', link='8KrIbuuGak'),
+    p(id='cpu-r7-9800x3d', category='cpu', name='AMD Ryzen 7 9800X3D (Tray)', brand='AMD', price=29090, tier=5, socket='AM5', memTypes=['DDR5'], tdp=120, cores='8C/16T', igpu=5, perf=110, perfMulti=90, boxedCooler=False, priceChecked='2026-11-23', 
+      note='Pinakamabilis na gaming CPU sa listahan. Kailangan ng dual-tower o AIO.', search='Ryzen 7 9800X3D', shopeeItemId='43465455309', link='8pnZCqUJKA'),
     p(id='cpu-i5-12400', category='cpu', name='Intel Core i5-12400', brand='Intel', price=9699, tier=2, socket='LGA1700', memTypes=['DDR4', 'DDR5'], tdp=65, cores='6C/12T', igpu=6, perf=58, perfMulti=52, boxedCooler=False,
       note='May UHD 730 graphics, swak sa school at office kahit walang GPU.', search='Intel Core i5 12400', shopeeItemId='25666724247', link='3B9B50ncsz'),
     p(id='cpu-i5-14400', category='cpu', name='Intel Core i5-14400 (Tray + fan)', brand='Intel', price=11895, tier=3, socket='LGA1700', memTypes=['DDR4', 'DDR5'], tdp=65, cores='10C/16T', igpu=7, perf=70, perfMulti=68, boxedCooler=True,
@@ -82,10 +86,16 @@ parts = [
       note='Dual channel, 2 sticks = mas mabilis.', search='T-Force Vulcan Z DDR4 16GB 2x8GB', shopeeItemId='29280108577', link='1gKNINxsCq'),
     p(id='ram-d4-32-vulcan', category='ram', name='TeamGroup T-Force Vulcan Z DDR4-3200 32GB (2x16GB)', brand='TeamGroup', price=20995, tier=3, memType='DDR4', capacityGB=32, sticks=2, speed=3200,
       note='32GB para sa editing at multitasking.', search='T-Force Vulcan Z DDR4 32GB 2x16GB', shopeeItemId='57051008324', link='4qHP4DUdko'),
+    p(id='ram-d4-32-ripjaws', category='ram', name='G.Skill Ripjaws V DDR4-3600 32GB (2x16GB)', brand='G.Skill', price=21295, tier=3, memType='DDR4', capacityGB=32, sticks=2, speed=3600, priceChecked='2026-11-23', 
+      note='DDR4-3600 CL18, sweet spot ng AM4.', search='G.Skill Ripjaws V DDR4 3600 32GB', shopeeItemId='45150970666', link='BVasskRam'),
     p(id='ram-d5-16-fury', category='ram', name='Kingston FURY Beast RGB DDR5-5600 16GB (2x8GB)', brand='Kingston', price=20999, tier=2, memType='DDR5', capacityGB=16, sticks=2, speed=5600,
       note='Entry DDR5, dual channel.', search='Kingston Fury Beast RGB DDR5 5600 16GB', shopeeItemId='43023314351', link='7AfJqWLUUo'),
+    p(id='ram-d5-16-vulcan', category='ram', name='TeamGroup T-Force Vulcan DDR5-6000 16GB (2x8GB)', brand='TeamGroup', price=21495, tier=2, memType='DDR5', capacityGB=16, sticks=2, speed=6000, priceChecked='2026-11-23', 
+      note='DDR5-6000 dual channel, swak sa AM5.', search='T-Force Vulcan DDR5 6000 16GB', shopeeItemId='54421138670', link='8pnZCnZqy3'),
     p(id='ram-d5-32-vulcan', category='ram', name='TeamGroup T-Force Vulcan DDR5-6000 32GB (2x16GB)', brand='TeamGroup', price=35995, tier=4, memType='DDR5', capacityGB=32, sticks=2, speed=6000,
       note='6000 MT/s, sweet spot ng AM5.', search='T-Force Vulcan DDR5 6000 32GB', shopeeItemId='55250219954', link='7AfJqWTG8B'),
+    p(id='ram-d5-32-trident', category='ram', name='G.Skill Trident Z5 Neo RGB DDR5-6000 32GB (2x16GB)', brand='G.Skill', price=40999, tier=4, memType='DDR5', capacityGB=32, sticks=2, speed=6000, priceChecked='2026-11-23', 
+      note='AMD EXPO, RGB. Plug and play sa AM5.', search='G.Skill Trident Z5 Neo DDR5 6000 32GB', shopeeItemId='21771571383', link='AKcMzXqgQm'),
     p(id='ram-d5-64-delta', category='ram', name='TeamGroup T-Force Delta RGB DDR5-6000 64GB (2x32GB)', brand='TeamGroup', price=75995, tier=5, memType='DDR5', capacityGB=64, sticks=2, speed=6000,
       note='64GB para sa 4K editing at heavy projects.', search='T-Force Delta DDR5 6000 64GB', shopeeItemId='27616821046', link='1qdnUixFvT'),
 
@@ -98,14 +108,20 @@ parts = [
       note='Solid 1080p high settings.', search='ASUS Dual RX 7600 EVO OC 8GB', shopeeItemId='23188684715', link='40iITHJf0W'),
     p(id='gpu-rtx5060', category='gpu', name='MSI GeForce RTX 5060 Shadow 2X OC 8GB', brand='MSI', price=33995, tier=3, vramGB=8, tdp=145, lengthMm=197, recPsuW=550, perf=70,
       note='1080p high refresh, matipid sa kuryente.', search='MSI RTX 5060 Shadow 2X OC 8GB', shopeeItemId='43558221119', link='30pksuuyHh'),
+    p(id='gpu-rtx5060ti-8', category='gpu', name='MSI GeForce RTX 5060 Ti Shadow 2X OC Plus 8GB', brand='MSI', price=33195, tier=3, vramGB=8, tdp=180, lengthMm=199, recPsuW=600, perf=78, priceChecked='2026-11-23', 
+      note='Mas malakas sa RTX 5060 sa halos parehong presyo.', search='MSI RTX 5060 Ti Shadow 2X 8GB', shopeeItemId='27840614312', link='1CAgUn1ta'),
     p(id='gpu-rx9060xt-16', category='gpu', name='Sapphire Pulse Radeon RX 9060 XT 16GB', brand='Sapphire', price=37995, tier=3, vramGB=16, tdp=182, lengthMm=240, recPsuW=550, perf=78,
       note='16GB VRAM, matagal bago maluma.', search='Sapphire Pulse RX 9060 XT 16GB', shopeeItemId='43904108395', link='3g5Rg91e4T'),
     p(id='gpu-rtx5060ti-16', category='gpu', name='MSI GeForce RTX 5060 Ti Shadow 2X OC Plus 16GB', brand='MSI', price=62299, tier=4, vramGB=16, tdp=180, lengthMm=199, recPsuW=600, perf=82,
       note='16GB + NVENC, sulit sa editing at gaming.', search='MSI RTX 5060 Ti Shadow 2X 16GB', shopeeItemId='47807285377', link='gRq6dLS9P'),
     p(id='gpu-rx9070xt', category='gpu', name='Gigabyte Radeon RX 9070 XT Gaming OC 16GB', brand='Gigabyte', price=63995, tier=5, vramGB=16, tdp=304, lengthMm=288, recPsuW=750, perf=112,
       note='1440p high refresh, pinakamalakas sa listahan.', search='Gigabyte RX 9070 XT Gaming OC 16GB', shopeeItemId='29181942707', link='2VtUI1F6It'),
+    p(id='gpu-rx9070xt-ch', category='gpu', name='ASRock Radeon RX 9070 XT Challenger 16GB', brand='ASRock', price=56290, tier=5, vramGB=16, tdp=304, lengthMm=314, recPsuW=750, perf=112, priceChecked='2026-11-23', 
+      note='Pinakamurang RX 9070 XT sa listahan. Mahaba, i-check ang case.', search='ASRock RX 9070 XT Challenger 16GB', shopeeItemId='54663012096', link='6q2Up4WIxM'),
     p(id='gpu-rtx5070', category='gpu', name='MSI GeForce RTX 5070 Shadow 2X OC 12GB', brand='MSI', price=65999, tier=5, vramGB=12, tdp=250, lengthMm=242, recPsuW=650, perf=100,
       note='1440p high refresh, CS2 sa 240Hz territory.', search='MSI RTX 5070 Shadow 2X OC 12GB', shopeeItemId='29635878408', link='6L6Cr3mU2A'),
+    p(id='gpu-rtx5070ti', category='gpu', name='MSI GeForce RTX 5070 Ti Shadow 3X OC 16GB', brand='MSI', price=101999, tier=5, vramGB=16, tdp=300, lengthMm=303, recPsuW=750, perf=120, priceChecked='2026-11-23', 
+      note='1440p at 4K, 16GB para sa editing at high settings.', search='MSI RTX 5070 Ti Shadow 3X OC 16GB', shopeeItemId='26985928616', link='7pv20wS29B'),
 
     # ---------------- SSD ----------------
     p(id='ssd-nv3-500', category='ssd', name='Kingston NV3 500GB NVMe', brand='Kingston', price=7295, tier=2, interface='NVMe', capacityGB=500,
@@ -130,6 +146,8 @@ parts = [
       note='Gold, fully modular, PCIe 5.1 ready.', search='MSI MAG A750GL', shopeeItemId='28476550522', link='AUvlooHCkM'),
     p(id='psu-a850gl', category='psu', name='MSI MAG A850GL 850W Gold', brand='MSI', price=8095, tier=5, watts=850, rating='80+ Gold', formFactor='ATX',
       note='Para sa high-end GPU at future upgrades.', search='MSI MAG A850GL', shopeeItemId='23984383831', link='AKcLcVQE4p'),
+    p(id='psu-a1000gl', category='psu', name='MSI MAG A1000GL 1000W Gold', brand='MSI', price=10695, tier=5, watts=1000, rating='80+ Gold', formFactor='ATX', priceChecked='2026-11-23', 
+      note='1000W, ATX 3.1. May headroom para sa RTX 5070 Ti at upgrades.', search='MSI MAG A1000GL', shopeeItemId='28961547220', link='3LScekTbOh'),
 
     # ---------------- Case ----------------
     p(id='case-db330m', category='case', name='darkFlash DB330M Mesh (mATX)', brand='darkFlash', price=1695, tier=1, formFactors=['mATX', 'ITX'], maxGpuMm=300, maxCoolerMm=155, rad240=False, psuFormFactors=['ATX'],
@@ -142,6 +160,8 @@ parts = [
       note='Compact pero kasya ang malalaking GPU.', search='Lian Li A3-mATX', shopeeItemId='24333733607', link='7fbaRea81d'),
     p(id='case-h7-flow', category='case', name='NZXT H7 Flow (ATX)', brand='NZXT', price=7399, tier=4, formFactors=['ATX', 'mATX', 'ITX'], maxGpuMm=400, maxCoolerMm=185, rad240=True, psuFormFactors=['ATX'],
       note='Premium airflow, maluwag gawan ng build.', search='NZXT H7 Flow', shopeeItemId='26611653658', link='1W0x6K7EFc'),
+    p(id='case-dlx21-white', category='case', name='darkFlash DLX21 Mesh White (ATX)', brand='darkFlash', price=4750, tier=3, formFactors=['ATX', 'mATX', 'ITX'], maxGpuMm=400, maxCoolerMm=170, rad240=True, psuFormFactors=['ATX'], priceChecked='2026-11-23', 
+      note='Puting ATX case, mesh front at hinged glass.', search='darkFlash DLX21 Mesh White', shopeeItemId='4857963073', link='3qOtFgaRE8'),
 
     # ---------------- Cooler ----------------
     p(id='cooler-ak400-se', category='cooler', name='DeepCool AK400 Digital SE', brand='DeepCool', price=1785, tier=2, type='air', sockets=ALL, heightMm=155, tdpRating=220,
