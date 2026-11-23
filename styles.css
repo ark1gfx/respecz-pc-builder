@@ -1892,3 +1892,18 @@ p, li { text-wrap: pretty; }
   .basket-dock, .to-top { right: var(--edge); }
   .ark-fab, .ark-pop { left: var(--edge); }
 }
+
+/* big screens, Home: a wider column (nav, page and footer together, so the grid still lines up),
+   a bigger headline and a bigger 3D PC */
+@media (min-width: 1500px) and (min-height: 860px) {
+  html[data-page='home'] :is(.nav-inner, main, .foot) { width: min(100%, 1280px); }
+  html[data-page='home'] .hero-pin h1 { font-size: clamp(3.9rem, 4.2vw, 4.8rem); }
+  html[data-page='home'] .hero-pin .lede { font-size: 1.18rem; max-width: 40ch; }
+  html[data-page='home'] .stage-slot { max-height: min(80svh, 880px); }
+}
+@media (min-width: 1800px) and (min-height: 980px) {
+  html[data-page='home'] :is(.nav-inner, main, .foot) { width: min(100%, 1440px); }
+  html[data-page='home'] .hero-pin h1 { font-size: clamp(4.4rem, 4vw, 5.4rem); }
+  html[data-page='home'] .hero-pin .lede { font-size: 1.25rem; }
+  html[data-page='home'] .stage-slot { max-height: min(82svh, 980px); }
+}
