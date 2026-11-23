@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://down-ph.img.susercontent.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=bad66d3c">
+  <link rel="stylesheet" href="./styles.css?v=9345b310">
   <script type="importmap">
     {
       "imports": {
@@ -79,12 +79,13 @@
      <div class="hero-pin">
       <div class="hero-copy">
         <p class="eyebrow">ReSpecz PC Builder</p>
-        <h1>Plan your PC build<br><span class="soft">bago ka mag-checkout.</span></h1>
+        <h1>Plan your PC build<br><span class="soft">bago ka <span class="nw">mag-checkout.</span></span></h1>
         <p class="lede">I-tap ang part sa 3D PC para makita ang options sa Shopee Mall. Budget lang ang alam mo? I-type mo, kami na ang bubuo ng compatible na set.</p>
         <div class="hero-cta">
           <a class="btn btn-blue" href="./build/">Mag-Build</a>
           <a class="btn btn-glass" href="./may/">May Parts na Ako</a>
         </div>
+        <a class="hero-alt" href="./troubleshoot/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 6.5a4 4 0 0 0-5.3 5.3L4 17l3 3 5.2-5.2a4 4 0 0 0 5.3-5.3l-2.6 2.6-2.3-.7-.7-2.3z"/></svg><span>May problema ang PC mo? <b>Troubleshoot</b></span><span class="hero-alt-go" aria-hidden="true">›</span></a>
         <!-- hovering a part of the 3D PC (mouse only) swaps the copy above for this card -->
         <aside class="peek" id="peek" aria-live="polite" hidden></aside>
       </div>
@@ -184,11 +185,6 @@
           </span>
         </a>
       </nav>
-      <a class="ts-promo tile" href="./troubleshoot/">
-        <span class="ts-promo-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v3.5M11 14h.01"/></svg></span>
-        <span class="ts-promo-text"><strong>May problema ang PC mo?</strong><span>Ayaw mag-on, walang display, mainit o nag-i-stutter. Subukan ang Troubleshooter.</span></span>
-        <span class="ts-promo-go" aria-hidden="true">›</span>
-      </a>
     </section>
 
     <!-- FEATURED + AD: from data/promo.json; hidden until filled -->
@@ -297,7 +293,7 @@
 
   <div id="toast" class="toast" role="status" hidden></div>
 
-  <script type="module" src="./js/app.js?v=e1c585f4"></script>
+  <script type="module" src="./js/app.js?v=b8aee512"></script>
   <script type="module" src="./js/ark.js?v=44a485fb"></script>
 </body>
 </html>

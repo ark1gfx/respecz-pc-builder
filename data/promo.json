@@ -1,5 +1,5 @@
 {
-  "_help": "Featured items and ad slots. featured.items: part ids from parts.json (tag = short label). ads: one entry per paid ad; slot = home | parts | builds; shown only between start and end (YYYY-MM-DD, inclusive). When a slot has no live ad, the house ad is shown instead. Set house to null to leave empty slots hidden.",
+  "_help": "Featured items and ad slots. featured.items: part ids from parts.json (tag = short label). ads: one entry per paid ad; slot = home | parts | builds; shown only between start and end (YYYY-MM-DD, inclusive). When a slot has no live ad, the house ad is shown instead. Set house to null to leave empty slots hidden. house.slots: where the house ad may show (left out = every slot).",
   "featured": {
     "title": "ReSpecz Picks",
     "sub": "Mga part na sulit for the price, pinili namin.",
@@ -36,6 +36,10 @@
     "title": "Gusto mo bang ma-feature ang Store or Brand mo?",
     "text": "Nakikita ito ng mga nagpaplano ng PC build. Mag-message sa ReSpecz FB page para sa ad o featured slot.",
     "cta": "Mag-message",
-    "url": "https://www.facebook.com/1378136052056179"
+    "url": "https://www.facebook.com/1378136052056179",
+    "slots": [
+      "parts",
+      "builds"
+    ]
   }
 }

@@ -1857,3 +1857,17 @@ p, li { text-wrap: pretty; }
 .ark-miss:hover { color: var(--ink2); }
 .ark-miss:disabled { text-decoration: none; cursor: default; color: var(--ok); }
 .ark-link-pm { color: #fff; background: rgba(var(--accent-rgb), 0.14); border-color: rgba(var(--accent-rgb), 0.45); }
+
+/* home: keep a word like "mag-checkout" whole; quiet third path to the Troubleshooter under the two hero buttons */
+.nw { white-space: nowrap; }
+.hero-alt { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; padding: 8px 14px 8px 12px; border-radius: 999px; font-size: 0.88rem; color: var(--ink2); background: rgba(255, 255, 255, 0.04); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); transition: background 0.2s ease, color 0.2s ease; }
+.hero-alt svg { width: 16px; height: 16px; color: var(--accent); flex: none; }
+.hero-alt b { font-weight: 600; color: var(--ink); }
+.hero-alt-go { font-size: 1.1rem; line-height: 1; transition: transform 0.2s ease; }
+.hero-alt:hover { text-decoration: none; color: var(--ink); background: rgba(255, 255, 255, 0.08); }
+.hero-alt:hover .hero-alt-go { transform: translateX(3px); }
+/* phones: Ark waits until the scroll cue is gone, like the floating Basket (they share the bottom of the hero) */
+@media (max-width: 999px) {
+  .ark-fab { transition: opacity 0.25s ease, transform 0.2s ease, border-color 0.2s ease; }
+  .in-hero .ark-fab { opacity: 0; pointer-events: none; }
+}

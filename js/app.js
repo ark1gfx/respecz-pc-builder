@@ -1527,7 +1527,8 @@ function adHtml(ad, house) {
 function renderAds(promo) {
   document.querySelectorAll('[data-ad]').forEach((slot) => {
     const ad = (promo.ads || []).find((a) => a.slot === slot.dataset.ad && a.url && liveAd(a));
-    const house = !ad && promo.house?.url ? promo.house : null;
+    const h = promo.house;
+    const house = !ad && h?.url && (!h.slots || h.slots.includes(slot.dataset.ad)) ? h : null;
     if (!ad && !house) return;
     slot.innerHTML = adHtml(ad || house, !ad);
     slot.hidden = false;
