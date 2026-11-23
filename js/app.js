@@ -1623,8 +1623,10 @@ function bindScrollHints(row, { dots = false } = {}) {
     const max = row.scrollWidth - row.clientWidth;
     const over = max > 4;
     wrap.classList.toggle('is-scrollable', over);
-    prev.hidden = !over || row.scrollLeft <= 4;
-    next.hidden = !over || row.scrollLeft >= max - 4;
+    // both arrows show whenever the row scrolls; the one with nothing more that way is dimmed
+    prev.hidden = next.hidden = !over;
+    prev.disabled = row.scrollLeft <= 4;
+    next.disabled = row.scrollLeft >= max - 4;
     if (dotBar) {
       dotBar.hidden = !over;
       const kids = [...row.children];

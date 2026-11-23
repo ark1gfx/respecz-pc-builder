@@ -1955,3 +1955,6 @@ p, li { text-wrap: pretty; }
 .budget-pen { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 8px; color: var(--accent); background: rgba(255, 255, 255, 0.06); cursor: text; flex: none; }
 .budget-pen svg { width: 15px; height: 15px; }
 .budget-edit:hover .budget-pen, .budget-out:focus + .budget-pen { background: rgba(var(--accent-rgb), 0.18); }
+
+.scroll-arrow:disabled { opacity: 0.35; cursor: default; background: rgba(28, 29, 34, 0.42); }
+.scroll-arrow:disabled:active { transform: none; }
