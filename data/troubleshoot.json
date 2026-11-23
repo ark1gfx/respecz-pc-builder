@@ -1,0 +1,576 @@
+{
+  "meta": {
+    "checked": "2026-11-23",
+    "note": "Gabay lang ito. Iba-iba ang board at case, kaya laging i-check ang manual ng motherboard mo.",
+    "sources": [
+      "https://learn.microsoft.com/en-us/previous-versions/orphan-topics/ws.10/ff943877(v=ws.10)",
+      "https://uk.crucial.com/support/articles-faq-memory/ddr5-memory-training",
+      "https://rog-forum.asus.com/t5/amd-800-series/understanding-memory-training-on-amd-am5-motherboards-q-code-15/td-p/1099400",
+      "https://www.tomshardware.com/reviews/amd-ryzen-9-7950x-ryzen-5-7600x-cpu-review/5"
+    ]
+  },
+  "symptoms": [
+    { "id": "nopower", "label": "Ayaw mag-on", "sub": "Walang ilaw, walang umiikot na fan", "start": "nopower-switch" },
+    { "id": "nodisplay", "label": "Naka-on pero walang display", "sub": "Umiikot ang fans, may RGB, pero itim ang monitor", "start": "nodisplay-port" },
+    { "id": "beep", "label": "Nagbe-beep pagka-on", "sub": "May tunog galing sa motherboard", "start": "beep-kind" },
+    { "id": "restart", "label": "Biglang namamatay o nagre-restart", "sub": "Habang naglalaro, o kahit walang ginagawa", "start": "restart-when" },
+    { "id": "heat", "label": "Sobrang init o ingay ng fans", "sub": "Mainit ang CPU o GPU, o parang eroplano ang fans", "start": "heat-which" },
+    { "id": "slow", "label": "Mabagal o nag-i-stutter sa games", "sub": "Valorant, Dota 2, CS2 at iba pa", "start": "slow-kind" },
+    { "id": "netaudio", "label": "Walang tunog o walang internet", "sub": "Headset, speakers, LAN o Wi-Fi", "start": "netaudio-which" }
+  ],
+  "nodes": {
+    "nopower-switch": {
+      "q": "Naka-ON ba ang switch sa likod ng PSU (nakapindot sa \"I\") at nakasaksak nang maayos ang power cable sa outlet?",
+      "options": [
+        { "label": "Oo, naka-on at nakasaksak", "next": "nopower-new" },
+        { "label": "Hindi ko sure", "next": "r-nopower-switch" }
+      ]
+    },
+    "nopower-new": {
+      "q": "Bagong build ba ito, o dati na itong gumagana?",
+      "options": [
+        { "label": "Bagong build, first time i-on", "next": "r-nopower-newbuild" },
+        { "label": "Dati gumagana, biglang ayaw na", "next": "nopower-event" }
+      ]
+    },
+    "nopower-event": {
+      "q": "May nangyari ba bago ito tumigil?",
+      "options": [
+        { "label": "Brownout, kidlat, pumutok na tunog o amoy sunog", "next": "r-nopower-psu-dead" },
+        { "label": "Wala naman akong napansin", "next": "r-nopower-general" }
+      ]
+    },
+    "r-nopower-switch": {
+      "title": "Simulan sa saksakan",
+      "why": "Madalas, simple lang: naka-off ang switch ng PSU, maluwag ang cable, o patay ang outlet o AVR.",
+      "steps": [
+        "Tingnan ang switch sa likod ng PSU. Dapat nakapindot ito sa \"I\" (on), hindi sa \"O\" (off).",
+        "Itulak nang mabuti ang power cable sa PSU at sa outlet.",
+        "Kung may AVR, UPS o extension, siguraduhing naka-on ito. Subukan ding isaksak nang direkta sa ibang outlet na sigurado kang gumagana.",
+        "Pindutin ulit ang power button. Kung ayaw pa rin, bumalik dito at piliin ang \"Oo, naka-on at nakasaksak\"."
+      ],
+      "cats": [],
+      "open": false
+    },
+    "r-nopower-newbuild": {
+      "title": "Malamang, may kulang na cable",
+      "why": "Sa bagong build, kadalasang dahilan ang power switch cable ng case na mali ang pwesto, o PSU cable na hindi pa fully nakasaksak.",
+      "steps": [
+        "Patayin ang PSU at bunutin sa saksakan bago galawin ang loob.",
+        "Hanapin ang front panel header sa motherboard (kadalasan sa baba, kanang sulok). I-check sa manual kung saan eksakto ang \"PWR_SW\" o \"POWER SW\" pins, at doon isaksak ang power switch cable ng case.",
+        "Itulak hanggang mag-click ang malaking 24-pin cable sa motherboard.",
+        "I-check ang CPU power cable (4+4 o 8-pin, may label na \"CPU\" o \"EPS\") sa taas-kaliwa ng motherboard. Huwag ipagpalit sa PCIe cable ng GPU.",
+        "Kung modular ang PSU, siguraduhing nakasaksak din nang buo ang cables sa PSU side.",
+        "Isaksak ulit, i-on ang PSU switch, at pindutin ang power button."
+      ],
+      "cats": ["psu"],
+      "open": true
+    },
+    "r-nopower-psu-dead": {
+      "title": "Posibleng nasira ang PSU",
+      "why": "Ang brownout, power surge o kidlat ay pwedeng makasira ng PSU. Kapag may pumutok na tunog o amoy sunog, kadalasan PSU ang unang tinamaan.",
+      "steps": [
+        "Kung may amoy sunog o usok, huwag nang subukang i-on ulit. Bunutin agad sa saksakan.",
+        "Huwag buksan ang PSU. May mga capacitor sa loob na pwedeng may natitirang kuryente kahit nakabunot na.",
+        "Kung may warranty pa ang PSU, i-claim ito sa seller o brand.",
+        "Palitan ng PSU galing sa kilalang brand na may sapat na wattage para sa build mo.",
+        "Kung bagong PSU na pero ayaw pa rin, pwedeng may iba pang tinamaan (hal. motherboard). Ipa-check sa technician.",
+        "Para sa susunod, gumamit ng AVR o UPS lalo na kung madalas ang brownout sa lugar ninyo."
+      ],
+      "cats": ["psu"],
+      "open": false
+    },
+    "r-nopower-general": {
+      "title": "I-reset ang power, tapos i-check ang PSU",
+      "why": "Minsan naka-protection mode lang ang PSU. Kung hindi pa rin bumubuhay, PSU o power switch ang pinaka-posibleng sira.",
+      "steps": [
+        "Bunutin ang power cable, tapos pindutin at i-hold ang power button nang mga 15 segundo para maubos ang natitirang kuryente.",
+        "Hintayin ang isang minuto, isaksak ulit, at subukang i-on.",
+        "Buksan ang case (nakabunot pa rin) at i-check kung nakasaksak nang maayos ang 24-pin, CPU power cable at power switch cable ng case.",
+        "Kung may kakilala kang may gumaganang PSU, subukan ito sa PC mo. Kung bumuhay, PSU ang sira.",
+        "Kung ayaw pa rin kahit ibang PSU na, ipa-check sa technician ang motherboard."
+      ],
+      "cats": ["psu"],
+      "open": true
+    },
+
+    "nodisplay-port": {
+      "q": "Saan nakasaksak ang cable ng monitor?",
+      "options": [
+        { "label": "Sa graphics card (GPU)", "next": "nodisplay-led" },
+        { "label": "Sa motherboard, at may graphics card ako", "next": "r-plug-into-gpu" },
+        { "label": "Sa motherboard, wala akong graphics card", "next": "r-no-igpu" }
+      ]
+    },
+    "nodisplay-led": {
+      "q": "May debug LED ba sa motherboard mo (CPU, DRAM, VGA, BOOT) na nakailaw at hindi namamatay?",
+      "help": "Maliliit na ilaw ito, kadalasan malapit sa RAM slots o sa 24-pin. Hindi lahat ng board meron.",
+      "options": [
+        { "label": "DRAM", "next": "r-led-dram" },
+        { "label": "CPU", "next": "r-led-cpu" },
+        { "label": "VGA", "next": "r-led-vga" },
+        { "label": "BOOT", "next": "r-led-boot" },
+        { "label": "Wala akong ganyan / walang nakailaw", "next": "nodisplay-new" }
+      ]
+    },
+    "nodisplay-new": {
+      "q": "Bagong build ba, o bago ka lang nagpalit ng RAM o nag-update ng BIOS?",
+      "options": [
+        { "label": "Oo, bago lang", "next": "r-memory-training" },
+        { "label": "Hindi, biglang nawala ang display", "next": "r-nodisplay-general" }
+      ]
+    },
+    "r-plug-into-gpu": {
+      "title": "Ilipat ang monitor cable sa graphics card",
+      "why": "Kapag may graphics card ka, doon dapat nakasaksak ang monitor. Ang ports sa motherboard ay para lang sa built-in graphics ng CPU, at kadalasan hindi ito gumagana o mas mabagal kapag may GPU na.",
+      "steps": [
+        "Hanapin ang ports sa graphics card. Pahalang sila sa bandang baba ng likod ng case, hindi sa taas kasama ng USB ports.",
+        "Ilipat doon ang HDMI o DisplayPort cable ng monitor.",
+        "Sa monitor, piliin ang tamang input (HDMI o DisplayPort) gamit ang buttons nito.",
+        "Kung nag-i-stutter dati sa games, malaking tulong din ito: graphics card na ang gagawa ng trabaho, hindi ang CPU."
+      ],
+      "cats": [],
+      "open": false
+    },
+    "r-no-igpu": {
+      "title": "Baka walang built-in graphics ang CPU mo",
+      "why": "Hindi lahat ng CPU ay may built-in graphics. Kapag wala, walang lalabas sa ports ng motherboard at kailangan ng graphics card.",
+      "steps": [
+        "Tingnan ang model ng CPU mo. Ang Ryzen 5000 na walang \"G\" sa dulo (hal. Ryzen 5 5600) at ang Intel na may \"F\" (hal. Core i5-12400F) ay walang built-in graphics.",
+        "Ang may \"G\" (hal. Ryzen 5 5600G), ang Intel na walang \"F\", at karamihan ng Ryzen 7000 at 9000 ay may built-in graphics. I-check pa rin ang specs page ng CPU mo sa AMD o Intel.",
+        "Kung wala ngang built-in graphics, kailangan mong magkabit ng graphics card at doon isaksak ang monitor.",
+        "Kung meron naman, i-check ang monitor input, subukan ang ibang cable, at ituloy sa troubleshooter na \"walang display\" gamit ang debug LEDs."
+      ],
+      "cats": ["gpu"],
+      "open": false
+    },
+    "r-led-dram": {
+      "title": "RAM ang hindi pumapasa",
+      "why": "Nakailaw ang DRAM LED kapag hindi ma-detect o ma-train ng board ang RAM. Sa bagong DDR5 build, normal na matagal ito sa unang boot.",
+      "steps": [
+        "Kung bagong build o bagong RAM, maghintay muna ng hanggang 10 hanggang 15 minuto. Nagme-memory training ang DDR5 sa unang boot, at itim lang ang monitor habang ginagawa ito. Huwag patayin.",
+        "Kung wala pa rin, patayin at bunutin ang PC. Tanggalin ang RAM at ibalik nang mabuti hanggang mag-click ang dalawang lock.",
+        "Kung dalawang stick, ilagay sa slots na sinasabi ng manual. Kadalasan A2 at B2 (pangalawa at pang-apat mula sa CPU).",
+        "Subukan muna ang isang stick lang sa A2. Kung bumuhay, palitan ng kabila para malaman kung may sirang stick.",
+        "I-check sa website ng motherboard kung supported ng BIOS mo ang RAM at CPU mo."
+      ],
+      "cats": ["ram"],
+      "open": true
+    },
+    "r-led-cpu": {
+      "title": "Hindi makita ng board ang CPU",
+      "why": "Ang CPU LED ay nakailaw kapag may problema sa CPU, sa power nito, o kapag hindi pa kilala ng BIOS ang CPU mo.",
+      "steps": [
+        "Patayin at bunutin ang PC. I-check ang CPU power cable (4+4 o 8-pin) sa taas-kaliwa ng motherboard. Kailangang nakasaksak ito nang buo.",
+        "Tingnan sa CPU support list ng motherboard sa website ng brand kung anong BIOS version ang kailangan ng CPU mo. Halimbawa, ang mga lumang B450 o B550 BIOS ay hindi pa kilala ang ilang bagong Ryzen.",
+        "Kung luma ang BIOS, gamitin ang BIOS Flashback button kung meron ang board mo. Kaya nitong mag-update kahit walang CPU. Sundin ang manual, at huwag patayin habang nag-a-update.",
+        "Kung tinanggal mo ang CPU, tingnan kung may baluktot na pin (nasa CPU sa AM4, nasa socket ng board sa AM5 at Intel). Huwag ayusin kung hindi ka sigurado. Dalhin sa technician.",
+        "Kung bago ang board at CPU at ayaw pa rin, i-claim ang warranty sa seller."
+      ],
+      "cats": ["cpu", "motherboard"],
+      "open": true
+    },
+    "r-led-vga": {
+      "title": "Graphics card ang may problema",
+      "why": "Nakailaw ang VGA LED kapag hindi ma-detect ng board ang graphics card o walang lumalabas na display.",
+      "steps": [
+        "Patayin at bunutin ang PC. Tanggalin ang graphics card at ibalik nang mabuti hanggang mag-click ang lock ng PCIe slot.",
+        "I-check ang power cable ng GPU (6+2 pin o 12V-2x6). Dapat buong nakasaksak. Kung dalawa o higit pa ang socket, gumamit ng hiwalay na cable para sa bawat isa kung kaya.",
+        "Siguraduhing nakasaksak ang monitor sa graphics card, at tama ang input na napili sa monitor.",
+        "Kung may built-in graphics ang CPU mo, subukang tanggalin ang GPU at isaksak ang monitor sa motherboard. Kung may display, GPU o power nito ang problema.",
+        "Kung may ibang PC ka, subukan doon ang graphics card."
+      ],
+      "cats": ["gpu", "psu"],
+      "open": true
+    },
+    "r-led-boot": {
+      "title": "Pumasa na ang hardware, storage na ang hinahanap",
+      "why": "Ang BOOT LED ay nangangahulugang tapos na ang hardware check pero walang makitang drive na may Windows, o may problema sa display.",
+      "steps": [
+        "I-check muna ang monitor: tamang input, nakasaksak sa graphics card, at subukan ang ibang cable.",
+        "Pumasok sa BIOS (kadalasan Delete o F2 habang nagbu-boot) at tingnan kung nakikita ang SSD mo.",
+        "Kung M.2 SSD, patayin at bunutin ang PC, tapos i-check kung nakapasok nang buo at naka-screw ito.",
+        "Kung bago ang SSD, normal na walang Windows pa. Kailangan mong mag-install gamit ang USB installer galing sa website ng Microsoft.",
+        "Kung dati gumagana at biglang nawala ang SSD sa BIOS, posibleng sira na ito."
+      ],
+      "cats": ["ssd"],
+      "open": true
+    },
+    "r-memory-training": {
+      "title": "Hintayin muna: baka nagme-memory training",
+      "why": "Pagkatapos ng bagong build, bagong RAM, BIOS update o clear CMOS, tine-train ulit ng board ang RAM. Sa DDR5 (lalo na sa AM5), pwedeng umabot ng ilang minuto na itim ang monitor.",
+      "steps": [
+        "Iwan muna ang PC na naka-on nang 10 hanggang 15 minuto. Huwag patayin o i-restart.",
+        "Kung may display na, normal na mas mabilis ang susunod na boot.",
+        "Kung wala pa rin pagkatapos ng 15 minuto, patayin, bunutin, at ibalik nang mabuti ang RAM (gamitin ang slots na sinasabi ng manual, kadalasan A2 at B2).",
+        "Subukan ang isang stick lang muna. Kung may debug LED ang board, tingnan kung alin ang nakailaw at bumalik dito."
+      ],
+      "cats": ["ram"],
+      "open": true
+    },
+    "r-nodisplay-general": {
+      "title": "Isa-isahin: monitor, cable, GPU, RAM",
+      "why": "Kapag biglang nawala ang display, kadalasang dahilan ang cable o monitor, maluwag na part, o settings ng BIOS na kailangang i-reset.",
+      "steps": [
+        "Subukan ang monitor at cable sa ibang device (laptop o console). Kung walang display pa rin, monitor o cable ang sira.",
+        "Subukan ang ibang port sa graphics card at ibang cable.",
+        "Patayin at bunutin ang PC, tapos ibalik nang mabuti ang graphics card at RAM.",
+        "I-clear ang CMOS para bumalik sa default ang BIOS. Sundin ang manual (may button o jumper ang karamihan ng board). Gawin ito habang nakabunot ang PC.",
+        "Kung may built-in graphics ang CPU, subukan ang display gamit ang ports ng motherboard nang walang GPU para malaman kung GPU ang sira."
+      ],
+      "cats": ["gpu", "ram"],
+      "open": true
+    },
+
+    "beep-kind": {
+      "q": "Anong klaseng beep ang naririnig mo?",
+      "options": [
+        { "label": "Isang maikling beep, tapos tuloy ang boot", "next": "r-beep-ok" },
+        { "label": "Paulit-ulit o sunod-sunod na beep, walang boot", "next": "r-beep-codes" }
+      ]
+    },
+    "r-beep-ok": {
+      "title": "Normal lang iyan",
+      "why": "Sa maraming motherboard, isang maikling beep ang ibig sabihin ay pumasa ang hardware check (POST).",
+      "steps": [
+        "Kung tuloy ang boot at may display, wala kang kailangang ayusin.",
+        "Kung gusto mong patahimikin, may setting dito sa BIOS ang ilang board. I-check sa manual."
+      ],
+      "cats": [],
+      "open": false
+    },
+    "r-beep-codes": {
+      "title": "Basahin ang beep code sa manual",
+      "why": "Iba-iba ang ibig sabihin ng beep pattern depende sa brand at BIOS ng motherboard, kaya ang manual ang pinaka-tamang basehan. Kadalasan RAM o graphics card ang tinuturo nito.",
+      "steps": [
+        "Bilangin ang beep: ilan ang mahaba at ilan ang maikli, at kung umuulit.",
+        "Hanapin sa manual ng motherboard (o sa support page ng brand) ang \"beep codes\" o \"POST codes\" at itugma ang pattern.",
+        "Kung RAM ang tinuturo: patayin at bunutin ang PC, ibalik nang mabuti ang RAM, at subukan ang isang stick lang muna.",
+        "Kung graphics card: ibalik nang mabuti ang GPU at i-check ang power cable nito.",
+        "Kung may debug LEDs ang board, mas madaling basahin iyon. Gamitin ang troubleshooter na \"Naka-on pero walang display\"."
+      ],
+      "cats": ["ram", "gpu"],
+      "open": true
+    },
+
+    "restart-when": {
+      "q": "Kailan ito nangyayari?",
+      "options": [
+        { "label": "Kapag naglalaro o mabigat ang ginagawa", "next": "restart-hot" },
+        { "label": "Kahit walang ginagawa, random lang", "next": "restart-oc" },
+        { "label": "May blue screen muna bago mag-restart", "next": "r-bsod" }
+      ]
+    },
+    "restart-hot": {
+      "q": "Na-check mo na ba ang temperature ng CPU at GPU habang naglalaro?",
+      "help": "Pwede mong gamitin ang libreng HWiNFO (Sensors only) para makita ang temps.",
+      "options": [
+        { "label": "Oo, sobrang init bago mamatay", "next": "heat-which" },
+        { "label": "Hindi naman mainit / hindi ko pa na-check", "next": "r-psu-load" }
+      ]
+    },
+    "restart-oc": {
+      "q": "Naka-on ba ang XMP o EXPO ng RAM, o may overclock o undervolt ka?",
+      "options": [
+        { "label": "Oo", "next": "r-oc-reset" },
+        { "label": "Hindi / hindi ko alam", "next": "r-random-restart" }
+      ]
+    },
+    "r-psu-load": {
+      "title": "Baka kulang ang PSU sa load",
+      "why": "Kapag biglang namamatay habang naglalaro pero hindi mainit, kadalasang dahilan ang PSU na kulang ang wattage, luma na, o mahina ang quality para sa GPU mo.",
+      "steps": [
+        "Tingnan ang recommended PSU wattage ng graphics card mo sa website ng brand, at ikumpara sa PSU mo.",
+        "Gamitin ang Mag-Build sa site na ito para makita ang estimated na power ng buong set mo.",
+        "Patayin at bunutin ang PC, tapos i-check ang power cables ng GPU. Kung dalawa o higit pa ang socket, gumamit ng hiwalay na cable para sa bawat isa kung kaya.",
+        "Kung hindi ka sigurado, i-check din ang temps gamit ang HWiNFO habang naglalaro.",
+        "Kung luma o walang brand ang PSU, palitan ng kilalang brand na may sapat na wattage."
+      ],
+      "cats": ["psu"],
+      "open": true
+    },
+    "r-oc-reset": {
+      "title": "Ibalik muna sa default ang BIOS",
+      "why": "Ang XMP, EXPO, overclock o undervolt ay pwedeng hindi stable sa ilang CPU, RAM o board, kahit gumana ito dati.",
+      "steps": [
+        "Pumasok sa BIOS at piliin ang \"Load Optimized Defaults\" (o katulad na pangalan), tapos i-save.",
+        "Gamitin muna ang PC nang ilang araw nang walang XMP o EXPO. Kung wala nang restart, iyon ang dahilan.",
+        "I-update ang BIOS gamit ang file galing sa website ng motherboard. Madalas may fix ito para sa RAM stability. Huwag patayin habang nag-a-update.",
+        "Pagkatapos, i-on ulit ang XMP o EXPO. Kung bumalik ang restart, gamitin ang mas mababang speed o i-check kung nasa supported list ng board ang RAM mo."
+      ],
+      "cats": ["ram"],
+      "open": false
+    },
+    "r-random-restart": {
+      "title": "I-check ang kuryente, drivers at RAM",
+      "why": "Ang random na restart ay pwedeng galing sa kuryente sa bahay, sa driver, sa RAM o sa PSU. Ang \"Kernel-Power 41\" sa Event Viewer ay nagsasabi lang na hindi maayos ang huling shutdown. Hindi nito sinasabi kung bakit.",
+      "steps": [
+        "Kung madalas ang brownout o mahina ang kuryente sa lugar ninyo, gumamit ng AVR o UPS.",
+        "I-update ang graphics driver galing sa AMD, NVIDIA o Intel, at ang chipset driver galing sa website ng motherboard.",
+        "I-run ang Windows Memory Diagnostic (i-type ang \"mdsched\" sa Start) para ma-test ang RAM.",
+        "Sa Event Viewer, tingnan ang ibang errors na kasabay ng Kernel-Power 41 (hal. disk o driver errors) para may clue.",
+        "Kung wala pa ring makita, subukan ang ibang PSU kung may mahihiraman ka."
+      ],
+      "cats": ["psu", "ram"],
+      "open": false
+    },
+    "r-bsod": {
+      "title": "Basahin ang stop code ng blue screen",
+      "why": "May nakasulat na stop code sa blue screen (hal. MEMORY_MANAGEMENT o WHEA_UNCORRECTABLE_ERROR). Iyon ang pinakamagandang clue kung driver, RAM o storage ang problema.",
+      "steps": [
+        "Kunan ng picture ang blue screen at isulat ang stop code. I-search ito sa website ng Microsoft.",
+        "I-update ang graphics driver (AMD, NVIDIA o Intel) at chipset driver (website ng motherboard).",
+        "Kung naka-on ang XMP o EXPO, i-off muna sa BIOS at tingnan kung mawawala ang blue screen.",
+        "I-run ang Windows Memory Diagnostic (i-type ang \"mdsched\" sa Start) para ma-test ang RAM.",
+        "I-check ang health ng SSD gamit ang tool ng brand nito, at siguraduhing may bakanteng space pa."
+      ],
+      "cats": ["ram", "ssd"],
+      "open": false
+    },
+
+    "heat-which": {
+      "q": "Alin ang mainit?",
+      "options": [
+        { "label": "CPU", "next": "heat-cooler" },
+        { "label": "Graphics card (GPU)", "next": "r-gpu-hot" },
+        { "label": "Hindi ko alam, maingay lang", "next": "r-check-temps" }
+      ]
+    },
+    "heat-cooler": {
+      "q": "Bago lang ba na-install ang CPU cooler?",
+      "options": [
+        { "label": "Oo, bago lang", "next": "r-cooler-install" },
+        { "label": "Hindi, matagal na", "next": "r-cpu-hot-old" }
+      ]
+    },
+    "r-cooler-install": {
+      "title": "I-check ang pagkakabit ng cooler",
+      "why": "Sa bagong cooler, madalas na dahilan ang plastic na nakadikit pa sa ilalim nito, maluwag na pagkakakabit, o fan cable na wala sa tamang header.",
+      "steps": [
+        "Patayin at bunutin ang PC. Tanggalin ang cooler at tingnan kung may plastic film pa sa ilalim. Kung meron, tanggalin ito.",
+        "Kung natanggal ang cooler, linisin ang lumang thermal paste gamit ang isopropyl alcohol at maglagay ng bago (parang butil ng mais lang sa gitna). Kung may pre-applied paste ang cooler, okay na iyon sa unang kabit.",
+        "Ikabit ulit nang pantay, hinihigpitan nang paekis (cross pattern) ang screws.",
+        "Isaksak ang fan cable ng cooler sa \"CPU_FAN\" header. Kung AIO, sundin ang manual para sa pump cable.",
+        "Pag-on, i-check ang temps gamit ang HWiNFO."
+      ],
+      "cats": ["cooler"],
+      "open": true
+    },
+    "r-cpu-hot-old": {
+      "title": "Alikabok, lumang paste, o kulang ang cooler",
+      "why": "Pagkalipas ng ilang taon, nag-iipon ng alikabok ang heatsink at natutuyo ang thermal paste. Tandaan din: ang ilang bagong CPU (hal. Ryzen 7000) ay talagang dinisenyo na umabot ng mga 95°C sa mabigat na load, at kusa silang nagbabawas ng bilis kapag nasa limit.",
+      "steps": [
+        "Patayin at bunutin ang PC. Linisin ang alikabok sa heatsink, fans at filters gamit ang brush o blower. Hawakan ang fan para hindi umikot habang binobugahan.",
+        "Kung ilang taon na, palitan ang thermal paste.",
+        "Siguraduhing may hangin na pumapasok sa harap at lumalabas sa likod o taas ng case.",
+        "I-check ang temps gamit ang HWiNFO. Kung bumabagsak ang bilis ng CPU o namamatay ang PC dahil sa init, mag-upgrade ng mas malakas na cooler.",
+        "Kung stock cooler ang gamit sa mabigat na CPU, malaking tulong ang upgrade sa tower cooler o AIO."
+      ],
+      "cats": ["cooler", "case"],
+      "open": true
+    },
+    "r-gpu-hot": {
+      "title": "Airflow at alikabok ng graphics card",
+      "why": "Kapag mainit ang GPU, kadalasang dahilan ang alikabok, kulang na hangin sa case, o masikip na pwesto.",
+      "steps": [
+        "Patayin at bunutin ang PC. Linisin ang fans at heatsink ng GPU gamit ang brush o blower, nang hindi binubuksan ang GPU (mawawala ang warranty).",
+        "Siguraduhing may intake fans sa harap at exhaust sa likod o taas, at hindi nakaharang ang cables sa harap ng GPU.",
+        "Huwag ilagay ang PC sa masikip na kabinet o sa sahig na maalikabok.",
+        "Pwede mong i-cap ang FPS sa game (hal. sa refresh rate ng monitor mo) para mas malamig at tahimik ang GPU.",
+        "Kung maliit o luma ang case, mas magandang airflow ang case na may mesh na harap."
+      ],
+      "cats": ["case"],
+      "open": true
+    },
+    "r-check-temps": {
+      "title": "Tingnan muna ang temps",
+      "why": "Para malaman kung alin ang mainit, kailangan mong makita ang temperature ng CPU at GPU habang ginagamit ang PC.",
+      "steps": [
+        "I-download ang HWiNFO sa official website nito at buksan sa \"Sensors only\".",
+        "Maglaro nang 15 minuto, tapos tingnan ang \"Maximum\" column ng CPU at GPU temperature.",
+        "Ikumpara sa specs ng CPU at GPU mo sa website ng AMD, Intel o NVIDIA. Ang ilang bagong CPU ay normal na umaabot ng mga 90 hanggang 95°C sa mabigat na load.",
+        "Kapag alam mo na kung alin ang mainit, bumalik dito at piliin ang CPU o GPU."
+      ],
+      "cats": [],
+      "open": false
+    },
+
+    "slow-kind": {
+      "q": "Ano ang mas malapit sa nangyayari?",
+      "options": [
+        { "label": "Mababa ang FPS kahit naka-low settings", "next": "slow-port" },
+        { "label": "Okay ang FPS pero may biglang stutter o lag", "next": "slow-ping" },
+        { "label": "Mataas ang FPS pero hindi smooth tingnan", "next": "r-refresh-rate" }
+      ]
+    },
+    "slow-port": {
+      "q": "Saan nakasaksak ang cable ng monitor?",
+      "options": [
+        { "label": "Sa graphics card (GPU)", "next": "r-low-fps" },
+        { "label": "Sa motherboard", "next": "r-plug-into-gpu" },
+        { "label": "Wala akong graphics card", "next": "r-low-fps" }
+      ]
+    },
+    "slow-ping": {
+      "q": "Online game ba (hal. Valorant, Dota 2, CS2), at tumataas ang ping kapag nagla-lag?",
+      "options": [
+        { "label": "Oo, tumataas ang ping", "next": "r-network-lag" },
+        { "label": "Hindi, FPS mismo ang bumabagsak", "next": "r-stutter" }
+      ]
+    },
+    "r-refresh-rate": {
+      "title": "I-check ang refresh rate ng monitor",
+      "why": "Kung 144Hz o mas mataas ang monitor mo pero naka-60Hz sa Windows, hindi mo makikita ang mataas na FPS.",
+      "steps": [
+        "Sa Windows: Settings > System > Display > Advanced display, at piliin ang pinakamataas na refresh rate.",
+        "Siguraduhing nakasaksak ang monitor sa graphics card, hindi sa motherboard.",
+        "Mas safe ang DisplayPort. Kung HDMI, gumamit ng port at cable na kaya ang refresh rate ng monitor mo. May lumang HDMI na hindi umaabot sa 144Hz.",
+        "Sa game settings, i-check din kung tama ang refresh rate at walang FPS cap na masyadong mababa."
+      ],
+      "cats": [],
+      "open": false
+    },
+    "r-low-fps": {
+      "title": "Drivers, settings, tapos hardware",
+      "why": "Ang mababang FPS ay pwedeng dahil sa lumang driver, settings ng Windows o RAM, o talagang kulang ang hardware para sa game. Sa Valorant at CS2, malaki ang epekto ng CPU at RAM sa mataas na FPS.",
+      "steps": [
+        "I-update ang graphics driver galing sa website ng AMD, NVIDIA o Intel.",
+        "Sa Windows: Settings > System > Power, at piliin ang \"Best performance\".",
+        "Sa Task Manager > Performance > Memory, tingnan ang \"Speed\" at \"Slots used\". Kung isang stick lang, mas mabilis ang dalawa (dual channel). Kung mababa ang speed, i-on ang XMP o EXPO sa BIOS.",
+        "Isara ang ibang apps habang naglalaro, lalo na ang browser na maraming tabs.",
+        "I-check ang temps gamit ang HWiNFO. Kapag sobrang init, kusang bumabagal ang CPU at GPU.",
+        "Kung okay na lahat at mababa pa rin, baka oras na mag-upgrade. Built-in graphics lang? Malaking tulong ang graphics card."
+      ],
+      "cats": ["gpu", "cpu", "ram"],
+      "open": false
+    },
+    "r-stutter": {
+      "title": "Hanapin ang dahilan ng stutter",
+      "why": "Madalas na dahilan ng stutter ang RAM na isang stick lang o mabagal, game na naka-install sa HDD o halos punong drive, o background apps.",
+      "steps": [
+        "Normal ang kaunting stutter sa unang laro pagkatapos ng driver o game update habang nagko-compile ng shaders. Dapat mawala ito pagkatapos ng ilang laro.",
+        "Kung isang RAM stick lang, mas smooth ang dalawang stick (dual channel). I-on din ang XMP o EXPO sa BIOS.",
+        "Kung naka-install ang game sa HDD, ilipat sa SSD. Mag-iwan din ng bakanteng space sa drive.",
+        "Isara ang overlays at apps na hindi kailangan (recording, browser, launchers na nagda-download).",
+        "I-check ang temps gamit ang HWiNFO para makita kung bumabagal ang CPU o GPU dahil sa init."
+      ],
+      "cats": ["ram", "ssd"],
+      "open": false
+    },
+    "r-network-lag": {
+      "title": "Internet ang problema, hindi ang PC",
+      "why": "Kapag tumataas ang ping habang nagla-lag, connection ang may problema at hindi ang hardware ng PC.",
+      "steps": [
+        "Gumamit ng LAN cable papunta sa router imbes na Wi-Fi kung kaya. Mas stable ito para sa online games.",
+        "I-check kung may ibang device sa bahay na nagda-download o nanonood ng video habang naglalaro ka.",
+        "I-restart ang router at modem.",
+        "Sa game, piliin ang server na pinakamalapit sa iyo (hal. Singapore o SEA).",
+        "Kung tuloy-tuloy pa rin, tumawag sa internet provider ninyo."
+      ],
+      "cats": [],
+      "open": false
+    },
+
+    "netaudio-which": {
+      "q": "Alin ang problema?",
+      "options": [
+        { "label": "Walang tunog", "next": "audio-where" },
+        { "label": "Walang internet", "next": "net-how" }
+      ]
+    },
+    "audio-where": {
+      "q": "Saan nakasaksak ang headset o speakers?",
+      "options": [
+        { "label": "Sa harap ng case", "next": "r-audio-front" },
+        { "label": "Sa likod (sa motherboard)", "next": "r-audio-rear" },
+        { "label": "Sa monitor, gamit ang HDMI o DisplayPort", "next": "r-audio-monitor" }
+      ]
+    },
+    "net-how": {
+      "q": "Paano ka kumokonekta sa internet?",
+      "options": [
+        { "label": "LAN cable", "next": "r-lan" },
+        { "label": "Wi-Fi", "next": "net-wifi" }
+      ]
+    },
+    "net-wifi": {
+      "q": "May Wi-Fi ba ang motherboard mo? (May \"WiFi\" sa pangalan nito at may kasamang antenna.)",
+      "options": [
+        { "label": "Oo", "next": "r-wifi-onboard" },
+        { "label": "Wala / hindi ko sure", "next": "r-wifi-none" }
+      ]
+    },
+    "r-audio-front": {
+      "title": "I-check ang audio cable ng case at ang output",
+      "why": "Ang front audio ng case ay may sariling cable papunta sa motherboard. Kapag hindi ito nakasaksak, walang tunog sa harap.",
+      "steps": [
+        "Sa Windows, i-click ang speaker icon sa taskbar at piliin ang tamang output device.",
+        "Patayin at bunutin ang PC. Hanapin ang \"HD_AUDIO\" o \"AAFP\" header sa baba-kaliwa ng motherboard at doon isaksak ang audio cable ng case.",
+        "Subukan muna ang headset sa likod ng motherboard. Kung may tunog doon, ang front panel cable ang problema.",
+        "I-install ang audio driver galing sa website ng motherboard mo."
+      ],
+      "cats": [],
+      "open": true
+    },
+    "r-audio-rear": {
+      "title": "Output device at driver",
+      "why": "Kadalasan, mali lang ang napiling output device sa Windows, o kulang ang audio driver.",
+      "steps": [
+        "I-click ang speaker icon sa taskbar at piliin ang tamang output device. Tingnan din kung naka-mute.",
+        "Isaksak sa berdeng port (headphone o line out) sa likod ng motherboard.",
+        "I-install ang audio driver galing sa website ng motherboard mo.",
+        "Subukan ang headset o speakers sa ibang device para malaman kung sila ang sira."
+      ],
+      "cats": [],
+      "open": false
+    },
+    "r-audio-monitor": {
+      "title": "Piliin ang monitor bilang output",
+      "why": "Kapag sa monitor dumadaan ang tunog (HDMI o DisplayPort), kailangang may speakers o headphone jack ang monitor, at dapat ito ang napiling output sa Windows.",
+      "steps": [
+        "I-check kung may built-in speakers o 3.5mm jack ang monitor mo. Kung wala, sa motherboard isaksak ang headset.",
+        "Sa speaker icon sa taskbar, piliin ang pangalan ng monitor bilang output.",
+        "Tingnan ang volume sa menu ng monitor mismo, baka naka-mute.",
+        "I-update ang graphics driver. Kasama rito ang audio driver para sa HDMI at DisplayPort."
+      ],
+      "cats": [],
+      "open": false
+    },
+    "r-lan": {
+      "title": "Cable, router at LAN driver",
+      "why": "Kapag walang internet sa LAN, kadalasang maluwag ang cable, may problema ang router, o kulang ang LAN driver (lalo na pagkatapos mag-install ng Windows).",
+      "steps": [
+        "I-check kung nakailaw o kumikislap ang ilaw sa LAN port ng PC. Kung wala, subukan ang ibang cable at ibang port sa router.",
+        "Subukan ang internet sa ibang device. Kung wala rin, router o provider ang problema.",
+        "I-download ang LAN driver galing sa website ng motherboard gamit ang ibang device, ilipat gamit ang USB flash drive, at i-install.",
+        "I-restart ang router at ang PC."
+      ],
+      "cats": [],
+      "open": false
+    },
+    "r-wifi-onboard": {
+      "title": "Antenna at Wi-Fi driver",
+      "why": "Ang Wi-Fi ng motherboard ay kailangan ng nakakabit na antenna at tamang driver.",
+      "steps": [
+        "Ikabit ang kasamang antenna sa dalawang gold na screw port sa likod ng motherboard. Mahina o walang signal kapag walang antenna.",
+        "I-download ang Wi-Fi at Bluetooth driver galing sa website ng motherboard gamit ang ibang device, ilipat gamit ang USB, at i-install.",
+        "Sa Windows, siguraduhing naka-on ang Wi-Fi at hindi naka-airplane mode.",
+        "Kung malayo sa router, ilapit ang antenna o gumamit ng LAN cable."
+      ],
+      "cats": [],
+      "open": false
+    },
+    "r-wifi-none": {
+      "title": "Baka walang Wi-Fi ang motherboard mo",
+      "why": "Maraming motherboard ang walang built-in Wi-Fi. Kadalasan, may \"WiFi\" sa pangalan ng model kapag meron.",
+      "steps": [
+        "Tingnan ang model ng motherboard mo at hanapin ang specs sa website ng brand.",
+        "Kung wala, gumamit ng LAN cable papunta sa router. Ito rin ang pinaka-stable para sa games.",
+        "Pwede ka ring bumili ng USB o PCIe Wi-Fi adapter.",
+        "Kung magpapalit ka rin ng motherboard, pumili ng model na may \"WiFi\" sa pangalan."
+      ],
+      "cats": ["motherboard"],
+      "open": false
+    }
+  }
+}

@@ -1725,6 +1725,12 @@ async function init() {
     catalog = { parts: data.parts, meta: data.meta, byId: new Map(data.parts.map((p) => [p.id, p])) };
     readHash();
     bindSheet();
+    // other modules (the troubleshooter) ask for a category's product list, opened without the 3D PC
+    addEventListener('respecz:open-cat', (e) => {
+      if (!CATEGORIES.includes(e.detail?.cat)) return;
+      e.preventDefault();
+      openSheet(e.detail.cat);
+    });
     initBasket({
       byId: (id) => catalog.byId.get(id),
       peso,

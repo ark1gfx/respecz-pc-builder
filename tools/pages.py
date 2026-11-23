@@ -42,10 +42,14 @@ PAGES = [
          title="May parts ka na? Tingnan ang compatible · ReSpecz PC Builder",
          og_title='May parts ka na? Tingnan ang compatible',
          description='Piliin ang meron ka na (RAM, CPU, GPU…) at ipapakita namin ang compatible na motherboard, RAM, PSU at iba pa.'),
-    dict(name='builds', slug='builds/', nav='Ready Builds', tab='Builds',
+    dict(name='builds', slug='builds/', nav=None, tab='Builds',  # in the Parts dropdown, not the top nav
          title='Ready PC builds · ReSpecz PC Builder',
          og_title='Ready PC builds mula ₱40K',
          description='Kumpletong PC builds para sa gaming, editing at school, may total na presyo at Shopee links.'),
+    dict(name='troubleshoot', slug='troubleshoot/', nav='Troubleshoot', tab=None,
+         title='PC Troubleshooter: ayaw mag-on, walang display, nag-i-stutter · ReSpecz PC Builder',
+         og_title='May problema ang PC mo? Hanapin natin ang dahilan',
+         description='Piliin ang problema (ayaw mag-on, walang display, nagre-restart, mainit, mabagal sa games) at sagutin ang ilang tanong. May step-by-step na checks na kaya mong gawin.'),
     dict(name='disclosure', slug='disclosure/', nav=None, tab=None,
          title='Affiliate disclosure · ReSpecz PC Builder',
          og_title='Paano kumikita ang ReSpecz PC Builder',
@@ -84,9 +88,15 @@ def nav_html(page, root, current):
             continue
         if p['name'] == 'parts':
             items = '\n'.join(f'            <a role="menuitem" href="{root}parts/#cat={c}">{label}</a>' for c, label in PART_CATS)
+            # Ready Builds lives in this menu too, under a divider; on that page the Parts link is the current one
+            on_builds = page['name'] == 'builds'
+            here = ' aria-current="page"' if on_builds else ''
+            items += ('\n            <span class="nav-menu-sep" role="separator"></span>'
+                      f'\n            <a role="menuitem" href="{root}builds/"{here}>Ready Builds</a>')
+            parts_current = ' aria-current="page"' if on_builds else current(p)
             out.append(f"""        <div class="nav-drop">
-          <a href="{root}parts/"{current(p)}>Parts</a>
-          <button type="button" class="nav-caret" aria-expanded="false" aria-haspopup="menu" aria-label="Mga category ng parts">{CARET}</button>
+          <a href="{root}parts/"{parts_current}>Parts</a>
+          <button type="button" class="nav-caret" aria-expanded="false" aria-haspopup="menu" aria-label="Mga category ng parts at Ready Builds">{CARET}</button>
           <div class="nav-menu" role="menu">
 {items}
           </div>
@@ -124,7 +134,8 @@ def render(page):
         out = out.replace('{{' + k + '}}', v)
     out = out.replace('{{root}}', root)  # placeholders inside the page bodies
     out = out.replace(f'{root}styles.css"', f'{root}styles.css?v={version("styles.css")}"')
-    out = out.replace(f'{root}js/app.js"', f'{root}js/app.js?v={version("js/app.js")}"')
+    for js in ('js/app.js', 'js/ark.js', 'js/troubleshoot.js'):
+        out = out.replace(f'{root}{js}"', f'{root}{js}?v={version(js)}"')
     assert '{{' not in out, f'{page["name"]}: unfilled placeholder'
     return out
 

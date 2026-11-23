@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://down-ph.img.susercontent.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=318d62d2">
+  <link rel="stylesheet" href="./styles.css?v=bad66d3c">
   <script type="importmap">
     {
       "imports": {
@@ -47,7 +47,7 @@
         <a href="./" aria-current="page">Home</a>
         <div class="nav-drop">
           <a href="./parts/">Parts</a>
-          <button type="button" class="nav-caret" aria-expanded="false" aria-haspopup="menu" aria-label="Mga category ng parts"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5l3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button type="button" class="nav-caret" aria-expanded="false" aria-haspopup="menu" aria-label="Mga category ng parts at Ready Builds"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5l3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <div class="nav-menu" role="menu">
             <a role="menuitem" href="./parts/#cat=cpu">CPU</a>
             <a role="menuitem" href="./parts/#cat=motherboard">Motherboard</a>
@@ -57,11 +57,13 @@
             <a role="menuitem" href="./parts/#cat=psu">Power supply (PSU)</a>
             <a role="menuitem" href="./parts/#cat=case">Case</a>
             <a role="menuitem" href="./parts/#cat=cooler">CPU cooler</a>
+            <span class="nav-menu-sep" role="separator"></span>
+            <a role="menuitem" href="./builds/">Ready Builds</a>
           </div>
         </div>
         <a href="./build/">Mag-Build</a>
         <a href="./may/">May Parts na Ako</a>
-        <a href="./builds/">Ready Builds</a>
+        <a href="./troubleshoot/">Troubleshoot</a>
         <a href="./#videos">Videos</a>
       </nav>
       <button class="nav-basket" id="nav-basket" type="button" aria-label="Buksan ang Basket">
@@ -182,6 +184,11 @@
           </span>
         </a>
       </nav>
+      <a class="ts-promo tile" href="./troubleshoot/">
+        <span class="ts-promo-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v3.5M11 14h.01"/></svg></span>
+        <span class="ts-promo-text"><strong>May problema ang PC mo?</strong><span>Ayaw mag-on, walang display, mainit o nag-i-stutter. Subukan ang Troubleshooter.</span></span>
+        <span class="ts-promo-go" aria-hidden="true">›</span>
+      </a>
     </section>
 
     <!-- FEATURED + AD: from data/promo.json; hidden until filled -->
@@ -212,7 +219,7 @@
   </main>
 
   <footer class="foot">
-    <p>© <span id="year"></span> ReSpecz. <a href="./disclosure/">Affiliate disclosure</a> · <a href="https://www.facebook.com/1378136052056179" rel="noopener" target="_blank">Facebook</a> · <a href="https://www.tiktok.com/@resp3cz" rel="noopener" target="_blank">TikTok @resp3cz</a></p>
+    <p>© <span id="year"></span> ReSpecz. <a href="./troubleshoot/">PC Troubleshooter</a> · <a href="./disclosure/">Affiliate disclosure</a> ·<a href="https://www.facebook.com/1378136052056179" rel="noopener" target="_blank">Facebook</a> · <a href="https://www.tiktok.com/@resp3cz" rel="noopener" target="_blank">TikTok @resp3cz</a></p>
   </footer>
 
   <!-- mobile: one tap to every page -->
@@ -290,6 +297,7 @@
 
   <div id="toast" class="toast" role="status" hidden></div>
 
-  <script type="module" src="./js/app.js?v=36e9fb2b"></script>
+  <script type="module" src="./js/app.js?v=e1c585f4"></script>
+  <script type="module" src="./js/ark.js?v=44a485fb"></script>
 </body>
 </html>

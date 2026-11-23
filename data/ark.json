@@ -1,0 +1,2694 @@
+{
+  "meta": {
+    "name": "Ark",
+    "tagline": "Ang Assistant ni ReSpecz",
+    "checked": "2026-11-23",
+    "note": "Sumasagot si Ark mula sa ReSpecz knowledge base at sa parts list ng site."
+  },
+  "groups": [
+    {
+      "id": "pc",
+      "label": "Buong PC",
+      "sub": "Hindi sigurado"
+    },
+    {
+      "id": "gpu",
+      "label": "GPU",
+      "sub": "Graphics card"
+    },
+    {
+      "id": "cpu",
+      "label": "CPU",
+      "sub": "Processor"
+    },
+    {
+      "id": "motherboard",
+      "label": "Motherboard",
+      "sub": "Board, BIOS"
+    },
+    {
+      "id": "ram",
+      "label": "RAM",
+      "sub": "DDR4, DDR5"
+    },
+    {
+      "id": "ssd",
+      "label": "SSD",
+      "sub": "Storage"
+    },
+    {
+      "id": "psu",
+      "label": "PSU",
+      "sub": "Power supply"
+    },
+    {
+      "id": "cooler",
+      "label": "Cooler",
+      "sub": "Cooler, paste"
+    },
+    {
+      "id": "case",
+      "label": "Case",
+      "sub": "Size, fans"
+    },
+    {
+      "id": "buy",
+      "label": "Pagbili",
+      "sub": "Budget, Shopee"
+    }
+  ],
+  "synonyms": {
+    "walang display": [
+      "no display",
+      "black screen",
+      "blank screen",
+      "no signal",
+      "walang signal",
+      "walang lumalabas",
+      "ayaw lumabas",
+      "walang picture",
+      "itim ang monitor",
+      "itim ang screen",
+      "no video",
+      "walang video",
+      "walang display sa monitor",
+      "walang lumalabas sa screen",
+      "walang display monitor",
+      "di lumalabas display"
+    ],
+    "ayaw mag on": [
+      "ayaw mag-on",
+      "ayaw magon",
+      "di mag on",
+      "hindi mag on",
+      "hindi nag oon",
+      "ayaw bumukas",
+      "hindi bumubukas",
+      "no power",
+      "walang power",
+      "wont turn on",
+      "won t turn on",
+      "not turning on",
+      "hindi umaandar",
+      "ayaw umandar",
+      "walang buhay",
+      "patay na",
+      "di nag oon",
+      "ayaw mag bukas",
+      "hindi nagbubukas",
+      "hindi mag bukas"
+    ],
+    "nagre restart": [
+      "nagrerestart",
+      "restart",
+      "nag restart",
+      "nagreboot",
+      "reboot",
+      "namamatay",
+      "nag shutdown",
+      "nagshushutdown",
+      "biglang namamatay",
+      "shutdown",
+      "nagsasara mag isa",
+      "nag o off",
+      "rerestart",
+      "nag rerestart",
+      "nagreerestart",
+      "restarting",
+      "nagsashutdown",
+      "nag sha shutdown",
+      "namatay"
+    ],
+    "mainit": [
+      "init",
+      "overheat",
+      "overheating",
+      "sobrang init",
+      "mataas ang temp",
+      "high temp",
+      "temperature",
+      "temp",
+      "temps",
+      "umiinit"
+    ],
+    "maingay": [
+      "ingay",
+      "noise",
+      "noisy",
+      "malakas ang fan",
+      "parang eroplano"
+    ],
+    "stutter": [
+      "nag stutter",
+      "nagstutter",
+      "stuttering",
+      "lag spike",
+      "lag spikes",
+      "choppy",
+      "fps drop",
+      "fps drops",
+      "freeze",
+      "nagfi freeze",
+      "nagha hang",
+      "hang",
+      "nag lalag",
+      "naglalag",
+      "laggy",
+      "lagging"
+    ],
+    "mababa fps": [
+      "low fps",
+      "mababang fps",
+      "mahina fps",
+      "mahina sa games",
+      "mabagal sa games",
+      "mabagal sa laro"
+    ],
+    "walang tunog": [
+      "no sound",
+      "no audio",
+      "walang sound",
+      "walang audio",
+      "walang marinig"
+    ],
+    "walang internet": [
+      "no internet",
+      "walang net",
+      "walang wifi",
+      "no wifi",
+      "walang connection",
+      "no connection",
+      "hindi maka connect",
+      "di maka connect"
+    ],
+    "beep": [
+      "beeps",
+      "nagbe beep",
+      "nagbebeep",
+      "beep code",
+      "beep codes"
+    ],
+    "gpu": [
+      "graphics card",
+      "video card",
+      "vcard",
+      "videocard",
+      "graphic card"
+    ],
+    "motherboard": [
+      "mobo",
+      "mother board"
+    ],
+    "psu": [
+      "power supply",
+      "power supply unit"
+    ],
+    "cpu": [
+      "processor",
+      "proci",
+      "procie"
+    ],
+    "thermal paste": [
+      "paste",
+      "thermal compound"
+    ],
+    "xmp": [
+      "expo",
+      "docp",
+      "xmp expo"
+    ],
+    "windows": [
+      "win11",
+      "win 11",
+      "windows 11",
+      "win10",
+      "windows 10"
+    ],
+    "dual channel": [
+      "dual chanel",
+      "2 sticks",
+      "dalawang stick",
+      "dalawang ram"
+    ],
+    "magkano": [
+      "presyo",
+      "price",
+      "how much",
+      "halaga"
+    ],
+    "pang gaming": [
+      "gaming",
+      "laro",
+      "games",
+      "maglaro",
+      "pang laro"
+    ],
+    "pang editing": [
+      "editing",
+      "video editing",
+      "edit",
+      "pang edit"
+    ],
+    "sulit": [
+      "worth it",
+      "value",
+      "bang for the buck"
+    ]
+  },
+  "entries": [
+    {
+      "id": "pc-problem",
+      "group": "pc",
+      "q": "May problema ang PC ko, saan ako magsisimula?",
+      "alt": [
+        "may problema pc ko",
+        "may sira pc ko",
+        "sira pc ko",
+        "help pc ko"
+      ],
+      "keys": [
+        "problema",
+        "sira",
+        "help",
+        "tulong"
+      ],
+      "a": "Sabihin mo kung ano ang nangyayari, hal. \"walang display\", \"ayaw mag-on\", \"nagre-restart\", \"mainit\" o \"mababa ang FPS\". Pwede ka ring pumili ng part sa itaas, o gamitin ang Troubleshooter: ilang tanong lang, may step-by-step na checks na.",
+      "links": [
+        {
+          "ts": "",
+          "label": "Buksan ang Troubleshooter"
+        }
+      ],
+      "next": [
+        "pc-nodisplay",
+        "pc-nopower",
+        "pc-restart"
+      ]
+    },
+    {
+      "id": "pc-nodisplay",
+      "group": "pc",
+      "q": "Naka-on pero walang display",
+      "alt": [
+        "walang display",
+        "umiikot fans pero walang display",
+        "may rgb pero walang display"
+      ],
+      "keys": [
+        "walang display",
+        "monitor",
+        "display"
+      ],
+      "a": "Unang tingnan: saan nakasaksak ang monitor? Kung may graphics card ka, sa graphics card dapat, hindi sa motherboard.\n\nKung tama na iyon, tingnan ang maliliit na debug LED sa motherboard (CPU, DRAM, VGA, BOOT). Ang nakailaw ang nagsasabi kung saan tumigil. Sa bagong DDR5 build, normal na itim muna ang monitor nang ilang minuto sa unang boot habang nagme-memory training.\n\nSundan ang Troubleshooter para sa step-by-step.",
+      "links": [
+        {
+          "ts": "nodisplay",
+          "label": "Troubleshooter: walang display"
+        }
+      ],
+      "next": [
+        "pc-debug-led",
+        "ram-training",
+        "cpu-igpu"
+      ]
+    },
+    {
+      "id": "pc-nopower",
+      "group": "pc",
+      "q": "Ayaw mag-on ang PC",
+      "alt": [
+        "ayaw mag on",
+        "walang ilaw walang fan",
+        "hindi bumubukas ang pc"
+      ],
+      "keys": [
+        "ayaw mag on",
+        "power button"
+      ],
+      "a": "Simulan sa simple:\n• Naka-ON ba ang switch sa likod ng PSU (nakapindot sa \"I\")?\n• Gumagana ba ang outlet, AVR o extension?\n• Sa bagong build: nasa tamang pins ba ang power switch cable ng case (PWR_SW sa front panel header) at naka-click nang buo ang 24-pin at CPU power cable?\n\nKung may amoy sunog o pumutok, bunutin agad at huwag nang i-on ulit.",
+      "links": [
+        {
+          "ts": "nopower",
+          "label": "Troubleshooter: ayaw mag-on"
+        },
+        {
+          "cat": "psu"
+        }
+      ],
+      "next": [
+        "psu-test",
+        "pc-front-panel"
+      ]
+    },
+    {
+      "id": "pc-restart",
+      "group": "pc",
+      "q": "Biglang namamatay o nagre-restart",
+      "alt": [
+        "nagre restart habang naglalaro",
+        "namamatay pag naglalaro",
+        "random restart"
+      ],
+      "keys": [
+        "nagre restart"
+      ],
+      "a": "Tatlong karaniwang dahilan:\n• Kulang o mahinang PSU, lalo na kung habang naglalaro lang nangyayari.\n• Sobrang init ng CPU o GPU.\n• Hindi stable na XMP/EXPO o overclock.\n\nKung may blue screen muna, isulat ang stop code. Malaking clue iyon.",
+      "links": [
+        {
+          "ts": "restart",
+          "label": "Troubleshooter: namamatay o nagre-restart"
+        }
+      ],
+      "next": [
+        "psu-watts",
+        "pc-temps",
+        "ram-xmp"
+      ]
+    },
+    {
+      "id": "pc-slow",
+      "group": "pc",
+      "q": "Mababa ang FPS sa games",
+      "alt": [
+        "mabagal sa games",
+        "mababa fps valorant",
+        "mababa fps cs2",
+        "mababa fps dota 2"
+      ],
+      "keys": [
+        "mababa fps",
+        "valorant",
+        "cs2",
+        "dota"
+      ],
+      "a": "Mga check na libre:\n• Nakasaksak ba ang monitor sa graphics card, hindi sa motherboard?\n• Updated ba ang graphics driver (galing sa AMD, NVIDIA o Intel)?\n• Dalawang RAM stick ba (dual channel) at naka-on ang XMP/EXPO?\n• Naka-\"Best performance\" ba ang power mode ng Windows?\n\nSa Valorant at CS2, malaki ang epekto ng CPU at RAM sa mataas na FPS. Sa Dota 2, CPU din at GPU.",
+      "links": [
+        {
+          "ts": "slow.0",
+          "label": "Troubleshooter: mababa ang FPS"
+        }
+      ],
+      "next": [
+        "ram-dual",
+        "gpu-driver",
+        "pc-refresh"
+      ]
+    },
+    {
+      "id": "pc-stutter",
+      "group": "pc",
+      "q": "May stutter o lag spikes sa games",
+      "alt": [
+        "nag i stutter",
+        "nagla lag sa games"
+      ],
+      "keys": [
+        "stutter"
+      ],
+      "a": "Tingnan muna kung ping ang tumataas (internet) o FPS ang bumabagsak (PC).\n\nKung FPS: isang RAM stick lang, naka-install ang game sa HDD, halos punong drive, o background apps. Normal din ang kaunting stutter sa unang laro pagkatapos ng driver update habang nagko-compile ng shaders.\n\nKung ping: gumamit ng LAN cable imbes na Wi-Fi.",
+      "links": [
+        {
+          "ts": "slow.1",
+          "label": "Troubleshooter: stutter"
+        }
+      ],
+      "next": [
+        "ram-dual",
+        "ssd-hdd-games",
+        "pc-lan-wifi"
+      ]
+    },
+    {
+      "id": "pc-refresh",
+      "group": "pc",
+      "q": "144Hz monitor pero parang 60Hz",
+      "alt": [
+        "hindi smooth kahit mataas fps",
+        "paano i set refresh rate",
+        "144hz"
+      ],
+      "keys": [
+        "refresh rate",
+        "144hz",
+        "165hz",
+        "hz",
+        "monitor"
+      ],
+      "a": "Sa Windows: Settings > System > Display > Advanced display, at piliin ang pinakamataas na refresh rate.\n\nSiguraduhing nakasaksak sa graphics card ang monitor. Mas safe ang DisplayPort; kung HDMI, gumamit ng port at cable na kaya ang refresh rate ng monitor (may lumang HDMI na hindi umaabot sa 144Hz).",
+      "links": [
+        {
+          "ts": "slow.2",
+          "label": "Troubleshooter: hindi smooth"
+        }
+      ],
+      "next": [
+        "pc-slow"
+      ]
+    },
+    {
+      "id": "pc-temps",
+      "group": "pc",
+      "q": "Paano i-check ang temperature ng PC?",
+      "alt": [
+        "paano makita temp",
+        "normal ba temp ko",
+        "ilang degrees normal",
+        "mainit ang cpu",
+        "mainit ang pc"
+      ],
+      "keys": [
+        "mainit",
+        "hwinfo",
+        "degrees"
+      ],
+      "a": "I-download ang HWiNFO sa official website nito at buksan sa \"Sensors only\". Maglaro nang 15 minuto, tapos tingnan ang \"Maximum\" column ng CPU at GPU.\n\nIba-iba ang normal per CPU. Halimbawa, dinisenyo ang Ryzen 7000 na umabot ng mga 95°C sa mabigat na load. Kusang bumabagal ang CPU at GPU kapag nasa limit, kaya hindi agad masisira, pero babagal ang performance.",
+      "links": [
+        {
+          "ts": "heat",
+          "label": "Troubleshooter: mainit o maingay"
+        }
+      ],
+      "next": [
+        "cooler-paste",
+        "case-airflow",
+        "pc-clean"
+      ]
+    },
+    {
+      "id": "pc-noisy",
+      "group": "pc",
+      "q": "Sobrang ingay ng fans",
+      "alt": [
+        "maingay ang pc",
+        "parang eroplano ang pc"
+      ],
+      "keys": [
+        "maingay"
+      ],
+      "a": "Kadalasan, ingay ay dahil mainit (bumibilis ang fans) o maalikabok.\n• Linisin ang alikabok sa fans, heatsink at filters.\n• I-check ang temps gamit ang HWiNFO.\n• Sa BIOS, pwedeng i-adjust ang fan curve para mas tahimik sa idle.\n• Kung may kumakaskas na tunog, baka sira ang bearing ng isang fan. Palitan ito.",
+      "links": [
+        {
+          "ts": "heat",
+          "label": "Troubleshooter: mainit o maingay"
+        }
+      ],
+      "next": [
+        "pc-clean",
+        "case-airflow"
+      ]
+    },
+    {
+      "id": "pc-clean",
+      "group": "pc",
+      "q": "Paano linisin ang PC?",
+      "alt": [
+        "paano mag linis ng pc",
+        "maalikabok ang pc"
+      ],
+      "keys": [
+        "linis",
+        "alikabok",
+        "dust"
+      ],
+      "a": "Patayin at bunutin ang PC. Gumamit ng soft brush o blower para sa fans, heatsink at dust filters. Hawakan ang fan para hindi umikot habang binubugahan.\n\nHuwag gumamit ng vacuum sa loob ng case (static), at huwag buksan ang PSU o ang graphics card. Gawin ito tuwing ilang buwan, mas madalas kung maalikabok ang kwarto.",
+      "links": [],
+      "next": [
+        "pc-temps",
+        "cooler-paste-replace"
+      ]
+    },
+    {
+      "id": "pc-beep",
+      "group": "pc",
+      "q": "Nagbe-beep ang PC pagka-on",
+      "alt": [
+        "may beep pag on",
+        "ano ibig sabihin ng beep"
+      ],
+      "keys": [
+        "beep"
+      ],
+      "a": "Sa maraming board, isang maikling beep tapos tuloy ang boot = normal (pumasa ang hardware check).\n\nKung paulit-ulit o sunod-sunod, iba-iba ang ibig sabihin per brand at BIOS, kaya ang manual ng motherboard ang basehan. Kadalasan RAM o graphics card ang tinuturo nito.",
+      "links": [
+        {
+          "ts": "beep",
+          "label": "Troubleshooter: beep"
+        }
+      ],
+      "next": [
+        "pc-debug-led",
+        "ram-reseat"
+      ]
+    },
+    {
+      "id": "pc-debug-led",
+      "group": "pc",
+      "q": "Ano ang ibig sabihin ng ilaw na CPU, DRAM, VGA, BOOT?",
+      "alt": [
+        "dram light",
+        "vga light",
+        "cpu light",
+        "boot light",
+        "may ilaw sa motherboard",
+        "debug led"
+      ],
+      "keys": [
+        "debug",
+        "led",
+        "dram",
+        "vga",
+        "ezdebug"
+      ],
+      "a": "Iyan ang debug LEDs. Ipinapakita nila kung saan tumigil ang hardware check:\n• CPU: CPU, power nito, o BIOS na hindi pa kilala ang CPU.\n• DRAM: RAM na hindi ma-detect o nagme-memory training pa.\n• VGA: graphics card o display.\n• BOOT: pumasa ang hardware, pero walang makitang drive na may Windows.\n\nPiliin ang nakailaw sa Troubleshooter.",
+      "links": [
+        {
+          "ts": "nodisplay.0",
+          "label": "Troubleshooter: debug LEDs"
+        }
+      ],
+      "next": [
+        "ram-training",
+        "mb-bios-update"
+      ]
+    },
+    {
+      "id": "pc-no-sound",
+      "group": "pc",
+      "q": "Walang tunog",
+      "alt": [
+        "walang tunog ang headset",
+        "walang sound sa front"
+      ],
+      "keys": [
+        "walang tunog",
+        "headset",
+        "speaker",
+        "audio"
+      ],
+      "a": "• I-click ang speaker icon sa taskbar at piliin ang tamang output device.\n• Kung sa harap ng case nakasaksak, i-check kung naka-saksak ang \"HD_AUDIO\" cable ng case sa motherboard.\n• Kung sa monitor dumadaan (HDMI o DisplayPort), kailangan may speakers o jack ang monitor.\n• I-install ang audio driver galing sa website ng motherboard.",
+      "links": [
+        {
+          "ts": "netaudio.0",
+          "label": "Troubleshooter: walang tunog"
+        }
+      ],
+      "next": [
+        "pc-drivers"
+      ]
+    },
+    {
+      "id": "pc-no-internet",
+      "group": "pc",
+      "q": "Walang internet o Wi-Fi",
+      "alt": [
+        "walang wifi ang pc",
+        "hindi makita wifi",
+        "walang lan"
+      ],
+      "keys": [
+        "walang internet",
+        "lan",
+        "ethernet"
+      ],
+      "a": "• LAN: tingnan kung may ilaw ang LAN port at subukan ang ibang cable.\n• Wi-Fi: maraming motherboard ang walang built-in Wi-Fi. Kadalasan may \"WiFi\" o \"AX\" sa pangalan kapag meron, at kailangang ikabit ang antenna.\n• Pagkatapos mag-install ng Windows, i-download ang LAN o Wi-Fi driver sa website ng motherboard gamit ang ibang device, at ilipat gamit ang USB.",
+      "links": [
+        {
+          "ts": "netaudio.1",
+          "label": "Troubleshooter: walang internet"
+        },
+        {
+          "cat": "motherboard"
+        }
+      ],
+      "next": [
+        "mb-wifi",
+        "pc-lan-wifi"
+      ]
+    },
+    {
+      "id": "pc-lan-wifi",
+      "group": "pc",
+      "q": "LAN o Wi-Fi para sa online games?",
+      "alt": [
+        "mas maganda ba lan sa gaming",
+        "lag sa wifi"
+      ],
+      "keys": [
+        "lan",
+        "ping",
+        "wifi",
+        "online"
+      ],
+      "a": "LAN cable kung kaya. Mas stable ang ping at walang interference, kaya mas kaunting lag spikes sa Valorant, Dota 2 at CS2. Kung Wi-Fi talaga, ilapit sa router at iwasan ang makapal na pader sa pagitan.",
+      "links": [],
+      "next": [
+        "pc-stutter"
+      ]
+    },
+    {
+      "id": "pc-front-panel",
+      "group": "pc",
+      "q": "Saan isasaksak ang power button cable ng case?",
+      "alt": [
+        "front panel connector",
+        "saan ilalagay power sw",
+        "pwr sw"
+      ],
+      "keys": [
+        "front panel",
+        "pwr",
+        "power sw",
+        "f panel",
+        "jfp1"
+      ],
+      "a": "Sa front panel header ng motherboard (kadalasan sa baba, kanang sulok, may label na F_PANEL o JFP1). Maliit ang pins at iba-iba ang ayos per brand, kaya tingnan ang diagram sa manual.\n\nAng POWER SW ay walang polarity (kahit baligtad, gagana). Ang LED cables ay may + at −.",
+      "links": [
+        {
+          "ts": "nopower.0.0",
+          "label": "Troubleshooter: bagong build na ayaw mag-on"
+        }
+      ],
+      "next": [
+        "pc-first-boot"
+      ]
+    },
+    {
+      "id": "pc-first-boot",
+      "group": "pc",
+      "q": "Ano ang gagawin sa unang boot ng bagong build?",
+      "alt": [
+        "first boot",
+        "unang bukas ng bagong pc"
+      ],
+      "keys": [
+        "first boot",
+        "bagong build",
+        "unang"
+      ],
+      "a": "1. I-check ang lahat ng cable bago isaksak: 24-pin, CPU power, GPU power, front panel.\n2. Pag-on, maghintay. Sa DDR5, pwedeng ilang minuto na itim ang monitor habang nagme-memory training. Huwag patayin.\n3. Pumasok sa BIOS (Delete o F2). Tingnan kung nakikita ang CPU, RAM at SSD.\n4. I-on ang XMP/EXPO, i-save, at mag-install ng Windows mula sa USB.\n5. I-install ang chipset at graphics drivers.",
+      "links": [],
+      "next": [
+        "ram-training",
+        "pc-windows-install",
+        "ram-xmp"
+      ]
+    },
+    {
+      "id": "pc-windows-install",
+      "group": "pc",
+      "q": "Paano mag-install ng Windows sa bagong PC?",
+      "alt": [
+        "install windows",
+        "paano gumawa ng bootable usb"
+      ],
+      "keys": [
+        "windows",
+        "install",
+        "usb",
+        "bootable"
+      ],
+      "a": "1. Sa ibang PC, i-download ang Media Creation Tool sa website ng Microsoft at gumawa ng USB installer (8GB pataas).\n2. Isaksak sa bagong PC, pumasok sa boot menu (kadalasan F8, F11 o F12, depende sa board) at piliin ang USB.\n3. I-install sa SSD.\n4. Pagkatapos, i-install ang chipset, LAN/Wi-Fi at audio drivers galing sa website ng motherboard, at ang graphics driver galing sa AMD, NVIDIA o Intel.",
+      "links": [],
+      "next": [
+        "pc-drivers"
+      ]
+    },
+    {
+      "id": "pc-drivers",
+      "group": "pc",
+      "q": "Saan kukuha ng drivers?",
+      "alt": [
+        "anong drivers kailangan",
+        "paano mag update ng driver"
+      ],
+      "keys": [
+        "driver",
+        "drivers",
+        "update"
+      ],
+      "a": "• Chipset, LAN, Wi-Fi, audio: sa support page ng motherboard mo (hanapin ang eksaktong model).\n• Graphics: sa website ng AMD, NVIDIA o Intel.\n\nIwasan ang \"driver updater\" apps galing sa ibang site. Madalas may kasamang ads o malware.",
+      "links": [],
+      "next": [
+        "gpu-driver"
+      ]
+    },
+    {
+      "id": "pc-specs",
+      "group": "pc",
+      "q": "Paano makita ang specs ng PC ko?",
+      "alt": [
+        "paano malaman specs",
+        "anong parts ng pc ko"
+      ],
+      "keys": [
+        "specs",
+        "malaman",
+        "makita"
+      ],
+      "a": "• CPU at RAM: Settings > System > About.\n• Graphics card: Task Manager > Performance > GPU.\n• RAM speed at ilang stick: Task Manager > Performance > Memory (\"Speed\" at \"Slots used\").\n• Lahat-lahat: libreng HWiNFO o CPU-Z.",
+      "links": [],
+      "next": [
+        "pc-upgrade-first"
+      ]
+    },
+    {
+      "id": "pc-upgrade-first",
+      "group": "pc",
+      "q": "Ano ang unahin i-upgrade?",
+      "alt": [
+        "anong uunahin upgrade",
+        "mag upgrade ng pc"
+      ],
+      "keys": [
+        "upgrade",
+        "unahin"
+      ],
+      "a": "Depende sa problema:\n• Mababa ang FPS sa graphics-heavy games: graphics card.\n• Mabagal mag-boot at mag-load: SSD (kung HDD pa).\n• Isang RAM stick lang o 8GB: dagdagan para dual channel at 16GB pataas.\n• Valorant o CS2 na kulang sa FPS kahit low settings: kadalasan CPU.\n\nKapag GPU ang ia-upgrade, i-check din kung kaya ng PSU.",
+      "links": [
+        {
+          "page": "may/",
+          "label": "May Parts na Ako: tingnan ang compatible"
+        }
+      ],
+      "next": [
+        "pc-bottleneck",
+        "psu-watts",
+        "ram-how-much"
+      ]
+    },
+    {
+      "id": "pc-bottleneck",
+      "group": "pc",
+      "q": "Ano ang bottleneck?",
+      "alt": [
+        "may bottleneck ba",
+        "bottleneck calculator"
+      ],
+      "keys": [
+        "bottleneck"
+      ],
+      "a": "Ang bottleneck ay ang part na pumipigil sa iba. Halimbawa, malakas na GPU pero mahinang CPU: hindi magamit nang buo ang GPU sa games na mabigat sa CPU.\n\nLaging may isang part na limit, kaya hindi ito masama. Ang mahalaga ay balanse para sa games mo. Huwag masyadong maniwala sa \"bottleneck calculator\" sites. Mas maaasahan ang benchmarks ng games na nilalaro mo.",
+      "links": [],
+      "next": [
+        "pc-upgrade-first"
+      ]
+    },
+    {
+      "id": "gpu-psu-calc",
+      "group": "gpu",
+      "q": "Kaya ba ng 550W PSU ang RTX 5060?",
+      "compute": true
+    },
+    {
+      "id": "gpu-case-calc",
+      "group": "gpu",
+      "q": "Kasya ba ang RX 9070 XT sa Tecware Infinity M?",
+      "compute": true
+    },
+    {
+      "id": "gpu-need",
+      "group": "gpu",
+      "q": "Kailangan ko ba ng graphics card?",
+      "alt": [
+        "kailangan ba ng gpu",
+        "pwede ba walang gpu",
+        "kaya ba walang gpu valorant"
+      ],
+      "keys": [
+        "kailangan",
+        "walang gpu",
+        "igpu"
+      ],
+      "a": "Depende sa CPU at sa gagawin mo:\n• Kung walang built-in graphics ang CPU (hal. Ryzen 5 5600, o Intel na may \"F\"), kailangan talaga ng GPU para may display.\n• Pang-school at office lang: sapat ang built-in graphics.\n• Gaming: kaya ng malakas na built-in graphics (hal. Ryzen 5 8600G) ang light games sa mababang settings, pero para sa mataas na FPS kailangan ng graphics card.",
+      "links": [
+        {
+          "cat": "gpu"
+        },
+        {
+          "cat": "cpu"
+        }
+      ],
+      "next": [
+        "cpu-igpu",
+        "gpu-which-budget"
+      ]
+    },
+    {
+      "id": "gpu-vram",
+      "group": "gpu",
+      "q": "8GB o 16GB VRAM?",
+      "alt": [
+        "ilang vram kailangan",
+        "sapat ba ang 8gb vram"
+      ],
+      "keys": [
+        "vram",
+        "8gb",
+        "16gb",
+        "12gb"
+      ],
+      "a": "Para sa Valorant, Dota 2 at CS2 sa 1080p, sapat ang 8GB.\n\nSa mga bagong AAA games, lalo na sa high o ultra textures at 1440p, mabilis nang mapuno ang 8GB at pwedeng mag-stutter. Kung pang-matagalan o pang-AAA, mas safe ang 12GB o 16GB.",
+      "links": [
+        {
+          "cat": "gpu"
+        }
+      ],
+      "next": [
+        "gpu-nvidia-amd",
+        "gpu-which-budget"
+      ]
+    },
+    {
+      "id": "gpu-nvidia-amd",
+      "group": "gpu",
+      "q": "NVIDIA o AMD na graphics card?",
+      "alt": [
+        "rtx o rx",
+        "nvidia vs amd",
+        "geforce o radeon"
+      ],
+      "keys": [
+        "nvidia",
+        "amd",
+        "rtx",
+        "radeon"
+      ],
+      "a": "Parehong maganda, depende sa presyo at gamit:\n• NVIDIA (RTX): DLSS, malakas sa ray tracing, at madalas preferred sa streaming at ilang editing apps.\n• AMD (Radeon RX): madalas mas maraming VRAM sa parehong presyo. May FSR para sa upscaling.\n\nIkumpara ang performance sa games mo sa parehong budget.",
+      "links": [
+        {
+          "cat": "gpu"
+        }
+      ],
+      "next": [
+        "gpu-vram"
+      ]
+    },
+    {
+      "id": "gpu-which-budget",
+      "group": "gpu",
+      "q": "Anong GPU sa budget ko?",
+      "alt": [
+        "best gpu sa budget",
+        "anong gpu maganda"
+      ],
+      "keys": [
+        "best",
+        "maganda",
+        "budget"
+      ],
+      "a": "Gamitin ang Mag-Build: ilagay ang budget at gamit, at pipili kami ng GPU na balanse sa CPU at PSU. Pwede mo ring i-browse ang listahan ng GPU na may filter at presyo.",
+      "links": [
+        {
+          "page": "build/",
+          "label": "Mag-Build"
+        },
+        {
+          "cat": "gpu"
+        }
+      ],
+      "next": [
+        "gpu-vram",
+        "gpu-nvidia-amd"
+      ]
+    },
+    {
+      "id": "gpu-driver",
+      "group": "gpu",
+      "q": "Paano i-update ang graphics driver?",
+      "alt": [
+        "gpu driver update",
+        "saan download driver ng gpu"
+      ],
+      "keys": [
+        "driver",
+        "nvidia app",
+        "adrenalin"
+      ],
+      "a": "• NVIDIA: i-download ang NVIDIA App o driver sa nvidia.com.\n• AMD: AMD Software: Adrenalin Edition sa amd.com.\n• Intel: Intel Arc o graphics driver sa intel.com.\n\nKapag lumipat ng brand (hal. AMD papuntang NVIDIA), magandang i-uninstall muna ang lumang driver.",
+      "links": [],
+      "next": [
+        "pc-drivers"
+      ]
+    },
+    {
+      "id": "gpu-power-cable",
+      "group": "gpu",
+      "q": "Paano isaksak ang power ng graphics card?",
+      "alt": [
+        "gpu power cable",
+        "pcie cable",
+        "ilan cable ng gpu",
+        "daisy chain"
+      ],
+      "keys": [
+        "pcie",
+        "8 pin",
+        "6 pin",
+        "12v",
+        "cable"
+      ],
+      "a": "Gamitin ang PCIe cable ng PSU (6+2 pin) o ang 12V-2x6 cable para sa mga bagong card na meron nito. Itulak hanggang mag-click.\n\nKung dalawa o higit pa ang socket sa card, mas safe ang hiwalay na cable para sa bawat isa, lalo na sa malakas na GPU. Huwag gamitin ang CPU cable (EPS) sa GPU: magkahawig pero iba.",
+      "links": [
+        {
+          "cat": "psu"
+        }
+      ],
+      "next": [
+        "gpu-psu-calc",
+        "psu-modular"
+      ]
+    },
+    {
+      "id": "gpu-slot",
+      "group": "gpu",
+      "q": "Saang slot ilalagay ang graphics card?",
+      "alt": [
+        "pcie slot ng gpu",
+        "kasya ba gpu sa lumang board",
+        "pcie 3.0 o 4.0"
+      ],
+      "keys": [
+        "slot",
+        "pcie",
+        "x16"
+      ],
+      "a": "Sa pinakamataas na mahabang PCIe x16 slot, pinakamalapit sa CPU.\n\nBackward compatible ang PCIe: gagana ang PCIe 4.0 o 5.0 card sa PCIe 3.0 slot. Pero ang mga card na x8 lang ang koneksyon (hal. RTX 5060 series, RX 7600) ay pwedeng medyo bumagal sa PCIe 3.0 board, lalo na ang 8GB na versions.",
+      "links": [],
+      "next": [
+        "gpu-sag"
+      ]
+    },
+    {
+      "id": "gpu-sag",
+      "group": "gpu",
+      "q": "Lumulubog ang graphics card (GPU sag)",
+      "alt": [
+        "gpu sag",
+        "nakalaylay ang gpu",
+        "kailangan ba ng gpu bracket"
+      ],
+      "keys": [
+        "sag",
+        "bracket",
+        "lubog"
+      ],
+      "a": "Normal sa mabibigat na card ang bahagyang paglubog. Kung halata ang pagkalaylay, gumamit ng GPU support bracket (madalas kasama na sa box). Siguraduhin ding naka-screw nang mahigpit ang card sa case.",
+      "links": [],
+      "next": [
+        "gpu-slot"
+      ]
+    },
+    {
+      "id": "gpu-hot",
+      "group": "gpu",
+      "q": "Mainit ang graphics card",
+      "alt": [
+        "mainit ang gpu",
+        "gpu overheat"
+      ],
+      "keys": [
+        "mainit",
+        "gpu temp"
+      ],
+      "a": "• Linisin ang alikabok sa fans ng GPU (huwag buksan ang card, mawawala ang warranty).\n• Siguraduhing may intake sa harap at exhaust sa likod o taas ng case.\n• I-cap ang FPS sa game (hal. sa refresh rate ng monitor) para mas malamig at tahimik.",
+      "links": [
+        {
+          "ts": "heat.1",
+          "label": "Troubleshooter: mainit ang GPU"
+        },
+        {
+          "cat": "case"
+        }
+      ],
+      "next": [
+        "case-airflow"
+      ]
+    },
+    {
+      "id": "gpu-used",
+      "group": "gpu",
+      "q": "Okay ba bumili ng second hand na GPU?",
+      "alt": [
+        "used gpu",
+        "2nd hand gpu",
+        "ex mining"
+      ],
+      "keys": [
+        "second hand",
+        "used",
+        "2nd",
+        "mining"
+      ],
+      "a": "Pwede, pero may risk: kadalasan wala nang warranty, at hindi mo alam kung paano ginamit. Kung bibili, subukan muna nang personal (maglaro o mag-benchmark ng 15 minuto), i-check ang temps, at humingi ng resibo. Ang bago sa Shopee Mall ay may warranty at returns sa seller.",
+      "links": [
+        {
+          "cat": "gpu"
+        }
+      ],
+      "next": [
+        "buy-warranty"
+      ]
+    },
+    {
+      "id": "gpu-two-monitors",
+      "group": "gpu",
+      "q": "Pwede ba ang dalawang monitor?",
+      "alt": [
+        "dual monitor",
+        "2 monitor"
+      ],
+      "keys": [
+        "dual monitor",
+        "dalawang monitor",
+        "2 monitor"
+      ],
+      "a": "Oo. Isaksak ang dalawa sa ports ng graphics card (hindi isa sa GPU at isa sa motherboard, maliban kung naka-on ang iGPU sa BIOS). Sa Windows: Settings > System > Display, piliin ang \"Extend these displays\".",
+      "links": [],
+      "next": [
+        "pc-refresh"
+      ]
+    },
+    {
+      "id": "cpu-board-calc",
+      "group": "cpu",
+      "q": "Anong motherboard sa Ryzen 5 7600?",
+      "compute": true
+    },
+    {
+      "id": "cpu-igpu-calc",
+      "group": "cpu",
+      "q": "May built-in graphics ba ang Ryzen 5 5600?",
+      "compute": true
+    },
+    {
+      "id": "cpu-intel-amd",
+      "group": "cpu",
+      "q": "Intel o AMD?",
+      "alt": [
+        "intel vs amd",
+        "ryzen o intel",
+        "mas maganda ba amd"
+      ],
+      "keys": [
+        "intel",
+        "amd",
+        "ryzen",
+        "core"
+      ],
+      "a": "Parehong maganda. Ikumpara ang presyo at performance sa gamit mo:\n• AMD AM5 (Ryzen 7000/9000): DDR5, at may upgrade path pa sa susunod na Ryzen.\n• AMD AM4 (Ryzen 5000): murang build gamit ang DDR4.\n• Intel LGA1700 (12th–14th Gen): pwedeng DDR4 o DDR5, depende sa board.\n\nPara sa pure gaming, malakas ang Ryzen na may \"X3D\".",
+      "links": [
+        {
+          "cat": "cpu"
+        }
+      ],
+      "next": [
+        "cpu-x3d",
+        "cpu-am4-am5"
+      ]
+    },
+    {
+      "id": "cpu-x3d",
+      "group": "cpu",
+      "q": "Ano ang X3D?",
+      "alt": [
+        "ano ang 7800x3d",
+        "sulit ba ang x3d"
+      ],
+      "keys": [
+        "x3d",
+        "v cache",
+        "3d"
+      ],
+      "a": "Ang X3D (hal. Ryzen 7 7800X3D, 9800X3D) ay may dagdag na cache (3D V-Cache) na malaking tulong sa games. Kaya sila madalas pinakamabilis sa gaming. Mas mahal sila, at hindi kasing laki ang dagdag sa editing o rendering.",
+      "links": [
+        {
+          "cat": "cpu"
+        }
+      ],
+      "next": [
+        "cpu-intel-amd"
+      ]
+    },
+    {
+      "id": "cpu-letters",
+      "group": "cpu",
+      "q": "Ano ang ibig sabihin ng F, K, X, G sa CPU?",
+      "alt": [
+        "anong ibig sabihin ng f sa intel",
+        "ano ang g sa ryzen",
+        "k sa intel"
+      ],
+      "keys": [
+        "suffix",
+        "f",
+        "k",
+        "x",
+        "g"
+      ],
+      "a": "• Intel F (hal. i5-12400F): walang built-in graphics, kailangan ng GPU.\n• Intel K: pwedeng i-overclock (kailangan ng Z board).\n• AMD G (hal. 8600G): mas malakas na built-in graphics.\n• AMD X: mas mataas na clock speed kaysa non-X.\n• AMD X3D: may dagdag na cache para sa gaming.",
+      "links": [
+        {
+          "cat": "cpu"
+        }
+      ],
+      "next": [
+        "cpu-igpu",
+        "cpu-x3d"
+      ]
+    },
+    {
+      "id": "cpu-igpu",
+      "group": "cpu",
+      "q": "Paano malaman kung may built-in graphics ang CPU?",
+      "alt": [
+        "may igpu ba",
+        "may integrated graphics ba"
+      ],
+      "keys": [
+        "igpu",
+        "built",
+        "integrated",
+        "graphics"
+      ],
+      "a": "Tingnan ang model at ang specs page sa AMD o Intel:\n• Walang built-in graphics: Ryzen 5000 na walang \"G\" (hal. Ryzen 5 5600), at Intel na may \"F\" (hal. i5-12400F) o \"KF\".\n• Meron: Ryzen na may \"G\", karamihan ng Ryzen 7000 at 9000 (maliban sa may \"F\"), at Intel na walang \"F\".\n\nPwede mo ring itanong dito ang eksaktong model, hal. \"may igpu ba ang i5-12400\".",
+      "links": [
+        {
+          "cat": "cpu"
+        }
+      ],
+      "next": [
+        "gpu-need"
+      ]
+    },
+    {
+      "id": "cpu-am4-am5",
+      "group": "cpu",
+      "q": "AM4 o AM5?",
+      "alt": [
+        "am4 vs am5",
+        "sulit pa ba am4"
+      ],
+      "keys": [
+        "am4",
+        "am5",
+        "socket"
+      ],
+      "a": "• AM4 (Ryzen 5000): DDR4 lang, mas mura ang board at RAM. Huling henerasyon na ito, kaya limitado ang upgrade.\n• AM5 (Ryzen 7000/9000): DDR5 lang. Mas mahal ng kaunti, pero mas bago at may upgrade path pa.\n\nHindi pwedeng ilagay ang AM4 na CPU sa AM5 board, at baliktad.",
+      "links": [
+        {
+          "cat": "cpu"
+        },
+        {
+          "cat": "motherboard"
+        }
+      ],
+      "next": [
+        "cpu-board-calc",
+        "ram-ddr4-ddr5"
+      ]
+    },
+    {
+      "id": "cpu-tray-box",
+      "group": "cpu",
+      "q": "Tray o box na CPU?",
+      "alt": [
+        "ano ang tray cpu",
+        "may kasama bang cooler"
+      ],
+      "keys": [
+        "tray",
+        "box",
+        "boxed"
+      ],
+      "a": "• Box: may kahon at kadalasan official na warranty. Ang ilang box CPU ay may kasamang cooler.\n• Tray: CPU lang, kadalasang walang cooler, at madalas sa seller ang warranty.\n\nTingnan sa listing kung may cooler, at i-check ang warranty sa seller bago bumili.",
+      "links": [
+        {
+          "cat": "cpu"
+        },
+        {
+          "cat": "cooler"
+        }
+      ],
+      "next": [
+        "cooler-stock-enough",
+        "buy-warranty"
+      ]
+    },
+    {
+      "id": "cpu-cores",
+      "group": "cpu",
+      "q": "Ilang cores ang kailangan?",
+      "alt": [
+        "6 cores sapat ba",
+        "cores at threads"
+      ],
+      "keys": [
+        "cores",
+        "threads",
+        "core"
+      ],
+      "a": "Para sa gaming, sapat na ang 6 cores, 12 threads (hal. Ryzen 5 7600) sa karamihan ng games. Mas maraming cores (8 pataas) ay tulong sa streaming habang naglalaro, video editing at rendering.",
+      "links": [
+        {
+          "cat": "cpu"
+        }
+      ],
+      "next": [
+        "cpu-intel-amd"
+      ]
+    },
+    {
+      "id": "cpu-intel-1314",
+      "group": "cpu",
+      "q": "Totoo bang may problema ang Intel 13th at 14th Gen?",
+      "alt": [
+        "intel 14th gen issue",
+        "intel instability",
+        "13th gen crash"
+      ],
+      "keys": [
+        "13th",
+        "14th",
+        "instability",
+        "microcode"
+      ],
+      "a": "May kinumpirmang stability issue ang Intel sa ilang 13th at 14th Gen desktop CPUs, at naglabas sila ng microcode fix sa BIOS updates. Kung may 13th o 14th Gen ka, i-update ang BIOS ng motherboard sa pinakabagong version galing sa website ng brand.",
+      "links": [],
+      "next": [
+        "mb-bios-update"
+      ]
+    },
+    {
+      "id": "cpu-paste",
+      "group": "cpu",
+      "q": "Kailangan ba ng thermal paste sa bagong CPU?",
+      "alt": [
+        "may paste na ba ang cooler"
+      ],
+      "keys": [
+        "thermal paste"
+      ],
+      "a": "Oo, kailangan ng paste sa pagitan ng CPU at cooler. Maraming cooler (kasama ang stock coolers) ang may pre-applied na paste. Kung meron, hindi mo na kailangang dagdagan sa unang kabit.",
+      "links": [
+        {
+          "cat": "cooler"
+        }
+      ],
+      "next": [
+        "cooler-paste"
+      ]
+    },
+    {
+      "id": "mb-ram-calc",
+      "group": "motherboard",
+      "q": "Anong RAM sa B650M?",
+      "compute": true
+    },
+    {
+      "id": "mb-cpu-calc",
+      "group": "motherboard",
+      "q": "Pwede ba ang Ryzen 5 5600 sa B650M?",
+      "compute": true
+    },
+    {
+      "id": "mb-chipset",
+      "group": "motherboard",
+      "q": "Ano ang chipset (A, B, X, H, Z)?",
+      "alt": [
+        "ano ang b650",
+        "b650 o a620",
+        "ano ang chipset",
+        "b760 o h610"
+      ],
+      "keys": [
+        "chipset",
+        "a620",
+        "b650",
+        "x870",
+        "h610",
+        "b760",
+        "z790"
+      ],
+      "a": "Ang chipset ang nagsasabi ng features ng board:\n• AMD: A (basic) < B (karamihan ng gaming builds) < X (pinakamaraming features). Hal. A620, B650, X870.\n• Intel: H (basic) < B < Z (pang-overclock ng K CPUs). Hal. H610, B760, Z790.\n\nPara sa karamihan, ang B ang sweet spot.",
+      "links": [
+        {
+          "cat": "motherboard"
+        }
+      ],
+      "next": [
+        "mb-size",
+        "mb-ram-calc"
+      ]
+    },
+    {
+      "id": "mb-size",
+      "group": "motherboard",
+      "q": "ATX, mATX o Mini-ITX?",
+      "alt": [
+        "anong size ng motherboard",
+        "matx o atx"
+      ],
+      "keys": [
+        "atx",
+        "matx",
+        "itx",
+        "micro"
+      ],
+      "a": "• ATX: pinakamalaki, mas maraming slots.\n• mATX (Micro-ATX): mas maliit, sapat para sa karamihan ng builds, at madalas mas mura.\n• Mini-ITX: pinakamaliit, para sa small builds; 2 RAM slots lang.\n\nDapat kasya ang board sa case: ang mATX case ay hindi kasya ang ATX board.",
+      "links": [
+        {
+          "cat": "motherboard"
+        },
+        {
+          "cat": "case"
+        }
+      ],
+      "next": [
+        "case-size"
+      ]
+    },
+    {
+      "id": "mb-bios-update",
+      "group": "motherboard",
+      "q": "Paano mag-update ng BIOS?",
+      "alt": [
+        "bios update",
+        "bios flashback",
+        "kailangan ba mag update ng bios"
+      ],
+      "keys": [
+        "bios",
+        "flashback",
+        "q flash",
+        "update"
+      ],
+      "a": "1. I-download ang BIOS file para sa eksaktong model ng board mo sa website ng brand.\n2. Ilagay sa USB flash drive (sundin ang manual sa format at filename).\n3. Gamitin ang tool sa BIOS (hal. EZ Flash, M-Flash, Q-Flash) o ang BIOS Flashback button kung meron.\n\nHuwag patayin habang nag-a-update. Kung may Flashback, kaya nitong mag-update kahit walang CPU o kahit hindi pa kilala ang CPU mo.",
+      "links": [],
+      "next": [
+        "pc-debug-led"
+      ]
+    },
+    {
+      "id": "mb-wifi",
+      "group": "motherboard",
+      "q": "May Wi-Fi ba ang motherboard?",
+      "alt": [
+        "may wifi ba ang board",
+        "kailangan ko ba ng wifi board"
+      ],
+      "keys": [
+        "wifi",
+        "ax",
+        "bluetooth",
+        "antenna"
+      ],
+      "a": "Kung may \"WIFI\" o \"AX\" sa pangalan ng board, kadalasan may built-in Wi-Fi at Bluetooth ito, at may kasamang antenna na ikakabit sa likod. Kung wala, gumamit ng LAN cable o bumili ng USB o PCIe Wi-Fi adapter.",
+      "links": [
+        {
+          "cat": "motherboard"
+        }
+      ],
+      "next": [
+        "pc-no-internet"
+      ]
+    },
+    {
+      "id": "mb-m2",
+      "group": "motherboard",
+      "q": "Ilang SSD ang kasya sa board?",
+      "alt": [
+        "ilang m2 slot",
+        "dalawang ssd"
+      ],
+      "keys": [
+        "m2",
+        "m 2",
+        "slot",
+        "nvme"
+      ],
+      "a": "Tingnan ang specs ng board: kadalasan 1 hanggang 3 M.2 slots, plus SATA ports para sa SATA SSD at HDD. Sa ilang board, kapag ginamit ang isang M.2 slot, may SATA port na nadi-disable. Nakasulat ito sa manual.",
+      "links": [
+        {
+          "cat": "motherboard"
+        },
+        {
+          "cat": "ssd"
+        }
+      ],
+      "next": [
+        "ssd-nvme-sata"
+      ]
+    },
+    {
+      "id": "mb-clear-cmos",
+      "group": "motherboard",
+      "q": "Paano mag-clear ng CMOS?",
+      "alt": [
+        "reset bios",
+        "clear cmos"
+      ],
+      "keys": [
+        "cmos",
+        "reset",
+        "clear"
+      ],
+      "a": "Patayin at bunutin ang PC. Tapos, depende sa board: pindutin ang Clear CMOS button, o i-short ang CLR_CMOS jumper ayon sa manual. Sa ibang board, tanggalin ang coin battery nang ilang minuto. Babalik sa default ang BIOS settings, kaya i-on ulit ang XMP/EXPO pagkatapos.",
+      "links": [],
+      "next": [
+        "ram-xmp"
+      ]
+    },
+    {
+      "id": "mb-vrm",
+      "group": "motherboard",
+      "q": "Kaya ba ng murang board ang malakas na CPU?",
+      "alt": [
+        "vrm",
+        "a620 sa 7800x3d",
+        "h610 sa i7"
+      ],
+      "keys": [
+        "vrm",
+        "murang board",
+        "entry"
+      ],
+      "a": "Ang VRM ng board ang nagbibigay ng power sa CPU. Ang entry boards (hal. A620, H610) ay ayos sa 65W CPUs, pero sa mas malakas na CPU pwedeng uminit ang VRM at bumagal ang CPU. Sa Mag-Build, may babala kami kapag manipis ang board para sa CPU.",
+      "links": [
+        {
+          "page": "build/",
+          "label": "Mag-Build"
+        },
+        {
+          "cat": "motherboard"
+        }
+      ],
+      "next": [
+        "mb-chipset"
+      ]
+    },
+    {
+      "id": "ram-cpu-calc",
+      "group": "ram",
+      "q": "Anong RAM sa Intel Core i5-14400?",
+      "compute": true
+    },
+    {
+      "id": "ram-ddr4-ddr5",
+      "group": "ram",
+      "q": "Pwede ba ang DDR5 sa DDR4 na board?",
+      "alt": [
+        "ddr4 o ddr5",
+        "ddr4 vs ddr5",
+        "pwede ba ihalo ddr4 at ddr5"
+      ],
+      "keys": [
+        "ddr4",
+        "ddr5",
+        "pwede",
+        "ihalo"
+      ],
+      "a": "Hindi. Iba ang hugis at notch ng DDR4 at DDR5, kaya hindi papasok sa maling slot. Ang board ang magdedesisyon: ang AM5 ay DDR5 lang, ang AM4 ay DDR4 lang, at sa Intel LGA1700 may DDR4 board at may DDR5 board (nakasulat sa pangalan).",
+      "links": [
+        {
+          "cat": "ram"
+        },
+        {
+          "cat": "motherboard"
+        }
+      ],
+      "next": [
+        "mb-ram-calc",
+        "ram-how-much"
+      ]
+    },
+    {
+      "id": "ram-how-much",
+      "group": "ram",
+      "q": "16GB o 32GB na RAM?",
+      "alt": [
+        "ilang gb ng ram",
+        "sapat ba 16gb",
+        "8gb ram sapat ba"
+      ],
+      "keys": [
+        "16gb",
+        "32gb",
+        "8gb",
+        "64gb",
+        "gb"
+      ],
+      "a": "• 16GB (2x8GB): sapat sa karamihan ng games, kasama ang Valorant, Dota 2 at CS2.\n• 32GB (2x16GB): mas maganda kung may Discord, browser at streaming habang naglalaro, o pang-editing.\n• 64GB: pang-mabigat na editing o 3D.\n\nAng 8GB ay kulang na para sa modernong gaming.",
+      "links": [
+        {
+          "cat": "ram"
+        }
+      ],
+      "next": [
+        "ram-dual",
+        "ram-speed"
+      ]
+    },
+    {
+      "id": "ram-dual",
+      "group": "ram",
+      "q": "Kailangan ba ng dalawang RAM stick?",
+      "alt": [
+        "dual channel",
+        "isang stick lang",
+        "1x16 o 2x8"
+      ],
+      "keys": [
+        "dual channel",
+        "stick",
+        "single"
+      ],
+      "a": "Oo, mas maganda ang dalawa (dual channel). Halos doble ang bandwidth, kaya mas mataas at mas stable ang FPS, lalo na sa built-in graphics at sa CPU-heavy games tulad ng Valorant at CS2. Mas maganda ang 2x8GB kaysa 1x16GB.",
+      "links": [
+        {
+          "cat": "ram"
+        }
+      ],
+      "next": [
+        "ram-slots",
+        "ram-xmp"
+      ]
+    },
+    {
+      "id": "ram-slots",
+      "group": "ram",
+      "q": "Saang slot ilalagay ang dalawang RAM?",
+      "alt": [
+        "a2 b2",
+        "anong slot ng ram",
+        "ram slot"
+      ],
+      "keys": [
+        "slot",
+        "a2",
+        "b2"
+      ],
+      "a": "Sa karamihan ng 4-slot boards: A2 at B2 (pangalawa at pang-apat mula sa CPU). Pero tingnan pa rin ang manual, dahil may board na iba. Kung isang stick lang, kadalasan sa A2. Itulak hanggang mag-click ang dalawang lock.",
+      "links": [],
+      "next": [
+        "ram-dual"
+      ]
+    },
+    {
+      "id": "ram-xmp",
+      "group": "ram",
+      "q": "Ano ang XMP o EXPO at paano i-on?",
+      "alt": [
+        "paano mag on ng xmp",
+        "bakit mabagal ang ram speed",
+        "naka 4800 lang ang ram"
+      ],
+      "keys": [
+        "xmp",
+        "speed",
+        "bios"
+      ],
+      "a": "Default, tumatakbo ang RAM sa mas mababang \"safe\" speed. Ang XMP (Intel) o EXPO (AMD) ang nagpapatakbo nito sa speed na nakasulat sa box.\n\nPumasok sa BIOS (Delete o F2), hanapin ang XMP, EXPO o DOCP, i-enable, at i-save. Kung naging hindi stable (restart o blue screen), i-off ulit o gumamit ng mas mababang profile.",
+      "links": [],
+      "next": [
+        "ram-speed",
+        "pc-restart"
+      ]
+    },
+    {
+      "id": "ram-speed",
+      "group": "ram",
+      "q": "Anong RAM speed ang maganda?",
+      "alt": [
+        "3200 o 3600",
+        "ddr5 6000",
+        "cl30"
+      ],
+      "keys": [
+        "speed",
+        "mhz",
+        "3200",
+        "3600",
+        "6000",
+        "cl"
+      ],
+      "a": "• AM4 (Ryzen 5000): DDR4-3200 hanggang 3600.\n• AM5 (Ryzen 7000/9000): DDR5-6000 ang madalas na sweet spot.\n• Intel LGA1700: DDR4-3200/3600 o DDR5-5600/6000, depende sa board.\n\nMas mahalaga ang dual channel at naka-on na XMP/EXPO kaysa sa sobrang mataas na speed.",
+      "links": [
+        {
+          "cat": "ram"
+        }
+      ],
+      "next": [
+        "ram-xmp"
+      ]
+    },
+    {
+      "id": "ram-training",
+      "group": "ram",
+      "q": "Matagal mag-boot ang bagong DDR5 build",
+      "alt": [
+        "memory training",
+        "ilang minuto bago may display",
+        "matagal unang boot"
+      ],
+      "keys": [
+        "training",
+        "matagal",
+        "ddr5"
+      ],
+      "a": "Normal iyan. Sa unang boot (at pagkatapos mag-update ng BIOS, magpalit ng RAM o mag-clear ng CMOS), tine-train ng board ang DDR5. Pwedeng ilang minuto na itim ang monitor, at sa ilang system umaabot ng 10 hanggang 15 minuto. Huwag patayin. Mas mabilis na ang susunod na boot.",
+      "links": [
+        {
+          "ts": "nodisplay.0.4.0",
+          "label": "Troubleshooter: memory training"
+        }
+      ],
+      "next": [
+        "pc-debug-led",
+        "ram-reseat"
+      ]
+    },
+    {
+      "id": "ram-reseat",
+      "group": "ram",
+      "q": "DRAM light ang nakailaw",
+      "alt": [
+        "dram led",
+        "hindi ma detect ang ram"
+      ],
+      "keys": [
+        "dram",
+        "reseat",
+        "detect"
+      ],
+      "a": "1. Maghintay muna ng 10 hanggang 15 minuto kung bagong DDR5 build (memory training).\n2. Kung wala pa rin: patayin at bunutin, tanggalin ang RAM at ibalik nang mabuti hanggang mag-click.\n3. Subukan ang isang stick lang sa A2, tapos ang kabila, para malaman kung may sirang stick.\n4. I-check kung supported ng BIOS mo ang RAM at CPU.",
+      "links": [
+        {
+          "ts": "nodisplay.0.0",
+          "label": "Troubleshooter: DRAM light"
+        },
+        {
+          "cat": "ram"
+        }
+      ],
+      "next": [
+        "ram-slots",
+        "mb-bios-update"
+      ]
+    },
+    {
+      "id": "ram-mix",
+      "group": "ram",
+      "q": "Pwede bang paghaluin ang magkaibang RAM?",
+      "alt": [
+        "mix ram",
+        "dagdag ng ram na ibang brand"
+      ],
+      "keys": [
+        "mix",
+        "halo",
+        "dagdag",
+        "ibang brand"
+      ],
+      "a": "Minsan gumagana, pero hindi garantisado. Kapag magkaiba ang brand o speed, tatakbo ang lahat sa pinakamabagal na setting, at pwedeng hindi mag-boot o hindi stable sa XMP/EXPO. Pinaka-safe ang isang kit (hal. 2x16GB) na sabay binili.",
+      "links": [
+        {
+          "cat": "ram"
+        }
+      ],
+      "next": [
+        "ram-how-much"
+      ]
+    },
+    {
+      "id": "ram-laptop",
+      "group": "ram",
+      "q": "Pwede ba ang laptop RAM sa desktop?",
+      "alt": [
+        "sodimm sa desktop"
+      ],
+      "keys": [
+        "laptop",
+        "sodimm",
+        "so dimm"
+      ],
+      "a": "Hindi. Ang laptop RAM (SO-DIMM) ay mas maikli at iba ang slot. Ang desktop ay gumagamit ng DIMM.",
+      "links": [
+        {
+          "cat": "ram"
+        }
+      ],
+      "next": [
+        "ram-ddr4-ddr5"
+      ]
+    },
+    {
+      "id": "ssd-nvme-sata",
+      "group": "ssd",
+      "q": "NVMe o SATA SSD?",
+      "alt": [
+        "nvme vs sata",
+        "m2 o sata",
+        "ano ang nvme"
+      ],
+      "keys": [
+        "nvme",
+        "sata",
+        "m2"
+      ],
+      "a": "• NVMe (M.2): pinakamabilis, maliit na stick na direkta sa motherboard, walang cable.\n• SATA SSD (2.5\"): mas mabagal kaysa NVMe pero mas mabilis pa rin nang malayo sa HDD. Kailangan ng SATA cable at power.\n\nSa bagong build, NVMe ang karaniwang pinipili kung may M.2 slot ang board.",
+      "links": [
+        {
+          "cat": "ssd"
+        }
+      ],
+      "next": [
+        "ssd-size",
+        "mb-m2"
+      ]
+    },
+    {
+      "id": "ssd-size",
+      "group": "ssd",
+      "q": "Gaano kalaking SSD ang kailangan?",
+      "alt": [
+        "500gb o 1tb",
+        "sapat ba 500gb",
+        "ilang gb ssd"
+      ],
+      "keys": [
+        "500gb",
+        "1tb",
+        "2tb",
+        "laki",
+        "size"
+      ],
+      "a": "• 500GB: Windows at ilang games lang.\n• 1TB: magandang simula para sa gaming. Maraming bagong games ang 50 hanggang 150GB bawat isa.\n• 2TB: kung maraming malalaking games o video files.\n\nMag-iwan ng bakanteng space (mga 10 hanggang 20%) para hindi bumagal.",
+      "links": [
+        {
+          "cat": "ssd"
+        }
+      ],
+      "next": [
+        "ssd-nvme-sata"
+      ]
+    },
+    {
+      "id": "ssd-gen",
+      "group": "ssd",
+      "q": "Gen3, Gen4 o Gen5 na SSD?",
+      "alt": [
+        "pcie gen4 ssd",
+        "gen 4 sa gen 3 slot"
+      ],
+      "keys": [
+        "gen3",
+        "gen4",
+        "gen5",
+        "gen"
+      ],
+      "a": "Mas mabilis ang mas mataas na Gen sa malalaking file transfers, pero sa paglo-load ng games, maliit lang ang diperensya. Backward compatible sila: gagana ang Gen4 SSD sa Gen3 slot (sa Gen3 speed). Para sa gaming, sulit na ang magandang Gen4.",
+      "links": [
+        {
+          "cat": "ssd"
+        }
+      ],
+      "next": [
+        "ssd-size"
+      ]
+    },
+    {
+      "id": "ssd-not-detected",
+      "group": "ssd",
+      "q": "Hindi makita ang SSD",
+      "alt": [
+        "hindi detected ang ssd",
+        "walang ssd sa bios",
+        "ssd not showing"
+      ],
+      "keys": [
+        "detect",
+        "makita",
+        "nawala"
+      ],
+      "a": "• Sa BIOS (Delete o F2): nakikita ba ang SSD? Kung hindi, patayin at bunutin ang PC, at tingnan kung buo ang pagkakapasok at naka-screw ang M.2.\n• Kung nasa BIOS pero wala sa Windows: buksan ang Disk Management, i-initialize ang bagong drive at gumawa ng partition.\n• Sa ilang board, nadi-disable ang isang M.2 slot o SATA port depende sa gamit. Tingnan ang manual.",
+      "links": [
+        {
+          "ts": "nodisplay.0.3",
+          "label": "Troubleshooter: BOOT light"
+        }
+      ],
+      "next": [
+        "mb-m2"
+      ]
+    },
+    {
+      "id": "ssd-hdd-games",
+      "group": "ssd",
+      "q": "Okay ba mag-install ng games sa HDD?",
+      "alt": [
+        "hdd o ssd sa games",
+        "games sa hdd"
+      ],
+      "keys": [
+        "hdd",
+        "hard drive",
+        "hard disk"
+      ],
+      "a": "Gagana, pero mas matagal ang loading at pwedeng mag-stutter sa mga bagong open-world games. Ilagay ang Windows at mga madalas laruin sa SSD. Okay ang HDD para sa videos, photos at backup.",
+      "links": [
+        {
+          "cat": "ssd"
+        }
+      ],
+      "next": [
+        "ssd-size",
+        "pc-stutter"
+      ]
+    },
+    {
+      "id": "ssd-health",
+      "group": "ssd",
+      "q": "Paano i-check ang health ng SSD?",
+      "alt": [
+        "ssd health",
+        "sira na ba ssd"
+      ],
+      "keys": [
+        "health",
+        "crystaldiskinfo",
+        "sira"
+      ],
+      "a": "Gamitin ang tool ng brand ng SSD (hal. Samsung Magician, Kingston SSD Manager, WD Dashboard) o ang libreng CrystalDiskInfo. Tingnan ang \"Health\" o porsyento. Kung bumababa na o may warning, mag-backup agad ng files.",
+      "links": [
+        {
+          "cat": "ssd"
+        }
+      ],
+      "next": [
+        "ssd-not-detected"
+      ]
+    },
+    {
+      "id": "ssd-heatsink",
+      "group": "ssd",
+      "q": "Kailangan ba ng heatsink ang NVMe?",
+      "alt": [
+        "ssd heatsink",
+        "m2 heatsink"
+      ],
+      "keys": [
+        "heatsink"
+      ],
+      "a": "Para sa karamihan ng Gen3 at Gen4 SSD sa gaming, hindi kailangan. Maraming board ang may kasamang M.2 heatsink, at magandang gamitin iyon. Ang Gen5 SSD ay kadalasang kailangan ng heatsink. Tanggalin ang plastic film ng thermal pad kung meron.",
+      "links": [],
+      "next": [
+        "ssd-gen"
+      ]
+    },
+    {
+      "id": "psu-calc",
+      "group": "psu",
+      "q": "Kaya ba ng 650W ang RTX 5070?",
+      "compute": true
+    },
+    {
+      "id": "psu-watts",
+      "group": "psu",
+      "q": "Ilang watts ng PSU ang kailangan ko?",
+      "alt": [
+        "ilang watts psu",
+        "sapat ba ang 550w",
+        "anong psu sa gpu ko"
+      ],
+      "keys": [
+        "watts",
+        "wattage",
+        "550w",
+        "650w",
+        "750w"
+      ],
+      "a": "Tingnan ang recommended PSU ng graphics card mo (nasa website ng brand). Pwede mo ring itanong dito, hal. \"kaya ba ng 650W ang RTX 5070\".\n\nPara sa buong set, gamitin ang Mag-Build: kinukuwenta nito ang estimated load ng CPU at GPU, at nagbibigay ng recommended na may allowance.",
+      "links": [
+        {
+          "page": "build/",
+          "label": "Kuwentahin sa Mag-Build"
+        },
+        {
+          "cat": "psu"
+        }
+      ],
+      "next": [
+        "psu-calc",
+        "psu-rating"
+      ]
+    },
+    {
+      "id": "psu-rating",
+      "group": "psu",
+      "q": "Ano ang 80+ Bronze, Gold?",
+      "alt": [
+        "bronze o gold",
+        "80 plus",
+        "sulit ba gold psu"
+      ],
+      "keys": [
+        "80",
+        "bronze",
+        "gold",
+        "platinum",
+        "rating"
+      ],
+      "a": "Ang 80+ rating ay tungkol sa efficiency: gaano kaliit ang nasasayang na kuryente bilang init. Mas efficient ang Gold kaysa Bronze. Hindi nito direktang sinasabi ang quality, kaya piliin din ang kilalang brand at maayos na reviews. Iwasan ang walang brand na mataas ang nakasulat na watts.",
+      "links": [
+        {
+          "cat": "psu"
+        }
+      ],
+      "next": [
+        "psu-watts",
+        "psu-modular"
+      ]
+    },
+    {
+      "id": "psu-modular",
+      "group": "psu",
+      "q": "Ano ang modular PSU?",
+      "alt": [
+        "modular o non modular",
+        "semi modular"
+      ],
+      "keys": [
+        "modular",
+        "non modular",
+        "semi"
+      ],
+      "a": "• Non-modular: nakakabit na lahat ng cable, mas mura.\n• Semi-modular: nakakabit ang main cables, pwedeng tanggalin ang iba.\n• Full modular: lahat natatanggal, pinakamalinis sa cable management.\n\nSa modular, gamitin lang ang cables na kasama ng PSU mo. Huwag ihalo sa cables ng ibang PSU, kahit pareho ang brand.",
+      "links": [
+        {
+          "cat": "psu"
+        }
+      ],
+      "next": [
+        "gpu-power-cable"
+      ]
+    },
+    {
+      "id": "psu-switch",
+      "group": "psu",
+      "q": "Nasaan ang switch ng PSU?",
+      "alt": [
+        "psu switch",
+        "i at o sa psu"
+      ],
+      "keys": [
+        "switch",
+        "on off"
+      ],
+      "a": "Nasa likod ng PSU, katabi ng saksakan ng power cable. Ang \"I\" ay on, ang \"O\" ay off. I-off ito at bunutin ang cable bago galawin ang loob ng PC.",
+      "links": [
+        {
+          "ts": "nopower",
+          "label": "Troubleshooter: ayaw mag-on"
+        }
+      ],
+      "next": [
+        "pc-nopower"
+      ]
+    },
+    {
+      "id": "psu-test",
+      "group": "psu",
+      "q": "Paano malaman kung sira ang PSU?",
+      "alt": [
+        "sira ba psu ko",
+        "psu test"
+      ],
+      "keys": [
+        "sira",
+        "test"
+      ],
+      "a": "Mga palatandaan: ayaw mag-on kahit tama ang cables, namamatay kapag naglalaro, amoy sunog, o pumutok pagkatapos ng brownout. Ang pinaka-siguradong test ay subukan ang ibang PSU na gumagana. Huwag buksan ang PSU: may capacitor sa loob na pwedeng may kuryente pa kahit nakabunot na.",
+      "links": [
+        {
+          "ts": "nopower",
+          "label": "Troubleshooter: ayaw mag-on"
+        },
+        {
+          "cat": "psu"
+        }
+      ],
+      "next": [
+        "psu-ups"
+      ]
+    },
+    {
+      "id": "psu-ups",
+      "group": "psu",
+      "q": "Kailangan ba ng AVR o UPS?",
+      "alt": [
+        "avr o ups",
+        "brownout pc"
+      ],
+      "keys": [
+        "avr",
+        "ups",
+        "brownout",
+        "kuryente"
+      ],
+      "a": "Kung madalas ang brownout o pabago-bago ang kuryente, malaking tulong ang UPS: may battery ito kaya may oras kang mag-save at mag-shutdown nang maayos. Proteksyon din ang magandang surge protector laban sa spikes. Ang mismong PSU na de-kalidad ang pinakamahalagang proteksyon ng PC.",
+      "links": [
+        {
+          "cat": "psu"
+        }
+      ],
+      "next": [
+        "psu-rating"
+      ]
+    },
+    {
+      "id": "psu-never-open",
+      "group": "psu",
+      "q": "Pwede bang buksan ang PSU para ayusin?",
+      "alt": [
+        "ayusin ang psu",
+        "open psu"
+      ],
+      "keys": [
+        "buksan",
+        "ayusin",
+        "open"
+      ],
+      "a": "Huwag. May mga capacitor sa loob ng PSU na pwedeng may mapanganib na kuryente kahit nakabunot na. Mawawala rin ang warranty. Kung sira, i-claim ang warranty o palitan.",
+      "links": [
+        {
+          "cat": "psu"
+        }
+      ],
+      "next": [
+        "psu-test"
+      ]
+    },
+    {
+      "id": "cooler-case-calc",
+      "group": "cooler",
+      "q": "Kasya ba ang Peerless Assassin 120 SE sa darkFlash DB330M?",
+      "compute": true
+    },
+    {
+      "id": "cooler-cpu-calc",
+      "group": "cooler",
+      "q": "Kaya ba ng AK400 ang Ryzen 7 7800X3D?",
+      "compute": true
+    },
+    {
+      "id": "cooler-stock-enough",
+      "group": "cooler",
+      "q": "Sapat ba ang stock cooler?",
+      "alt": [
+        "okay ba stock fan",
+        "kailangan ba ng aftermarket cooler"
+      ],
+      "keys": [
+        "stock",
+        "aftermarket"
+      ],
+      "a": "Para sa 65W CPU na may kasamang cooler, kadalasan sapat para sa gaming, pero mas maingay at mas mainit. Ang murang tower cooler (hal. ₱1,500 hanggang ₱2,500) ay malaking upgrade sa temps at ingay. Kapag tray o walang kasamang cooler ang CPU, kailangan mo talagang bumili.",
+      "links": [
+        {
+          "cat": "cooler"
+        }
+      ],
+      "next": [
+        "cooler-air-aio",
+        "cpu-tray-box"
+      ]
+    },
+    {
+      "id": "cooler-air-aio",
+      "group": "cooler",
+      "q": "Air cooler o AIO?",
+      "alt": [
+        "tower cooler o liquid",
+        "aio vs air"
+      ],
+      "keys": [
+        "aio",
+        "air",
+        "liquid",
+        "tower"
+      ],
+      "a": "• Air (tower): mas mura, halos walang masisira bukod sa fan, at sapat para sa karamihan ng CPUs.\n• AIO (liquid): mas malinis tingnan at maganda sa mainit na CPUs, pero mas mahal at may pump na pwedeng masira pagkalipas ng ilang taon.\n\nI-check ang taas ng tower cooler o ang radiator mount ng case.",
+      "links": [
+        {
+          "cat": "cooler"
+        }
+      ],
+      "next": [
+        "cooler-case-calc"
+      ]
+    },
+    {
+      "id": "cooler-paste",
+      "group": "cooler",
+      "q": "Paano maglagay ng thermal paste?",
+      "alt": [
+        "gaano karaming paste",
+        "paano mag paste"
+      ],
+      "keys": [
+        "thermal paste",
+        "apply",
+        "lagay"
+      ],
+      "a": "1. Kung may lumang paste, punasan gamit ang isopropyl alcohol at tissue o coffee filter.\n2. Maglagay ng kaunti sa gitna ng CPU, mga kasinlaki ng gisantes.\n3. Ikabit ang cooler nang pantay, hinihigpitan nang paekis ang screws.\n\nHuwag sobrahan. Kung may pre-applied paste ang cooler, hindi na kailangan sa unang kabit.",
+      "links": [],
+      "next": [
+        "cooler-film",
+        "cooler-paste-replace"
+      ]
+    },
+    {
+      "id": "cooler-film",
+      "group": "cooler",
+      "q": "Mainit ang CPU pagkatapos magkabit ng bagong cooler",
+      "alt": [
+        "mainit pagkatapos mag install ng cooler",
+        "plastic sa cooler"
+      ],
+      "keys": [
+        "plastic",
+        "film",
+        "bagong cooler"
+      ],
+      "a": "Pinaka-karaniwang dahilan: may plastic film pa sa ilalim ng cooler. Tanggalin ito. Tingnan din kung pantay at mahigpit ang pagkakakabit, at kung nasa \"CPU_FAN\" header ang fan cable.",
+      "links": [
+        {
+          "ts": "heat.0.0",
+          "label": "Troubleshooter: bagong cooler"
+        }
+      ],
+      "next": [
+        "cooler-paste"
+      ]
+    },
+    {
+      "id": "cooler-paste-replace",
+      "group": "cooler",
+      "q": "Kailan dapat palitan ang thermal paste?",
+      "alt": [
+        "palit paste",
+        "tuyo na ang paste"
+      ],
+      "keys": [
+        "palitan",
+        "tuyo",
+        "repaste"
+      ],
+      "a": "Kadalasan, ilang taon bago kailangang palitan. Kung ilang taon na ang PC at mas mainit na kaysa dati kahit malinis ang heatsink, magandang i-repaste. Palitan din ang paste tuwing tatanggalin ang cooler.",
+      "links": [],
+      "next": [
+        "cooler-paste",
+        "pc-clean"
+      ]
+    },
+    {
+      "id": "cooler-header",
+      "group": "cooler",
+      "q": "Saan isasaksak ang fan ng cooler?",
+      "alt": [
+        "cpu fan header",
+        "aio pump header",
+        "cpu fan error"
+      ],
+      "keys": [
+        "header",
+        "cpu fan",
+        "pump",
+        "fan error"
+      ],
+      "a": "Sa \"CPU_FAN\" header ng motherboard, kadalasan malapit sa socket. Sa AIO, ang pump ay sa \"AIO_PUMP\" o \"PUMP_FAN\" (o ayon sa manual), at ang radiator fans sa CPU_FAN. Kung may \"CPU Fan Error\" sa boot, kadalasang nasa maling header ang fan.",
+      "links": [],
+      "next": [
+        "cooler-film"
+      ]
+    },
+    {
+      "id": "cooler-am5",
+      "group": "cooler",
+      "q": "Pwede ba ang AM4 cooler sa AM5?",
+      "alt": [
+        "am4 cooler sa am5",
+        "lga1700 bracket"
+      ],
+      "keys": [
+        "am4",
+        "am5",
+        "lga1700",
+        "bracket",
+        "mounting"
+      ],
+      "a": "Kadalasan oo: ginawa ng AMD na pareho ang mounting ng AM5 at AM4 para sa karamihan ng coolers. I-check pa rin ang compatibility list ng cooler. Sa Intel LGA1700, kailangan ng tamang bracket; maraming bagong cooler ang may kasama na nito.",
+      "links": [
+        {
+          "cat": "cooler"
+        }
+      ],
+      "next": [
+        "cooler-cpu-calc"
+      ]
+    },
+    {
+      "id": "case-gpu-calc",
+      "group": "case",
+      "q": "Kasya ba ang RX 9070 XT Challenger sa darkFlash DB330M?",
+      "compute": true
+    },
+    {
+      "id": "case-size",
+      "group": "case",
+      "q": "Anong case size ang bibilhin?",
+      "alt": [
+        "matx case o atx case",
+        "kasya ba atx board sa matx case"
+      ],
+      "keys": [
+        "case",
+        "matx",
+        "atx",
+        "size"
+      ],
+      "a": "Dapat kasya ang motherboard: ang ATX case ay kasya ang ATX, mATX at ITX; ang mATX case ay mATX at ITX lang. I-check din ang max haba ng GPU at max taas ng CPU cooler sa specs ng case.",
+      "links": [
+        {
+          "cat": "case"
+        }
+      ],
+      "next": [
+        "case-gpu-calc",
+        "mb-size"
+      ]
+    },
+    {
+      "id": "case-gpu-fit",
+      "group": "case",
+      "q": "Paano malaman kung kasya ang GPU sa case?",
+      "alt": [
+        "kasya ba gpu ko sa case",
+        "sakto ba gpu sa case",
+        "haba ng gpu"
+      ],
+      "keys": [
+        "kasya",
+        "haba",
+        "length",
+        "gpu"
+      ],
+      "a": "Ikumpara ang haba ng graphics card (nasa specs, sa mm) sa \"max GPU length\" ng case. Mag-iwan ng allowance kung may fans o radiator sa harap.\n\nPwede mo ring itanong dito gamit ang mga model, hal. \"kasya ba ang RX 9070 XT sa Tecware Infinity M\".",
+      "links": [
+        {
+          "cat": "case"
+        }
+      ],
+      "next": [
+        "case-gpu-calc",
+        "case-size"
+      ]
+    },
+    {
+      "id": "case-airflow",
+      "group": "case",
+      "q": "Paano ang tamang direksyon ng fans?",
+      "alt": [
+        "intake exhaust",
+        "fan direction",
+        "airflow ng case"
+      ],
+      "keys": [
+        "airflow",
+        "intake",
+        "exhaust",
+        "direksyon",
+        "fan"
+      ],
+      "a": "Karaniwang setup: intake (pasok ng hangin) sa harap o ilalim, exhaust (labas) sa likod at taas. May arrow sa gilid ng fan frame na nagpapakita ng direksyon ng hangin. Kadalasan, ang hangin ay lumalabas sa gilid na may grill o mga braso ng fan frame.",
+      "links": [
+        {
+          "cat": "case"
+        }
+      ],
+      "next": [
+        "case-mesh",
+        "pc-temps"
+      ]
+    },
+    {
+      "id": "case-mesh",
+      "group": "case",
+      "q": "Mesh o glass sa harap ng case?",
+      "alt": [
+        "mesh case",
+        "mas malamig ba ang mesh"
+      ],
+      "keys": [
+        "mesh",
+        "glass",
+        "harap"
+      ],
+      "a": "Mas malamig kadalasan ang mesh sa harap dahil mas maraming hangin ang pumapasok. Ang solid o glass na harap ay pwedeng maganda tingnan pero mas mainit, lalo na kung kaunti ang butas sa gilid.",
+      "links": [
+        {
+          "cat": "case"
+        }
+      ],
+      "next": [
+        "case-airflow"
+      ]
+    },
+    {
+      "id": "case-fans",
+      "group": "case",
+      "q": "Ilang fans ang kailangan?",
+      "alt": [
+        "ilang case fan",
+        "kulang ba ang fans"
+      ],
+      "keys": [
+        "ilang",
+        "fans",
+        "case fan"
+      ],
+      "a": "Para sa karamihan ng gaming builds, maganda ang 2 hanggang 3 intake sa harap at 1 exhaust sa likod. Maraming case ang may kasama nang fans. Mas mahalaga ang maayos na daloy ng hangin kaysa sa dami ng fans.",
+      "links": [
+        {
+          "cat": "case"
+        }
+      ],
+      "next": [
+        "case-airflow"
+      ]
+    },
+    {
+      "id": "case-usb-c",
+      "group": "case",
+      "q": "Hindi gumagana ang USB-C sa harap ng case",
+      "alt": [
+        "front usb c",
+        "front usb hindi gumagana"
+      ],
+      "keys": [
+        "usb",
+        "usb c",
+        "front"
+      ],
+      "a": "Kailangan ng motherboard na may USB-C front panel header (\"USB 3.2 Gen 2 Type-C\" o katulad) para gumana ang USB-C sa harap. Kung walang ganitong header ang board, hindi ito gagana. Para sa USB-A sa harap, isaksak ang USB 3 cable sa USB 3 header.",
+      "links": [
+        {
+          "cat": "motherboard"
+        }
+      ],
+      "next": [
+        "pc-front-panel"
+      ]
+    },
+    {
+      "id": "buy-budget",
+      "group": "buy",
+      "q": "Magkano ang gaming PC?",
+      "alt": [
+        "magkano budget pang gaming",
+        "budget gaming pc",
+        "magkano pc pang valorant"
+      ],
+      "keys": [
+        "magkano",
+        "budget",
+        "pang gaming"
+      ],
+      "a": "Depende sa target. May Ready Builds kami mula mga ₱40K hanggang ₱130K, may total na presyo at Shopee links. Kung may sariling budget ka, ilagay ito sa Mag-Build at gagawan ka namin ng compatible na set.",
+      "links": [
+        {
+          "page": "builds/",
+          "label": "Ready Builds"
+        },
+        {
+          "page": "build/",
+          "label": "Mag-Build"
+        }
+      ],
+      "next": [
+        "buy-priority",
+        "buy-editing"
+      ]
+    },
+    {
+      "id": "buy-priority",
+      "group": "buy",
+      "q": "Saan dapat mapunta ang malaking parte ng budget?",
+      "alt": [
+        "ano uunahin sa budget",
+        "saan ilalagay ang pera"
+      ],
+      "keys": [
+        "uunahin",
+        "priority",
+        "budget"
+      ],
+      "a": "Para sa gaming, kadalasan ang graphics card ang pinakamalaking bahagi, sunod ang CPU. Huwag tipirin ang PSU (dapat kilalang brand) at siguraduhing may SSD at dual-channel RAM. Pwedeng mas simple ang case at board basta compatible.",
+      "links": [
+        {
+          "page": "build/",
+          "label": "Mag-Build"
+        }
+      ],
+      "next": [
+        "buy-budget",
+        "psu-rating"
+      ]
+    },
+    {
+      "id": "buy-editing",
+      "group": "buy",
+      "q": "Anong PC pang-editing?",
+      "alt": [
+        "pc pang video editing",
+        "pc pang premiere"
+      ],
+      "keys": [
+        "pang editing",
+        "premiere",
+        "davinci",
+        "render"
+      ],
+      "a": "Para sa video editing: mas maraming CPU cores, 32GB RAM pataas, mabilis na NVMe SSD, at GPU na suportado ng editing app mo. Piliin ang \"Editing\" sa Mag-Build para ma-adjust ang set.",
+      "links": [
+        {
+          "page": "build/",
+          "label": "Mag-Build"
+        }
+      ],
+      "next": [
+        "ram-how-much",
+        "cpu-cores"
+      ]
+    },
+    {
+      "id": "buy-site-how",
+      "group": "buy",
+      "q": "Paano gamitin ang site na ito?",
+      "alt": [
+        "paano gumagana ang site",
+        "ano ang respecz pc builder"
+      ],
+      "keys": [
+        "site",
+        "gamitin",
+        "respecz"
+      ],
+      "a": "• Mag-Build: ilagay ang budget at gamit, may compatible na set ka na.\n• May Parts na Ako: piliin ang meron ka na, ipapakita ang compatible.\n• Parts: i-browse per category na may filters.\n• Ready Builds: kumpletong sets.\n• Troubleshooter: para sa sira o problema.\n\nMay compatibility check at Shopee Mall link ang bawat part.",
+      "links": [
+        {
+          "page": "build/",
+          "label": "Mag-Build"
+        },
+        {
+          "page": "may/",
+          "label": "May Parts na Ako"
+        }
+      ],
+      "next": [
+        "buy-affiliate",
+        "buy-price"
+      ]
+    },
+    {
+      "id": "buy-affiliate",
+      "group": "buy",
+      "q": "Ano ang affiliate link?",
+      "alt": [
+        "paano kumikita ang respecz",
+        "may dagdag ba sa presyo"
+      ],
+      "keys": [
+        "affiliate",
+        "kumikita",
+        "commission"
+      ],
+      "a": "Shopee affiliate links ang mga \"Shopee Checkout\" na button. Kapag bumili ka gamit ang mga ito, may maliit na commission ang ReSpecz mula sa Shopee. Walang dagdag sa presyo mo, at hindi nito binabago ang mga suggestion namin.",
+      "links": [
+        {
+          "page": "disclosure/",
+          "label": "Affiliate disclosure"
+        }
+      ],
+      "next": [
+        "buy-price"
+      ]
+    },
+    {
+      "id": "buy-price",
+      "group": "buy",
+      "q": "Saan galing ang presyo?",
+      "alt": [
+        "updated ba ang presyo",
+        "bakit iba presyo sa shopee"
+      ],
+      "keys": [
+        "presyo",
+        "updated",
+        "iba"
+      ],
+      "a": "Galing sa Shopee Mall listing noong araw na na-check namin (nakasulat sa site). Nagbabago ang presyo at vouchers anumang oras, kaya laging i-check sa Shopee bago bumili.",
+      "links": [
+        {
+          "page": "disclosure/",
+          "label": "Affiliate disclosure"
+        }
+      ],
+      "next": [
+        "buy-affiliate"
+      ]
+    },
+    {
+      "id": "buy-warranty",
+      "group": "buy",
+      "q": "Paano ang warranty?",
+      "alt": [
+        "may warranty ba",
+        "saan mag claim ng warranty"
+      ],
+      "keys": [
+        "warranty",
+        "claim",
+        "return"
+      ],
+      "a": "Hindi kami ang seller. Ang order, warranty at returns ay sa pagitan mo at ng seller sa Shopee (at ng brand, para sa official warranty). Basahin ang warranty sa listing bago bumili, at itago ang resibo at kahon.",
+      "links": [],
+      "next": [
+        "buy-mall"
+      ]
+    },
+    {
+      "id": "buy-mall",
+      "group": "buy",
+      "q": "Bakit Shopee Mall?",
+      "alt": [
+        "shopee mall o hindi mall",
+        "legit ba"
+      ],
+      "keys": [
+        "mall",
+        "legit",
+        "authentic"
+      ],
+      "a": "Ang Shopee Mall ay para sa official stores at authorized sellers, kaya mas mababa ang risk ng peke at mas malinaw ang warranty. Kaya Shopee Mall ang ginagamit namin sa listahan.",
+      "links": [],
+      "next": [
+        "buy-warranty"
+      ]
+    },
+    {
+      "id": "buy-basket",
+      "group": "buy",
+      "q": "Ano ang Basket?",
+      "alt": [
+        "paano gamitin basket"
+      ],
+      "keys": [
+        "basket",
+        "cart"
+      ],
+      "a": "Ang Basket ay listahan ng parts na pinili mo sa site, may total na presyo. Hindi ito Shopee cart. Mula rito, i-click ang Shopee link ng bawat part para i-add sa Shopee cart mo.",
+      "links": [],
+      "next": [
+        "buy-site-how"
+      ]
+    },
+    {
+      "id": "ark-who",
+      "group": "buy",
+      "q": "Sino ka?",
+      "alt": [
+        "sino si ark",
+        "ano ka",
+        "bot ka ba",
+        "ai ka ba"
+      ],
+      "keys": [
+        "sino",
+        "ark",
+        "bot",
+        "ai"
+      ],
+      "a": "Ako si Ark, ang Assistant ni ReSpecz. Sumasagot ako mula sa knowledge base ng ReSpecz at sa parts list ng site, kaya ang mga numero (watts, laki, presyo) ay galing mismo sa listahan namin. Kung wala sa alam ko ang tanong mo, ituturo kita sa Troubleshooter o sa Facebook page ng ReSpecz.",
+      "links": [],
+      "next": [
+        "buy-site-how"
+      ],
+      "hidden": true
+    },
+    {
+      "id": "ark-hi",
+      "group": "buy",
+      "q": "Hi",
+      "alt": [
+        "hello",
+        "hi ark",
+        "good morning",
+        "good evening",
+        "kumusta",
+        "musta"
+      ],
+      "keys": [
+        "hi",
+        "hello",
+        "kumusta"
+      ],
+      "a": "Hi! Ako si Ark. Pumili ng part sa itaas o i-type ang tanong mo, hal. \"walang display\" o \"kaya ba ng 550W ang RTX 5060\".",
+      "links": [],
+      "next": [
+        "pc-nodisplay",
+        "gpu-psu-calc"
+      ],
+      "hidden": true
+    },
+    {
+      "id": "ark-thanks",
+      "group": "buy",
+      "q": "Salamat",
+      "alt": [
+        "thank you",
+        "thanks",
+        "ty",
+        "salamat po"
+      ],
+      "keys": [
+        "salamat",
+        "thanks"
+      ],
+      "a": "Walang anuman! Kung may iba ka pang tanong, nandito lang ako. Good luck sa build!",
+      "links": [],
+      "next": [],
+      "hidden": true
+    }
+  ]
+}
