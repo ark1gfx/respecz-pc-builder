@@ -1,12 +1,15 @@
 name = "respecz-visits"
 main = "worker.js"
 compatibility_date = "2026-11-01"
+# Served on the site's own domain (respecz.com is on Cloudflare); no workers.dev subdomain needed.
+workers_dev = false
+routes = [{ pattern = "visits.respecz.com", custom_domain = true }]
 
 # Create the KV namespace once with:  npx wrangler kv namespace create VISITS
 # then paste the id it prints below.
 [[kv_namespaces]]
 binding = "VISITS"
-id = "PASTE_KV_NAMESPACE_ID_HERE"
+id = "9dd1abd1217f433b98e77d7f4b73cb29"
 
 # The Studio reads the total with a secret header:  npx wrangler secret put VISITS_KEY
 # (same value as VISITS_KEY in herk-edit-kit/.env; never commit it)

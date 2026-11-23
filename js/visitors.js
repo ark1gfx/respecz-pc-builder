@@ -2,7 +2,7 @@
 // Each device is counted once: a flag in localStorage, then one POST to the respecz-visits Worker
 // (tools/visitor-counter/). No cookies, no personal data. Does nothing until ENDPOINT is set.
 
-export const ENDPOINT = ''; // e.g. 'https://respecz-visits.<account>.workers.dev' after deploy
+export const ENDPOINT = 'https://visits.respecz.com';
 
 const FLAG = 'rz-counted-v1';
 
