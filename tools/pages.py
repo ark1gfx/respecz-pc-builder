@@ -12,7 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / 'site'
-SITE_URL = 'https://ark1gfx.github.io/respecz-pc-builder/'
+SITE_URL = 'https://respecz.com/'
 
 IMPORTMAP = '''  <script type="importmap">
     {
