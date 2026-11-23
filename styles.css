@@ -1876,9 +1876,19 @@ p, li { text-wrap: pretty; }
 @media (hover: hover) and (pointer: fine) and (min-width: 860px) { .stage-chips { display: none; } }
 /* desktop: leave room on the right for the parts rail (it is fixed to the screen edge), so it never covers the PC */
 @media (hover: hover) and (pointer: fine) and (min-width: 860px) and (min-aspect-ratio: 11/10) {
-  .hero-pin .stage-wrap:not(.is-full) { box-sizing: border-box; padding-right: max(0px, calc(184px - (100vw - 1080px) / 2 - var(--gutter))); }
+  .hero-pin .stage-wrap:not(.is-full) { box-sizing: border-box; padding-right: 172px; }
 }
 
 /* small "+" discs (half the old size): thinner cross, and the invisible tap target stays 36px */
 .hs-dot::before, .hs-dot::after { height: 1.5px; margin-top: -0.75px; width: calc(var(--hs) * 0.46); margin-left: calc(var(--hs) * -0.23); }
 .hotspot::before { left: calc(var(--hs) / 2 - 18px); top: calc(var(--hs) / 2 - 18px); width: 36px; height: 36px; }
+
+/* Wide screens: everything fixed to the screen edges lines up with the page's 1080px content column instead
+   (the rail beside the 3D PC, Basket, back-to-top, Ark), so the hero reads as one grid. --edge = the column's
+   left/right content edge measured from the screen edge (never less than the old 16px). */
+:root { --edge: max(16px, calc((100vw - 1080px) / 2 + var(--gutter) - 8px)); } /* js/app.js sets the exact value */
+@media (hover: hover) and (pointer: fine) and (min-width: 860px) {
+  .stage-rail { right: var(--edge); }
+  .basket-dock, .to-top { right: var(--edge); }
+  .ark-fab, .ark-pop { left: var(--edge); }
+}

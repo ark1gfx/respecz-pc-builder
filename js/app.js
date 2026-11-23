@@ -1668,7 +1668,19 @@ function bindAurora() {
   addEventListener('scroll', kick, { passive: true });
 }
 
+// --edge: distance from the screen edge to the content column's edge, so fixed buttons line up with the page grid
+function syncEdge() {
+  const m = document.querySelector('main');
+  if (!m) return;
+  const r = m.getBoundingClientRect();
+  const pad = parseFloat(getComputedStyle(m).paddingRight) || 0;
+  const edge = Math.max(16, document.documentElement.clientWidth - r.right + pad);
+  document.documentElement.style.setProperty('--edge', `${Math.round(edge)}px`);
+}
+
 function bindChrome() {
+  syncEdge();
+  addEventListener('resize', syncEdge);
   bindAurora();
   bindTips();
   // Parts dropdown: hover opens it on a mouse; the caret button toggles it for touch and keyboard
