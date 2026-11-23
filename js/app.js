@@ -117,11 +117,12 @@ function renderStageChips() {
   }
 }
 
-// The parts rail shows while the PC fills the screen (scrolled in, or full screen), desktop only.
+// Desktop: the parts rail sits beside the 3D PC the whole time the PC is on screen (at rest and zoomed in);
+// it replaces the chip row. Phones keep the chips.
 function syncRail() {
   const rail = $('#stage-rail');
   if (!rail) return;
-  const on = !!peekFloating() && !peekPastPC() && peekMode.matches;
+  const on = !peekPastPC() && peekMode.matches;
   if (rail.classList.contains('is-on') === on) return;
   rail.classList.toggle('is-on', on);
   rail.querySelectorAll('button').forEach((b) => { b.tabIndex = on ? 0 : -1; });
