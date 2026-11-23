@@ -1925,3 +1925,27 @@ p, li { text-wrap: pretty; }
   html:has(#hero.is-zooming) :is(.basket-dock, .to-top), html:has(.stage-wrap.is-full) :is(.basket-dock, .to-top) { right: max(16px, env(safe-area-inset-right)); }
   html:has(#hero.is-zooming) :is(.ark-fab, .ark-pop), html:has(.stage-wrap.is-full) :is(.ark-fab, .ark-pop) { left: max(16px, env(safe-area-inset-left)); }
 }
+
+/* side-scrolling card rows: frosted-glass arrows on the edges (only while there is more to see that way),
+   page dots under the Home cards */
+.scroll-x { position: relative; }
+.scroll-arrow {
+  position: absolute; top: 50%; z-index: 4; width: 42px; height: 42px; margin-top: -21px;
+  display: grid; place-items: center; padding: 0; border: 0; border-radius: 50%; cursor: pointer; color: #fff;
+  background: rgba(28, 29, 34, 0.42);
+  -webkit-backdrop-filter: blur(16px) saturate(180%); backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), inset 0 0 0 1px rgba(255, 255, 255, 0.16), 0 10px 24px -8px rgba(0, 0, 0, 0.6);
+  transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+.scroll-arrow svg { width: 18px; height: 18px; }
+.scroll-arrow:hover { background: rgba(var(--accent-rgb), 0.35); }
+.scroll-arrow:active { transform: scale(0.94); }
+.scroll-arrow[hidden] { display: grid; opacity: 0; pointer-events: none; }
+.scroll-prev { left: 8px; }
+.scroll-prev svg { transform: scaleX(-1); }
+.scroll-next { right: 8px; }
+.scroll-dots { display: flex; justify-content: center; gap: 6px; margin-top: -14px; }
+.scroll-dots[hidden] { display: none; }
+.scroll-dots i { width: 6px; height: 6px; border-radius: 999px; background: rgba(255, 255, 255, 0.28); transition: width 0.25s ease, background 0.25s ease; }
+.scroll-dots i.is-on { width: 18px; background: var(--accent); }
+@media (prefers-reduced-motion: reduce) { .scroll-arrow, .scroll-dots i { transition: none; } }

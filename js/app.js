@@ -1505,6 +1505,7 @@ async function initVideos() {
   tabs.forEach((t) => t.addEventListener('click', () => show(t.dataset.vtab)));
   // nothing to rank by: start on "Bago"
   show(data.trending?.some((v) => v.views || v.engagement) ? 'trending' : 'latest');
+  bindScrollHints(grid);
   // The section starts hidden until the JSON loads, so the browser's own #videos jump finds nothing on arrival
   // from another page. Jump there ourselves once it exists (instantly: the visitor already asked to go there).
   if (location.hash === '#videos') requestAnimationFrame(() => section.scrollIntoView({ block: 'start' }));
@@ -1564,6 +1565,7 @@ function renderFeatured(promo) {
       </div>
     </article>`).join('');
   $('#featured').hidden = false;
+  bindScrollHints(row);
   row.addEventListener('click', (e) => {
     const add = e.target.closest('[data-add]');
     if (add) addToBasket([add.dataset.add]);
@@ -1581,6 +1583,63 @@ async function initPromo() {
   } catch (err) {
     console.warn('promo', err);
   }
+}
+
+// ---------- side-scrolling card rows (small screens) ----------
+// Frosted-glass arrows on the edges show there is more to the side and scroll one card per tap;
+// the Home cards also get page dots. Arrows and dots hide when the row fits.
+const SCROLL_ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>';
+function bindScrollHints(row, { dots = false } = {}) {
+  if (!row || row.closest('.scroll-x')) return;
+  const wrap = document.createElement('div');
+  wrap.className = 'scroll-x';
+  row.parentNode.insertBefore(wrap, row);
+  wrap.append(row);
+  const mk = (dir) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = `scroll-arrow scroll-${dir}`;
+    b.setAttribute('aria-label', dir === 'next' ? 'Tingnan ang susunod' : 'Tingnan ang nauna');
+    b.innerHTML = SCROLL_ARROW;
+    b.addEventListener('click', () => {
+      const card = row.firstElementChild;
+      const step = card ? card.getBoundingClientRect().width + (parseFloat(getComputedStyle(row).columnGap) || 12) : row.clientWidth * 0.8;
+      row.scrollBy({ left: dir === 'next' ? step : -step, behavior: reducedMotion ? 'auto' : 'smooth' });
+    });
+    wrap.append(b);
+    return b;
+  };
+  const prev = mk('prev');
+  const next = mk('next');
+  let dotBar = null;
+  if (dots) {
+    dotBar = document.createElement('div');
+    dotBar.className = 'scroll-dots';
+    dotBar.setAttribute('aria-hidden', 'true');
+    dotBar.innerHTML = [...row.children].map(() => '<i></i>').join('');
+    wrap.append(dotBar);
+  }
+  const sync = () => {
+    const max = row.scrollWidth - row.clientWidth;
+    const over = max > 4;
+    wrap.classList.toggle('is-scrollable', over);
+    prev.hidden = !over || row.scrollLeft <= 4;
+    next.hidden = !over || row.scrollLeft >= max - 4;
+    if (dotBar) {
+      dotBar.hidden = !over;
+      const kids = [...row.children];
+      const mid = row.getBoundingClientRect().left + row.clientWidth / 2;
+      let best = 0, bd = Infinity;
+      kids.forEach((k, i) => { const r = k.getBoundingClientRect(); const d = Math.abs(r.left + r.width / 2 - mid); if (d < bd) { bd = d; best = i; } });
+      if (row.scrollLeft <= 4) best = 0;
+      if (row.scrollLeft >= max - 4) best = kids.length - 1;
+      [...dotBar.children].forEach((d, i) => d.classList.toggle('is-on', i === best));
+    }
+  };
+  row.addEventListener('scroll', () => requestAnimationFrame(sync), { passive: true });
+  addEventListener('resize', sync);
+  new MutationObserver(sync).observe(row, { childList: true });
+  sync();
 }
 
 function bindRouteCards() {
@@ -1774,6 +1833,7 @@ async function init() {
     }
     if (has('#samples')) renderSamples(builds);
     if (has('.routes')) bindRouteCards();
+    if (has('.routes')) bindScrollHints($('.routes'), { dots: true });
     // freshness: when the Shopee Mall prices were last checked
     const pd = $('[data-price-date]');
     if (pd && catalog.meta?.priceChecked) {
