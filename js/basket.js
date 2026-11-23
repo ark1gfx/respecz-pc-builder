@@ -81,7 +81,7 @@ function renderPreviews() {
         <span class="bp-price">${ctx.peso.format(p.price)}</span>
       </li>`).join('')}</ul>
     ${list.length > shown.length ? `<p class="bp-more">+${list.length - shown.length} pa</p>` : ''}
-    <p class="bp-total"><span>Total</span><strong>${ctx.peso.format(total)}</strong></p>
+    <p class="bp-total"><span>Estimated Total</span><strong>${ctx.peso.format(total)}</strong></p>
     <button type="button" class="btn btn-blue btn-sm bp-open" data-open-basket>Buksan ang Basket</button>`
     : '<p class="bp-empty">Wala pang laman. Pindutin ang <strong>Basket</strong> button sa kahit anong part.</p>';
   document.querySelectorAll('[data-basket-preview]').forEach((el) => { el.innerHTML = html; });
@@ -91,7 +91,7 @@ function renderBasket() {
   const list = items.map((it) => ({ ...it, p: ctx.byId(it.id) })).filter((it) => it.p);
   const done = list.filter((it) => it.done).length;
   const total = list.reduce((sum, it) => sum + it.p.price, 0);
-  $('#basket-sub').textContent = `${list.length} item${list.length === 1 ? '' : 's'} · ${ctx.peso.format(total)}`;
+  $('#basket-sub').textContent = `${list.length} item${list.length === 1 ? '' : 's'} · estimated ${ctx.peso.format(total)}`;
   $('#basket-progress-fill').style.width = list.length ? `${(done / list.length) * 100}%` : '0%';
   $('#basket-progress-text').textContent = `${done}/${list.length} nasa Shopee cart mo na`;
   $('#basket-list').innerHTML = list.length ? list.map(({ id, done: isDone, p }) => {

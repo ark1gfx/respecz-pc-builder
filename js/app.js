@@ -943,7 +943,7 @@ function renderResult(scroll) {
   result.hidden = false;
   const total = totalPrice(state.build);
   const fails = renderCompat().filter((r) => r.level === 'fail').length;
-  $('#summary-label').textContent = fails ? `Total · ${fails} problema sa compatibility` : 'Total';
+  $('#summary-label').textContent = fails ? `Estimated Total · ${fails} problema sa compatibility` : 'Estimated Total';
   countTo($('#total'), total);
   $('#usecase-tag').textContent = USE_CASES[state.useCase].label;
   const fill = $('#meter-fill');
