@@ -1913,3 +1913,15 @@ p, li { text-wrap: pretty; }
 @media (hover: hover) and (pointer: fine) and (min-width: 1200px) and (max-width: 1499px) and (min-aspect-ratio: 11/10) {
   html[data-page='home'] .hero-pin { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); }
 }
+/* zoomed in (scroll zoom or full screen): the PC fills the screen, so the rail goes back to the screen edge,
+   mirroring the hover card on the left */
+@media (hover: hover) and (pointer: fine) and (min-width: 860px) {
+  .stage-rail { transition: opacity 0.22s ease, transform 0.22s ease, right 0.35s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  html:has(#hero.is-zooming) .stage-rail, html:has(.stage-wrap.is-full) .stage-rail { right: max(20px, env(safe-area-inset-right)); }
+}
+@media (hover: hover) and (pointer: fine) and (min-width: 860px) {
+  .basket-dock, .to-top { transition: right 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.25s ease, transform 0.25s ease; }
+  .ark-fab { transition: left 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.15s ease, border-color 0.2s ease; }
+  html:has(#hero.is-zooming) :is(.basket-dock, .to-top), html:has(.stage-wrap.is-full) :is(.basket-dock, .to-top) { right: max(16px, env(safe-area-inset-right)); }
+  html:has(#hero.is-zooming) :is(.ark-fab, .ark-pop), html:has(.stage-wrap.is-full) :is(.ark-fab, .ark-pop) { left: max(16px, env(safe-area-inset-left)); }
+}
