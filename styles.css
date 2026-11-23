@@ -1958,3 +1958,9 @@ p, li { text-wrap: pretty; }
 
 .scroll-arrow:disabled { opacity: 0.35; cursor: default; background: rgba(28, 29, 34, 0.42); }
 .scroll-arrow:disabled:active { transform: none; }
+
+/* budget slider: the part left of the thumb fills in ReSpecz blue (same as the Total bar), so it reads as draggable */
+#budget::-webkit-slider-runnable-track { height: 6px; background: linear-gradient(90deg, rgb(var(--blue-deep)), rgb(var(--blue-bright))) 0 0 / var(--fill, 0%) 100% no-repeat, var(--island3); }
+#budget::-moz-range-track { height: 6px; background: var(--island3); }
+#budget::-moz-range-progress { height: 6px; border-radius: 4px; background: linear-gradient(90deg, rgb(var(--blue-deep)), rgb(var(--blue-bright))); }
+#budget::-webkit-slider-thumb { margin-top: -10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45), 0 0 0 4px rgba(var(--accent-rgb), 0.25); }

@@ -709,6 +709,9 @@ function liveBuild(throttle = 0) {
 function setBudgetText() {
   const el = $('#budget-out');
   if (el && document.activeElement !== el) el.value = peso.format(state.budget);
+  // blue fill on the slider up to the thumb, like the Total bar
+  const r = $('#budget');
+  if (r) r.style.setProperty('--fill', `${((state.budget - Number(r.min)) / (Number(r.max) - Number(r.min))) * 100}%`);
 }
 function parseBudget(text) {
   const t = String(text).toLowerCase().replace(/[₱,\s]/g, '');
