@@ -954,9 +954,11 @@ html.viewer-full, html.viewer-full body { overflow: hidden; }
 .more-note:empty { display: none; }
 .more-note { padding: 2px 8px; border-radius: 999px; font-size: 0.75rem; color: #fff; background: rgba(var(--blue-deep), 0.8); font-weight: 600; white-space: nowrap; }
 
-/* Phones: the floating Basket sits above the tab bar; back-to-top stacks above it */
+/* Phones: one Basket (top bar) instead of a floating pill; desktop uses the floating pill only */
+@media (min-width: 1000px) { .nav-basket { display: none; } }
 @media (max-width: 999px) {
-  .to-top { bottom: calc(var(--tabbar-h) + 72px + env(safe-area-inset-bottom)); }
+  .basket-dock:not(.in-sheet) { display: none; }
+  .to-top { bottom: calc(var(--tabbar-h) + 14px + env(safe-area-inset-bottom)); }
   .nav-basket { min-height: 44px; padding: 8px 14px; font-size: 0.9rem; }
   .brand { min-height: 44px; }
   /* inside the product list the Basket shrinks to an icon + count */
