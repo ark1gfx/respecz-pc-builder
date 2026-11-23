@@ -5,3 +5,4 @@ __pycache__/
 # local secrets (Facebook Page token for tools/fb_videos.py)
 .env.local
 .env
+.wrangler/

@@ -27,27 +27,27 @@ IMPORTMAP = '''  <script type="importmap">
 # slug '' = home. nav = label in the top nav (None = not listed), tab = label + icon in the mobile tab bar.
 PAGES = [
     dict(name='home', slug='', nav=None, tab='Home',
-         title='ReSpecz PC Builder: Plan your PC build bago mag-checkout',
+         title='PC Builder Philippines: budget PC build + compatibility check · ReSpecz',
          og_title='ReSpecz PC Builder',
          description='Plan your PC build bago mag-checkout. Parts mula Shopee Mall, may compatibility check, budget builder at 3D PC.'),
     dict(name='parts', slug='parts/', nav='Parts', tab='Parts',
-         title='Lahat ng PC parts · ReSpecz PC Builder',
+         title='PC parts Philippines: CPU, GPU, RAM, SSD at iba pa · ReSpecz PC Builder',
          og_title='Lahat ng PC parts, galing sa Shopee Mall',
          description='CPU, motherboard, RAM, GPU, SSD, PSU, case at cooler. May filter, presyo at Shopee Mall link bawat isa.'),
     dict(name='build', slug='build/', nav='Mag-Build', tab='Mag-Build',
-         title='Mag-Build ng PC sa budget mo · ReSpecz PC Builder',
+         title='PC build sa budget mo: gaming, editing, school · ReSpecz PC Builder',
          og_title='Mag-Build: i-set ang budget, kami na sa parts',
          description='Ilagay ang budget at gamit (gaming, editing, school). Bibigyan ka namin ng compatible na set na may Shopee links.'),
     dict(name='may', slug='may/', nav='May Parts na Ako', tab='May Parts',
-         title="May parts ka na? Tingnan ang compatible · ReSpecz PC Builder",
+         title="PC compatibility checker: ano ang swak sa parts mo? · ReSpecz PC Builder",
          og_title='May parts ka na? Tingnan ang compatible',
          description='Piliin ang meron ka na (RAM, CPU, GPU…) at ipapakita namin ang compatible na motherboard, RAM, PSU at iba pa.'),
     dict(name='builds', slug='builds/', nav=None, tab=None,  # in the Parts dropdown, not the top nav
-         title='Ready PC builds · ReSpecz PC Builder',
+         title='Ready PC builds Philippines: gaming, editing at school · ReSpecz PC Builder',
          og_title='Ready PC builds mula ₱40K',
          description='Kumpletong PC builds para sa gaming, editing at school, may total na presyo at Shopee links.'),
     dict(name='troubleshoot', slug='troubleshoot/', nav='Troubleshoot', tab='Troubleshoot',
-         title='PC Troubleshooter: ayaw mag-on, walang display, nag-i-stutter · ReSpecz PC Builder',
+         title='PC troubleshooter: ayaw mag-on, walang display, nagre-restart · ReSpecz PC Builder',
          og_title='May problema ang PC mo? Hanapin natin ang dahilan',
          description='Piliin ang problema (ayaw mag-on, walang display, nagre-restart, mainit, mabagal sa games) at sagutin ang ilang tanong. May step-by-step na checks na kaya mong gawin.'),
     dict(name='disclosure', slug='disclosure/', nav=None, tab=None,
@@ -68,6 +68,50 @@ TAB_ICONS = {
 
 
 import hashlib
+import json
+from datetime import datetime, timedelta, timezone
+
+SOCIAL = ['https://www.facebook.com/1378136052056179', 'https://www.tiktok.com/@resp3cz']
+NOINDEX = {'disclosure'}   # thin legal page: reachable, but kept out of search results
+
+
+def ld_json(page):
+    """schema.org JSON-LD: the brand + site on the home page, a breadcrumb on every other page."""
+    url = SITE_URL + page['slug']
+    if page['name'] == 'home':
+        data = {'@context': 'https://schema.org', '@graph': [
+            {'@type': 'Organization', '@id': SITE_URL + '#org', 'name': 'ReSpecz', 'url': SITE_URL,
+             'logo': SITE_URL + 'assets/favicon.png', 'sameAs': SOCIAL},
+            {'@type': 'WebSite', '@id': SITE_URL + '#site', 'name': 'ReSpecz PC Builder', 'url': SITE_URL,
+             'inLanguage': 'fil-PH', 'publisher': {'@id': SITE_URL + '#org'}},
+            {'@type': 'WebApplication', 'name': 'ReSpecz PC Builder', 'url': SITE_URL,
+             'applicationCategory': 'UtilitiesApplication', 'operatingSystem': 'Any', 'inLanguage': 'fil-PH',
+             'description': page['description'], 'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'PHP'},
+             'publisher': {'@id': SITE_URL + '#org'}},
+        ]}
+    else:
+        name = page['nav'] or page['og_title']
+        data = {'@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': [
+            {'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL},
+            {'@type': 'ListItem', 'position': 2, 'name': name, 'item': url},
+        ]}
+    return '  <script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + '</script>\n'
+
+
+def robots_meta(page):
+    return '  <meta name="robots" content="noindex, follow">\n' if page['name'] in NOINDEX else ''
+
+
+def write_robots_and_sitemap():
+    today = (datetime.now(timezone.utc) + timedelta(hours=8)).date().isoformat()
+    urls = '\n'.join(f'  <url><loc>{SITE_URL}{p["slug"]}</loc><lastmod>{today}</lastmod></url>'
+                     for p in PAGES if p['name'] not in NOINDEX)
+    (ROOT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + '\n</urlset>\n')
+    # site/, tools/ and test/ are source files GitHub Pages also serves; js/, data/ and assets/ stay open so Google can render the pages
+    (ROOT / 'robots.txt').write_text('User-agent: *\nDisallow: /site/\nDisallow: /tools/\nDisallow: /test/\n\n'
+        f'Sitemap: {SITE_URL}sitemap.xml\n')
+    print('wrote robots.txt, sitemap.xml')
 
 
 def version(path):
@@ -124,7 +168,7 @@ def render(page):
         'description': page['description'],
         'url': SITE_URL + page['slug'],
         'site': SITE_URL,
-        'head_extra': IMPORTMAP if page['name'] == 'home' else '',
+        'head_extra': robots_meta(page) + ld_json(page) + (IMPORTMAP if page['name'] == 'home' else ''),
         'nav_links': nav_links,
         'tabbar': tabbar,
         'main': (SITE / 'pages' / f'{page["name"]}.html').read_text().rstrip('\n') + '\n',
@@ -147,6 +191,7 @@ def main():
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(render(page))
         print('wrote', dest.relative_to(ROOT))
+    write_robots_and_sitemap()
 
 
 if __name__ == '__main__':

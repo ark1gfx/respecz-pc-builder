@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /site/
+Disallow: /tools/
+Disallow: /test/
+
+Sitemap: https://respecz.com/sitemap.xml
